@@ -1,0 +1,19 @@
+version: '3'
+services:
+  cheerup-front:
+        container_name: react_front
+        build:
+            context: .
+            dockerfile: Dockerfile    
+        volumes:
+          - '.:/app'
+          - '/app/node_modules'
+        ports:
+          - '3000:3000'
+        environment:
+          - NODE_ENV=development
+        tty: true
+        stdin_open: true
+      
+      
+      
