@@ -8,6 +8,8 @@ services:
         volumes:
           - '.:/app'
           - '/app/node_modules'
+        networks:
+          - network-api
         ports:
           - '3000:3000'
         environment:
@@ -15,5 +17,8 @@ services:
         tty: true
         stdin_open: true
       
-      
+networks:
+  network-api:
+    external:
+      name: network-api
       
