@@ -136,3 +136,11 @@
         display: none;
     }
 }
+
+.logo-cheeryUp img{
+    width: 130px;
+    height: 60px;
+    position: absolute;
+    left: 30px;
+    top: 6px;
+}

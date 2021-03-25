@@ -1,4 +1,4 @@
-img{
+.imagem-superior{
     width: 550px;
     height: 550px;
     position: absolute;
@@ -28,6 +28,6 @@ img{
     width: 150px;
     height: 100px;
     position: absolute;
-    left: 870px;
-    top: 390px;
+    left: 750px;
+    top: 430px;
 }
