@@ -1,9 +1,10 @@
 .about-container{
     background-color: rgb(163, 171, 189);
     width: 100%;
-    height: 850px;
+    height: 800px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 
@@ -29,16 +30,18 @@
     position: absolute;
     left: 100px;
     top: 20px;
+    flex-grow: 1;
 }
 
 .texto-about{
     width: 1000px;
-    height: 700px;
+    height: 900px;
     position: relative;
     left: 170px;
-    top: 440px;
+    top: 400px;
+    flex-grow: 1;
 }
 
 .sobre-nos{
-    font-size: 25px;
+    font-size: 30px;
 }

@@ -144,3 +144,9 @@
     left: 30px;
     top: 6px;
 }
+
+.botao-about{
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}

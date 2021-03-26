@@ -23,15 +23,12 @@ function About(){
 function Texto(){
     return(
         <h3 className='sobre-nos'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type 
-            specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining essentially unchanged. 
-            It was popularised in the 1960s with the release of Letraset sheets containing 
-            Lorem Ipsum passages, 
-            and more recently with desktop publishing software like Aldus PageMaker including 
-            versions of Lorem Ipsum.
+            Cheery Up é um projeto que dá atenção à saúde mental da sociedade, 
+            especialmente no contexto da pandemia do Covid-19. O propósito da Cheery Up 
+            consiste em uma plataforma web para ajudar profissionais da psicologia
+            à monitorar e acompanhar a saúde psicológica de seus pacientes.
+            Portanto, convidamos você, psicólogo, a se juntar à nossa luta nesse 
+            momento tão delicado no país e no mundo.
         </h3>
     )
 }

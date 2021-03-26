@@ -12,6 +12,7 @@
     height: 600px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .msg-convite{
@@ -28,6 +29,6 @@
     width: 150px;
     height: 100px;
     position: absolute;
-    left: 750px;
+    left: 700px;
     top: 430px;
 }
