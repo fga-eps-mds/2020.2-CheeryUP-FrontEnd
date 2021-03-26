@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import NavBar from './pages/Registrar/NavBar';
 import SignUP from './pages/Registrar/SignUP';
 import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import Routes from './routes';
