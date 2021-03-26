@@ -4,7 +4,7 @@ import '../../style/pages/SignUP.css';
 import useForm from '../../components/useForm';
 
 
-function validateInfo(values){
+function validate(values){
     let errors = {};
     if (!values.nome.trim()) {
         errors.nome = 'É necessário preencher seu nome';
@@ -35,8 +35,8 @@ function validateInfo(values){
     return errors;
 };
 
-function SubmitForm(validateInfo){
-    if (validateInfo != 0){
+function SubmitForm(validate){
+    if (validate != 0){
         document.write("Boaaaaaaa cuzao")
     }
 }
@@ -52,7 +52,7 @@ function FormSucess () {
 
 
 const SignUP = ({ SubmitForm }) => {
-    const { handleChange, values, handleSubmit, errors } = useForm(SubmitForm, validateInfo);
+    const { handleChange, values, handleSubmit, errors } = useForm(SubmitForm, validate);
 
 
 

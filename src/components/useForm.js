@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import '../pages/Registrar/SignUP.js'
 
-export default function useForm(callback, validateInfo){
+export default function useForm(callback, validate) {
     const [values, setValues] = useState({
         nome: '',
         email: '',
@@ -22,22 +23,28 @@ export default function useForm(callback, validateInfo){
     const handleSubmit = e => {
         e.preventDefault();
 
-        setErrors(validateInfo(values));
+        setErrors(validate(values));
 
         setIsSubmitting(true);
     };
 
     useEffect(
         () => {
-            if (Object.keys(errors).length === 0 && isSubmitting) {
-                callback();
+            if (Object.keys(errors).length == 0 && isSubmitting) {
+                console.log(values);
+                alert("Cadastro efetuado passado!");          
             }
+
+
+
+
+
         },
         [errors]
     );
-    
 
-    return { handleChange, values, handleSubmit, errors};
+
+    return { handleChange, values, handleSubmit, errors };
 };
 
 
