@@ -44,10 +44,10 @@ const Login = ({ SubmitForm }) => {
     return (
         <>
             <div className="form-container">
-
+                
                 <div className="form-content-center">
                     <form className='form' onSubmit={handleSubmit}>
-                        
+                        <h2>Login do psicólogo</h2>
                         <div className="form-inputs">
                             <label htmlFor="email" className="form-label">Email:</label>
                             <input
@@ -74,16 +74,20 @@ const Login = ({ SubmitForm }) => {
                                 value={values.senha}
                                 onChange={handleChange}
                             />
+                            <p><a className="links" href="#">Esqueceu sua senha?</a></p>
                             {errors.senha && <p>{errors.senha}</p>}
                         </div>
 
                         
-                        <button className="form-input-btn" type="submit">Login</button>
-                        <span className="form-input-login">
-                            Não possui login ? 
-                            <a  href="#"> Cadastre-se </a>
-                        </span>
-
+                        
+                            <button className="form-input-btn" type="submit">Login</button>
+                            <span className="form-input-help">
+                                <p>Não possui login ?</p> 
+                                <p><a className="links" href="#"> Cadastre-se</a></p>
+                            </span>
+                        
+                    
+                        <p></p>
                     </form>
 
 

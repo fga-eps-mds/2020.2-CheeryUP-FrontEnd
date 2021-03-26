@@ -9,7 +9,7 @@
     
   }
 
-   {/*
+  /*
   .form-content-left {
     background: linear-gradient(
       90deg,
@@ -36,7 +36,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  */}
+  */
 
   .top {
     position: relative;
@@ -64,6 +64,7 @@
   
   .form-content-center {
     width: 800px;
+    height: 55%;
     justify-content: center;
     align-items: center;
     top: 50%;
@@ -82,9 +83,10 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    padding: 5px;
   }
   
-  .form h1 {
+  .form h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -103,6 +105,17 @@
     width: 80%;
   }
   
+  .form-input {
+    background-color: #F8F8F8;
+    display: block;
+    margin: 5px;
+    outline: none;
+    border-radius: 2px;
+    height: 40px;
+    width: 100%;
+    border: none;
+  }
+
   .form-inputs p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
@@ -116,16 +129,6 @@
     color: #fff;
   }
   
-  .form-input {
-    background-color: #F8F8F8;
-    display: block;
-    padding-left: 10px;
-    outline: none;
-    border-radius: 2px;
-    height: 40px;
-    width: 100%;
-    border: none;
-  }
   
   .form-input::placeholder {
     color: gray;
@@ -161,18 +164,17 @@
     transition: all 0.4s ease-out;
   }
   
-  .form-input-login {
+  .form-input-help {
     font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
     position: absolute;
     text-align: left;
     left: 5;
     bottom: 0;
-    display: flex;  
  
   }
   
-  .form-input-login a {
+  .links {
     color: red;
   }
 
