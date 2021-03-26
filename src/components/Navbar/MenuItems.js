@@ -1,3 +1,4 @@
+
 export const MenuItems = [
     {
         title: 'Home',
@@ -17,7 +18,8 @@ export const MenuItems = [
     {
         title: 'About',
         url: '#',
-        cName: 'nav-links'
+        cName: 'nav-links',
+        ID : 'some-id'
     },
     {
         title: 'Cadastre-se',
