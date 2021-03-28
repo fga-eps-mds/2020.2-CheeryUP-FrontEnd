@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Button } from '../Button/Button';
 import ButtonCad from '../Button/ButtonCadastro';
-import './Body.css';
+import '../stylesComp/Body.css';
 
 function Body() {
     return (

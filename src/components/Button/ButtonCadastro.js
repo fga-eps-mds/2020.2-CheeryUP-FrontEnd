@@ -1,5 +1,5 @@
 import React from 'react'
-import './Button.css'
+import '../stylesComp/Button.css'
 
 const ButtonCad = ({children}) => {
     return <button className='botaoCadastro'>{children}</button>
