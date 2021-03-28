@@ -1,7 +1,7 @@
 .about-container{
     background-color: rgb(163, 171, 189);
     width: 100%;
-    height: 800px;
+    height: 950px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -44,4 +44,11 @@
 
 .sobre-nos{
     font-size: 30px;
+}
+
+.objetivo{
+    font-size: 39px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(219, 55, 55);
 }
