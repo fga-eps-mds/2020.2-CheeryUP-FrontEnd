@@ -1,7 +1,9 @@
 import React from 'react'
-import useState from 'react'
 import '../../style/pages/SignUP.css';
 import useForm from '../../components/useForm';
+import { useHistory, Link } from 'react-router-dom';
+
+
 
 
 function validate(values){
@@ -18,8 +20,8 @@ function validate(values){
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
         errors.email = 'E-mail inválido. Preencha com algum e-mail válido';
     }
-    if (!values.nºcrp) {
-        errors.nºcrp = 'É necessário preencher nºcrp';
+    if (!values.nCRP) {
+        errors.nCRP = 'É necessário preencher nºcrp';
     }
     if (!values.senha) {
         errors.senha = 'É necessário preencher uma senha';
@@ -35,20 +37,6 @@ function validate(values){
     return errors;
 };
 
-function SubmitForm(validate){
-    if (validate != 0){
-        document.write("Boaaaaaaa cuzao")
-    }
-}
-
-
-function FormSucess () {
-    return (
-        <div className = "form-sucess">
-            <h1> Recebemos o seu dados. YUUUUUUUUUUUUUUUUPI TÚ É DA EQUIPE GARAI</h1>
-        </div>
-    )    
-}
 
 
 const SignUP = ({ SubmitForm }) => {
@@ -102,17 +90,17 @@ const SignUP = ({ SubmitForm }) => {
                         </div>
 
                         <div className="form-inputs">
-                            <label htmlFor="nºcrp" className="form-label">Nº CRP:</label>
+                            <label htmlFor="nCRP" className="form-label">Nº CRP:</label>
                             <input
-                                id='nºcrp'
+                                id='nCRP'
                                 type="text"
-                                name='nºcrp'
+                                name='nCRP'
                                 className="form-input"
                                 placeholder="Nº CRP"
-                                value={values.nºcrp}
+                                value={values.nCRP}
                                 onChange={handleChange}
                             />
-                            {errors.nºcrp && <p>{errors.nºcrp}</p>}
+                            {errors.nCRP && <p>{errors.nCRP}</p>}
                         </div>
 
                         <div className="form-inputs">
