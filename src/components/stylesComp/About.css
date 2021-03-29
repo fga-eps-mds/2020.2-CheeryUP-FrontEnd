@@ -1,0 +1,54 @@
+.about-container{
+    background-color: rgb(163, 171, 189);
+    width: 100%;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+.imagem-inferior img{
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    left: 700px;
+    top: 650px;
+}
+
+.titulo-about{
+    font-size: 50px;
+    font-style: italic;
+    position: absolute;
+    left: 140px;
+    top: 740px;
+}
+
+.titulo-about img{
+    width: 350px;
+    height: 260px;
+    position: absolute;
+    left: 100px;
+    top: 20px;
+    flex-grow: 1;
+}
+
+.texto-about{
+    width: 1000px;
+    height: 900px;
+    position: relative;
+    left: 170px;
+    top: 400px;
+    flex-grow: 1;
+}
+
+.sobre-nos{
+    font-size: 30px;
+}
+
+.objetivo{
+    font-size: 39px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(219, 55, 55);
+}
