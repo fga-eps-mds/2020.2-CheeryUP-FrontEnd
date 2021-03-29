@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../style/pages/SignUP.css';
+import '../../style/pages/Cadastro/SignUP.css';
 import useForm from '../../components/useForm';
 import { useHistory, Link } from 'react-router-dom';
 

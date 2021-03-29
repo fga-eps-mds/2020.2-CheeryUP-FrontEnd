@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 //import { Link } from 'react-router-dom'
 import { MenuItems } from "./MenuItems"
 import { Button } from "../Button/Button"
-import '../stylesComp/Navbar.css'
+import '../../style/pages/HomePage/Navbar.css'
 
 
 

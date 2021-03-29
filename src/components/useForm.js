@@ -44,7 +44,7 @@ export default function useForm(callback, validate) {
                     headers: {'Content-Type': 'application/json'}
                 }).then(
                     data => {
-                        console.log(data);
+                        
                     }
                 ).catch(errors => console.error(errors))
                       
