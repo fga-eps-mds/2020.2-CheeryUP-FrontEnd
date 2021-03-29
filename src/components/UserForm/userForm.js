@@ -64,4 +64,3 @@ export default function useForm(callback, validate) {
 
 
 
-
