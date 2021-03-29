@@ -17,14 +17,14 @@ export const MenuItems = [
     },
     {
         title: 'About',
-        url: '#',
+        url: 'http://localhost:3000/About',
         cName: 'nav-links',
         ID : 'some-id'
     },
     {
         title: 'Cadastre-se',
-        url: '#',
-        cName: 'nav-links-mobile'
+        url: 'http://localhost:3000/SignUP',
+        cName: 'nav-links'
     }
 
 ]
