@@ -55,7 +55,10 @@ const SignUP = ({ SubmitForm }) => {
                 
                 <div class="top">
                     <img src="img/logo_word.png" alt="cereja" class="form-img" />
-                    <button className="form-input-btn-home" type="submit">Inicio</button>
+                    <a href="http://localhost:3000/Home"> 
+                    <button className="form-input-btn-home" type="submit">Inicio</button>  
+                    </a>
+                    
                 </div>
 
                 <div className="form-content-main">
@@ -134,7 +137,7 @@ const SignUP = ({ SubmitForm }) => {
                         <button className="form-input-btn" type="submit">Cadastrar</button>
                         <span className="form-input-loguin">
                             Já possui cadastro ? Faça o 
-                            <a  href="#"> Loguin. </a>
+                            <a  href="http://localhost:3000/Login"> Login. </a>
                         </span>
 
                     </form>

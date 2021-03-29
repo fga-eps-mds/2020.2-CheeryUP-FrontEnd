@@ -83,7 +83,7 @@ const Login = ({ SubmitForm }) => {
                             <button className="form-input-btn" type="submit">Login</button>
                             <span className="form-input-help">
                                 <p>Não possui login ?</p> 
-                                <p><a className="links" href="#"> Cadastre-se</a></p>
+                                <p><a className="links" href="http://localhost:3000/SignUP"> Cadastre-se</a></p>
                             </span>
                         
                     

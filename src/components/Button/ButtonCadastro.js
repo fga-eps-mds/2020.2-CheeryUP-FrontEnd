@@ -2,7 +2,9 @@ import React from 'react'
 import '../../style/pages/HomePage/Button.css'
 
 const ButtonCad = ({children}) => {
-    return <button className='botaoCadastro'>{children}</button>
+    return (
+    <a href ="http://localhost:3000/SignUP" className='botaoCadastro'>{children}</a>
+   )
 }
 
 export default ButtonCad
