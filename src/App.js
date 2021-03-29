@@ -1,15 +1,14 @@
+
 import React from 'react';
-//import ReactDOM from 'react-dom'
-import Home from './pages/Home'
 import './App.css';
-//import {BrowserRouter as Router} from 'react-router-dom';
+import SignUP from './pages/Registrar/SignUP';
+import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import Routes from './routes';
 
 function App() {
-  return(
-    <div>
-      <Home />
-    </div>
-  )
+  return (
+      <Routes />
+  );
 }
 
 export default App;
