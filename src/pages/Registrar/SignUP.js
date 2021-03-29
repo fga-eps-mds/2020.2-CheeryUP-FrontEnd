@@ -58,7 +58,7 @@ const SignUP = ({ SubmitForm }) => {
                     <button className="form-input-btn-home" type="submit">Inicio</button>
                 </div>
 
-                <div className="form-content-center">
+                <div className="form-content-main">
                     <form className='form' onSubmit={handleSubmit}>
                         <h1> Cadastro de Psicólogo </h1>
                         <div className="form-inputs">

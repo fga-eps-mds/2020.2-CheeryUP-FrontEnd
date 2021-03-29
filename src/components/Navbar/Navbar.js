@@ -33,7 +33,7 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                <Button>Cadastre-se</Button>
+                
             </nav>
         )
     }
