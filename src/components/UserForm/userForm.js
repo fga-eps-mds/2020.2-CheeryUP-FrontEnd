@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react'
-import '../../pages/Login/Login'
+import '../pages/Registrar/SignUP.js'
+
+import axios from 'axios'
+
+import api from '../services/api';
 
 export default function useForm(callback, validate) {
     const [values, setValues] = useState({
+        nome: '',
         email: '',
+        nCRP: '',
         senha: '',
+        senha2: '',
     });
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,10 +34,26 @@ export default function useForm(callback, validate) {
 
     useEffect(
         () => {
-            if (Object.keys(errors).length == 0 && isSubmitting) {
+            if (Object.keys(errors).length === 0 && isSubmitting) {
                 console.log(values);
-                alert("Cadastro efetuado passado!");          
+                alert("Cadastro efetuado passado!");  
+        
+                fetch('http://localhost:8000/api/psicologo/',
+                {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'}
+                }).then(
+                    data => {
+                        
+                    }
+                ).catch(errors => console.error(errors))
+                      
             }
+
+
+
+
+
         },
         [errors]
     );
@@ -38,6 +61,5 @@ export default function useForm(callback, validate) {
 
     return { handleChange, values, handleSubmit, errors };
 };
-
 
 
