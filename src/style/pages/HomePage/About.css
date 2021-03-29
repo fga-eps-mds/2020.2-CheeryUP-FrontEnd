@@ -13,7 +13,7 @@
     height: 450px;
     position: relative;
     left: 700px;
-    top: 20px;
+    top: 2px;
     padding: 5px;
     float: left;
 }
@@ -26,7 +26,7 @@
     font-style: italic;
     position: relative;
     left: 200px;
-    top: -350px;
+    top: -400px;
 }
 
 .titulo-about img{
@@ -43,7 +43,7 @@
     height: 900px;
     position: relative;
     left: 170px;
-    top: -250px;
+    top: -300px;
     flex-grow: 1;
 }
 
