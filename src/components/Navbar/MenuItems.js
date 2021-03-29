@@ -17,7 +17,7 @@ export const MenuItems = [
     },
     {
         title: 'About',
-        url: 'http://localhost:3000/About',
+        url: 'http://localhost:3000/AboutPage',
         cName: 'nav-links',
         ID : 'some-id'
     },

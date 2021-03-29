@@ -6,6 +6,7 @@ import Home from './pages/HomePage/Home';
 import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login';
+import AboutPage from './pages/AboutPage/AboutPage';
 
 export default function Routes() {
     return (
@@ -13,7 +14,7 @@ export default function Routes() {
             <Switch>
                 <Route path="/Home" component={Home} />
                 <Route path="/SignUP" component={SignUP} />  
-                <Route path="/About" component={About} />
+                <Route path="/AboutPage" component={AboutPage} />
                 <Route path="/Login" component={Login} />
             </Switch>
         </BrowserRouter>
