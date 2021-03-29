@@ -1,7 +1,7 @@
 import React from 'react'
 import useState from 'react'
 import '../../style/pages/Login/Login.css';
-import useForm from '../../components/UserForm/userForm';
+import useForm from '../../components/useForm';
 
 
 function validate(values){
