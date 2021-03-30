@@ -1,4 +1,4 @@
-<p align="center"><a href="image" target="_blank"><img width="600"src="./docs/assets/images/logo.png"></a></p>   
+<p align="center"><a href="image" target="_blank"><img width="600"src="./public/logoReadme.png"></a></p>   
 
 
 ## ℹ️ Sobre o projeto
