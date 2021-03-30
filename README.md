@@ -76,7 +76,7 @@ Após a instalação conferir se o mesmo encontra em sua máquina.
 
 ## Sobre o produto
 * [Documentação](https://fga-eps-mds.github.io/2020.2-CheeryUP/#/)
-* [Front-end](https://github.com/fga-eps-mds/2020.2-CheeryUP-FrontEnd)
+* [Back-end](https://github.com/fga-eps-mds/2020.2-CheeryUP)
 
 <!-- ## Ambientes de homologação -->
 
