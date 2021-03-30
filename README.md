@@ -64,15 +64,15 @@ Após a instalação conferir se o mesmo encontra em sua máquina.
 
 * Para executar o container:
 
-    make build  
+    docker-compose up -d --build
 
 **Após esses passos o mesmo ficará disponível em** 
 
-    0.0.0.0:8000
+    http://localhost:3000/Home
 
 * Para derrubar o container:
 
-    make down
+    docker-compose down
 
 ## Sobre o produto
 * [Documentação](https://fga-eps-mds.github.io/2020.2-CheeryUP/#/)
