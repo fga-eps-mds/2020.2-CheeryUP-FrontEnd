@@ -46,7 +46,7 @@ const Login = ({ SubmitForm }) => {
             <div className="form-container">
                 <div class="top">
                     <img src="img/logo_word.png" alt="cereja" class="form-img" />
-                    <a href="http://localhost:3000/Home"> 
+                    <a href="http://localhost:3000/"> 
                     <button className="form-input-btn-home" type="submit">Inicio</button>  
                     </a>
                     

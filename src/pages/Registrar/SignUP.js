@@ -20,8 +20,8 @@ function validate(values){
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
         errors.email = 'E-mail inválido. Preencha com algum e-mail válido';
     }
-    if (!values.nCRP) {
-        errors.nCRP = 'É necessário preencher nºcrp';
+    if (!values.NCRP) {
+        errors.NCRP = 'É necessário preencher nºcrp';
     }
     if (!values.senha) {
         errors.senha = 'É necessário preencher uma senha';
@@ -55,7 +55,7 @@ const SignUP = ({ SubmitForm }) => {
                 
                 <div class="top">
                     <img src="img/logo_word.png" alt="cereja" class="form-img" />
-                    <a href="http://localhost:3000/Home"> 
+                    <a href="http://localhost:3000/"> 
                     <button className="form-input-btn-home" type="submit">Inicio</button>  
                     </a>
                     
@@ -93,17 +93,17 @@ const SignUP = ({ SubmitForm }) => {
                         </div>
 
                         <div className="form-inputs">
-                            <label htmlFor="nCRP" className="form-label">Nº CRP:</label>
+                            <label htmlFor="NCRP" className="form-label">Nº CRP:</label>
                             <input
-                                id='nCRP'
+                                id='NCRP'
                                 type="text"
-                                name='nCRP'
+                                name='NCRP'
                                 className="form-input"
                                 placeholder="Nº CRP"
-                                value={values.nCRP}
+                                value={values.NCRP}
                                 onChange={handleChange}
                             />
-                            {errors.nCRP && <p>{errors.nCRP}</p>}
+                            {errors.NCRP && <p>{errors.NCRP}</p>}
                         </div>
 
                         <div className="form-inputs">
@@ -134,7 +134,7 @@ const SignUP = ({ SubmitForm }) => {
                             {errors.senha2 && <p>{errors.senha2}</p>}
                         </div>
 
-                        <button className="form-input-btn" type="submit">Cadastrar</button>
+                        <button className="form-input-btn" type="submit" onChange={handleSubmit}>Cadastrar</button>
                         <span className="form-input-loguin">
                             Já possui cadastro ? Faça o 
                             <a  href="http://localhost:3000/Login"> Login. </a>
