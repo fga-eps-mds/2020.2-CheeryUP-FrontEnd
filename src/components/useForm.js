@@ -38,13 +38,17 @@ export default function useForm(callback, validate) {
                 console.log(values);
                 alert("Cadastro efetuado passado!");  
         
-                fetch('http://localhost:8000/api/psicologo/',
+                fetch('http://0.0.0.0:8000/api/psicologo/',
                 {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'}
                 }).then(
                     data => {
-                        
+                        values.nome,
+                        values.senha,
+                        values.nCRP,
+                        values.senha2,
+                        values.email
                     }
                 ).catch(errors => console.error(errors))
                       
