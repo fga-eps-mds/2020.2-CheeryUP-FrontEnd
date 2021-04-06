@@ -20,8 +20,8 @@ function validate(values){
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
         errors.email = 'E-mail inválido. Preencha com algum e-mail válido';
     }
-    if (!values.NCRP) {
-        errors.NCRP = 'É necessário preencher nºcrp';
+    if (!values.nCRP) {
+        errors.nCRP = 'É necessário preencher nºcrp';
     }
     if (!values.senha) {
         errors.senha = 'É necessário preencher uma senha';
@@ -93,17 +93,17 @@ const SignUP = ({ SubmitForm }) => {
                         </div>
 
                         <div className="form-inputs">
-                            <label htmlFor="NCRP" className="form-label">Nº CRP:</label>
+                            <label htmlFor="nCRP" className="form-label">Nº CRP:</label>
                             <input
-                                id='NCRP'
+                                id='nCRP'
                                 type="text"
-                                name='NCRP'
+                                name='nCRP'
                                 className="form-input"
                                 placeholder="Nº CRP"
-                                value={values.NCRP}
+                                value={values.nCRP}
                                 onChange={handleChange}
                             />
-                            {errors.NCRP && <p>{errors.NCRP}</p>}
+                            {errors.nCRP && <p>{errors.nCRP}</p>}
                         </div>
 
                         <div className="form-inputs">

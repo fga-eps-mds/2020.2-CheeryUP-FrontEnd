@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import '../pages/Registrar/SignUP.js'
 
-import axios from 'axios'
-
 import api from '../services/api';
 
 export default function useForm(callback, validate) {
@@ -12,9 +10,13 @@ export default function useForm(callback, validate) {
         nCRP: '',
         senha: '',
         senha2: '',
+        bio: "ALGO",
+        genero: "M"
+
     });
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const data = new FormData();
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -33,31 +35,27 @@ export default function useForm(callback, validate) {
     };
 
     useEffect(
-        () => {
+        async () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {
                 console.log(values);
-                alert("Cadastro efetuado passado!");  
-        
-                fetch('http://0.0.0.0:8000/api/psicologo/',
-                {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'}
-                }).then(
-                    data => {
-                        values.nome,
-                        values.senha,
-                        values.nCRP,
-                        values.senha2,
-                        values.email
-                    }
-                ).catch(errors => console.error(errors))
-                      
+                
+                
+                data.append('user.username', values.nome)
+                data.append('user.password', values.senha)
+                data.append('user.email', values.email)
+                data.append('nCRP', values.CRP)
+                data.append('bio', values.bio)
+                data.append('genero', values.genero)
+
+    
+                await api.post('/psicologo/', data)
+                    .then(() => {
+                        alert("Cadastro efetuado passado!");  
+                    })
+                    .catch((err) => alert("Cadastro Inválido"))
+    
             }
-
-
-
-
-
+   
         },
         [errors]
     );
