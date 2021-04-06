@@ -43,7 +43,7 @@ export default function useForm(callback, validate) {
                 data.append('user.username', values.nome)
                 data.append('user.password', values.senha)
                 data.append('user.email', values.email)
-                data.append('nCRP', values.CRP)
+                data.append('nCRP', values.nCRP)
                 data.append('bio', values.bio)
                 data.append('genero', values.genero)
 
@@ -63,7 +63,3 @@ export default function useForm(callback, validate) {
 
     return { handleChange, values, handleSubmit, errors };
 };
-
-
-
-

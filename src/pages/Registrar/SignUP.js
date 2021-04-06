@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import '../../style/pages/Cadastro/SignUP.css';
 import useForm from '../../components/useForm';
 import { useHistory, Link } from 'react-router-dom';
+import { Card, Form, Button } from "semantic-ui-react"
+
 
 
 
@@ -45,25 +47,58 @@ const SignUP = ({ SubmitForm }) => {
 
 
     return (
-        <>
-            <div className="form-container">
+        <Fragment>
+            <div className="form-signup-container">
 
-                {/*  <div className="form-content-left">
-                    <img src="img/cereja.jpeg" alt="cereja" className="form-img" />
-                    </div>
-                */}
-                
-                <div class="top">
+                <div class="top-signup">
                     <img src="img/logo_word.png" alt="cereja" class="form-img" />
                     <a href="http://localhost:3000/"> 
                     <button className="form-input-btn-home" type="submit">Inicio</button>  
                     </a>
-                    
                 </div>
+                
+                <div className="form-signup-wrap">
+                    <Card className="form-ui-card">
+                        <Card.Content className="form-title"> 
+                            <Card.Header> Cadastro de Psicólogo </Card.Header>
+                        </Card.Content>
+                        <Card.Content> 
+                            <Form className="form-content-input">
+                                <Form.Input placeholder="Nome" label="Nome" required fluid onChange={handleChange} name='nome' value={values.nome}  /> 
+                                    {errors.nome && <p class="p-message">{errors.nome}</p>}
+                                <Form.Input placeholder="Email" label="Email" required fluid onChange={handleChange} name='email' value={values.email} /> 
+                                    {errors.email && <p class="p-message">{errors.email}</p>}
+                                <Form.Input placeholder="nCRP" label="nCRP" required fluid onChange={handleChange} name='nCRP' value={values.nCRP} /> 
+                                    {errors.nCRP && <p class="p-message">{errors.nCRP}</p>}
+                                <Form.Input placeholder="Senha" label="Senha" type="password" required fluid onChange={handleChange} name='senha' value={values.senha} /> 
+                                    {errors.senha && <p class="p-message">{errors.senha}</p>}
+                                <Form.Input placeholder="Confirmar senha" label="Confirmar senha" type="password" required fluid onChange={handleChange} name='senha2' value={values.senha2} /> 
+                                    {errors.senha2 && <p class="p-message">{errors.senha2}</p>}
+                                <Button type="submit" onClick={handleSubmit}>Cadastrar </Button>
+                                <span className="form-input-loguin">
+                                    Já possui cadastro ? Faça o 
+                                    <a  href="http://localhost:3000/Login"> Login. </a>
+                                </span>
+                            </Form>
+                        </Card.Content>
+                    </Card>
+                </div>
+            
+            </div>
+{/*             
 
-                <div className="form-content-main">
-                    <form className='form' onSubmit={handleSubmit}>
-                        <h1> Cadastro de Psicólogo </h1>
+<div className="form-container">
+<div></div>
+
+{/*  <div className="form-content-left">
+<img src="img/cereja.jpeg" alt="cereja" className="form-img" />
+</div>
+*/}
+    {/*            
+
+<div className="form-content-main">
+<form className='form' onSubmit={handleSubmit}>
+<h1> Cadastro de Psicólogo </h1>
                         <div className="form-inputs">
                             <label htmlFor="nome" className="form-label">Nome:</label>
                             <input
@@ -74,7 +109,7 @@ const SignUP = ({ SubmitForm }) => {
                                 placeholder="Nome"
                                 value={values.nome}
                                 onChange={handleChange}
-                            />
+                                />
                             {errors.nome && <p>{errors.nome}</p>}
                         </div>
 
@@ -89,7 +124,7 @@ const SignUP = ({ SubmitForm }) => {
                                 value={values.email}
                                 onChange={handleChange}
                             />
-                            {errors.email && <p>{errors.email}</p>}
+                            {errors.email && <p>{errors.email}</p>}F
                         </div>
 
                         <div className="form-inputs">
@@ -102,7 +137,7 @@ const SignUP = ({ SubmitForm }) => {
                                 placeholder="Nº CRP"
                                 value={values.nCRP}
                                 onChange={handleChange}
-                            />
+                                />
                             {errors.nCRP && <p>{errors.nCRP}</p>}
                         </div>
 
@@ -116,7 +151,7 @@ const SignUP = ({ SubmitForm }) => {
                                 placeholder="Senha"
                                 value={values.senha}
                                 onChange={handleChange}
-                            />
+                                />
                             {errors.senha && <p>{errors.senha}</p>}
                         </div>
 
@@ -130,7 +165,7 @@ const SignUP = ({ SubmitForm }) => {
                                 placeholder="Confirmar senha"
                                 value={values.senha2}
                                 onChange={handleChange}
-                            />
+                                />
                             {errors.senha2 && <p>{errors.senha2}</p>}
                         </div>
 
@@ -146,11 +181,12 @@ const SignUP = ({ SubmitForm }) => {
                 </div>
 
             </div>
+ */}
+        
+        </Fragment>
 
-        </>
 
-
-    )
+)
 }
 
 export default SignUP;
