@@ -15,5 +15,7 @@ services:
         tty: true
         stdin_open: true
       
-      
+volumes: 
+  node_modules:
+  app:
       
