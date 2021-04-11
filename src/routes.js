@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import SignUP from './pages/Registrar/SignUP';

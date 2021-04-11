@@ -1,134 +1,73 @@
-.form-container {
+.form-login-container {
     height: 100vh;
-    width: 100%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    background:  #F8F8F1;
-
-    
+    background: white;
   }
 
-  /*
-  .form-content-left {
-    background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
-    border-radius: 10px 0 0 10px;
-    position: relative;
-  }
-  .form-img {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .form-img-2 {
-    width: 60%;
-    height: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  */
-
-  .top {
-    position: relative;
-    background-color: white;
-    display: flex;
-    text-decoration: none;
-    justify-content: space-between;
-    border-bottom: 6px solid lightgray;
-
-  
+  .top-login {
+      position: absolute;
+      width: 100vw;
+      background-color: white;
+      display: flex;
+      text-decoration: none;
+      justify-content: space-between;
+      box-shadow: 3px 0px 0px 5px lightgray;
   }
 
-  .form-img {
+  .form-img-login {
     cursor: crosshair;
     height: 75px;
+    padding-block: 10px;
+  }
+
+  .input-login {
+    padding-block: 10px;
+  }
+
+  .logo-img {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .logo-img img {
+    width: 100px !important;
+    height: 70px !important;
+    background-color: white
 
   }
   
-  .form-success {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 80px;
-    color: #fff;
-  }
-  
-  .form-content-center {
-    width: 800px;
-    height: 55%;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    padding: 20px 40px;
-    border-radius: 12px;
-    border-style: solid;
-    border-color: gray;
-    background-color: #ffffff;
-  }
-  
-  .form {
-    justify-content:relative;
+  .form-login-wrap {
+    height: 100%;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-  }
-  
-  .form h2 {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 100%;
-    color: #111;
-    font-weight: lighter;
-    font-family: 'Roboto', sans-serif;
-    font-size: 3.2rem;
+    padding-top: 75px;
   }
 
-  .form-inputs {
-    border-radius: 20px;
-    border-color: gray;
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
-    width: 80%;
+  .form-ui-card {
+    width: 300px !important;
+   
+  }
+
+  .form-title-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px !important;
+  }
+
+  .form-content-input-login {
+    display: flex;
+    flex-direction: column;
   }
   
-  .form-input {
-    background-color: #F8F8F8;
-    display: block;
-    margin: 5px;
-    outline: none;
-    border-radius: 2px;
-    height: 40px;
-    width: 100%;
-    border: none;
-  }
-
   .form-inputs p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
     color: #f00e0e;
   }
-  
-  .form-label {
-    display: ruby-text-container;
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-    color: #fff;
-  }
-  
   
   .form-input::placeholder {
     color: gray;
@@ -165,13 +104,13 @@
   }
   
   .form-input-help {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif;
+    display: flex;
     position: absolute;
     text-align: left;
-    left: 5;
     bottom: 0;
- 
+    
   }
   
   .links {

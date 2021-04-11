@@ -4,8 +4,8 @@
 } 
 
 .form-signup-wrap {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +23,8 @@
   font-size: 25px !important;
 }
 
-.form-ui-card {
-  width: 700px !important;
+.form-card {
+  width: 300px !important;
 }
    {/*
   .form-content-left {
@@ -58,11 +58,10 @@
   .top-signup {
       position: absolute;
       width: 100vw;
-      background-color: white;
+      background-color:rgb(52, 86, 158);
       display: flex;
       text-decoration: none;
       justify-content: space-between;
-      box-shadow: 3px 0px 0px 5px lightgray;
 
   }
   
@@ -71,7 +70,26 @@
     cursor: crosshair;
     height: 75px;
     padding-block: 10px;
+    background-color: rgb(52, 86, 158);
 
+  }
+
+  .text-top {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    padding: 10px;
+  }
+
+  .bottom-signup {
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    background-color:rgb(58,69,89);
+    display: flex;
+    justify-content: center;
   }
   
   .form-success {
@@ -123,8 +141,8 @@
   }
   
   .p-message {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
+    font-size: 0.5rem;
+    margin-top: 0.1rem;
     color: #f0300efa;
   }
   

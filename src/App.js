@@ -1,8 +1,7 @@
 
 import React from 'react';
 import './App.css';
-
-import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter , Route, Link} from 'react-router-dom'
 import Routes from './routes';
 
 function App() {
