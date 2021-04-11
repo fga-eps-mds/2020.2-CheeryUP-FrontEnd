@@ -56,7 +56,7 @@ Após a instalação conferir se o mesmo encontra em sua máquina.
 
 2. Clone o projeto  
 
-    git clone https://github.com/fga-eps-mds/2020.2-CheeryUP.git
+    git clone https://github.com/fga-eps-mds/2020.2-CheeryUP-FrontEnd.git
 3. Crie uma conexão local para os containers do back e front se comuniquem:
 
     network create network-api
@@ -65,15 +65,15 @@ Após a instalação conferir se o mesmo encontra em sua máquina.
 
 * Para executar o container:
 
-    docker-compose up -d --build
+    make up
 
 **Após esses passos o mesmo ficará disponível em** 
 
-    http://localhost:3000/Home
+    http://localhost:3000/
 
 * Para derrubar o container:
 
-    docker-compose down
+    make down
 
 ## Sobre o produto
 * [Documentação](https://fga-eps-mds.github.io/2020.2-CheeryUP/#/)
