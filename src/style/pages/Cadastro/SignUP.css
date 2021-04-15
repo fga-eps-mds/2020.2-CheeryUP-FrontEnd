@@ -1,8 +1,25 @@
+.container{
+  display: flex;
+}
+
 .form-signup-container {
+  position:relative;
   display: inline-block;
   height: 100vh;
+  width: 50vw;
   background: #ffffff
 } 
+
+.side-image{
+  position: relative;
+  display: inline-block;
+  align-items: center;
+}
+
+.ui.input > input {
+  font-size: 1.2rem;
+  background-color: red;
+}
 
 .form-signup-wrap {
   height: 100vh;
@@ -17,6 +34,10 @@
 .form-content-input {
   display: flex;
   flex-direction: column;
+}
+
+.form-content-input input{
+  background-color: red;
 }
 .form-title {
   display: flex;
@@ -49,6 +70,7 @@
 
   .top-signup-navbar-option{
     text-align: center;
+    font-weight: bold;
     padding: 2rem;
     width: 100%;
     font-size: 1.4rem;
@@ -57,16 +79,9 @@
   }
 
   .top-signup-navbar-option:hover{
-    transition-delay: 0.1s;
+    transition: all 0.4s ease-out;
     color: #F9423A;
   }
-
-  .side-image{
-    display: inline-block;
-    float: left;
-    height: 100vh;
-  }
-
   
   .form-success {
     text-align: center;
@@ -102,7 +117,7 @@
   }
   
   .p-message {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     margin-top: 0.1rem;
     color: #f0300efa;
   }
@@ -130,34 +145,6 @@
     font-size: 1.2rem;
   }
   
-  .form-input-btn {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 30%;
-    height: 50px;
-    border-radius: 25px;
-    background: linear-gradient(
-      90deg,
-      rgb(236, 6, 6) 0%,
-      #f70202 100%
-    );
-    outline: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .form-input-btn:hover {
-    cursor: pointer;
-    background: linear-gradient(
-      90deg,
-      rgb(39, 143, 255) 0%,
-      rgb(12, 99, 250) 100%
-    );
-    transition: all 0.4s ease-out;
-  }
   
   .form-input-login {
     font-size: 1.5rem;

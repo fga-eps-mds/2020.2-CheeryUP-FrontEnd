@@ -41,10 +41,11 @@ const SignUP = ({ SubmitForm }) =>
     return (
         <Fragment>
             
+            <div className="container">
             <div className="form-signup-container">
                 <div className="top-signup">
                     <a href="http://localhost:3000/"> 
-                        <img className="top-signup-logo" src="img/logo_word.png" alt="logo CheeryUp"/>
+                        <img className="top-signup-logo" src="img/logo_word.png" alt="logo CheeryUp" />
                     </a>
 
                     <a href="http://localhost:3000/"> 
@@ -63,12 +64,13 @@ const SignUP = ({ SubmitForm }) =>
                                     {errors.nome && <p class="p-message">{errors.nome}</p>}
                                 <Form.Input placeholder="Digite seu e-mail" label="Email" required fluid onChange={handleChange} name='email' value={values.email} /> 
                                     {errors.email && <p class="p-message">{errors.email}</p>}
-                                <Form.Input placeholder="Digite o número do CRP" label="nCRP" required fluid onChange={handleChange} name='nCRP' value={values.nCRP} /> 
+                                <Form.Input placeholder="Digite o número do CRP" label="Número do CRP" required fluid onChange={handleChange} name='nCRP' value={values.nCRP} /> 
                                     {errors.nCRP && <p class="p-message">{errors.nCRP}</p>}
                                 <Form.Input placeholder="Digite sua senha" label="Senha" type="password" required fluid onChange={handleChange} name='senha' value={values.senha} /> 
                                     {errors.senha && <p class="p-message">{errors.senha}</p>}
                                 <Form.Input placeholder="Confirme sua senha" label="Confirmar senha" type="password" required fluid onChange={handleChange} name='senha2' value={values.senha2} /> 
                                     {errors.senha2 && <p class="p-message">{errors.senha2}</p>}
+
                                 <Button type="submit" onClick={handleSubmit}>Cadastrar </Button>
                                 <span className="form-input-loguin">
                                     Já possui cadastro ?
@@ -85,6 +87,8 @@ const SignUP = ({ SubmitForm }) =>
             <div className="side-image">
                 <img src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro"/>
             </div> 
+
+            </div>
 
              
         </Fragment>
