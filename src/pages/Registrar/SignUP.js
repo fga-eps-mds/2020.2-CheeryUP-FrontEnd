@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+ import React, {Fragment} from 'react'
 import '../../style/pages/Cadastro/SignUP.css';
 import useForm from '../../components/useForm';
 import { Card, Form, Button } from "semantic-ui-react"
@@ -11,7 +11,7 @@ function validate(values){
     // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
     //   errors.name = 'Enter a valid name';
     // }
-
+      
     if (!values.email) {
         errors.email = 'É necessário preencher seu e-mail';
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
@@ -42,17 +42,20 @@ const SignUP = ({ SubmitForm }) =>
         <Fragment>
             
             <div className="form-signup-container">
-                <div class="top-signup">
-                    <h1 className="text-top"> CheeryUP </h1>
+                <div className="top-signup">
                     <a href="http://localhost:3000/"> 
-                    <button className="form-input-btn-home" type="submit">Inicio</button>  
+                        <img className="top-signup-logo" src="img/logo_word.png" alt="logo CheeryUp"/>
+                    </a>
+
+                    <a href="http://localhost:3000/"> 
+                        <label className="top-signup-navbar-option">Início</label>
                     </a>
                 </div>
                 
                 <div className="form-signup-wrap">
                     <Card className="form-card" style={{ border: "none", boxShadow: "none" }}>
                         <Card.Content className="form-title"> 
-                            <Card.Header> Cadastre-se </Card.Header>
+                            <Card.Header> Cadastrar </Card.Header>
                         </Card.Content>
                         <Card.Content> 
                             <Form className="form-content-input">
@@ -68,21 +71,22 @@ const SignUP = ({ SubmitForm }) =>
                                     {errors.senha2 && <p class="p-message">{errors.senha2}</p>}
                                 <Button type="submit" onClick={handleSubmit}>Cadastrar </Button>
                                 <span className="form-input-loguin">
-                                    Já possui cadastro ? Faça o 
-                                    <a  href="http://localhost:3000/Login"> Login. </a>
+                                    Já possui cadastro ?
+                                    <a  href="http://localhost:3000/Login">Faça Login. </a>
                                 </span>
                             </Form>
                         </Card.Content>
                     </Card>
-                    
-                    <div class="bottom-signup">
-                        <h1> CheeryUP </h1>
-                    </div>
                 
-                </div>               
+                </div>             
             
             </div>
-        
+
+            <div className="side-image">
+                <img src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro"/>
+            </div> 
+
+             
         </Fragment>
         )
 }

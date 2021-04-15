@@ -1,11 +1,12 @@
 .form-signup-container {
+  display: inline-block;
   height: 100vh;
-  background: #F8F8F1
+  background: #ffffff
 } 
 
 .form-signup-wrap {
   height: 100vh;
-  width: 100vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,98 +21,58 @@
 .form-title {
   display: flex;
   justify-content: center;
-  font-size: 25px !important;
+  font-size: 25px ;
 }
 
 .form-card {
   width: 300px !important;
 }
-   {/*
-  .form-content-left {
-    background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
-    border-radius: 10px 0 0 10px;
-    position: relative;
-  }
-  .form-img {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .form-img-2 {
-    width: 60%;
-    height: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  */}
+
 
   .top-signup {
-      position: absolute;
-      width: 100vw;
-      background-color:rgb(52, 86, 158);
-      display: flex;
-      text-decoration: none;
-      justify-content: space-between;
-
-  }
-  
-
-  .form-img {
-    cursor: crosshair;
-    height: 75px;
-    padding-block: 10px;
-    background-color: rgb(52, 86, 158);
-
+    position: absolute;
+    width: 50vw;
+    height: 70px;
+    background-color:#ffffff;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
   }
 
-  .text-top {
-    color: white;
-    justify-content: center;
-    align-items: center;
+  .top-signup-logo {
     position: relative;
-    display: flex;
-    padding: 10px;
+    align-items: center;
+    left: 2vw;
+    width: 40px;
+    height: 56px;
   }
 
-  .bottom-signup {
-    bottom: 0px;
-    position: fixed;
+  .top-signup-navbar-option{
+    text-align: center;
+    padding: 2rem;
     width: 100%;
-    background-color:rgb(58,69,89);
-    display: flex;
-    justify-content: center;
+    font-size: 1.4rem;
+    display: table;
+    color: #494949;
   }
+
+  .top-signup-navbar-option:hover{
+    transition-delay: 0.1s;
+    color: #F9423A;
+  }
+
+  .side-image{
+    display: inline-block;
+    float: left;
+    height: 100vh;
+  }
+
   
   .form-success {
     text-align: center;
     font-size: 24px;
     margin-top: 80px;
     color: #fff;
-  }
-  
-  .form-content-main {
-    width: 800px;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    padding: 20px 40px;
-    border-radius: 12px;
-    border-style: solid;
-    border-color: gray;
-    background-color: #ffffff;
   }
   
   .form {
@@ -134,7 +95,7 @@
 
   .form-inputs {
     border-radius: 20px;
-    border-color: gray;
+    border-color: #2D4561;
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
     width: 80%;
