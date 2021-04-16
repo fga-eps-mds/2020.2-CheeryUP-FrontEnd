@@ -1,15 +1,15 @@
 
 export const MenuItems = [
-    {
-        title: 'Home',
-        url: 'http://localhost:3000/',
-        cName: 'nav-links'
-    },
-    {
-        title: 'Serviços',
-        url: '#',
-        cName: 'nav-links'
-    },
+    // {
+    //     title: 'Home',
+    //     url: 'http://localhost:3000/',
+    //     cName: 'nav-links'
+    // },
+    // {
+    //     title: 'Serviços',
+    //     url: '#',
+    //     cName: 'nav-links'
+    // },
     {
         title: 'Login',
         url: 'http://localhost:3000/Login',
@@ -22,9 +22,20 @@ export const MenuItems = [
         ID : 'some-id'
     },
     {
-        title: 'Cadastre-se',
+        title: 'Cadastre',
         url: 'http://localhost:3000/SignUP',
         cName: 'nav-links'
     }
 
+]
+
+// Fiz esse export para aparecer apenas "Home" na Navbar.
+// Além disso, fiz um novo arquivo.js chamado "NavbarAlt.js" para 
+// exportar essa nova Navbar.
+export const MenuItemsAlt = [
+    {
+        title: 'Home',
+        url: 'http://localhost:3000/',
+        cName: 'nav-linksAlt'
+    },
 ]

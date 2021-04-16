@@ -46,15 +46,15 @@
 }
 
 .botaoCadastro{
-    background-color: #4eca86;
+    background-color: #EE512F;
     border: 2.5px solid rgb(54, 54, 54);
-    font-size: 40px;
+    font-size: 25px;
     font-family: sans-serif;
     border-radius: 12px;
     color: rgb(252, 252, 252);
     text-decoration: none;
-    padding: 15px 120px;
-    margin-left: 10px;
+    padding: 1rem 2.5rem;
+    margin-left: 0;
     white-space: nowrap;
 }
 

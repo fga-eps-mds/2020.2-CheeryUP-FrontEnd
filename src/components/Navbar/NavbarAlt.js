@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { MenuItems} from "./MenuItems"
+import { MenuItemsAlt } from "./MenuItems"
 import { Button } from "../Button/Button"
 import '../../style/pages/HomePage/Navbar.css'
 
-//import { useState } from 'react'
-//import { Link } from 'react-router-dom'
+/*
+    Fiz esse novo arquivo no intuito de termos uma Navbar alternativa,
+    que mostre apenas o botão Home.
+    Essa Navbar seria usada nas seguintes paginas:
+    About, Cadastro de Psicologo, Login, etc
+*/
 
-
-
-class Navbar extends Component {
+class NavbarAlt extends Component {
     state = { clicked: false }
 
     handleClick = () => {
@@ -17,12 +19,12 @@ class Navbar extends Component {
 
     render() {
         return(
-            <nav className="NavbarItems">
-                <div className='logo-cheeryUp'>
-                    <img src = '/imagens/logoNavbar.png' alt='Logo'/>
+            <nav className="NavbarItemsAlt">
+                <div className='logo-cheeryUpAlt'>
+                    <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
+                    {MenuItemsAlt.map((item, index) => {
                         return (
                             <li key={index}>
                                 <a className={item.cName} href={item.url}>
@@ -38,4 +40,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default NavbarAlt
