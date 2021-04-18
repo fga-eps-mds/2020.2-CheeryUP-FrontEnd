@@ -1,34 +1,97 @@
-.imagem-superior{
-    width: 550px;
-    height: 550px;
-    position: absolute;
-    left: 150px;
-    top: 125px;
-}
 
 .body-container{
     background-color: whitesmoke;
     width: 100%;
-    height: 600px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.msg-convite{
-    width: 500px;
-    height: 50px;
-    font-size: 70px;
-    font-style: oblique;
+.imagem-superior{
+    width: 100%;
+    height: 80%;
     position: absolute;
-    left: 750px;
-    top: 150px;
+    left: 40%;
+    top: 15%;
+}
+
+.convite{
+    position: absolute;
+    left: 10%;
+    top: 28%;
+    transition: all 0.5s ease;
+}
+
+.mensagem{
+    width: 50%;
+    height: 20%;
+    font-size: 350%;
+    font-family: sans-serif;
+
+    
+}
+
+.submensagem{
+    width: 50%;
+    height: 20%;
+    font-size: 150%;
+    color: rgb(61, 61, 61);
+    font-family: (-apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 
+    sans-serif);
 }
 
 .body-botao{
-    width: 150px;
-    height: 100px;
     position: absolute;
-    left: 700px;
-    top: 430px;
+    font-family: sans-serif;
+    left: 10%;
+    top: 72%;
+}
+
+.rodape {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 100%;
+    background-color: black;
+}
+
+.imagem-rodape {
+    left: 46%;
+    top: 8%;
+    width: 10%;
+    height: 10%;
+    position: absolute;
+}
+@media screen and (max-width: 960px) {
+    .convite{
+        position: absolute;
+        left: 35%;
+        top: 15%;
+    }
+    
+    .mensagem{
+        width: 50%;
+        height: 20%;
+        font-size: 350%;
+        font-family: sans-serif;
+        transition: all 0.5s ease;
+    }
+    
+    .body-botao{
+        position: absolute;
+        font-family: sans-serif;
+        left: 30%;
+        top: 78%;
+        transition: all 0.5s ease;
+    }
+
+    .submensagem {
+        display: none;
+    }
+
+    .imagem-superior {
+        display: none;
+    }
 }
