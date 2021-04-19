@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import useState from 'react'
 import '../../style/pages/Login/Login.css';
-import useForm from '../../components/useForm';
+import useForm from '../../components/useFormSignIn';
 import { Card, Form, Button, Checkbox, Image} from 'semantic-ui-react'
 
 function validate(values){
