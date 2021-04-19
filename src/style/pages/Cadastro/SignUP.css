@@ -1,5 +1,7 @@
 .container{
   display: flex;
+  height: 100vh;
+  width: 100vh;
 }
 
 .form-signup-container {
@@ -9,26 +11,44 @@
   width: 50vw;
   background: #ffffff
 } 
-
-.side-image{
+/*imagem lateral*/
+.side-image img{
   position: relative;
-  display: inline-block;
-  align-items: center;
+  height: 100vh;
+  width: 50vw;
+  
+}
+/* propriedades do formulario*/
+.ui.input > input {
+  background-color: #F2F2F2 !important;
+  border-radius: 5px !important;
+  border: 0px !important;
 }
 
-.ui.input > input {
-  font-size: 1.2rem;
-  background-color: red;
+.ui.button{
+  background-color: #2D4561 !important;
+  border-radius: 5px !important;
+  color: #f7f7f7 !important;
+}
+
+.ui.card>.content{
+  border-top: none !important;
+}
+
+/*propriedades do titulo*/
+.form-title { 
+  font-size: 1.2rem !important;
+  font-weight: normal !important;
+  justify-content: left !important;
 }
 
 .form-signup-wrap {
-  height: 100vh;
   width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 75px;
+  padding-top: 20vh;
 }
 
 .form-content-input {
@@ -36,9 +56,6 @@
   flex-direction: column;
 }
 
-.form-content-input input{
-  background-color: red;
-}
 .form-title {
   display: flex;
   justify-content: center;
@@ -130,7 +147,7 @@
   }
   
   .form-input {
-    background-color: #F8F8F8;
+    background-color: red;
     display: block;
     padding-left: 10px;
     outline: none;
