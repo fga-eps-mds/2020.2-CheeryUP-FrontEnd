@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login';
 import AboutPage from './pages/AboutPage/AboutPage';
+import ListaPacientes from './pages/ListaPacientes/ListaPacientes';
 
 export default function Routes() {
     return (
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route path="/SignUP" component={SignUP} />  
                 <Route path="/AboutPage" component={AboutPage} />
                 <Route path="/Login" component={Login} />
+                <Route path="/ListaPacientes" component={ListaPacientes} />
             </Switch>
         </BrowserRouter>
     );

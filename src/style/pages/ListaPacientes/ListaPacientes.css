@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding:  0px;
+}
+
+.topside{
+    display:flex;
+}
+
+.logo,.navbar, .info-psicologo{
+    display: inline-block;
+}
+
+.logo{
+    height: 20vh;
+}
+/*
+.pesquisa{
+    width: 400px;
+    height: 40px;
+    margin: 200px auto;
+}
+*/
+#texto-pesquisa{
+    width: 350px;
+    height: 30px;
+    float: left;
+}
+
+.btn-pesquisa{
+    height: 30px;
+    height: 30px;
+    background-color: #2D4561;
+    padding: 5px 10px;
+    cursor: pointer;
+}
