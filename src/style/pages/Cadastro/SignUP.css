@@ -1,95 +1,103 @@
-.form-signup-container {
+.container{
+  display: flex;
   height: 100vh;
-  background: #F8F8F1
+  width: 100vh;
+}
+
+.form-signup-container {
+  position:relative;
+  display: inline-block;
+  height: 100vh;
+  width: 50vw;
+  background: #ffffff
 } 
+/*imagem lateral*/
+.side-image img{
+  position: relative;
+  height: 100vh;
+  width: 50vw;
+  
+}
+/* propriedades do formulario*/
+.ui.input > input {
+  background-color: #F2F2F2 !important;
+  border-radius: 5px !important;
+  border: 0px !important;
+}
+
+.ui.button{
+  background-color: #2D4561 !important;
+  border-radius: 5px !important;
+  color: #f7f7f7 !important;
+}
+
+.ui.card>.content{
+  border-top: none !important;
+}
+
+/*propriedades do titulo*/
+.form-title { 
+  font-size: 1.2rem !important;
+  font-weight: normal !important;
+  justify-content: left !important;
+}
 
 .form-signup-wrap {
-  height: 100vh;
-  width: 100vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 75px;
+  padding-top: 20vh;
 }
 
 .form-content-input {
   display: flex;
   flex-direction: column;
 }
+
 .form-title {
   display: flex;
   justify-content: center;
-  font-size: 25px !important;
+  font-size: 25px ;
 }
 
 .form-card {
   width: 300px !important;
 }
-   {/*
-  .form-content-left {
-    background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
-    border-radius: 10px 0 0 10px;
-    position: relative;
-  }
-  .form-img {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .form-img-2 {
-    width: 60%;
-    height: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  */}
+
 
   .top-signup {
-      position: absolute;
-      width: 100vw;
-      background-color:rgb(52, 86, 158);
-      display: flex;
-      text-decoration: none;
-      justify-content: space-between;
-
-  }
-  
-
-  .form-img {
-    cursor: crosshair;
-    height: 75px;
-    padding-block: 10px;
-    background-color: rgb(52, 86, 158);
-
+    position: absolute;
+    width: 50vw;
+    height: 70px;
+    background-color:#ffffff;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
   }
 
-  .text-top {
-    color: white;
-    justify-content: center;
-    align-items: center;
+  .top-signup-logo {
     position: relative;
-    display: flex;
-    padding: 10px;
+    align-items: center;
+    left: 2vw;
+    width: 40px;
+    height: 56px;
   }
 
-  .bottom-signup {
-    bottom: 0px;
-    position: fixed;
+  .top-signup-navbar-option{
+    text-align: center;
+    font-weight: bold;
+    padding: 2rem;
     width: 100%;
-    background-color:rgb(58,69,89);
-    display: flex;
-    justify-content: center;
+    font-size: 1.4rem;
+    display: table;
+    color: #494949;
+  }
+
+  .top-signup-navbar-option:hover{
+    transition: all 0.4s ease-out;
+    color: #F9423A;
   }
   
   .form-success {
@@ -97,21 +105,6 @@
     font-size: 24px;
     margin-top: 80px;
     color: #fff;
-  }
-  
-  .form-content-main {
-    width: 800px;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    padding: 20px 40px;
-    border-radius: 12px;
-    border-style: solid;
-    border-color: gray;
-    background-color: #ffffff;
   }
   
   .form {
@@ -134,14 +127,14 @@
 
   .form-inputs {
     border-radius: 20px;
-    border-color: gray;
+    border-color: #2D4561;
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
     width: 80%;
   }
   
   .p-message {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     margin-top: 0.1rem;
     color: #f0300efa;
   }
@@ -154,7 +147,7 @@
   }
   
   .form-input {
-    background-color: #F8F8F8;
+    background-color: red;
     display: block;
     padding-left: 10px;
     outline: none;
@@ -169,34 +162,6 @@
     font-size: 1.2rem;
   }
   
-  .form-input-btn {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 30%;
-    height: 50px;
-    border-radius: 25px;
-    background: linear-gradient(
-      90deg,
-      rgb(236, 6, 6) 0%,
-      #f70202 100%
-    );
-    outline: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .form-input-btn:hover {
-    cursor: pointer;
-    background: linear-gradient(
-      90deg,
-      rgb(39, 143, 255) 0%,
-      rgb(12, 99, 250) 100%
-    );
-    transition: all 0.4s ease-out;
-  }
   
   .form-input-login {
     font-size: 1.5rem;
