@@ -1,18 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Padronização inicial da tela*/
 *{
     margin: 0px;
     padding:  0px;
+    font-family: "Montserrat", sans-serif;
 }
 
-.topside{
-    display:flex;
-}
-
-.logo,.navbar, .info-psicologo{
-    display: inline-block;
-}
-
+/*Defs da logo*/
 .logo{
-    height: 20vh;
+    align-items: center;
+    width: 40px;
+    height: 56px;
+}
+
+/********************************************************************************/
+/*                                conteudo header                               */
+/********************************************************************************/
+
+/* header */
+.top-content{
+    /*position: fixed;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10% ;
+    background-color: #2D4561;
+    width: 100vw;
+    height: 70px;
+    text-align: center;
+}
+/* retira os . iniciais em listas não ordenadas */
+ul{
+    list-style: none;
+}
+/* caracteristicas das opções da navbar */
+.nav__links{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* centraliza o texto das opcoes da lista*/
+.nav__links li{
+    text-align: center;
+}
+
+/* cada opcao da navbar */
+.nav__links li a{
+    color: #f1f1f1;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav__links li a:hover{
+    transition: all 0.4s ease-out;
+    color: #c7c7c7;
+}
+
+/* quadradinho com as informações do psicologo*/
+.info-psicologo ul{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+}
+
+/********************************************************************************/
+/*                             conteudo principal                               */
+/********************************************************************************/
+
+.main-content{
+    align-items: center;
+    justify-content: center;
+}
+
+.default-button{
+    background-color: red;
+}
+
+
+.delete-button{
+    
 }
 /*
 .pesquisa{
@@ -21,6 +90,7 @@
     margin: 200px auto;
 }
 */
+
 #texto-pesquisa{
     width: 350px;
     height: 30px;
