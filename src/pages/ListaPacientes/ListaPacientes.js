@@ -26,33 +26,44 @@ class ListaPacientes extends Component{
 
                 <main className="main-content">
                     <div className="upper-main-content">
-                        <h2>Lista Pacientes</h2>
+                        <h2 class= "page-name" >Lista Pacientes</h2>
                         <button type="button" className="default-button">Cadastrar paciente</button>
                         <form className="pesquisa">
                             <input type="search" id="texto-pesquisa" placeholder="Buscar por nome"/>
                             <img src="img/lupa.png" className="btn-pesquisa"/>
                         </form>
                     </div>
-                    <table >
-                        <thead>
-                            <tr>
+                    <table className= "table-content" cellspacing ="10px">
+                        <thead> {/** constante, logo não mudará. É o header da table */}
+                            <tr className="table-header-columns">
                                 <th></th> 
-                                <th>Id</th>
-                                <th>Nome</th>
-                                <th>Idade</th>
-                                <th>Região</th>
-                                <th></th> 
-                                <th></th> 
+                                <th className="table-header-option">Id</th>
+                                <th className="table-header-option">Nome</th>
+                                <th className="table-header-option">Idade</th>
+                                <th className="table-header-option">Região</th>
+         
                             </tr>
                         </thead>
-                        <tbody>
-                            <td><button type="button" className="delete-button">X</button></td>
-                            <td>1</td>
-                            <td>Neymar</td>
-                            <td>23</td>
-                            <td>Ceilandia</td>
-                            <td><button type="button" className="default-button">Informações</button></td>
-                            <td><button type="button" className="default-button">Registar consulta</button></td>
+                        <tbody> {/* tbody é onde sera inserido os individous */}
+                            <tr> {/*Individuo 1*/ }
+                                <td><button type="button" className="delete-button">X</button></td>
+                                <td className="table-body-option" >1</td>
+                                <td className="table-body-option" >Neymar</td>
+                                <td className="table-body-option" >23</td>
+                                <td className="table-body-option" >Ceilandia</td>
+                                <td><button type="button" className="default-button">Informações</button></td>
+                                <td><button type="button" className="default-button">Registar consulta</button></td>
+                            </tr>
+
+                            <tr> {/*Individuo 2*/ }
+                                <td><button type="button" className="delete-button">X</button></td>
+                                <td className="table-body-option" >2</td>
+                                <td className="table-body-option" >Ednaldo Pereira</td>
+                                <td className="table-body-option" >69</td>
+                                <td className="table-body-option" >Mumbai</td>
+                                <td><button type="button" className="default-button">Informações</button></td>
+                                <td><button type="button" className="default-button">Registar consulta</button></td>
+                            </tr>
                         </tbody>
                     </table>
                 </main>
