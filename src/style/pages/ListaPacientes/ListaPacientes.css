@@ -9,7 +9,7 @@
 
 body{
     height: 100%;
-    background-color: #f7f7f7;
+    background-color: #f00000;
 }
 
 /*Defs da logo*/
@@ -78,6 +78,7 @@ ul{
 /********************************************************************************/
 /*                             conteudo principal                               */
 /********************************************************************************/
+/* */
 .main-content{
     padding-top: 10rem ;
 }
@@ -86,6 +87,8 @@ ul{
 /********************************************************************************/
 /*                             conteudo principal superior                      */
 /********************************************************************************/
+
+/* texto superior, botao cadastro e ferramenta de pesquisa*/
 .upper-main-content{
     display: flex;
     justify-content: center;
@@ -149,6 +152,8 @@ button{
 /*                             conteudo principal tabela                        */
 /********************************************************************************/
 
+/* tabela */
+
 .table-content{
     display: table;
     justify-content: center;
@@ -156,14 +161,13 @@ button{
     margin:auto;
 }
 
-.table-header-columns{
-    padding-left: 70px;
-}
-
 .table-body-option, .table-header-option{
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     font-size: 18px;
 }
+
+
+/* opções da HEADER da table*/
 
 .table-header-option{
     background-color: #2D4561;
@@ -171,6 +175,8 @@ button{
     text-align: left;
     
 }
+
+/* opções da BODY da table */
 
 .table-body-option{
     background-color: #F1F1F1;
