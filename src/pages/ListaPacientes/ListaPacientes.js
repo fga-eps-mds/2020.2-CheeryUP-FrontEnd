@@ -33,7 +33,7 @@ class ListaPacientes extends Component{
                             <img src="img/lupa.png" className="btn-pesquisa"/>
                         </form>
                     </div>
-                    <table className= "table-content" cellspacing ="10px">
+                    <table className= "table-content" cellspacing ="10">
                         <thead> {/** constante, logo não mudará. É o header da table */}
                             <tr className="table-header-columns">
                                 <th></th> 
@@ -51,8 +51,8 @@ class ListaPacientes extends Component{
                                 <td className="table-body-option" >Neymar</td>
                                 <td className="table-body-option" >23</td>
                                 <td className="table-body-option" >Ceilandia</td>
-                                <td><button type="button" className="default-button">Informações</button></td>
-                                <td><button type="button" className="default-button">Registar consulta</button></td>
+                                <td><button type="button" className="default-button">Informações <img src="img/arrow.png"/></button></td>
+                                <td><button type="button" className="default-button">Registar consulta <img src="img/arrow.png"/></button></td>
                             </tr>
 
                             <tr> {/*Individuo 2*/ }
@@ -61,8 +61,8 @@ class ListaPacientes extends Component{
                                 <td className="table-body-option" >Ednaldo Pereira</td>
                                 <td className="table-body-option" >69</td>
                                 <td className="table-body-option" >Mumbai</td>
-                                <td><button type="button" className="default-button">Informações</button></td>
-                                <td><button type="button" className="default-button">Registar consulta</button></td>
+                                <td><button type="button" className="default-button">Informações <img src="img/arrow.png"/></button></td>
+                                <td><button type="button" className="default-button">Registar consulta <img src="img/arrow.png"/></button></td>
                             </tr>
                         </tbody>
                     </table>

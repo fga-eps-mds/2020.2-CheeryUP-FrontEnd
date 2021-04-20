@@ -72,6 +72,7 @@ ul{
     background-color: #f1f1f1;
     border-radius: 5px;
     padding: 0.75rem 1rem;
+    text-align: left;
 }
 
 /********************************************************************************/
@@ -81,6 +82,10 @@ ul{
     padding-top: 10rem ;
 }
 
+
+/********************************************************************************/
+/*                             conteudo principal superior                      */
+/********************************************************************************/
 .upper-main-content{
     display: flex;
     justify-content: center;
@@ -91,7 +96,7 @@ ul{
 
 .page-name{
     font-size: 28px;
-    margin-right: 20vw;
+    margin-right: 8vw;
 }
 
 .pesquisa{
@@ -139,9 +144,16 @@ button{
     border-radius: 0px 5px 5px 0px;
 }
 
+
+/********************************************************************************/
+/*                             conteudo principal tabela                        */
+/********************************************************************************/
+
 .table-content{
     display: table;
     justify-content: center;
+    
+    margin:auto;
 }
 
 .table-header-columns{
@@ -150,15 +162,18 @@ button{
 
 .table-body-option, .table-header-option{
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    font-size: 18px;
 }
 
 .table-header-option{
     background-color: #2D4561;
     color:  #f1f1f1;
     text-align: left;
+    
 }
 
 .table-body-option{
     background-color: #F1F1F1;
     text-align: left;
+    border-radius: 2px;
 }
