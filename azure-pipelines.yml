@@ -11,22 +11,22 @@ strategy:
   matrix:
     linux-node-14:
       imageName: 'ubuntu-latest'
-      nodeVersion: '14.x'
+      nodeVersion: '14.9.0-alpine3.10'
     linux-node-latest:
       imageName: 'ubuntu-latest'
-      nodeVersion: '>=12.x'
+      nodeVersion: '14.9.0-alpine3.10'
     mac-node-10:
       imageName: 'macos-latest'
-      nodeVersion: '14.x'
+      nodeVersion: '14.9.0-alpine3.10'
     mac-node-latest:
       imageName: 'macos-latest'
-      nodeVersion: '>=14.x'
+      nodeVersion: '14.9.0-alpine3.10'
     windows-node-10:
       imageName: 'windows-latest'
-      nodeVersion: '14.x'
+      nodeVersion: '14.9.0-alpine3.10'
     windows-node-latest:
       imageName: 'windows-latest'
-      nodeVersion: '>=12.x'
+      nodeVersion: '14.9.0-alpine3.10'
 
 pool:
   vmImage: $(imageName)
@@ -36,6 +36,12 @@ steps:
   inputs:
     versionSpec: $(nodeVersion)
   displayName: 'Install Node.js'
+
+- task: Npm@1
+  inputs:
+    command: custom
+    customCommand: 'run lint'
+  displayName: Run ESLint
 
 - script: |
     npm install
