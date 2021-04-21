@@ -1,5 +1,5 @@
 <p align="center"><a href="image" target="_blank"><img width="600"src="./public/logoReadme.png"></a></p>   
-
+[![Build Status](https://dev.azure.com/nilvanperes/CheeryUP/_apis/build/status/fga-eps-mds.2020.2-CheeryUP-FrontEnd?branchName=main)](https://dev.azure.com/nilvanperes/CheeryUP/_build/latest?definitionId=1&branchName=main)
 
 ## ℹ️ Sobre o projeto
 <p align="justify"> O CheeryUP é um sistema direcionado para psicólogos que foi arquitetado por Carla Silva Rocha Aguiar, com a ideia de disponibilizar uma plataforma online para prontuário de atendimento de pacientes que estão em fase de recuperação da COVID-19.</p>
