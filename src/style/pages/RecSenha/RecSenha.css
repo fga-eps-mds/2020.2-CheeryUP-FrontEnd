@@ -25,6 +25,13 @@
   width: 50vw;
       
 }
+.Rec-Frase{
+      position: relative;
+      height: 100vh;
+      width: 50vw;
+      background-color: #F2F2F2 !important;
+          
+}
 /* propriedades do formulario*/
 .ui.input > input {
     background-color: #F2F2F2 !important;

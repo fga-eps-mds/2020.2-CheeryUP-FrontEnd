@@ -2,11 +2,12 @@ import React, {Fragment} from 'react'
 import useState from 'react'
 import '../../style/pages/RecSenha/RecSenha.css';
 import useForm from '../../components/useForm';
-import { Card, Form, Button } from 'semantic-ui-react'
+import { Card, Form, Button,Header } from 'semantic-ui-react'
 
-const RecPassword = ({ SubmitForm }) => 
+
+const RecSenha = ({ SubmitForm }) => 
 {
-    const { handleChange, values, handleSubmit, errors } = useForm(SubmitForm, validate);
+    const { handleChange, values, handleSubmit, errors } = useForm(SubmitForm);
     return(
         <Fragment>
             <div className="container-Rec">
@@ -44,6 +45,9 @@ const RecPassword = ({ SubmitForm }) =>
                 </div> 
                 <div className="side-image-Rec2">
                     <img src="imagens/textRecSenha.png" alt="Texto Recuperar Senha"/>
+                    <div className = "Rec-Frase">
+                        <Header as= 'h1'>Frase</Header>
+                    </div>
                 </div> 
 
             </div>
