@@ -6,6 +6,7 @@ import Home from './pages/HomePage/Home';
 import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login';
+import Login from './pages/Login/RecSenha';
 import AboutPage from './pages/AboutPage/AboutPage';
 
 export default function Routes() {
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route path="/SignUP" component={SignUP} />  
                 <Route path="/AboutPage" component={AboutPage} />
                 <Route path="/Login" component={Login} />
+                <Route path="/RecuperarSenha" component={RecSenha} />
             </Switch>
         </BrowserRouter>
     );
