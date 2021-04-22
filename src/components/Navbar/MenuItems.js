@@ -12,18 +12,18 @@ export const MenuItems = [
     // },
     {
         title: 'Login',
-        url: 'http://localhost:3000/Login',
+        url: '/Login',
         cName: 'nav-links'
     },
     {
         title: 'About',
-        url: 'http://localhost:3000/AboutPage',
+        url: '/AboutPage',
         cName: 'nav-links',
         ID : 'some-id'
     },
     {
         title: 'Cadastre',
-        url: 'http://localhost:3000/SignUP',
+        url: '/SignUP',
         cName: 'nav-links'
     }
 
@@ -35,7 +35,7 @@ export const MenuItems = [
 export const MenuItemsAlt = [
     {
         title: 'Home',
-        url: 'http://localhost:3000/',
+        url: '/',
         cName: 'nav-linksAlt'
     },
 ]
