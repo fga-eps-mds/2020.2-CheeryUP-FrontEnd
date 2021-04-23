@@ -30,39 +30,53 @@ function About(){
                     <h2>Integrantes</h2>
                     
                     <div className="img-group">
-                        <figure className="developer-img-content">
+                        <figure className="developer-img">
                             <img src="imagens/integrantes/abraao-pic.jpg" alt="Foto Abrãao"/>
-                            <figcaption>Abraão Alves</figcaption>
+                            <div className="middle">
+                                <figcaption>Abraão Alves</figcaption>
+                            </div>
                         </figure>
 
-                        <figure className="developer-img-content">
-                        <img src="imagens/integrantes/antonio-pic.jpg" alt="Foto Antônio"/>
-                            <figcaption>Antônio Neto</figcaption>
+                        <figure className="developer-img">
+                        <img className="img-developer image" src="imagens/integrantes/antonio-pic.jpg" alt="Foto Antônio"/>
+                            <div className="middle">
+                                <figcaption>Antônio Neto</figcaption>
+                            </div>
                         </figure>
 
-                        <figure className="developer-img-content">
+                        <figure className="developer-img">
                         <img src="imagens/integrantes/arthur-pic.jpg" alt="Foto Arthur"/>
-                            <figcaption>Arthur Talles</figcaption>
+                            <div className="middle">
+                                <figcaption>Arthur Talles</figcaption>
+                            </div>
                         </figure>
 
-                        <figure className="developer-img-content">
+                        <figure className="developer-img">
                             <img src="imagens/integrantes/davi-pic.jpg" alt="Foto Davi"/>
-                            <figcaption>Davi Matheus</figcaption>
+                            <div className="middle">
+                                <figcaption>Davi Matheus</figcaption>
+                            </div>
                         </figure>
 
-                        <figure className="developer-img-content">
-                            <img/>
-                            <figcaption>Lucas Ferraz</figcaption>
+                        <figure className="developer-img">
+                            <img src="imagens/integrantes/lucas-pic.jpg" alt="Foto Lucas"/>
+                            <div className="middle">
+                                <figcaption>Lucas Ferraz</figcaption>
+                            </div>
                         </figure>
 
-                        <figure className="developer-img-content">
-                            <img/>
+                        <figure className="developer-img">
+                            <img src="imagens/integrantes/natanael-pic.jpg" alt="Foto Natanael"/>
+                            <div className="middle">
                             <figcaption>Natanael Filho</figcaption>
+                            </div>
                         </figure>
 
-                        <figure className="developer-img-content">
-                            <img/>
+                        <figure className="developer-img">
+                            <img src="imagens/integrantes/nilvan-pic.jpg" alt="Foto Nilvan"/>
+                            <div className="middle">
                             <figcaption>Nilvan Junior</figcaption>
+                            </div>
                         </figure>
                     </div>
 
