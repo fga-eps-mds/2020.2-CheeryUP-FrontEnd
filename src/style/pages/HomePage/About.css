@@ -39,7 +39,7 @@
     font-family: "Montserrat", sans-serif;
 }
 
-.developer-img:hover{
+.developer-img:hover img{
     opacity: 0.3;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -74,7 +74,7 @@
     font-size: 18px;
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: rgb(92, 92, 92);
 }
 
 .middle {
