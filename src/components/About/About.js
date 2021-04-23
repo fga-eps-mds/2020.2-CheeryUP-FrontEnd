@@ -31,49 +31,63 @@ function About(){
                     
                     <div className="img-group">
                         <figure className="developer-img">
-                            <img src="imagens/integrantes/abraao-pic.jpg" alt="Foto Abrãao"/>
+                            <a href="https://github.com/Abraao1231" target="_blank">
+                                <img src="imagens/integrantes/abraao-pic.jpg" alt="Foto Abrãao"/>
+                            </a>
                             <div className="middle">
                                 <figcaption>Abraão Alves</figcaption>
                             </div>
                         </figure>
 
                         <figure className="developer-img">
-                        <img className="img-developer image" src="imagens/integrantes/antonio-pic.jpg" alt="Foto Antônio"/>
+                            <a href="https://github.com/antoniotoineto" target="_blank">
+                                <img className="img-developer image" src="imagens/integrantes/antonio-pic.jpg" alt="Foto Antônio"/>
+                            </a>
                             <div className="middle">
                                 <figcaption>Antônio Neto</figcaption>
                             </div>
                         </figure>
 
                         <figure className="developer-img">
-                        <img src="imagens/integrantes/arthur-pic.jpg" alt="Foto Arthur"/>
+                            <a href="https://github.com/art1505" target="_blank">
+                                <img src="imagens/integrantes/arthur-pic.jpg" alt="Foto Arthur"/>
+                            </a>
                             <div className="middle">
                                 <figcaption>Arthur Talles</figcaption>
                             </div>
                         </figure>
 
                         <figure className="developer-img">
-                            <img src="imagens/integrantes/davi-pic.jpg" alt="Foto Davi"/>
+                            <a href="https://github.com/DaviMatheus" target="_blank">
+                                <img src="imagens/integrantes/davi-pic.jpg" alt="Foto Davi"/>
+                            </a>
                             <div className="middle">
                                 <figcaption>Davi Matheus</figcaption>
                             </div>
                         </figure>
 
                         <figure className="developer-img">
-                            <img src="imagens/integrantes/lucas-pic.jpg" alt="Foto Lucas"/>
+                            <a href="https://github.com/mibasFerraz" target="_blank">
+                                <img src="imagens/integrantes/lucas-pic.jpg" alt="Foto Lucas"/>
+                            </a>
                             <div className="middle">
                                 <figcaption>Lucas Ferraz</figcaption>
                             </div>
                         </figure>
-
                         <figure className="developer-img">
-                            <img src="imagens/integrantes/natanael-pic.jpg" alt="Foto Natanael"/>
+                            <a href="https://github.com/fernandes-natanael" target="_blank">
+                                <img src="imagens/integrantes/natanael-pic.jpg" alt="Foto Natanael"/>
+                            </a>
                             <div className="middle">
                             <figcaption>Natanael Filho</figcaption>
                             </div>
                         </figure>
+            
 
                         <figure className="developer-img">
-                            <img src="imagens/integrantes/nilvan-pic.jpg" alt="Foto Nilvan"/>
+                            <a href="https://github.com/NilvanPeres" target="_blank">
+                                <img src="imagens/integrantes/nilvan-pic.jpg" alt="Foto Nilvan"/>
+                            </a>
                             <div className="middle">
                             <figcaption>Nilvan Junior</figcaption>
                             </div>
