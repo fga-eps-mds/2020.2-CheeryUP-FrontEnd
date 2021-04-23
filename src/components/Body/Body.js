@@ -7,7 +7,7 @@ function Body() {
     return (
         <div className='body-container'>
             <div className='imagem-superior'>
-                <img src="/imagens/imagemHome.png" alt="Imagem Logo"/>
+                <img src="/imagens/imagemHome.png" alt="Imagem Logo" width='100%' height='100%'/>
             </div>
             <div className='convite'>
                 <h1 className='mensagem'>Faça parte da nossa equipe!</h1>

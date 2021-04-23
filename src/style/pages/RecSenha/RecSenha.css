@@ -1,0 +1,211 @@
+.container-Rec{
+  display: flex;
+  height: 100vh;
+  width: 100vh;
+}
+
+.form-RecPassword-container {
+  position:relative;
+  display: inline-block;
+  height: 100vh;
+  width: 50vw;
+  background: #ffffff
+}
+
+/*imagem lateral*/
+
+.side-image-Rec img{
+  position: relative;
+  height: 100vh;
+  width: 50vw;
+    
+}
+.Rec-Frase{
+      position: relative;
+      height: 100vh;
+      width: 50vw;
+      background-color: #F2F2F2 !important;
+          
+}
+/* propriedades do formulario*/
+.ui.input > input {
+    background-color: #F2F2F2 !important;
+    border-radius: 5px !important;
+    border: 0px !important;
+}
+  
+.ui.button{
+    background-color: #2D4561 !important;
+    border-radius: 5px !important;
+    color: #f7f7f7 !important;
+}
+  
+.ui.card>.content{
+    border-top: none !important;
+}
+  
+/*propriedades do titulo*/
+.form-title-RecPassword { 
+    font-size: 1.2rem !important;
+    font-weight: normal !important;
+    justify-content: left !important;
+}
+  
+.form-RecPassword-wrap {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20vh;
+}
+  
+.form-content-input-RecPassword {
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-title-RecPassword {
+    display: flex;
+    justify-content: center;
+    font-size: 25px ;
+}
+  
+.form-Rec-card {
+  width: 300px !important;
+}
+  
+  
+.top-RecPassword {
+    position: absolute;
+    width: 50vw;
+    height: 70px;
+    background-color:#ffffff;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+}
+  
+.top-RecPassword-logo {
+      position: relative;
+      align-items: center;
+      left: 2vw;
+      width: 40px;
+      height: 56px;
+}
+  
+.top-RecPassword-navbar-option{
+      text-align: center;
+      font-weight: bold;
+      padding: 2rem;
+      width: 100%;
+      font-size: 1.4rem;
+      display: table;
+      color: #494949;
+}
+  
+.top-RecPassword-navbar-option:hover{
+      transition: all 0.4s ease-out;
+      color: #F9423A;
+}
+    
+.form-success {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 80px;
+      color: #fff;
+}
+    
+.form {
+      justify-content:relative;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+}
+    
+.form h1 {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      color: #111;
+      font-weight: lighter;
+      font-family: 'Roboto', sans-serif;
+      font-size: 3.2rem;
+}
+  
+.form-inputs {
+      border-radius: 20px;
+      border-color: #2D4561;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      width: 80%;
+}
+    
+.p-message {
+      font-size: 0.9rem;
+      margin-top: 0.1rem;
+      color: #f0300efa;
+}
+    
+.form-label {
+      display: ruby-text-container;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      color: #fff;
+}
+    
+.form-input {
+      background-color: red;
+      display: block;
+      padding-left: 10px;
+      outline: none;
+      border-radius: 2px;
+      height: 40px;
+      width: 100%;
+      border: none;
+}
+    
+.form-input::placeholder {
+      color: gray;
+      font-size: 1.2rem;
+}
+    
+    
+.form-input-login {
+      font-size: 1.5rem;
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;  
+   
+}
+  
+.form-input-btn-home {
+      height: 70px;
+      width: 210px;
+      border-radius: 25px;
+      
+      background: linear-gradient(
+        90deg,
+        rgba(247, 5, 5, 0) 0%,
+        hsla(0, 29%, 48%, 0) 100%
+      );
+      outline: none;
+      border: none;
+      color: rgb(3, 0, 0);
+      font-size: 1.5rem;
+      font-family: 'Roboto', sans-serif;
+      
+}
+    
+.form-input-btn-home:hover {
+      cursor: pointer;
+      background: linear-gradient(
+        90deg,
+        rgb(39, 143, 255) 0%,
+        rgb(12, 99, 250) 100%
+      );
+      transition: all 0.4s ease-out;
+}

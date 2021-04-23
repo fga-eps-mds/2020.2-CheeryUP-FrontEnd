@@ -44,11 +44,11 @@ const SignUP = ({ SubmitForm }) =>
             <div className="container">
                 <div className="form-signup-container">
                     <div className="top-signup">
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                             <img className="top-signup-logo" src="img/logo_word.png" alt="logo CheeryUp" />
                         </a>
 
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                             <label className="top-signup-navbar-option">Início</label>
                         </a>
                     </div>
@@ -74,7 +74,7 @@ const SignUP = ({ SubmitForm }) =>
                                     <Button type="submit" onClick={handleSubmit}>Cadastrar </Button>
                                     <span className="form-input-loguin">
                                         Já possui cadastro ?
-                                        <a  href="http://localhost:3000/Login">Faça Login. </a>
+                                        <a  href="/Login">Faça Login. </a>
                                     </span>
                                 </Form>
                             </Card.Content>
