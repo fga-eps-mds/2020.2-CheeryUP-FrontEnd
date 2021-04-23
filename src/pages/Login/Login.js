@@ -51,7 +51,7 @@ const Login = ({ SubmitForm }) => {
                                         {errors.email && <p class="p-message">{errors.email}</p>}
                                     <Form.Input placeholder="Senha" label="Senha" required fluid onChange={handleChange} name='senha' value={values.senha}/>
                                         {errors.senha && <p class="p-message">{errors.senha}</p>}
-                                        <p><a className="links" href="#">Esqueceu sua senha?</a></p>
+                                        <p><a className="links" href="http://localhost:3000/RecuperarSenha">Esqueceu sua senha?</a></p>
                                     <Button type="submit" onClick={handleSubmit}>Login</Button>
                            
                                 </Form>
