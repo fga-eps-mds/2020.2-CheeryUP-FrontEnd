@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MenuItemsAlt } from "./MenuItems"
 import { Button } from "../Button/Button"
-import '../../style/pages/HomePage/Navbar.css'
+import '../../style/pages/HomePage/NavbarAlt.css'
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar alternativa,
@@ -19,11 +19,11 @@ class NavbarAlt extends Component {
 
     render() {
         return(
-            <nav className="NavbarItemsAlt">
-                <div className='logo-cheeryUpAlt'>
-                    <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
-                </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+            <nav className="navbar">
+                <a href = "http://localhost:3000/">
+                    <img className="logo" src = '/img/logo_word.png' alt='Logo'/>
+                </a>
+                <ul className={this.state.clicked ? 'nav-items active' : 'nav-items'}>
                     {MenuItemsAlt.map((item, index) => {
                         return (
                             <li key={index}>
