@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Padronização inicial da tela*/
+*{
+    margin: 0px;
+    padding:  0px;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    height: 100%;
+    background-color: #f00000;
+}
+
+/*Defs da logo*/
+.logo{
+    align-items: center;
+    width: 40px;
+    height: 56px;
+}
+
+/********************************************************************************/
+/*                                conteudo header                               */
+/********************************************************************************/
+
+/* header */
+.top-content{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10% ;
+    background-color: #2D4561;
+    width: 100vw;
+    height: 70px;
+    text-align: center;
+}
+/* retira os . iniciais em listas não ordenadas */
+ul{
+    list-style: none;
+}
+/* caracteristicas das opções da navbar */
+.nav__links{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* centraliza o texto das opcoes da lista*/
+.nav__links li{
+    text-align: center;
+}
+
+/* cada opcao da navbar */
+/* padding: top  rigth bottom left*/
+.nav__links li a{
+    color: #f1f1f1;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav__links li a:hover{
+    transition: all 0.2s ease-out;
+    background-color: #3c5b80;
+}
+
+/* quadradinho com as informações do psicologo*/
+.info-psicologo ul{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+/********************************************************************************/
+/*                             conteudo principal                               */
+/********************************************************************************/
+/* */
+.main-content{
+    padding-top: 10rem ;
+}
+
+
+/********************************************************************************/
+/*                             conteudo principal superior                      */
+/********************************************************************************/
+
+/* texto superior, botao cadastro e ferramenta de pesquisa*/
+.upper-main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+
+.page-name{
+    font-size: 28px;
+    margin-right: 8vw;
+}
+
+.pesquisa{
+    margin-left: 2vw;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    padding: 2px 5px 2px 5px;
+    color: #f1f1f1;
+}
+.default-button{
+    background-color: #2D4561;
+    padding: 0.35rem 0.5rem 0.35rem 0.5rem;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.delete-button{
+    background-color: #F9423A;
+    border-radius: 3px;
+}
+
+#texto-pesquisa{
+    /*border-style: solid;
+    border-color: #f1f1f1;*/
+    font-size: 16px;
+    border:none;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #f1f1f1;
+    width: 150px;
+    height: 30px;
+    float: left;
+    padding-left: 0.50rem;
+}
+
+.btn-pesquisa{
+    height: 30px;
+    height: 30px;
+    background-color: #2D4561;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+
+
+/********************************************************************************/
+/*                             conteudo principal tabela                        */
+/********************************************************************************/
+
+/* tabela */
+
+.table-content{
+    display: table;
+    justify-content: center;
+    
+    margin:auto;
+}
+
+.table-body-option, .table-header-option{
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    font-size: 18px;
+}
+
+
+/* opções da HEADER da table*/
+
+.table-header-option{
+    background-color: #2D4561;
+    color:  #f1f1f1;
+    text-align: left;
+    
+}
+
+/* opções da BODY da table */
+
+.table-body-option{
+    background-color: #F1F1F1;
+    text-align: left;
+    border-radius: 2px;
+}

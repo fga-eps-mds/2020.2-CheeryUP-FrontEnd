@@ -208,3 +208,12 @@
     );
     transition: all 0.4s ease-out;
   }
+  @media screen and (max-width: 960px) {
+    .form-signup-wrap{
+      position: relative;
+      left: 50%;
+    }
+    .side-image{
+      display: none;
+    }
+  }
