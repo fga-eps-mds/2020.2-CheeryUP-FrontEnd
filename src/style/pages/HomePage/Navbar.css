@@ -8,6 +8,7 @@
     font-size: 1.2rem;
 }
 
+/*
 .NavbarItemsAlt {
     background-color: #2D4561;
     height: 12vh;
@@ -28,6 +29,8 @@
     align-items: center;
     font-size: 1.2rem;
 }
+
+*/
 
 .nav-menu {
     display: grid;
@@ -57,6 +60,7 @@
     transition: all 0.2s ease-out;
 }
 
+/*
 .nav-linksAlt {
     color: rgb(233, 233, 233);
     text-decoration: none;
@@ -65,6 +69,9 @@
     font-size: 105%;
 }
 
+*/
+
+/*
 .nav-linksAlt:hover {
     background-color: #faf4f3;
     border-radius: 10px;
@@ -86,6 +93,8 @@
     transition: all 0.2s ease-out;
 }
 
+
+*/
 .nav-links-mobile {
     display: none;
 }
@@ -186,6 +195,8 @@
     top: 23%;
 }
 
+/*
+
 .logo-cheeryUpAlt img{
     width: 45px;
     height: 50%;
@@ -193,3 +204,5 @@
     left: 3%;
     top: 19%;
 }
+
+*/
