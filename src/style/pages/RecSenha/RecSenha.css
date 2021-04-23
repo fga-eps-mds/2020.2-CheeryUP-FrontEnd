@@ -13,17 +13,12 @@
 }
 
 /*imagem lateral*/
+
 .side-image-Rec img{
   position: relative;
   height: 100vh;
   width: 50vw;
     
-}
-.side-image-Rec2 img{
-  position: relative;
-  height: 100vh;
-  width: 50vw;
-      
 }
 .Rec-Frase{
       position: relative;

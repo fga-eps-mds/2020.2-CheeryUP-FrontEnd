@@ -41,15 +41,8 @@ const RecSenha = ({ SubmitForm }) =>
 
                </div>
                <div className="side-image-Rec" >
-                    <img src="imagens/FundoLateral.png" alt="Fundo Lateral"/>
+                    <img src="img/wallpaper_recSen.png" alt="Fundo Lateral"/>
                 </div> 
-                <div className="side-image-Rec2">
-                    <img src="imagens/textRecSenha.png" alt="Texto Recuperar Senha"/>
-                    <div className = "Rec-Frase">
-                        <Header as= 'h1'>Frase</Header>
-                    </div>
-                </div> 
-
             </div>
         </Fragment>
   
