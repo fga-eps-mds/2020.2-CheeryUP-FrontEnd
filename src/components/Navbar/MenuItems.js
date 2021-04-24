@@ -39,3 +39,22 @@ export const MenuItemsAlt = [
         cName: 'nav-linksAlt'
     },
 ]
+
+export const MenuItemsPsic = [
+    {
+        title: 'Lista de Pacientes',
+        url: '#',
+        cName: 'nav-linksPsic'
+    },
+    {
+        title: 'Dashboards Gerais',
+        url: '#',
+        cName: 'nav-linksPsic'
+
+    },
+    {
+        title: 'Perfil',
+        url:'#',
+        cName: 'nav-linksPsic'
+    }
+]
