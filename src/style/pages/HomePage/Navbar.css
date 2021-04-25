@@ -8,6 +8,7 @@
     font-size: 1.2rem;
 }
 
+/*
 .NavbarItemsAlt {
     background-color: #2D4561;
     height: 12vh;
@@ -18,16 +19,7 @@
     font-size: 1.2rem;
 }
 
-.NavbarItemsPsic {
-    background-color: #2D4561;
-    height: 12vh;
-    width: 85%;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-}
+*/
 
 .nav-menu {
     display: grid;
@@ -57,6 +49,7 @@
     transition: all 0.2s ease-out;
 }
 
+/*
 .nav-linksAlt {
     color: rgb(233, 233, 233);
     text-decoration: none;
@@ -65,6 +58,9 @@
     font-size: 105%;
 }
 
+*/
+
+/*
 .nav-linksAlt:hover {
     background-color: #faf4f3;
     border-radius: 10px;
@@ -72,20 +68,8 @@
     transition: all 0.2s ease-out;
 }
 
-.nav-linksPsic {
-    color: rgb(233, 233, 233);
-    text-decoration: none;
-    padding: 0.5rem 3rem;
-    border-radius: 10px;
-    font-size: 105%;
-}
 
-.nav-linksPsic:hover {
-    border-radius: 10px;
-    color: rgb(167, 167, 167);
-    transition: all 0.2s ease-out;
-}
-
+*/
 .nav-links-mobile {
     display: none;
 }
@@ -186,6 +170,8 @@
     top: 23%;
 }
 
+/*
+
 .logo-cheeryUpAlt img{
     width: 45px;
     height: 50%;
@@ -193,3 +179,5 @@
     left: 3%;
     top: 19%;
 }
+
+*/
