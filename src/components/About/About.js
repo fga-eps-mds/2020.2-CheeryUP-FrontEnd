@@ -1,82 +1,101 @@
 import React from 'react';
 import '../../style/pages/HomePage/About.css';
+import NavbarAlt from '../Navbar/NavbarAlt'
 
 function About(){
     return(
-        <div className='about-container'>
-            <div className='imagem-inferior'>
-                <img src='/imagens/logoCheery_Up_3_-removebg-preview.png' alt='Logo Cereja'/>
-            </div>
-            <div className='titulo-about'>
-                <h1>Somos a </h1>
-                    <img src='/imagens/logoUpper2-removebg-preview.png' alt='Logo Cheery Up'/>
-            </div>
-            <div className='texto-about'>
-                <Texto />
-            </div>
+        <div className='about-content'>
+                <div className="upper-content">
+                    <section className="who-we-are-content">
+                        <h2 className="who-we-are-title">Quem somos?</h2>
+                        <p>Cheery Up é um projeto que dá atenção à saúde psicológica da sociedade, 
+                        especialmente no contexto da pandemia do Covid-19. O propósito da Cheery Up 
+                        consiste em uma plataforma web para ajudar profissionais da psicologia
+                        à monitorar e acompanhar a saúde mental de seus pacientes.
+                        A plataforma irá oferecer ferramentas para melhor fiscalização do
+                        comportamento psicológico dos pacientes, tais como Dashboards e 
+                        Quadros de Evolução.</p>
+                        <p>A Cheery Up nasceu a partir de uma ideia de uma professora da Universidade
+                        de Brasília, Carla Rocha, na qual é desenvolvida uma ideia para ajudar 
+                        a sociedade em um momento tão delicado como a Pandemia do Covid-19.
+                        Esse movimento foi abraçado por um grupo de estudantes da UnB, que juntos
+                        à supervisão da Professora Carla e suas monitoras, está tornando o projeto
+                        Cheery Up real. </p>
+                        <p>Portanto, aos psicólogos que querem facilitar seu trabalho, 
+                        além de ajudar a sociedade, não percam tempo e façam seu Cadastro!</p>
+                    </section>      
+                </div> 
 
+                <section className="devel-group">
+                    <h2>Integrantes</h2>
+                    
+                    <div className="img-group">
+                        <figure className="developer-img">
+                            <a href="https://github.com/Abraao1231" target="_blank">
+                                <img src="imagens/integrantes/abraao-pic.jpg" alt="Foto Abrãao"/>
+                            </a>
+                            <div className="middle">
+                                <figcaption>Abraão Alves</figcaption>
+                            </div>
+                        </figure>
+
+                        <figure className="developer-img">
+                            <a href="https://github.com/antoniotoineto" target="_blank">
+                                <img className="img-developer image" src="imagens/integrantes/antonio-pic.jpg" alt="Foto Antônio"/>
+                            </a>
+                            <div className="middle">
+                                <figcaption>Antônio Neto</figcaption>
+                            </div>
+                        </figure>
+
+                        <figure className="developer-img">
+                            <a href="https://github.com/art1505" target="_blank">
+                                <img src="imagens/integrantes/arthur-pic.jpg" alt="Foto Arthur"/>
+                            </a>
+                            <div className="middle">
+                                <figcaption>Arthur Talles</figcaption>
+                            </div>
+                        </figure>
+
+                        <figure className="developer-img">
+                            <a href="https://github.com/DaviMatheus" target="_blank">
+                                <img src="imagens/integrantes/davi-pic.jpg" alt="Foto Davi"/>
+                            </a>
+                            <div className="middle">
+                                <figcaption>Davi Matheus</figcaption>
+                            </div>
+                        </figure>
+
+                        <figure className="developer-img">
+                            <a href="https://github.com/mibasFerraz" target="_blank">
+                                <img src="imagens/integrantes/lucas-pic.jpg" alt="Foto Lucas"/>
+                            </a>
+                            <div className="middle">
+                                <figcaption>Lucas Ferraz</figcaption>
+                            </div>
+                        </figure>
+                        <figure className="developer-img">
+                            <a href="https://github.com/fernandes-natanael" target="_blank">
+                                <img src="imagens/integrantes/natanael-pic.jpg" alt="Foto Natanael"/>
+                            </a>
+                            <div className="middle">
+                            <figcaption>Natanael Filho</figcaption>
+                            </div>
+                        </figure>
+            
+
+                        <figure className="developer-img">
+                            <a href="https://github.com/NilvanPeres" target="_blank">
+                                <img src="imagens/integrantes/nilvan-pic.jpg" alt="Foto Nilvan"/>
+                            </a>
+                            <div className="middle">
+                            <figcaption>Nilvan Junior</figcaption>
+                            </div>
+                        </figure>
+                    </div>
+
+                </section>
         </div>
-    )
-}
-
-function Texto(){
-    return(
-            <ul>
-                <h1 className='objetivo'>Nosso Objetivo:</h1>
-                    <li>
-                        <h2>
-                            Ajudar a sociedade, principalmente nesse difícil cenário de pandemia.
-                        </h2>
-                    </li>
-                <br></br>
-                <br></br>
-
-                <h1 className='objetivo'>Como faremos isso?</h1>
-                    <li>
-                        <h2>
-                            Dando uma atenção especial para saúde mental
-                            daqueles afetados pelo contexto epidêmico.
-                        </h2>
-                    </li>
-                <br></br>
-                <br></br>
-
-                <h1 className='objetivo'>Quem pode nos ajudar?</h1>
-                    <li>
-                        <h2>
-                            Você, profissional da psicologia, que quer se aliar
-                            à nossa luta!
-                        </h2>
-                    </li>
-                <br></br>
-                <br></br>
-
-                <h1 className='objetivo'>Sobre a ferramenta:</h1>
-
-                    <li>
-                        <h2>
-                            A Cheery Up é uma plataforma web que ajudará os psicólogos
-                            à monitorar e acompanhar a saúde mental de seus 
-                            pacientes.
-                        </h2>
-                    </li>
-                    <li>
-                        <h2>
-                            Tudo isso com o apoio de Dashboards e Quadros de evolução.
-                            Venha experimentar essa incrível ferramenta!
-                        </h2>
-                    </li>
-                <br></br>
-                <br></br>
-            </ul>
-        /*<h3 className='sobre-nos'>
-            Cheery Up é um projeto que dá atenção à saúde mental da sociedade, 
-            especialmente no contexto da pandemia do Covid-19. O propósito da Cheery Up 
-            consiste em uma plataforma web para ajudar profissionais da psicologia
-            à monitorar e acompanhar a saúde psicológica de seus pacientes.
-            Portanto, convidamos você, psicólogo, a se juntar à nossa luta nesse 
-            momento tão delicado no país e no mundo.
-        </h3>*/
     )
 }
 

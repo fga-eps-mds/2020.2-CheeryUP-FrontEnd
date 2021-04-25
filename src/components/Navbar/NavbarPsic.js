@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { MenuItems} from "./MenuItems"
+import { MenuItemsPsic } from "./MenuItems"
 import { Button } from "../Button/Button"
 import '../../style/pages/HomePage/Navbar.css'
 
-//import { useState } from 'react'
-//import { Link } from 'react-router-dom'
+/*
+    Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
+    Essa Navbar seria usada nas páginas após o Login.
+*/
 
-
-
-class Navbar extends Component {
+class NavbarPsic extends Component {
     state = { clicked: false }
 
     handleClick = () => {
@@ -17,12 +17,13 @@ class Navbar extends Component {
 
     render() {
         return(
-            <nav className="NavbarItems">
-                <div className='logo-cheeryUp'>
-                    <img src = '/imagens/logoNavbar.png' alt='Logo'/>
+            <nav className="NavbarItemsPsic">
+                <div className='logo-cheeryUpAlt'>
+                        <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
                 </div>
+
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
+                    {MenuItemsPsic.map((item, index) => {
                         return (
                             <li key={index}>
                                 <a className={item.cName} href={item.url}>
@@ -32,10 +33,15 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                
+
+                {/* <div className="dados-psicologo">
+                    Nome do Psicólogo<br/>
+                    Número do CRP
+                </div> */}
+
             </nav>
         )
     }
 }
 
-export default Navbar
+export default NavbarPsic

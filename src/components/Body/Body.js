@@ -7,17 +7,28 @@ function Body() {
     return (
         <div className='body-container'>
             <div className='imagem-superior'>
-                <img src="/imagens/logoCerebro5-Frontal-removebg-preview.png" alt="Imagem Logo"/>
+                <img src="/imagens/imagemHome.png" alt="Imagem Logo" width='100%' height='100%'/>
             </div>
-            <div>
-                <h1 className='msg-convite'>Junte-se à nossa causa</h1>
+            <div className='convite'>
+                <h1 className='mensagem'>Faça parte da nossa equipe!</h1>
+                <h2 className='submensagem'>
+                    Escolha a ferramenta que facilita
+                    a gerência de seus pacientes.
+                </h2>
             </div>
             <div className='body-botao'>
                 <ButtonCad>
-                    Cadastre-se
+                    Faça seu Cadastro
                 </ButtonCad>
             </div>
+            <div className='rodape'>
+                <div className='imagem-rodape'>
+                    <img src="/imagens/github.png" alt="Imagem Logo" width='50' height='50'/>
+                </div>
+            </div>
+            
         </div>
+        
     )
 }
 

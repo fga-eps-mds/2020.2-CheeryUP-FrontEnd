@@ -14,8 +14,12 @@ services:
           - NODE_ENV=development
         tty: true
         stdin_open: true
-      
+        networks:
+          - network-api 
+
 volumes: 
   node_modules:
   app:
       
+networks:
+  network-api:

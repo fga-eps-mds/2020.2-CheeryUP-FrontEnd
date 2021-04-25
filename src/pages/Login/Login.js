@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import useState from 'react'
 import '../../style/pages/Login/Login.css';
-import useForm from '../../components/useForm';
+import useForm from '../../components/useFormSignIn';
 import { Card, Form, Button, Checkbox, Image} from 'semantic-ui-react'
 
 function validate(values){
@@ -27,9 +27,9 @@ const Login = ({ SubmitForm }) => {
             <Fragment>
 
                 <div className="form-login-container">
-                    <div class="top-login">
+                    <div class="top-login" >
                         <img src="img/logo_word.png" alt="cereja" class="form-img-login" />
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                         <button className="form-input-btn-home" type="submit">Inicio</button>  
                         </a>
                     </div>
@@ -51,7 +51,7 @@ const Login = ({ SubmitForm }) => {
                                         {errors.email && <p class="p-message">{errors.email}</p>}
                                     <Form.Input placeholder="Senha" label="Senha" required fluid onChange={handleChange} name='senha' value={values.senha}/>
                                         {errors.senha && <p class="p-message">{errors.senha}</p>}
-                                        <p><a className="links" href="#">Esqueceu sua senha?</a></p>
+                                        <p><a className="links" href="http://localhost:3000/RecuperarSenha">Esqueceu sua senha?</a></p>
                                     <Button type="submit" onClick={handleSubmit}>Login</Button>
                            
                                 </Form>
@@ -59,7 +59,7 @@ const Login = ({ SubmitForm }) => {
                             <br />
                             <span className="form-input-help">
                                         Não possui uma conta ?
-                                        <a className="links" href="http://localhost:3000/SignUP">Cadastre-se</a>
+                                        <a className="links" href="/SignUP">Cadastre-se</a>
                             </span>
                         </Card>
                    
