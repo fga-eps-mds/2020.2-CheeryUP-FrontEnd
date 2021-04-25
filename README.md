@@ -1,6 +1,5 @@
 <p align="center"><a href="image" target="_blank"><img width="600"src="./public/logoReadme.png"></a></p>   
 
-
 ## ℹ️ Sobre o projeto
 <p align="justify"> O CheeryUP é um sistema direcionado para psicólogos que foi arquitetado por Carla Silva Rocha Aguiar, com a ideia de disponibilizar uma plataforma online para prontuário de atendimento de pacientes que estão em fase de recuperação da COVID-19.</p>
 <p align="justify"> O principal intuito do projeto, é auxiliar a saúde mental dos indivíduos que se encontram em isolamento social. Outro fator, é coletar dados para definir quais ações preventivas e corretivas, podem ser realizadas em um cenário semelhante.</p> 
