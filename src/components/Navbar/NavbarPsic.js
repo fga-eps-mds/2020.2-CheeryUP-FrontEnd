@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MenuItemsPsic } from "./MenuItems"
+import { NavbarItemsPsic } from "./MenuItems"
 import { Button } from "../Button/Button"
 import '../../style/pages/HomePage/NavbarPsic.css'
 
@@ -23,7 +23,7 @@ class NavbarPsic extends Component {
                 </div>
 
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItemsPsic.map((item, index) => {
+                    {NavbarItemsPsic.map((item, index) => {
                         return (
                             <li key={index}>
                                 <a className={item.cName} href={item.url}>
@@ -34,10 +34,10 @@ class NavbarPsic extends Component {
                     })}
                 </ul>
 
-                {/* <div className="dados-psicologo">
+                { <div className="dados-psicologo">
                     Nome do Psicólogo<br/>
                     Número do CRP
-                </div> */}
+                </div> }
 
             </nav>
         )
