@@ -1,0 +1,54 @@
+.perfil-psicologo-container .all{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+}
+.perfil-psicologo-container .all .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+}
+.perfil-psicologo-container .all .left .data{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    padding: 30px;
+    font-size: 18px;
+
+    color: #eee;
+    background: #2d4561;
+}
+.perfil-psicologo-container .all .left .data button{
+    border-radius: 5px;
+    height: 30px;
+    width: 130px;
+    color: #2d4561;
+}
+.perfil-psicologo-container .all .right{
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #2d4561;
+}
+
+.perfil-psicologo-container .all .right img{
+    height: 300px;
+}
+.perfil-psicologo-container .all .right .buttons{
+    display: flex;
+    margin-top: 85px;
+    justify-content: space-between;
+}
+.perfil-psicologo-container .all .right .buttons button{
+    border-radius: 5px;
+    height: 50px;
+    width: 200px;
+    background: #2d4561;
+    color: #eee;
+    font-size: 18px;
+}
