@@ -37,110 +37,112 @@ class GraficoRegiao extends Component {
                 case "AC":
                     legenda[legenda.indexOf(regiao)] = "Águas Claras"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "AS":
+                    legenda[legenda.indexOf(regiao)] = "Asa Sul"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "AN":
+                    legenda[legenda.indexOf(regiao)] = "Asa Norte"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "AR":
+                    legenda[legenda.indexOf(regiao)] = "Arniqueiras"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "BZ":
+                    legenda[legenda.indexOf(regiao)] = "Brazilândia"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "CA":
+                    legenda[legenda.indexOf(regiao)] = "Candangolândia"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "CI":
+                    legenda[legenda.indexOf(regiao)] = "Ceilândia"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "CZ":
+                    legenda[legenda.indexOf(regiao)] = "Cruzeiro"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "FE":
+                    legenda[legenda.indexOf(regiao)] = "Fercal"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "GA":
+                    legenda[legenda.indexOf(regiao)] = "Gama"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "GR":
+                    legenda[legenda.indexOf(regiao)] = "Guará"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "IT":
+                    legenda[legenda.indexOf(regiao)] = "Itapoã"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "JB":
+                    legenda[legenda.indexOf(regiao)] = "Jardim Botânico"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "LS":
+                    legenda[legenda.indexOf(regiao)] = "Lago Sul"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "LN":
+                    legenda[legenda.indexOf(regiao)] = "Lago Norte"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "NB":
+                    legenda[legenda.indexOf(regiao)] = "Núcleo Bandeirante"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "PW":
+                    legenda[legenda.indexOf(regiao)] = "Park Way"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "PA":
+                    legenda[legenda.indexOf(regiao)] = "Paranoá"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "PL":
+                    legenda[legenda.indexOf(regiao)] = "Planaltina"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "PP":
+                    legenda[legenda.indexOf(regiao)] = "Plano Piloto"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "RE":
+                    legenda[legenda.indexOf(regiao)] = "Recanto das Emas"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "RF":
+                    legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SA":
+                    legenda[legenda.indexOf(regiao)] = "Samambaia"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SM":
+                    legenda[legenda.indexOf(regiao)] = "Santa Maria"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SB":
+                    legenda[legenda.indexOf(regiao)] = "São Sebastião"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SCIA":
+                    legenda[legenda.indexOf(regiao)] = "SCIA"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "RF":
+                    legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "RF2":
+                    legenda[legenda.indexOf(regiao)] = "Riacho Fundo II"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SI":
+                    legenda[legenda.indexOf(regiao)] = "SIA"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SO":
+                    legenda[legenda.indexOf(regiao)] = "Sobradinho"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SO2":
+                    legenda[legenda.indexOf(regiao)] = "Sobradinho II"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SN":
+                    legenda[legenda.indexOf(regiao)] = "Sol Nascente"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "SD":
+                    legenda[legenda.indexOf(regiao)] = "Sudoeste"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "TA":
+                    legenda[legenda.indexOf(regiao)] = "Taguatinga"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "VA":
+                    legenda[legenda.indexOf(regiao)] = "Varjão"
                     break;
-                case "AC":
-                    legenda[legenda.indexOf(regiao)] = "Águas Claras"
+                case "VP":
+                    legenda[legenda.indexOf(regiao)] = "Vicente Pires"
+                case "EO":
+                    legenda[legenda.indexOf(regiao)] = "Entre outros"
             }
         })
 
