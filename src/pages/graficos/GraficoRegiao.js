@@ -152,8 +152,7 @@ class GraficoRegiao extends Component {
             labels: legenda,
             datasets: [
                 {
-                    label: {}
-                        'Pessoas por região',
+                    label: 'Pessoas por região',
                     data: qtdRegioes,
                     backgroundColor: [
                         'rgba(103, 160, 224, 0.7)', // azul claro
@@ -174,7 +173,9 @@ class GraficoRegiao extends Component {
         };
         return (
             <>
-                <Bar data={data} />
+                <Bar
+                 data={data}
+                  />
             </>)
 
     }
