@@ -10,7 +10,7 @@ class GraficoRegiao extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('/psicologos/33333333333/pacientes');
+        const response = await api.get('api/psicologos/11111111111/pacientes');
         this.setState({ pessoas: response.data });
     }
 
@@ -152,18 +152,23 @@ class GraficoRegiao extends Component {
             labels: legenda,
             datasets: [
                 {
-                    label: 'Pessoas por região',
+                    label: {}
+                        'Pessoas por região',
                     data: qtdRegioes,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 206, 86, 0.7)',
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(153, 102, 255, 0.7)',
-                        'rgba(255, 159, 64, 0.7)',
+                        'rgba(103, 160, 224, 0.7)', // azul claro
+                        'rgba(249, 66, 58, 0.7)',//vermelho clar
+                        'rgba(159, 219, 127, 0.7)', // verde claro
+
+                        'rgba(45, 69, 97, 0.7)', // a escuro
+                        'rgba(183, 49, 43, 0.7)', // vermelho escuro
+                        'rgba(108, 194, 74, 0.7)', // verde escuro
+                        
+                        
                     ],
 
                     borderWidth: 1,
+                    borderRadius: 30,
                 },
             ],
         };
