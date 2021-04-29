@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import api from '../../services/api'
 import { Component } from 'react'
