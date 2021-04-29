@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MenuItemsPsic } from "./MenuItems"
 import { Button } from "../Button/Button"
-import '../../style/pages/HomePage/Navbar.css'
+import '../../style/pages/HomePage/NavbarPsic.css'
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
@@ -18,7 +18,7 @@ class NavbarPsic extends Component {
     render() {
         return(
             <nav className="NavbarItemsPsic">
-                <div className='logo-cheeryUpAlt'>
+                <div className='logo-cheeryUpPsic'>
                         <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
                 </div>
 

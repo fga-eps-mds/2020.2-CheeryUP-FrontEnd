@@ -10,6 +10,7 @@ import RecSenha from './pages/RecSenha/RecSenha';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ListaPacientes from './pages/ListaPacientes/ListaPacientes';
 import CadastroPac from './pages/Registrar/CadastroPaciente';
+import AttDadosPac from './pages/AtualizaDados/AttPaciente';
 
 export default function Routes() {
     return (
@@ -20,8 +21,8 @@ export default function Routes() {
                 <Route path="/AboutPage" component={AboutPage} />
                 <Route path="/Login" component={Login} />
                 <Route path="/ListaPacientes" component={ListaPacientes} />
-                <Route path="/CadastroPaciente" component={CadastroPac} />
-=======
+                <Route path="/CadastrarPaciente" component={CadastroPac} />
+                <Route path="/AtualizarPaciente" component={AttDadosPac} />
                 <Route path="/RecuperarSenha" component={RecSenha} />
             </Switch>
         </BrowserRouter>
