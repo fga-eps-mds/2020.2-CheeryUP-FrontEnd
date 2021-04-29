@@ -22,7 +22,7 @@ class NavbarPsic extends Component {
                         <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
                 </div>
 
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <ul className={this.state.clicked ? 'nav-menu activePsic' : 'nav-menuPsic'}>
                     {MenuItemsPsic.map((item, index) => {
                         return (
                             <li key={index}>

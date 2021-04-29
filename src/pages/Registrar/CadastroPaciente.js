@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsic';
+import useFormPaciente from '../../components/useForm';
 import '../../style/pages/Cadastro/CadastroPaciente.css';
 
 const opcoesRegiao = [
@@ -15,16 +16,48 @@ const opcoesRegiao = [
     { key: 9, text: 'Guará', value: 9 },
   ]
 
-class CadastroPac extends Component {
-    state = {}
+  function validate(values){
+    let errors = {};
+    if (!values.nome.trim()) {
+        errors.nome = 'É necessário preencher seu nome';
+    }
+    // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
+    //   errors.name = 'Enter a valid name';
+    // }
+      
+    if (!values.nascimento) {
+        errors.nascimento = 'É necessário preencher seu e-mail';
+    }
+    
+    if (!values.regiao) {
+        errors.regiao = 'É necessário preencher nºcrp';
+    }
+    if (!values.nCPF) {
+        errors.nCPF = 'É necessário preencher uma senha';
+    } else if (values.senha.length < 11) {
+        errors.nCPF = 'A senha deve conter mais de 6 caracteres';
+    }
 
-    handleChange = (e, { value }) => this.setState({ value })
+    if (!values.genero) {
+        errors.genero = 'É necessário confirmar sua senha';
+    }
 
-    render() {
-        const { value } = this.state
-        return (
-            <Fragment className="container-cadPac">
-                <NavbarPsic />
+    if (!values.descricao) {
+        errors.descricao = 'É necessário confirmar sua senha';
+    }
+    return errors;
+};
+
+const CadastroPac = ({ SubmitForm }) => {
+    //state = {}
+    //handleChange = (e, { value }) => this.setState({ value })
+    //const { value } = ''
+
+    const { handleChange, values, handleSubmit, errors } = useFormPaciente(SubmitForm, validate);
+
+    return(
+        <Fragment className="container-cadPac">
+                <NavbarPsic /> 
 
                 <div className="dados-psicologo">
                     Nome do Psicólogo <br/>
@@ -61,20 +94,20 @@ class CadastroPac extends Component {
                                 <Form.Radio
                                     label='Masculino'
                                     value='masc'
-                                    checked={value === 'masc'}
-                                    onChange={this.handleChange}
+                                    //checked={value === 'masc'}
+                                    //onChange={this.handleChange}
                                 />
                                 <Form.Radio
                                     label='Feminino'
                                     value='fem'
-                                    checked={value === 'fem'}
-                                    onChange={this.handleChange}
+                                    //checked={value === 'fem'}
+                                    //onChange={this.handleChange}
                                 />
                                 <Form.Radio
                                     label='Indefinido'
                                     value='ind'
-                                    checked={value === 'ind'}
-                                    onChange={this.handleChange}
+                                    //checked={value === 'ind'}
+                                    //onChange={this.handleChange}
                                 />
                                 </Form.Group>
                             </div>
@@ -88,8 +121,7 @@ class CadastroPac extends Component {
                     </Form>
                 </div>
             </Fragment>
-        )
-    }
+    )
 }
 
 export default CadastroPac;

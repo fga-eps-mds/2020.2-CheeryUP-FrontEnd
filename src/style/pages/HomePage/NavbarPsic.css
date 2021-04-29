@@ -9,6 +9,19 @@
     font-size: 1.2rem;
 }
 
+.nav-menuPsic {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    position: absolute;
+    right: 0;
+    grid-gap: 10px;
+    list-style: none;
+    text-align: right;
+    width: 70vw;
+    justify-content: right;
+    margin-right: 2rem;
+}
+
 .nav-linksPsic {
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -29,4 +42,21 @@
     position: absolute;
     left: 2%;
     top: 23%;
+}
+
+@media screen and (max-width: 960px) {
+    .NavbarItemsPsic{
+        width: 100%;
+        position: absolute;
+        font-size: 1rem;
+    }
+
+    .dados-psicologo-attPac{
+        display: none;
+    }
+
+    .dados-psicologo{
+        display: none;
+    }
+
 }
