@@ -1,62 +1,39 @@
-.NavbarItemsPsic {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.NavbarItemsPsic{
     background-color: #2D4561;
-    width: 85%;
-    height: 12vh;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+    height: 70px;
     font-size: 1.2rem;
 }
 
-.nav-menuPsic {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    position: absolute;
-    right: 0;
-    grid-gap: 10px;
-    list-style: none;
-    text-align: right;
-    width: 70vw;
-    justify-content: right;
-    margin-right: 2rem;
+.NavbarItemsPsic .logo-cheeryUpAlt img{
+    align-items: center;
+    width: 40px;
+    height: 56px;
+    justify-content: left;
+    margin: 4px 20px;
 }
 
-.nav-linksPsic {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 10px;
-    font-size: 90%;
+
+.NavbarItemsPsic .dados-psicologo{
+    height: 70px;
+    display:flex;
+    align-items: center;
 }
 
-.nav-linksPsic:hover {
-    border-radius: 10px;
-    color: rgb(138, 180, 214);
-    transition: all 0.2s ease-out;
+.NavbarItemsPsic li a{
+    margin-left: 100px;
+    font-size: 1.4rem;
+    color:#eee;
 }
 
-.logo-cheeryUpPsic img{
-    width: 3vw;
-    height: 6vh;
-    position: absolute;
-    left: 2%;
-    top: 23%;
-}
-
-@media screen and (max-width: 960px) {
-    .NavbarItemsPsic{
-        width: 100%;
-        position: absolute;
-        font-size: 1rem;
-    }
-
-    .dados-psicologo-attPac{
-        display: none;
-    }
-
-    .dados-psicologo{
-        display: none;
-    }
-
+.NavbarItemsPsic .nav-menu{
+    margin-right: 350px;
+    margin-top: -45px;
 }
