@@ -38,8 +38,7 @@ export default function useForm(callback, validate) {
         async () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {
                 console.log(values);
-                
-                
+
                 data.append('user.username', values.nome)
                 data.append('user.password', values.senha)
                 data.append('user.email', values.email)
@@ -47,19 +46,16 @@ export default function useForm(callback, validate) {
                 data.append('bio', values.bio)
                 data.append('genero', values.genero)
 
-    
                 await api.post('api/psicologos/', data)
-                    .then(() => {
-                        alert("Cadastro efetuado passado!");  
+                    .then((data) => {
+                        alert("Cadastro efetuado passado!");
+                        console.log(data.data.token)
                     })
                     .catch((err) => alert("Cadastro Inválido"))
-    
             }
-   
         },
         [errors]
     );
-
 
     return { handleChange, values, handleSubmit, errors };
 };

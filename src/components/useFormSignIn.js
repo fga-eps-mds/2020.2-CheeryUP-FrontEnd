@@ -33,14 +33,15 @@ export default function useFormSignIn(callback, validate) {
             if (Object.keys(errors).length === 0 && isSubmitting) {
                 console.log(values);
                 
-                data.append('user.username', values.nome)
-                data.append('user.password', values.senha)
+                data.append('username', values.nome)
+                data.append('password', values.senha)
     
-                await api.post('login/api/login/', data)
-                    .then(() => {
-                        alert("Login efetuado passado!");  
+                await api.post('api-token-auth/', data)
+                    .then((data) => {
+                        alert("Login efetuado passado!");
+                        console.log(data.data.token)
                     })
-                    .catch((err) => alert("Cadastro Inválido"))
+                    .catch((err) => alert("Login Inválido"))
     
             }
    
