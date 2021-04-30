@@ -43,7 +43,7 @@ export const MenuItemsAlt = [
 export const MenuItemsPsic = [
     {
         title: 'Lista de Pacientes',
-        url: '#',
+        url: '/ListaPacientes',
         cName: 'nav-linksPsic'
     },
     {
