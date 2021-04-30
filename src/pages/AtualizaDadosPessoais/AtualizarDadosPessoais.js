@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsic';
 import '../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css';
+import { Redirect } from 'react-router';
 
 
 class AttDadosPsico extends Component {
@@ -73,8 +74,8 @@ class AttDadosPsico extends Component {
                             </div>
                         </div>
                         <span className="form-input-attPsico">
-                                 <Form.Button>Alterar Senha</Form.Button>
-                                <a className="links" href="/AtualizarSenha"></a>
+                                <button type="button" className="default-buttonAlt" >Alterar Senha </button> 
+                                <a href="/AtualizarSenha"> clique aqui (consertar)</a>
                         </span>
 
                     </Form>

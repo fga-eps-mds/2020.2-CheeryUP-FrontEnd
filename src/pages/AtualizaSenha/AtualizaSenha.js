@@ -44,7 +44,7 @@ class AttSenha extends Component {
                                 </Form.Group>
                             </div>
                             <div className="quarta-linha-attSenha">
-                                <Form.Button> Alterar</Form.Button>
+                                <Form.Button> Confirmar</Form.Button>
                                 
                             </div>
                         </div>

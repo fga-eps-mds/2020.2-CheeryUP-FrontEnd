@@ -52,16 +52,24 @@
 }
 
 .quinta-linha-attPsico{
-    width: 120vw;
+    width: 45vw;
     height: 45vh;
     left: 40%;
     right: 40%; 
     top: 100%;
     position: absolute;
 }
+
 .form-input-attPsico{
-    top: 120%;
-    left: 70%;
+    top: 125%;
+    left: 75%;
     right: 5%; 
     position: absolute;
+}
+
+.default-buttonAlt{
+    background-color: #a39f9f;
+    padding: 0.40rem 0.5rem 0.35rem 0.5rem;
+    border-radius: 5px;
+    font-size: 15px;
 }
