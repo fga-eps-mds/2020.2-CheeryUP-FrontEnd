@@ -68,7 +68,8 @@
 }
 
 .default-buttonAlt{
-    background-color: #a39f9f;
+    background-color: #cac6c6;
+    color: black;
     padding: 0.40rem 0.5rem 0.35rem 0.5rem;
     border-radius: 5px;
     font-size: 15px;

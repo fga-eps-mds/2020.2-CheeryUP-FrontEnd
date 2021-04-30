@@ -45,23 +45,17 @@ class AttDadosPsico extends Component {
                             </div>
                             <div className="quarta-linha-attPsico">
                                 <Form.Group inline>
-                                <label>Gênero</label>
+                                <label> Avaliação da plataforma: </label>
                                 <Form.Radio
-                                    label='Masculino'
-                                    value='masc'
-                                    checked={value === 'masc'}
+                                    label='Satisfeito'
+                                    value='good'
+                                    checked={value === 'good'}
                                     onChange={this.handleChange}
                                 />
                                 <Form.Radio
-                                    label='Feminino'
-                                    value='fem'
-                                    checked={value === 'fem'}
-                                    onChange={this.handleChange}
-                                />
-                                <Form.Radio
-                                    label='Indefinido'
-                                    value='ind'
-                                    checked={value === 'ind'}
+                                    label='Insatisfeito'
+                                    value='bad'
+                                    checked={value === 'bad'}
                                     onChange={this.handleChange}
                                 />
 
@@ -74,8 +68,9 @@ class AttDadosPsico extends Component {
                             </div>
                         </div>
                         <span className="form-input-attPsico">
+                                <a href="/AtualizarSenha">
                                 <button type="button" className="default-buttonAlt" >Alterar Senha </button> 
-                                <a href="/AtualizarSenha"> clique aqui (consertar)</a>
+                                </a>
                         </span>
 
                     </Form>
