@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ListaPacientes from './pages/ListaPacientes/ListaPacientes';
 import CadastroPac from './pages/Registrar/CadastroPaciente';
 import AttDadosPac from './pages/AtualizaDados/AttPaciente';
+import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
 
 export default function Routes() {
@@ -22,6 +23,7 @@ export default function Routes() {
                 <Route path="/ListaPacientes" component={ListaPacientes} />
                 <Route path="/CadastrarPaciente" component={CadastroPac} />
                 <Route path="/AtualizarPaciente" component={AttDadosPac} />
+                <Route path="/PerfilPsicologo" component={PerfilPsicologo} />
                 <Route path="/DashboardPacientes" component={DashboardPacientes}/>
                 <Route path="/RecuperarSenha" component={RecSenha} />
             </Switch>
