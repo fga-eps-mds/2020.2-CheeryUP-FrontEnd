@@ -61,16 +61,24 @@
 }
 
 .form-input-attPsico{
+    
     top: 125%;
     left: 75%;
     right: 5%; 
     position: absolute;
 }
 
+.default-buttonAtt{
+    background-color: #2D4561;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .default-buttonAlt{
     background-color: #cac6c6;
     color: black;
-    padding: 0.40rem 0.5rem 0.35rem 0.5rem;
+    padding: 0.59rem 1rem 0.5rem 1rem;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 14px;
 }

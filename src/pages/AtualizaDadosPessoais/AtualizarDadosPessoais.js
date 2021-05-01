@@ -64,7 +64,9 @@ class AttDadosPsico extends Component {
                             </div>
 
                             <div className="quinta-linha-attPsico">
-                                <Form.Button>Atualizar</Form.Button>
+                                <a href="/">
+                                <button type="button" className="default-buttonAtt" >Atualizar </button> 
+                                </a>
                             </div>
                         </div>
                         <span className="form-input-attPsico">
