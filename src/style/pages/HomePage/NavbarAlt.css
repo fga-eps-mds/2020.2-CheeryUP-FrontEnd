@@ -26,9 +26,9 @@
 }
 
 .nav-items{
-        display: flex;
-        list-style: none;
-        margin-right: 2rem;    
+    display: flex;
+    list-style: none;
+    margin-right: 2rem;
 }
 
 .nav-items li a{

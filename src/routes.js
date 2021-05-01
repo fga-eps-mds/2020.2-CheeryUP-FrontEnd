@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import SignUP from './pages/Registrar/SignUP';
 import Home from './pages/HomePage/Home';
-import About from './components/About/About';
-import Navbar from './components/Navbar/Navbar'
 import Login from './pages/Login/Login';
 import RecSenha from './pages/RecSenha/RecSenha';
 import AboutPage from './pages/AboutPage/AboutPage';
@@ -13,6 +11,9 @@ import CadastroPac from './pages/Registrar/CadastroPaciente';
 import AttDadosPac from './pages/AtualizaDados/AttPaciente';
 import AttDadosPsico from './pages/AtualizaDadosPessoais/AtualizarDadosPessoais';
 import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
+import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
+import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
+
 
 export default function Routes() {
     return (
@@ -27,6 +28,8 @@ export default function Routes() {
                 <Route path="/AtualizarPaciente" component={AttDadosPac} />
                 <Route path="/AtualizarSenha" component={AttSenha} />
                 <Route path="/AtualizarPsicologo" component={AttDadosPsico} />
+                <Route path="/PerfilPsicologo" component={PerfilPsicologo} />
+                <Route path="/DashboardPacientes" component={DashboardPacientes}/>
                 <Route path="/RecuperarSenha" component={RecSenha} />
             </Switch>
         </BrowserRouter>
