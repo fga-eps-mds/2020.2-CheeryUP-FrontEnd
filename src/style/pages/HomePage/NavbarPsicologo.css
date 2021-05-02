@@ -1,0 +1,62 @@
+.NavbarItemsPsicologo {
+    background-color: #2D4561;
+    width: 85%;
+    height: 12vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.nav-menuPsicologo {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    position: absolute;
+    right: 0;
+    grid-gap: 10px;
+    list-style: none;
+    text-align: right;
+    width: 70vw;
+    justify-content: right;
+    margin-right: 2rem;
+}
+
+.nav-linksPsicologo {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    font-size: 90%;
+}
+
+.nav-linksPsicologo:hover {
+    border-radius: 10px;
+    color: rgb(138, 180, 214);
+    transition: all 0.2s ease-out;
+}
+
+.logo-cheeryUpPsicologo img{
+    width: 3vw;
+    height: 6vh;
+    position: absolute;
+    left: 2%;
+    top: 23%;
+}
+
+@media screen and (max-width: 960px) {
+    .NavbarItemsPsicologo{
+        width: 100%;
+        position: absolute;
+        font-size: 1rem;
+    }
+
+    .dados-psicologo-attPac{
+        display: none;
+    }
+
+    .dados-psicologo{
+        display: none;
+    }
+
+}

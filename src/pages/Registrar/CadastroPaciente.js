@@ -1,8 +1,42 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsic';
+import useFormPaciente from '../../components/useForm';
 import '../../style/pages/Cadastro/CadastroPaciente.css';
 
+  function validate(values){
+    let errors = {};
+    if (!values.nome.trim()) {
+        errors.nome = 'É necessário preencher seu nome';
+    }
+    // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
+    //   errors.name = 'Enter a valid name';
+    // }
+      
+    if (!values.nascimento) {
+        errors.nascimento = 'É necessário preencher seu e-mail';
+    }
+    
+    if (!values.regiao) {
+        errors.regiao = 'É necessário preencher nºcrp';
+    }
+    if (!values.nCPF) {
+        errors.nCPF = 'É necessário preencher uma senha';
+    } else if (values.senha.length < 11) {
+        errors.nCPF = 'A senha deve conter mais de 6 caracteres';
+    }
+
+    if (!values.genero) {
+        errors.genero = 'É necessário confirmar sua senha';
+    }
+
+    if (!values.descricao) {
+        errors.descricao = 'É necessário confirmar sua senha';
+    }
+    return errors;
+};
+
+// Opções de Região
 const opcoesRegiao = [
     { key: 1, text: 'Águas Claras', value: 1 },
     { key: 2, text: 'Taguatinga', value: 2 },
@@ -15,22 +49,47 @@ const opcoesRegiao = [
     { key: 9, text: 'Guará', value: 9 },
   ]
 
-  const opcoesGenero = [
-    { key: 1, text: 'Masculino', value: 1 },
-    { key: 2, text: 'Feminino', value: 2 },
-    { key: 3, text: 'Indefinido', value: 3 },
-  ]
-
-class CadastroPac extends Component {
+// Função para escolha de gênero do paciente  
+class Genero extends Component {
     state = {}
-
     handleChange = (e, { value }) => this.setState({ value })
-
+    
     render() {
         const { value } = this.state
-        return (
-            <Fragment className="container-cadPac">
-                <NavbarPsic />
+        return(
+            <Form.Group inline>
+                <label>Gênero</label>
+                <Form.Radio
+                    label='Masculino'
+                    value='masc'
+                    checked={value === 'masc'}
+                    onChange={this.handleChange}
+                />
+                <Form.Radio
+                    label='Feminino'
+                    value='fem'
+                    checked={value === 'fem'}
+                    onChange={this.handleChange}
+                />
+                <Form.Radio
+                    label='Indefinido'
+                    value='ind'
+                    checked={value === 'ind'}
+                    onChange={this.handleChange}
+                />
+            </Form.Group>
+        )
+    }
+}
+
+// Formulário de Cadastrod de Paciente
+const CadastroPac = ({ SubmitForm }) => {
+
+    const { handleChange, values, handleSubmit, errors } = useFormPaciente(SubmitForm, validate);
+
+    return(
+        <Fragment className="container-cadPac">
+                <NavbarPsic /> 
 
                 <div className="dados-psicologo">
                     Nome do Psicólogo <br/>
@@ -62,27 +121,7 @@ class CadastroPac extends Component {
                                 </Form.Group>
                             </div>
                             <div className="terceira-linha">
-                                <Form.Group inline>
-                                <label>Gênero</label>
-                                <Form.Radio
-                                    label='Masculino'
-                                    value='masc'
-                                    checked={value === 'masc'}
-                                    onChange={this.handleChange}
-                                />
-                                <Form.Radio
-                                    label='Feminino'
-                                    value='fem'
-                                    checked={value === 'fem'}
-                                    onChange={this.handleChange}
-                                />
-                                <Form.Radio
-                                    label='Indefinido'
-                                    value='ind'
-                                    checked={value === 'ind'}
-                                    onChange={this.handleChange}
-                                />
-                                </Form.Group>
+                                <Genero />
                             </div>
                             <div className="quarta-linha">
                                 <Form.TextArea label='Descrição' placeholder='Informações adicionais do paciente...' />
@@ -94,8 +133,7 @@ class CadastroPac extends Component {
                     </Form>
                 </div>
             </Fragment>
-        )
-    }
+    )
 }
 
 export default CadastroPac;

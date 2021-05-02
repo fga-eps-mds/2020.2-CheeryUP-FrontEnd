@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { NavbarItemsPsic } from "./MenuItems"
+import { MenuItemsPsic } from "./MenuItems"
 import { Button } from "../Button/Button"
-import '../../style/pages/HomePage/NavbarPsic.css'
+import '../../style/pages/HomePage/NavbarPsicologo.css'
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
@@ -17,13 +17,13 @@ class NavbarPsic extends Component {
 
     render() {
         return(
-            <nav className="NavbarItemsPsic">
-                <div className='logo-cheeryUpPsic'>
+            <nav className="NavbarItemsPsicologo">
+                <div className='logo-cheeryUpPsicologo'>
                         <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
                 </div>
 
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {NavbarItemsPsic.map((item, index) => {
+                <ul className={this.state.clicked ? 'nav-menu activePsicologo' : 'nav-menuPsicologo'}>
+                    {MenuItemsPsic.map((item, index) => {
                         return (
                             <li key={index}>
                                 <a className={item.cName} href={item.url}>
@@ -34,10 +34,10 @@ class NavbarPsic extends Component {
                     })}
                 </ul>
 
-                { <div className="dados-psicologo">
+                {/* <div className="dados-psicologo">
                     Nome do Psicólogo<br/>
                     Número do CRP
-                </div> }
+                </div> */}
 
             </nav>
         )

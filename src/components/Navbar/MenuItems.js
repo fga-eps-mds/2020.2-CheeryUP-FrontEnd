@@ -43,7 +43,7 @@ export const MenuItemsAlt = [
 export const MenuItemsPsic = [
     {
         title: 'Lista de Pacientes',
-        url: '#',
+        url: '/ListaPacientes',
         cName: 'nav-linksPsic'
     },
     {
@@ -54,6 +54,25 @@ export const MenuItemsPsic = [
     },
     {
         title: 'Perfil',
+        url:'#',
+        cName: 'nav-linksPsic'
+    }
+]
+
+export const NavbarItemsPsic = [
+    {
+        title: 'Lista de Pacientes',
+        url: '#',
+        cName: 'nav-linksPsic'
+    },
+    {
+        title: 'Dashboards Gerais',
+        url: '#',
+        cName: 'nav-linksPsic'
+
+    },
+    {
+        title: 'Sair',
         url:'#',
         cName: 'nav-linksPsic'
     }

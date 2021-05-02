@@ -16,7 +16,7 @@
   position: relative;
   height: 100vh;
   width: 50vw;
-  
+ 
 }
 /* propriedades do formulario*/
 .ui.input > input {
@@ -66,16 +66,15 @@
   width: 300px !important;
 }
 
-
-  .top-signup {
-    position: absolute;
-    width: 50vw;
-    height: 70px;
-    background-color:#ffffff;
-    display: flex;
-    text-decoration: none;
-    justify-content: space-between;
-  }
+.top-signup {
+  position: absolute;
+  width: 50vw;
+  height: 70px;
+  background-color:#ffffff;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+}
 
   .top-signup-logo {
     position: relative;
@@ -139,23 +138,6 @@
     color: #f0300efa;
   }
   
-  .form-label {
-    display: ruby-text-container;
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-    color: #fff;
-  }
-  
-  .form-input {
-    background-color: red;
-    display: block;
-    padding-left: 10px;
-    outline: none;
-    border-radius: 2px;
-    height: 40px;
-    width: 100%;
-    border: none;
-  }
   
   .form-input::placeholder {
     color: gray;
@@ -181,33 +163,6 @@
     color :red;
   }
 
-  .form-input-btn-home {
-    height: 70px;
-    width: 210px;
-    border-radius: 25px;
-    
-    background: linear-gradient(
-      90deg,
-      rgba(247, 5, 5, 0) 0%,
-      hsla(0, 29%, 48%, 0) 100%
-    );
-    outline: none;
-    border: none;
-    color: rgb(3, 0, 0);
-    font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-    
-  }
-  
-  .form-input-btn-home:hover {
-    cursor: pointer;
-    background: linear-gradient(
-      90deg,
-      rgb(39, 143, 255) 0%,
-      rgb(12, 99, 250) 100%
-    );
-    transition: all 0.4s ease-out;
-  }
   @media screen and (max-width: 960px) {
     .form-signup-wrap{
       position: relative;
