@@ -20,17 +20,25 @@ class GraficoEvolucaoPaciente extends Component {
         var media = [];
         var soma = 0;
        consultas.forEach(consulta => {
-        for (var indicador in consulta){   
-            if (indicador != "registro"){
+        for (var indicador in consulta){        
+            if (indicador != "registro"){  
+              if (indicador == "humor" || indicador == "estabilidadeDeEmoções"){
+                soma += consulta[indicador]*3
+              }  
+              else{
                 soma += consulta[indicador];
-            }
+              }
+              }
+              
           }
           media.push(soma);
        });
         
        var legenda = [];
+       var i = 1;
        media.forEach(valor => {
-          legenda.push((media.indexOf(valor)+1)+"º consulta")
+          legenda.push(i+"º consulta")
+          i++;
        });
         const data = {
             labels: legenda,
@@ -38,40 +46,21 @@ class GraficoEvolucaoPaciente extends Component {
               {
                 
                 data: media,
-                fill: true,
-                backgroundColor: 'rgb(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 0.2)',
-                tension: 0.3,
+                fill: false,
+                backgroundColor: 'rgba(45, 69, 97, 0.8)',
+                borderColor: 'rgba(45, 69, 97, 0.8)',
+                tension: 0.1,
+                
               },
             ],
-           
-
           };
           
-          
+         
+
         return (
+
             <>
-                <Line data = {data} options= {{
-
-scales: {
-    xAxes: [{
-        gridLines: {
-            display:false
-        }
-    }],
-    yAxes: [{
-        gridLines: {
-            display:false
-        }
-    }]
-},
-title:{
-display:true,
-text:'Minha pica',
-fontiSize:64,
-}
-
-}}/>
+                <Line data = {data}/>
             </>)
 
     }
