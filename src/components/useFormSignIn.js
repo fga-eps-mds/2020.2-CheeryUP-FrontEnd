@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import '../pages/Registrar/SignUP.js'
 
 import api from '../services/api';
+import { useHistory } from 'react-router-dom';
 
 export default function useFormSignIn(callback, validate) {
     const [values, setValues] = useState({
@@ -11,6 +12,7 @@ export default function useFormSignIn(callback, validate) {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const data = new FormData();
+    const history = useHistory();
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -38,6 +40,7 @@ export default function useFormSignIn(callback, validate) {
     
                 await api.post('api-token-auth/', data)
                     .then((data) => {
+                        history.push('/ListaPacientes')
                         alert("Login efetuado passado!");
                         console.log(data.data.token)
                     })
