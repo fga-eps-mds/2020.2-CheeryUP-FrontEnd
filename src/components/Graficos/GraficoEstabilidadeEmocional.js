@@ -2,19 +2,20 @@ import { Line } from 'react-chartjs-2';
 import api from '../../services/api'
 import { Component } from 'react'
 
-class GraficoEvolucaoPaciente extends Component {
+class GraficoEstabilidadeEmocional extends Component {
 
     state = {
         consultas: [],
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/11111111111/pacientes/00000000000/consultas/');
+        const response = await api.get('api/psicologos/11111111111/pacientes/11111111122/consultas/');
         this.setState({ consultas: response.data });
     }
 
-    render() {
 
+    render() {
+         
         var {consultas} = this.state
         var mediaConsulta = [];
         mediaConsulta[0] = 0;
@@ -24,12 +25,8 @@ class GraficoEvolucaoPaciente extends Component {
         for (var indicador in consulta){    
 
             if (indicador != "registro" ){ 
-              console.log(consulta); 
-              if (indicador == "humor" || indicador == "estabilidadeDeEmoções")
-                soma += consulta[indicador]*3
-              else{
-                soma += consulta[indicador];
-              }
+              if (indicador == "convivioFamiliar" || indicador == "capacidadeDeSituaçõesDificeis" || indicador == "convivioAmigos")
+                soma += consulta[indicador]*3;
               }
           }
           mediaConsulta.push(soma);
@@ -49,7 +46,7 @@ class GraficoEvolucaoPaciente extends Component {
             labels: legenda,
             datasets: [
               {
-                label:'Evolução do paciente',
+                label:'Estabilidade emocional',
                 data: mediaConsulta,
                 fill: false,
                 backgroundColor: 'rgba(45, 69, 97, 0.8)',
@@ -59,11 +56,11 @@ class GraficoEvolucaoPaciente extends Component {
               },
             ],
           };
-             
+
         return (
 
             <>
-                <Line data = {data}/>
+                <Line data={data}/>
             </>)
 
     }
@@ -73,4 +70,4 @@ class GraficoEvolucaoPaciente extends Component {
 
 
 
-export default GraficoEvolucaoPaciente;
+export default GraficoEstabilidadeEmocional;

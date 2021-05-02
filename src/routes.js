@@ -12,6 +12,7 @@ import AttDadosPac from './pages/AtualizaDados/AttPaciente';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
 import DashboardEvolucao from './pages/DashboradEvolucao/DashboardEvolucao'
+import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'
 
 export default function Routes() {
     return (
@@ -28,6 +29,7 @@ export default function Routes() {
                 <Route path="/DashboardPacientes" component={DashboardPacientes}/>
                 <Route path="/DashboardEvolucao" component={DashboardEvolucao}/>
                 <Route path="/RecuperarSenha" component={RecSenha} />
+                <Route path="/InformacoesPaciente" component={InformacoesPaciente}/>
             </Switch>
         </BrowserRouter>
     );
