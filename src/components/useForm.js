@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import '../pages/Registrar/SignUP.js'
 
-import api from '../services/api';
+import axiosInstance from '../services/api';
+import { useHistory } from 'react-router-dom';
 
 export default function useForm(callback, validate) {
+    const history = useHistory();
     const [values, setValues] = useState({
         nome: '',
         email: '',
@@ -46,10 +48,11 @@ export default function useForm(callback, validate) {
                 data.append('bio', values.bio)
                 data.append('genero', values.genero)
 
-                await api.post('api/psicologos/', data)
+                await axiosInstance.post('api/psicologos/', data)
                     .then((data) => {
                         alert("Cadastro efetuado passado!");
-                        console.log(data.data.token)
+                        history.push('/Login')
+                        
                     })
                     .catch((err) => alert("Cadastro Inválido"))
             }

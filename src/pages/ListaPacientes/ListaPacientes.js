@@ -19,6 +19,7 @@ class ListaPacientes extends Component{
                             <ul>
                                 <li>Nome do psicologo</li>
                                 <li>Numero CRP</li>
+                                <a href ="/"> <li> Logout</li> </a>
                             </ul>
                         </div>
                     {/*</div>*/}
