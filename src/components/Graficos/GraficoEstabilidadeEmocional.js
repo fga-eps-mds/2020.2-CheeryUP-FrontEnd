@@ -9,7 +9,7 @@ class GraficoEstabilidadeEmocional extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/11111111111/pacientes/11111111122/consultas/');
+        const response = await api.get('api/psicologos/12312312312/pacientes/07483676169/consultas/');
         this.setState({ consultas: response.data });
     }
 
