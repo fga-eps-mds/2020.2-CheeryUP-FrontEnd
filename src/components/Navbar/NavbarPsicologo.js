@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { MenuItemsPsic } from "./MenuItems"
 import { Button } from "../Button/Button"
 import '../../style/pages/HomePage/NavbarPsicologo.css'
-
+import { MenuItemsPsic } from "./MenuItems";
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
     Essa Navbar seria usada nas páginas após o Login.

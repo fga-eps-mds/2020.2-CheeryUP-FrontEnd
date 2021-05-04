@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../pages/Registrar/SignUP.js'
 
-import axiosInstance from '../services/api';
+import api from '../services/api';
 import { useHistory } from 'react-router-dom';
 
 export default function useForm(callback, validate) {
@@ -48,7 +48,7 @@ export default function useForm(callback, validate) {
                 data.append('bio', values.bio)
                 data.append('genero', values.genero)
 
-                await axiosInstance.post('api/psicologos/', data)
+                await api.post('api/psicologos/', data)
                     .then((data) => {
                         alert("Cadastro efetuado passado!");
                         history.push('/Login')

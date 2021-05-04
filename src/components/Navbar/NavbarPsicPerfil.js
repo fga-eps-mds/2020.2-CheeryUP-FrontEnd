@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback } from "react";
-import { MenuItemsPsicPerfil } from "./MenuItems";
 import "../../style/pages/HomePage/NavbarPsicologo.css";
 import axiosInstance from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from "../../store/Psicologo/actions";
+import { MenuItems, MenuItemsPsicPerfil } from "./MenuItems";
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
@@ -24,7 +24,7 @@ export const NavbarPsic = () => {
   },[psic])
   
   return (
-    <nav className="NavbarItemsPsic">
+    <nav className="NavbarItemsPsico">
       <div className="logo-cheeryUpPsic">
         <img src="/imagens/logoNavbarAlt.png" alt="Logo" />
       </div>
