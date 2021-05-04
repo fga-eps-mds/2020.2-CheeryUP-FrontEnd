@@ -50,37 +50,37 @@ const opcoesRegiao = [
   ]
 
 // Função para escolha de gênero do paciente  
-class Genero extends Component {
-    state = {}
-    handleChange = (e, { value }) => this.setState({ value })
+// class Genero extends Component {
+//     state = {}
+//     handleChange = (e, { value }) => this.setState({ value })
     
-    render() {
-        const { value } = this.state
-        return(
-            <Form.Group inline>
-                <label>Gênero</label>
-                <Form.Radio
-                    label='Masculino'
-                    value='masc'
-                    checked={value === 'masc'}
-                    onChange={this.handleChange}
-                />
-                <Form.Radio
-                    label='Feminino'
-                    value='fem'
-                    checked={value === 'fem'}
-                    onChange={this.handleChange}
-                />
-                <Form.Radio
-                    label='Indefinido'
-                    value='ind'
-                    checked={value === 'ind'}
-                    onChange={this.handleChange}
-                />
-            </Form.Group>
-        )
-    }
-}
+//     render() {
+//         const { value } = this.state
+//         return(
+//             <Form.Group inline>
+//                 <label>Gênero</label>
+//                 <Form.Radio
+//                     label='Masculino'
+//                     value='masc'
+//                     checked={value === 'masc'}
+//                     onChange={this.handleChange}
+//                 />
+//                 <Form.Radio
+//                     label='Feminino'
+//                     value='fem'
+//                     checked={value === 'fem'}
+//                     onChange={this.handleChange}
+//                 />
+//                 <Form.Radio
+//                     label='Indefinido'
+//                     value='ind'
+//                     checked={value === 'ind'}
+//                     onChange={this.handleChange}
+//                 />
+//             </Form.Group>
+//         )
+//     }
+//}
 
 // Formulário de Cadastrod de Paciente
 const CadastroPac = ({ SubmitForm }) => {
@@ -88,7 +88,8 @@ const CadastroPac = ({ SubmitForm }) => {
     const { handleChange, values, handleSubmit, errors } = useFormPaciente(SubmitForm, validatePac);
 
     return(
-        <Fragment className="container-cadPac">
+        <Fragment>
+            <div className="container-cadPac">
                 <NavbarPsic /> 
 
                 <div className="dados-psicologo">
@@ -105,15 +106,15 @@ const CadastroPac = ({ SubmitForm }) => {
                         <div className="form-items">
                             <div className="primeira-linha">
                                 <Form.Group widths='equal'>
-                                    <Form.Input fluid label="Nome" placeholder="Nome do Paciente" required fluid onChance={handleChange} name='nomePac' value={values.nomePac}/>
+                                    <Form.Input fluid label="Nome" placeholder="Nome do Paciente" required fluid onChange={handleChange} name='nomePac' value={values.nomePac}/>
                                     {errors.nomePac && <p class="alert-paciente-msg">{errors.nomePac}</p>}
                                 </Form.Group>
                             </div>
                             <div className="segunda-linha">
                                 <Form.Group widths='equal'>
-                                    <Form.Input fluid label='Data de Nascimento' placeholder='dd/mm/aaaa' required fluid onChance={handleChange} name='nascimento' value={values.nascimento}/>
+                                    <Form.Input fluid label='Data de Nascimento' placeholder='dd/mm/aaaa' required fluid onChange={handleChange} name='nascimento' value={values.nascimento}/>
                                     {errors.nascimento && <p class="alert-paciente-msg">{errors.nascimento}</p>}
-                                    <Form.Input fluid label='CPF' placeholder='CPF do Paciente' required fluid onChance={handleChange} name='nCPF' value={values.nCPF}/>
+                                    <Form.Input fluid label='CPF' placeholder='CPF do Paciente' required fluid onChange={handleChange} name='nCPF' value={values.nCPF}/>
                                     {errors.nCPF && <p class="alert-paciente-msg">{errors.nCPF}</p>}
                                     <Form.Select
                                         fluids
@@ -124,17 +125,18 @@ const CadastroPac = ({ SubmitForm }) => {
                                 </Form.Group>
                             </div>
                             <div className="terceira-linha">
-                                <Genero />
+
                             </div>
                             <div className="quarta-linha">
                                 <Form.TextArea label='Descrição' placeholder='Informações adicionais do paciente...' />
                             </div>
                             <div className="quinta-linha">
-                                <Form.Button type="submit" onClick={handleSubmit}>Cadastrar</Form.Button>
+                                <Button type="submit" onClick={handleSubmit}>Cadastrar</Button>
                             </div>
                         </div>
                     </Form>
                 </div>
+            </div>
             </Fragment>
     )
 }

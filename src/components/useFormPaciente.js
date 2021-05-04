@@ -5,12 +5,12 @@ import api from '../services/api';
 
 export default function useFormPaciente(callback, validatePac) {
     const [values, setValues] = useState({
-        nomePac: 'antoniotoineto',
-        nascimento: '10-10-2005',
-        nCPF: '55560396109',
+        nomePac: '',
+        nascimento: '',
+        nCPF: '',
         regiao: 'AC',
         generoPac: 'M',
-        descricao: 'alo familia',
+        descricao: '',
         situacao: 'Controlada'
         // genero: "M"
 
@@ -37,6 +37,18 @@ export default function useFormPaciente(callback, validatePac) {
 
     // Ainda falta completar toda essa parte aqui ksksksks
 
+    // const headers = {
+        
+    //     // baseURL: baseURL,
+    //     // timeout: 5000,
+    //     // headers: 
+    //     'Authorization': localStorage.getItem('access_token')
+    //         ? 'JWT ' + localStorage.getItem('access_token')
+    //         : null,
+    //     'Content-Type': 'application/json'
+        
+    // }
+    
     useEffect(
         async () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {
@@ -50,8 +62,7 @@ export default function useFormPaciente(callback, validatePac) {
                 dataPaciente.append('situacao', values.situacao)
                 dataPaciente.append('descricao', values.descricao)
 
-    
-                await api.post('api/psicologos/12345678911/pacientes/', dataPaciente)
+                await api.post('api/psicologos/12345678911/pacientes/', dataPaciente) 
                     .then(() => {
                         alert("Cadastro efetuado passado!");  
                     })
