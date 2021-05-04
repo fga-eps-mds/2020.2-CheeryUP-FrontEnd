@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "../pages/Registrar/CadastroPaciente";
 import "../pages/ListaPacientes/ListaPacientes";
 
-import axiosInstance from "..//api";
+import axiosInstance from '../services/api';
 
 export default function useFormPaciente(callback, validate) {
   const [values, setValues] = useState({

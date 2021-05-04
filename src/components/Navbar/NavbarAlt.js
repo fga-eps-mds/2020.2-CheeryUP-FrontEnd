@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { NavbarItemsPsic } from "./MenuItems";
-import "../../style/pages/HomePage/NavbarPsic.css";
+import { MenuItemsPsic } from "./MenuItems";
+import "../../style/pages/HomePage/NavbarPsicologo.css";
 import axiosInstance from "../../services/api";
 
 /*
@@ -22,7 +22,7 @@ export const NavbarAlt = () => {
       </div>
 
       <ul className="nav-menu">
-        {NavbarItemsPsic.map((item, index) => {
+        {MenuItemsPsic.map((item, index) => {
           return (
             <li key={index}>
               <a className={item.cName} href={item.url}>

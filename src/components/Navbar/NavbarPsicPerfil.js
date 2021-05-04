@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from "react";
-import { NavbarItemsPsic } from "./MenuItems";
-import "../../style/pages/HomePage/NavbarPsic.css";
+import { MenuItemsPsicPerfil } from "./MenuItems";
+import "../../style/pages/HomePage/NavbarPsicologo.css";
 import axiosInstance from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from "../../store/Psicologo/actions";
@@ -30,7 +30,7 @@ export const NavbarPsic = () => {
       </div>
 
       <ul className="nav-menu">
-        {NavbarItemsPsic.map((item, index) => {
+        {MenuItemsPsicPerfil.map((item, index) => {
           return (
             <li key={index}>
               <a className={item.cName} href={item.url}>

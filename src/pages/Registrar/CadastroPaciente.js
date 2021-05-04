@@ -88,7 +88,8 @@ const CadastroPac = ({ SubmitForm }) => {
     const { handleChange, values, handleSubmit, errors } = useFormPaciente(SubmitForm, validate);
 
     return(
-        <Fragment className="container-cadPac">
+        <Fragment>
+            <div className="container-cadPac">
                 <NavbarPsic /> 
 
                 <div className="dados-psicologo">
@@ -132,6 +133,7 @@ const CadastroPac = ({ SubmitForm }) => {
                         </div>
                     </Form>
                 </div>
+            </div>
             </Fragment>
     )
 }

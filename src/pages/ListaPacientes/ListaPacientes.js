@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
 import useFormPaciente from "../../components/useFormPaciente";
-import {NavbarPsic} from '../../components/Navbar/NavbarPsic'
+import NavbarPsic from '../../components/Navbar/NavbarPsicologo'
 
 const ListaPacientes = ({ SubmitForm }) => {
   const { handleChange, values, handleSubmit } = useFormPaciente(SubmitForm);
