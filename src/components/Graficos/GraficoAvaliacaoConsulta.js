@@ -16,20 +16,29 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
     render() {
         // Calcula Media de cada indicador
+        var avaliacao = [0,0,0];
+        var avaliacaoBoa = [];
+        var avaliacaoRuim = [];
+        var avaliacaoRegular = [];
         var {consulta} = this.state
         delete consulta.registro
-        var avaliacao = [0,0,0];
         console.log(consulta);
         for (var indicador in consulta) {
-            console.log(avaliacao)
-            if (consulta[indicador] == 1)
+            if (consulta[indicador] == 1){
                 avaliacao[0]++;
-            else if (consulta[indicador] == -1)
+                avaliacaoBoa.push(indicador)
+            }
+            else if (consulta[indicador] == -1){
                 avaliacao[1]++;
-            else
+                avaliacaoRuim.push(indicador)
+            }
+            else{
                 avaliacao[2]++;
+                avaliacaoRegular.push(indicador)
+            }
         };
-       
+       console.log("Avaliações regular: ",avaliacaoRegular);
+  
         // Implementação Grafica
         const data = {
             labels: ['Bom', 'Ruim', 'Regular'],

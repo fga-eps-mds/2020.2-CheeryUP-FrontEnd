@@ -18,29 +18,44 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         // Calcula Media de cada indicador
         var avaliacao = [0,0,0]
         var media = [];
-        var posicaoIndicador;
+        var posicaoIndicador=0;
+        var nomeIndicador = [];
+        var avaliacaoBoa = [];
+        var avaliacaoRuim = [];
+        var avaliacaoRegular = [];
         var { consultas } = this.state
         consultas.forEach(consulta => {
             posicaoIndicador = 0;
             delete consulta["registro"]
+
             for (var indicador in consulta) {
-                if (consultas.indexOf(consulta) == 0)
+                if (consultas.indexOf(consulta) == 0){
+                    nomeIndicador.push(indicador)
                     media.push(consulta[indicador])
+                }
                 else
                     media[posicaoIndicador] += consulta[indicador]
                 posicaoIndicador++;
             }
         });
-        media = media.map(valor => valor/consultas.length)
+        posicaoIndicador = 0;
         media.forEach(mediaIndicador => {
-            if (mediaIndicador > 0)
+            if (mediaIndicador > 1){
+                avaliacaoBoa.push(nomeIndicador[posicaoIndicador])
                 avaliacao[0] ++;
-            else if (mediaIndicador < 0)
+            }
+            else if (mediaIndicador < -1){
+                avaliacaoRuim.push(nomeIndicador[posicaoIndicador])
                 avaliacao[1]++;
-            else 
+            }
+            else {
+                avaliacaoRegular.push(nomeIndicador[posicaoIndicador])
                 avaliacao[2]++;
+            }
+            posicaoIndicador++;
         });
-
+        console.log(avaliacaoBoa, avaliacaoRegular, avaliacaoRuim);
+        
         // Implementação Grafica
         const data = {
             labels: ['Bom', 'Ruim', 'Regular'],
