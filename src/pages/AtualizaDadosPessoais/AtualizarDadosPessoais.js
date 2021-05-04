@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
-import NavbarPsic from '../../components/Navbar/NavbarPsic';
+import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
 import '../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css';
 import { Redirect } from 'react-router';
 

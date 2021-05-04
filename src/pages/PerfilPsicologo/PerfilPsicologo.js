@@ -1,11 +1,16 @@
 import React from "react"
 import "../../style/pages/PerfilPsicologo/PerfilPsicologo.css"
-import Navbar from "../../components/Navbar/NavbarPsic"
+import NavbarPerfil from "../../components/Navbar/NavbarPsicPerfil"
 
 const PerfilPsicologo = () => {
     return (
         <div className = "perfil-psicologo-container">
-            <Navbar/>
+            <NavbarPerfil/>
+
+            <div className="dados-psicologo">
+                Nome do Psicólogo<br/>
+                Número do CRP
+            </div>
             <div className = "all">
                 <div className = "left">
                     <div className = "data">
