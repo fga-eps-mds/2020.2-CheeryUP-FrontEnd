@@ -13,11 +13,11 @@ const RecSenha = ({ SubmitForm }) =>
             <div className="container-Rec">
                 <div className= "form-RecPassword-container">
                     <div className="top-RecPassword">
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                             <img className="top-RecPassword-logo" src="img/logo_word.png" alt="logo CheeryUp" />
                         </a>
 
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                             <label className="top-RecPassword-navbar-option">Início</label>
                         </a>
                     </div>

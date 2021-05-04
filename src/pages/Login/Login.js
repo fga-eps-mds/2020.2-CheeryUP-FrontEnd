@@ -1,16 +1,12 @@
 import React, {Fragment} from 'react'
-import useState from 'react'
 import '../../style/pages/Login/Login.css';
-import useForm from '../../components/useFormSignIn';
-import { Card, Form, Button, Checkbox, Image} from 'semantic-ui-react'
+import useFormSignIn from '../../components/useFormSignIn';
+import { Card, Form, Button} from 'semantic-ui-react'
 
 function validate(values){
     let errors = {};
-
-    if (!values.email) {
-        errors.email = 'É necessário preencher seu e-mail';
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = 'E-mail inválido. Preencha com algum e-mail válido';
+    if (!values.nome.trim()) {
+        errors.nome = 'É necessário preencher seu nome';
     }
     if (!values.senha) {
         errors.senha = 'É necessário preencher uma senha';
@@ -21,7 +17,7 @@ function validate(values){
 };
 
 const Login = ({ SubmitForm }) => {
-    const { handleChange, values, handleSubmit, errors } = useForm(SubmitForm, validate);
+    const { handleChange, values, handleSubmit, errors } = useFormSignIn(SubmitForm, validate);
 
     return (
             <Fragment>
@@ -45,9 +41,9 @@ const Login = ({ SubmitForm }) => {
                                 
                                 <Card.Content> 
                                     <Form className ="form-content-input-login">
-                                        <Form.Input placeholder="Email" label="Email" required fluid onChange={handleChange} name='email' value={values.email}/>
-                                            {errors.email && <p class="p-message">{errors.email}</p>}
-                                        <Form.Input placeholder="Senha" label="Senha" required fluid onChange={handleChange} name='senha' value={values.senha}/>
+                                        <Form.Input placeholder="Nome" label="Nome" required fluid onChange={handleChange} name='nome' value={values.nome}/>
+                                            {errors.nome && <p class="p-message">{errors.nome}</p>}
+                                        <Form.Input placeholder="Senha" label="Senha" required fluid onChange={handleChange} type="password" name='senha' value={values.senha}/>
                                             {errors.senha && <p class="p-message">{errors.senha}</p>}
                                             <p><a className="links" href="/RecuperarSenha">Esqueceu sua senha?</a></p>
                                         <Button type="submit" onClick={handleSubmit}>Login</Button>
@@ -74,5 +70,4 @@ const Login = ({ SubmitForm }) => {
         
             )
 }
-   
 export default Login;
