@@ -1,37 +1,37 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
-import useFormPaciente from '../../components/useForm';
+import useFormPaciente from '../../components/useFormPaciente';
 import '../../style/pages/Cadastro/CadastroPaciente.css';
 
-  function validate(values){
+  function validatePac(values){
     let errors = {};
-    if (!values.nome.trim()) {
-        errors.nome = 'É necessário preencher seu nome';
+    if (!values.nomePac.trim()) {
+        errors.nomePac = 'É necessário preencher o nome';
     }
     // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
     //   errors.name = 'Enter a valid name';
     // }
       
     if (!values.nascimento) {
-        errors.nascimento = 'É necessário preencher seu e-mail';
+        errors.nascimento = 'É necessário fornecer a data de nascimento';
     }
     
     if (!values.regiao) {
-        errors.regiao = 'É necessário preencher nºcrp';
+        errors.regiao = 'É necessário fornecer a região';
     }
     if (!values.nCPF) {
-        errors.nCPF = 'É necessário preencher uma senha';
-    } else if (values.senha.length < 11) {
-        errors.nCPF = 'A senha deve conter mais de 6 caracteres';
+        errors.nCPF = 'É necessário preencher o CPF';
+    } else if (values.nCPF.length != 11) {
+        errors.nCPF = 'O CPF deve conter 11 caracteres';
     }
 
-    if (!values.genero) {
-        errors.genero = 'É necessário confirmar sua senha';
+    if (!values.generoPac) {
+        errors.generoPac = 'É necessário fornecer o gênero';
     }
 
     if (!values.descricao) {
-        errors.descricao = 'É necessário confirmar sua senha';
+        errors.descricao = 'É necessário fornecer uma descrição';
     }
     return errors;
 };
@@ -85,7 +85,7 @@ class Genero extends Component {
 // Formulário de Cadastrod de Paciente
 const CadastroPac = ({ SubmitForm }) => {
 
-    const { handleChange, values, handleSubmit, errors } = useFormPaciente(SubmitForm, validate);
+    const { handleChange, values, handleSubmit, errors } = useFormPaciente(SubmitForm, validatePac);
 
     return(
         <Fragment className="container-cadPac">
@@ -105,13 +105,16 @@ const CadastroPac = ({ SubmitForm }) => {
                         <div className="form-items">
                             <div className="primeira-linha">
                                 <Form.Group widths='equal'>
-                                    <Form.Input fluid label="Nome" placeholder="Nome do Paciente" />
+                                    <Form.Input fluid label="Nome" placeholder="Nome do Paciente" required fluid onChance={handleChange} name='nomePac' value={values.nomePac}/>
+                                    {errors.nomePac && <p class="alert-paciente-msg">{errors.nomePac}</p>}
                                 </Form.Group>
                             </div>
                             <div className="segunda-linha">
                                 <Form.Group widths='equal'>
-                                    <Form.Input fluid label='Data de Nascimento' placeholder='dd/mm/aaaa' />
-                                    <Form.Input fluid label='CPF' placeholder='CPF do Paciente' />
+                                    <Form.Input fluid label='Data de Nascimento' placeholder='dd/mm/aaaa' required fluid onChance={handleChange} name='nascimento' value={values.nascimento}/>
+                                    {errors.nascimento && <p class="alert-paciente-msg">{errors.nascimento}</p>}
+                                    <Form.Input fluid label='CPF' placeholder='CPF do Paciente' required fluid onChance={handleChange} name='nCPF' value={values.nCPF}/>
+                                    {errors.nCPF && <p class="alert-paciente-msg">{errors.nCPF}</p>}
                                     <Form.Select
                                         fluids
                                         label='Região'
@@ -127,7 +130,7 @@ const CadastroPac = ({ SubmitForm }) => {
                                 <Form.TextArea label='Descrição' placeholder='Informações adicionais do paciente...' />
                             </div>
                             <div className="quinta-linha">
-                                <Form.Button>Cadastrar</Form.Button>
+                                <Form.Button type="submit" onClick={handleSubmit}>Cadastrar</Form.Button>
                             </div>
                         </div>
                     </Form>
