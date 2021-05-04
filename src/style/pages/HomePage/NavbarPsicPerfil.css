@@ -1,4 +1,4 @@
-.NavbarItemsPsicologo {
+.NavbarItemsPsic {
     background-color: #2D4561;
     width: 85%;
     height: 12vh;
@@ -9,7 +9,7 @@
     font-size: 1.3rem;
 }
 
-.nav-menuPsicologo {
+.nav-menuPsic {
     display: grid;
     grid-template-columns: repeat(5, auto);
     position: absolute;
@@ -22,7 +22,7 @@
     margin-right: 2rem;
 }
 
-.nav-linksPsic {
+.nav-linksPsicPerfil {
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 0.5rem 1.5rem;
@@ -30,13 +30,13 @@
     font-size: 90%;
 }
 
-.nav-linksPsic:hover {
+.nav-linksPsicPerfil:hover {
     border-radius: 10px;
     color: rgb(138, 180, 214);
     transition: all 0.2s ease-out;
 }
 
-.logo-cheeryUpPsicologo img{
+.logo-cheeryUpPsic img{
     width: 3vw;
     height: 6vh;
     position: absolute;
@@ -45,7 +45,7 @@
 }
 
 @media screen and (max-width: 960px) {
-    .NavbarItemsPsicologo{
+    .NavbarItemsPsic{
         width: 100%;
         position: absolute;
         font-size: 1rem;

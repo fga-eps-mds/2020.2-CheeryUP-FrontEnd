@@ -59,21 +59,21 @@ export const MenuItemsPsic = [
     }
 ]
 
-export const NavbarItemsPsic = [
+export const MenuItemsPsicPerfil = [
     {
         title: 'Lista de Pacientes',
         url: '#',
-        cName: 'nav-linksPsic'
+        cName: 'nav-linksPsicPerfil'
     },
     {
         title: 'Dashboards Gerais',
         url: '#',
-        cName: 'nav-linksPsic'
+        cName: 'nav-linksPsicPerfil'
 
     },
     {
         title: 'Sair',
         url:'#',
-        cName: 'nav-linksPsic'
+        cName: 'nav-linksPsicPerfil'
     }
 ]
