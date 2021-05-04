@@ -1,68 +1,51 @@
-import { useState, useEffect } from 'react'
-import '../pages/Registrar/CadastroPaciente'
+import { useState, useEffect } from "react";
+import "../pages/Registrar/CadastroPaciente";
+import "../pages/ListaPacientes/ListaPacientes";
 
-import api from '../services/api';
+import axiosInstance from "..//api";
 
 export default function useFormPaciente(callback, validate) {
-    const [values, setValues] = useState({
-        nome: '',
-        nascimento: '',
-        nCPF: '',
-        regiao: '',
-        genero: '',
-        descricao: '',
-        situacao: 'Controlada'
-        // genero: "M"
+  const [values, setValues] = useState({
+    nome: "",
+    nascimento: "",
+    nCPF: "",
+    regiao: "",
+    genero: "",
+    descricao: "",
+    situacao: "Controlada",
+    // genero: "M"
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const data = new FormData();
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
     });
-    const [errors, setErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const data = new FormData();
+  };
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setValues({
-            ...values,
-            [name]: value
-        });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+  };
 
-    const handleSubmit = e => {
-        e.preventDefault();
+  // Ainda falta completar toda essa parte aqui ksksksks
 
-        setErrors(validate(values));
+  useEffect(async () => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      console.log(values);
+      
+      await axiosInstance
+        .get("api/psicologos/88888888854/pacientes/")
+        .then(function (res) {
+          console.log(res.data);
+        })
+        .catch((err) => alert("Nenhum paciente valido"));
+    }
+  }, [errors]);
 
-        setIsSubmitting(true);
-    };
-
-    // Ainda falta completar toda essa parte aqui ksksksks
-
-    // useEffect(
-    //     async () => {
-    //         if (Object.keys(errors).length === 0 && isSubmitting) {
-    //             console.log(values);
-                
-                
-    //             data.append('user.username', values.nome)
-    //             data.append('user.password', values.senha)
-    //             data.append('user.email', values.email)
-    //             data.append('nCRP', values.nCRP)
-    //             data.append('bio', values.bio)
-    //             data.append('genero', values.genero)
-
-    
-    //             await api.post('api/psicologos/', data)
-    //                 .then(() => {
-    //                     alert("Cadastro efetuado passado!");  
-    //                 })
-    //                 .catch((err) => alert("Cadastro Inválido"))
-    
-    //         }
-   
-    //     },
-    //     [errors]
-    // );
-
-
-    return { handleChange, values, handleSubmit, errors };
-};
+  return { handleSubmit };
+}
