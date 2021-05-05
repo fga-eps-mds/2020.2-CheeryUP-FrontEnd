@@ -42,13 +42,8 @@ export default function Routes() {
         <Route path="/SignUP" component={SignUP} />
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
-        <PrivateRoute
-          Route
-          path="/ListaPacientes"
-          isAuth={auth}
-          component={ListaPacientes}
-        />
-        <PrivateRoute
+        <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
+        <Route
           Route
           path="/CadastrarPaciente"
           isAuth={auth}

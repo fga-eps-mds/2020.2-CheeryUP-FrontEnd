@@ -15,7 +15,7 @@ export const NavbarPsic = () => {
   const dispatch = useDispatch();
   const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
   useEffect(() => {
-    axiosInstance.get("/api/psicologos/88888888854/").then((response) => {
+    axiosInstance.get("/api/psicologos/{psic.user.username}/").then((response) => {
       changePsic(response.data);
     });
   }, []);

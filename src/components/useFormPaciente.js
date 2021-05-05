@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
-import "../pages/Registrar/CadastroPaciente";
-import "../pages/ListaPacientes/ListaPacientes";
+import "../pages/Registrar/CadastroPaciente"
+import axiosInstance from "../services/apiToken";
 
-import axiosInstance from '../services/api';
 
-export default function useFormPaciente(callback, validate) {
+export default function useFormPaciente(callback, validatePac) {
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
     nCPF: "",
-    regiao: "",
-    genero: "",
+    regiao: "PW",
     descricao: "",
-    situacao: "Controlada",
-    // genero: "M"
+    situacao: "M",
+    genero: "M"
   });
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const data = new FormData();
+  const [isSubmitting, setIsSubmitting] = useState(null);
+  const dataPac = new FormData();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,26 +24,35 @@ export default function useFormPaciente(callback, validate) {
       [name]: value,
     });
   };
+ 
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    console.log("pica")
+ /*    setIsSubmitting(false);
+    /* setErrors(validatePac(values)); */
+   /*  setIsSubmitting(true); */ 
+
+      console.log(values);
+      dataPac.append("nome", values.nome);
+      dataPac.append("data_nascimento", values.nascimento);
+      dataPac.append("regiao", values.regiao);
+      dataPac.append("situacao", values.situacao);
+      dataPac.append("descricao", values.descricao);
+      dataPac.append("cpf", values.nCPF);
+      dataPac.append("genero", values.genero);
+      
+      await axiosInstance
+        .post("api/psicologos/junin/pacientes/", dataPac)
+        .then((data) => {
+          alert("Cadastro efetuado passado!");
+          console.log(dataPac);
+        })
+        .catch((err) => alert("Cadastro de Paciente inválido!"));
+    
   };
 
   // Ainda falta completar toda essa parte aqui ksksksks
 
-  useEffect(async () => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      console.log(values);
-      
-      await axiosInstance
-        .get("api/psicologos/88888888854/pacientes/")
-        .then(function (res) {
-          console.log(res.data);
-        })
-        .catch((err) => alert("Nenhum paciente valido"));
-    }
-  }, [errors]);
-
-  return { handleSubmit };
+  return { handleSubmit, handleChange, values};
 }

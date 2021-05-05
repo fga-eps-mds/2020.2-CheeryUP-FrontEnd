@@ -1,26 +1,30 @@
 import React, { Component } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
 import useFormPaciente from "../../components/useFormPaciente";
-import NavbarPsic from '../../components/Navbar/NavbarPsicologo'
+import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicPerfil";
+import { useHistory } from "react-router-dom";
 
 const ListaPacientes = ({ SubmitForm }) => {
+  const history = useHistory();
   const { handleChange, values, handleSubmit } = useFormPaciente(SubmitForm);
+
   return (
     <div className="body-content">
       <header className="top-content">
-            <NavbarPsic />
+        <NavbarPsicPerfil />
       </header>
 
       <main className="main-content">
         <div className="upper-main-content">
           <h2 class="page-name">Lista Pacientes</h2>
-          <button
-            type="submit"
-            onClick={handleSubmit}
-            className="default-button"
-          >
-            Cadastrar paciente
-          </button>
+          <a href="/CadastrarPaciente"> Cadastrar Paciente
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="default-button"
+            >
+            </button>
+          </a>
           <form className="pesquisa">
             <input
               type="search"
@@ -32,7 +36,6 @@ const ListaPacientes = ({ SubmitForm }) => {
         </div>
         <table className="table-content" cellspacing="10">
           <thead>
-            {" "}
             {/** constante, logo não mudará. É o header da table */}
             <tr className="table-header-columns">
               <th></th>
@@ -43,10 +46,8 @@ const ListaPacientes = ({ SubmitForm }) => {
             </tr>
           </thead>
           <tbody>
-            {" "}
             {/* tbody é onde sera inserido os individous */}
             <tr>
-              {" "}
               {/*Individuo 1*/}
               <td>
                 <button type="button" className="delete-button">
@@ -69,7 +70,6 @@ const ListaPacientes = ({ SubmitForm }) => {
               </td>
             </tr>
             <tr>
-              {" "}
               {/*Individuo 2*/}
               <td>
                 <button type="button" className="delete-button">
