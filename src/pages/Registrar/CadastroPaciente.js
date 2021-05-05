@@ -50,49 +50,45 @@ const opcoesRegiao = [
   { key: 9, text: "Guará", value: 9 },
 ];
 
-
-// Função para escolha de gênero do paciente  
+// Função para escolha de gênero do paciente
 class Genero extends Component {
-    state = {}
-    handleChange = (e, { value }) => this.setState({ value })
-    
-    render() {
-        const { value } = this.state
-        return(
-            <Form.Group inline>
-                <label>Gênero</label>
-                <Form.Radio
-                    label='Masculino'
-                    value='masc'
-                    checked={value === 'masc'}
-                    onChange={this.handleChange}
-                />
-                <Form.Radio
-                    label='Feminino'
-                    value='fem'
-                    checked={value === 'fem'}
-                    onChange={this.handleChange}
-                />
-                <Form.Radio
-                    label='Indefinido'
-                    value='ind'
-                    checked={value === 'ind'}
-                    onChange={this.handleChange}
-                />
-            </Form.Group>
-        )
-    }
-}
+  state = {};
+  handleChange = (e, { value }) => this.setState({ value });
 
+  render() {
+    const { value } = this.state;
+    return (
+      <Form.Group inline>
+        <label>Gênero</label>
+        <Form.Radio
+          label="Masculino"
+          value="masc"
+          checked={value === "masc"}
+          onChange={this.handleChange}
+        />
+        <Form.Radio
+          label="Feminino"
+          value="fem"
+          checked={value === "fem"}
+          onChange={this.handleChange}
+        />
+        <Form.Radio
+          label="Indefinido"
+          value="ind"
+          checked={value === "ind"}
+          onChange={this.handleChange}
+        />
+      </Form.Group>
+    );
+  }
+}
 
 // Formulário de Cadastrod de Paciente
 const CadastroPac = ({ SubmitFormPac }) => {
-  
-  const { handleSubmit, handleChange, values} = useFormPaciente(
+  const { handleSubmit, handleChange, values } = useFormPaciente(
     SubmitFormPac
     /* validatePac */
   );
-  
 
   return (
     <Fragment>
