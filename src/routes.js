@@ -17,8 +17,8 @@ import DashboardEstabilidade from './pages/DashboardEstabilidadeEmocional/Dashbo
 import DashboardQualidadeVida from './pages/DashboardQualidadeVida/DashboardQualidadeVida'
 import DashboardAvaliacaoMedia from './pages/DashboardAvaliacaoMedia/DashboardAvaliaçãoMedia'
 import DashboardAvaliacaoConsulta from './pages/DashboardAvaliacaoConsulta/DashboardAvaliacaoConsulta'
-
-
+import DashboardProdutividade from './pages/DashboardProdutividade/DashboardProdutividade'
+ 
 export default function Routes() {
     return (
         <BrowserRouter>
@@ -37,6 +37,7 @@ export default function Routes() {
                 <Route path="/DashboardQualidadeVida"  component={DashboardQualidadeVida}/>
                 <Route path="/DashboardAvaliacaoMedia" component={DashboardAvaliacaoMedia}/>
                 <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
+                <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
                 <Route path="/RecuperarSenha" component={RecSenha} />
                 <Route path="/InformacoesPaciente" component={InformacoesPaciente}/>
             </Switch>
