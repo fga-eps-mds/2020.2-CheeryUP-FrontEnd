@@ -71,10 +71,12 @@ class RegistroConsulta extends Component{
                 
                 <Form> 
                     <h2>Registrar consulta</h2>
-         {/*problemasPessoais*/}
+
                     <Form.Field>
                         <input type="date" />
                     </Form.Field>
+
+         {/*problemasPessoais*/}
                     <Form.Field>
                         <label>Problemas pessoais: <b>{this.state.problemasPessoais}</b></label>
                         <Radio
