@@ -16,31 +16,31 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
     render() {
         // Calcula Media de cada indicador
-        var avaliacao = [0,0,0];
+        var avaliacao = [0, 0, 0];
         var avaliacaoBoa = [];
         var avaliacaoRuim = [];
         var avaliacaoRegular = [];
-        var {consulta} = this.state
-        
-  
+        var { consulta } = this.state
+
+
         for (var indicador in consulta) {
-            if (indicador != 'id' && indicador != 'data'){ 
-            if (consulta[indicador] == 1){
-                avaliacao[0]++;
-                avaliacaoBoa.push(indicador)
+            if (indicador != 'id' && indicador != 'data') {
+                if (consulta[indicador] == 1) {
+                    avaliacao[0]++;
+                    avaliacaoBoa.push(indicador)
+                }
+                else if (consulta[indicador] == -1) {
+                    avaliacao[1]++;
+                    avaliacaoRuim.push(indicador)
+                }
+                else {
+                    avaliacao[2]++;
+                    avaliacaoRegular.push(indicador)
+                }
             }
-            else if (consulta[indicador] == -1){
-                avaliacao[1]++;
-                avaliacaoRuim.push(indicador)
-            }
-            else{
-                avaliacao[2]++;
-                avaliacaoRegular.push(indicador)
-            }
-        }
         };
-       console.log("Avaliações regular: ",avaliacaoRegular);
-  
+        console.log("Avaliações regular: ", avaliacaoRegular);
+
         // Implementação Grafica
         const data = {
             labels: ['Bom', 'Ruim', 'Regular'],
@@ -67,8 +67,13 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
         return (
             <>
-                <Pie data={data}/>
-                
+                <div>
+                    <Pie data={data}
+                        width={500}
+                        height={500}
+                        options={{ maintainAspectRatio: false }} />
+                </div>
+
             </>)
 
     }

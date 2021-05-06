@@ -171,9 +171,12 @@ class GraficoRegiao extends Component {
         };
         return (
             <>
-                <Pie
-                 data={data}
-                  />
+               <div>
+                <Pie data={data}
+                        width={500}
+                        height={500}
+                        options={{ maintainAspectRatio: false  }}/>
+                        </div>
             </>)
 
     }

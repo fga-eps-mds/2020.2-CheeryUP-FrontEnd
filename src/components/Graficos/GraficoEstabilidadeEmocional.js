@@ -59,7 +59,12 @@ class GraficoEstabilidadeEmocional extends Component {
         return (
 
             <>
-                <Line data={data} width={500}/>
+              <div>
+                <Line data={data}
+                        width={500}
+                        height={500}
+                        options={{ maintainAspectRatio: false  }}/>
+                        </div>
             </>)
 
     }
