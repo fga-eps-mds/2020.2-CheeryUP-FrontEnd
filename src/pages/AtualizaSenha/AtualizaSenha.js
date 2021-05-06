@@ -14,13 +14,7 @@ class AttSenha extends Component {
         return (
             <Fragment className="container-attSenha">
                 <NavbarPsic />
-
-                <div className="dados-psicologo-attSenha">
-                    Nome do Psicólogo <br/>
-                    Número do CRP
-                </div>
-
-
+                
                 <div className="form-attSenha">
                     <div className="titulo-form-attSenha">
                         <h1 className="titulo-attSenha">Alterar Senha</h1>

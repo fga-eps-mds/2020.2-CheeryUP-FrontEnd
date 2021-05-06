@@ -37,9 +37,7 @@ const ListaPacientes = ({ SubmitForm }) => {
   return (
     <Fragment>
       <div className="body-content">
-        <header className="top-content">
           <NavbarPsicPerfil />
-        </header>
 
         <main className="main-content">
           <div className="upper-main-content">

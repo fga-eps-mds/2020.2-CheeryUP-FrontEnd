@@ -25,13 +25,7 @@ class AttDadosPac extends Component {
         return (
             <Fragment className="container-attPac">
                 <NavbarPsic />
-
-                <div className="dados-psicologo-attPac">
-                    Nome do Psicólogo <br/>
-                    Número do CRP
-                </div>
-
-
+                
                 <div className="form-attPac">
                     <div className="titulo-form-attPac">
                         <h1 className="titulo-att">Atualizar dados - Paciente</h1>

@@ -1,6 +1,6 @@
 .NavbarItemsPsicologo {
     background-color: #2D4561;
-    width: 85%;
+    width: 100%;
     height: 12vh;
     display: flex;
     position: relative;
@@ -9,17 +9,23 @@
     font-size: 1.3rem;
 }
 
-.nav-menuPsicologo {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
+.dados-psicologo{
+    width: 18%;
+    background-color: whitesmoke;
+    margin-left: auto;
+    height: 12vh;
+    padding: 3vh;
+    left: 82%;
     position: absolute;
-    right: 0;
-    grid-gap: 10px;
-    list-style: none;
-    text-align: right;
-    width: 70vw;
+}
+
+.nav-menuPsicologo {
+    display: grid; 
+    grid-template-columns: repeat(3, auto);
+    position: absolute;
+    width: 70vw; 
     justify-content: right;
-    margin-right: 2rem;
+    margin-right: 10rem; 
 }
 
 .nav-linksPsic {

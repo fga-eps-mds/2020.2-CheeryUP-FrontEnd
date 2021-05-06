@@ -95,11 +95,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
     <Fragment>
       <div className="container-cadPac">
         <NavbarPsic />
-
-        <div className="dados-psicologo">
-          Nome do Psicólogo <br />
-          Número do CRP
-        </div>
+        
         <div className="form-cadPac">
           <div className="titulo-form">
             <h1 className="titulo">Cadastro de Paciente</h1>
