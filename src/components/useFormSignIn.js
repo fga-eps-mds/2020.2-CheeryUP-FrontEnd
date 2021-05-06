@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { setAuth } from "../store/Auth/actions";
 import axiosInstance from "../services/apiToken";
 import { useHistory } from "react-router-dom";
+import { setPsic } from "../store/Psicologo/actions";
+
 
 export default function useFormSignIn(callback, validate) {
   const [values, setValues] = useState({
@@ -16,6 +18,7 @@ export default function useFormSignIn(callback, validate) {
   const history = useHistory();
   const dispatch = useDispatch();
   const changeAuth = useCallback((auth) => dispatch(setAuth(auth)), [dispatch]);
+  const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -43,7 +46,7 @@ export default function useFormSignIn(callback, validate) {
         .then((res) => {
           localStorage.setItem("access_token", res.data.access);
           localStorage.setItem("refresh_token", res.data.refresh);
-
+          changePsic( { user: {username: res.data.user}})
           console.log(res.data.access);
           history.push("/ListaPacientes");
         })

@@ -4,6 +4,7 @@ const initialState = {
     bio:"",
     nCRP: "",
     genero: "",
+    name: "",
     user:{
         username:"",
         email:""
