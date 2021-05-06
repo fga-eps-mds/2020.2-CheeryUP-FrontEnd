@@ -13,6 +13,7 @@ import AttDadosPsico from './pages/AtualizaDadosPessoais/AtualizarDadosPessoais'
 import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
+import RegistroConsulta from './pages/Registrar/RegistroConsulta'
 
 const PrivateRoute = ({ component: Component, isAuth, ...rest }) => (
   <Route
@@ -43,6 +44,8 @@ export default function Routes() {
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
         <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
+        <Route path="/RegistroConsulta" component={RegistroConsulta}/>
+
         <Route
           Route
           path="/CadastrarPaciente"
