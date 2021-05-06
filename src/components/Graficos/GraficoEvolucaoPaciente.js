@@ -64,11 +64,22 @@ class GraficoEvolucaoPaciente extends Component {
 
             <>
             <div>
-                <Line data={data}
+            <Line data={data}
                         width={500}
                         height={500}
-                        options={{ maintainAspectRatio: false  }}/>
-                        </div>
+                        options={{ maintainAspectRatio: false , 
+                          scales: {
+                            y: {
+                              display: false,
+                            },
+                            x: {
+                              display: false,
+                             
+                            }
+                          }
+                        
+                  }}/>
+                  </div>
             </>)
 
     }

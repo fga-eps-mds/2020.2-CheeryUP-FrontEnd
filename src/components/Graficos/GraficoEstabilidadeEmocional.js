@@ -50,7 +50,7 @@ class GraficoEstabilidadeEmocional extends Component {
                 fill: false,
                 backgroundColor: 'rgba(45, 69, 97, 0.8)',
                 borderColor: 'rgba(45, 69, 97, 0.8)',
-                tension: 0.1,
+                tension: 0.2,
                 
               },
             ],
@@ -63,7 +63,18 @@ class GraficoEstabilidadeEmocional extends Component {
                 <Line data={data}
                         width={500}
                         height={500}
-                        options={{ maintainAspectRatio: false  }}/>
+                        options={{ maintainAspectRatio: false , 
+                          scales: {
+                            y: {
+                              display: false,
+                            },
+                            x: {
+                              display: false,
+                             
+                            }
+                          }
+                        
+                  }}/>
                         </div>
             </>)
 

@@ -60,10 +60,21 @@ class GraficoQualidadeVida extends Component {
 
             <>
                <div>
-                <Line data={data}
+               <Line data={data}
                         width={500}
                         height={500}
-                        options={{ maintainAspectRatio: false  }}/>
+                        options={{ maintainAspectRatio: false , 
+                          scales: {
+                            y: {
+                              display: false,
+                            },
+                            x: {
+                              display: true,
+                             
+                            }
+                          }
+                        
+                  }}/>
                         </div>
             </>)
 
