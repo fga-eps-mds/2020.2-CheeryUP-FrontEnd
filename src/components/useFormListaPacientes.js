@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
-import "../pages/Registrar/CadastroPaciente";
-import axiosInstance from "../services/apiToken";
-import { useSelector } from "react-redux";
+import { useState, useEffect, useCallback } from "react";
+import "../pages/ListaPacientes/ListaPacientes";
+import axiosInstance from "../services/api";
 
-export default function useFormPaciente() {
+export default function useFormPaciente(callback, validatePac) {
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
     nCPF: "",
-    regiao: "PW",
+    regiao: "",
     descricao: "",
-    situacao: "M",
-    genero: "M",
+    situacao: "",
+    genero: "",
   });
-  const [errors, setErrors] = useState({});
+  
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPac = new FormData();
-  const { psic } = useSelector((state) => state);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -31,7 +30,6 @@ export default function useFormPaciente() {
     /*    setIsSubmitting(false);
     /* setErrors(validatePac(values)); */
     /*  setIsSubmitting(true); */
-
     console.log(values);
     dataPac.append("nome", values.nome);
     dataPac.append("data_nascimento", values.nascimento);
@@ -42,10 +40,10 @@ export default function useFormPaciente() {
     dataPac.append("genero", values.genero);
 
     await axiosInstance
-      .post(`api/psicologos/${psic.user.username}/pacientes/`, dataPac)
+      .get("api/psicologos/junin/pacientes/", dataPac)
       .then((data) => {
         alert("Cadastro efetuado passado!");
-        console.log(psic);
+        console.log(dataPac);
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
   };

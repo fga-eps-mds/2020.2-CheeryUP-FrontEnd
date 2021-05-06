@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback } from "react";
-import { NavbarItemsPsic } from "./MenuItems";
-import "../../style/pages/HomePage/NavbarPsic.css";
+import "../../style/pages/HomePage/NavbarPsicologo.css";
 import axiosInstance from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from "../../store/Psicologo/actions";
+import { MenuItems, MenuItemsPsicPerfil } from "./MenuItems";
+import {Link} from 'react-router-dom'
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
@@ -15,7 +16,8 @@ export const NavbarPsic = () => {
   const dispatch = useDispatch();
   const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
   useEffect(() => {
-    axiosInstance.get("/api/psicologos/88888888854/").then((response) => {
+    axiosInstance.get(`api/psicologos/${psic.user.username}/`).then((response) => {
+      console.log(response)
       changePsic(response.data);
     });
   }, []);
@@ -24,18 +26,18 @@ export const NavbarPsic = () => {
   },[psic])
   
   return (
-    <nav className="NavbarItemsPsic">
+    <nav className="NavbarItemsPsico">
       <div className="logo-cheeryUpPsic">
         <img src="/imagens/logoNavbarAlt.png" alt="Logo" />
       </div>
 
       <ul className="nav-menu">
-        {NavbarItemsPsic.map((item, index) => {
+        {MenuItemsPsicPerfil.map((item, index) => {
           return (
             <li key={index}>
-              <a className={item.cName} href={item.url}>
+              <Link className={item.cName} to={item.url}>
                 {item.title}
-              </a>
+              </Link>
             </li>
           );
         })}

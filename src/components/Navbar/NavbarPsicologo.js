@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { MenuItemsPsic } from "./MenuItems"
 import { Button } from "../Button/Button"
 import '../../style/pages/HomePage/NavbarPsicologo.css'
-
+import { MenuItemsPsic } from "./MenuItems";
+import {Link} from 'react-router-dom'
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
     Essa Navbar seria usada nas páginas após o Login.
@@ -26,9 +26,9 @@ class NavbarPsic extends Component {
                     {MenuItemsPsic.map((item, index) => {
                         return (
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
+                                <Link className={item.cName} to={item.url}>
                                 {item.title}
-                                </a>
+                                </Link>
                             </li>
                         )
                     })}

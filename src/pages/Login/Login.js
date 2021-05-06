@@ -5,8 +5,8 @@ import { Card, Form, Button} from 'semantic-ui-react'
 
 function validate(values){
     let errors = {};
-    if (!values.nome.trim()) {
-        errors.nome = 'É necessário preencher seu nome';
+    if (!values.username.trim()) {
+        errors.username = 'É necessário preencher seu nome';
     }
     if (!values.senha) {
         errors.senha = 'É necessário preencher uma senha';
@@ -41,8 +41,8 @@ const Login = ({ SubmitForm }) => {
                                 
                                 <Card.Content> 
                                     <Form className ="form-content-input-login">
-                                        <Form.Input placeholder="Nome" label="Nome" required fluid onChange={handleChange} name='nome' value={values.nome}/>
-                                            {errors.nome && <p class="p-message">{errors.nome}</p>}
+                                        <Form.Input placeholder="Username" label="Username" required fluid onChange={handleChange} name='username' value={values.username}/>
+                                            {errors.nome && <p class="p-message">{errors.username}</p>}
                                         <Form.Input placeholder="Senha" label="Senha" required fluid onChange={handleChange} type="password" name='senha' value={values.senha}/>
                                             {errors.senha && <p class="p-message">{errors.senha}</p>}
                                             <p><a className="links" href="/RecuperarSenha">Esqueceu sua senha?</a></p>
