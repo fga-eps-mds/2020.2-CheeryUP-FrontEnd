@@ -57,6 +57,12 @@
     position: relative;
 }
 
+.alert-paciente-msg {
+    font-size: 0.9rem;
+    margin-top: 0.1rem;
+    color: #f0300efa;
+  }
+
 @media screen and (max-width: 960px) {
     .form-cadPac{
         background-color: white;

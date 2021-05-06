@@ -90,6 +90,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
     /* validatePac */
   );
 
+
   return (
     <Fragment>
       <div className="container-cadPac">
@@ -99,7 +100,6 @@ const CadastroPac = ({ SubmitFormPac }) => {
           Nome do Psicólogo <br />
           Número do CRP
         </div>
-
         <div className="form-cadPac">
           <div className="titulo-form">
             <h1 className="titulo">Cadastro de Paciente</h1>
@@ -171,5 +171,6 @@ const CadastroPac = ({ SubmitFormPac }) => {
     </Fragment>
   );
 };
+
 
 export default CadastroPac;
