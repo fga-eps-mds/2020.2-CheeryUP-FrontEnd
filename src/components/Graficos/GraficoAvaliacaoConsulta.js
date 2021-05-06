@@ -71,7 +71,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
                     <Pie data={data}
                         width={500}
                         height={500}
-                        options={{ maintainAspectRatio: false }} />
+                        options={{ maintainAspectRatio: false , }} />
                 </div>
 
             </>)
