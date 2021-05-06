@@ -9,7 +9,7 @@ class GraficoEstabilidadeEmocional extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/12312312312/pacientes/07483676169/consultas/');
+        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
         this.setState({ consultas: response.data });
     }
 
@@ -23,8 +23,7 @@ class GraficoEstabilidadeEmocional extends Component {
         var qualidadeDeVida = [];
        consultas.forEach(consulta => {
         for (var indicador in consulta){    
-
-            if (indicador != "registro" ){ 
+          if (indicador != 'id' && indicador != 'data'){ 
               if (indicador == "convivioFamiliar" || indicador == "capacidadeDeSituaçõesDificeis" || indicador == "convivioAmigos")
                 soma += consulta[indicador]*3;
               }
@@ -60,7 +59,7 @@ class GraficoEstabilidadeEmocional extends Component {
         return (
 
             <>
-                <Line data={data}/>
+                <Line data={data} width={500}/>
             </>)
 
     }

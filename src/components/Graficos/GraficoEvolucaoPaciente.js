@@ -9,7 +9,7 @@ class GraficoEvolucaoPaciente extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/12312312312/pacientes/07483676169/consultas/');
+        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
         this.setState({ consultas: response.data });
     }
 
@@ -21,10 +21,10 @@ class GraficoEvolucaoPaciente extends Component {
         var soma = 0;
         var qualidadeDeVida = [];
        consultas.forEach(consulta => {
+         
         for (var indicador in consulta){    
-
-            if (indicador != "registro" ){ 
-              console.log(consulta); 
+            if (indicador != 'id' && indicador != 'data'){ 
+              console.log(indicador);
               if (indicador == "humor" || indicador == "estabilidadeDeEmoções")
                 soma += consulta[indicador]*3
               else{
@@ -63,7 +63,7 @@ class GraficoEvolucaoPaciente extends Component {
         return (
 
             <>
-                <Line data = {data}/>
+                <Line data = {data} width={500}/>
             </>)
 
     }

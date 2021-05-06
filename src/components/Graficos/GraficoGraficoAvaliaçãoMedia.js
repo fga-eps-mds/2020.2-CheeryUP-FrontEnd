@@ -9,7 +9,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/12312312312/pacientes/12312312311/consultas/');
+        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
         this.setState({ consultas: response.data });
     }
 
@@ -26,9 +26,10 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         var { consultas } = this.state
         consultas.forEach(consulta => {
             posicaoIndicador = 0;
-            delete consulta["registro"]
+           
 
             for (var indicador in consulta) {
+                if (indicador != 'id' && indicador != 'data'){ 
                 if (consultas.indexOf(consulta) == 0){
                     nomeIndicador.push(indicador)
                     media.push(consulta[indicador])
@@ -37,6 +38,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
                     media[posicaoIndicador] += consulta[indicador]
                 posicaoIndicador++;
             }
+        }
         });
         posicaoIndicador = 0;
         media.forEach(mediaIndicador => {

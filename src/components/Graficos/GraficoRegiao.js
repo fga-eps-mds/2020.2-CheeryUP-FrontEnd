@@ -1,4 +1,4 @@
-import { Bar } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import api from '../../services/api'
 import { Component } from 'react'
 
@@ -9,7 +9,7 @@ class GraficoRegiao extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/11111111111/pacientes');
+        const response = await api.get('api/psicologos/davi/pacientes/');
         this.setState({ pessoas: response.data });
     }
 
@@ -165,14 +165,13 @@ class GraficoRegiao extends Component {
                         
                     ],
 
-                    borderWidth: 1,
-                    borderRadius: 30,
+                    
                 },
             ],
         };
         return (
             <>
-                <Bar
+                <Pie
                  data={data}
                   />
             </>)

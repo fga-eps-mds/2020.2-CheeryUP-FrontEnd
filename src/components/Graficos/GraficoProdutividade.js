@@ -30,7 +30,6 @@ class GraficoProdutividade extends Component {
                 produtividade[1]++
         });
         // Implementação Grafica
-        Doughnut.heigth(100)
         const data = {
             labels: ['Consultas Produtivas','Consultas improdutivas' ,'Produtividade estavel', ],
             datasets: [
@@ -56,7 +55,7 @@ class GraficoProdutividade extends Component {
         
         return (
             <>
-                <Doughnut data={data} />
+                <Doughnut data={data}  />
             </>)
 
     }

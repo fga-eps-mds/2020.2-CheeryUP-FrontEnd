@@ -9,7 +9,7 @@ class GraficoQualidadeVida extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/12312312312/pacientes/12312312311/consultas/');
+        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
         this.setState({ consultas: response.data });
     }
 
@@ -23,7 +23,7 @@ class GraficoQualidadeVida extends Component {
        consultas.forEach(consulta => {
         for (var indicador in consulta){    
 
-            if (indicador != "registro" ){ 
+          if (indicador != 'id' && indicador != 'data'){ 
               if (indicador == "interessePelaVida" || indicador == "exposiçãoRisco" || indicador == "qualidadeNutritiva")
                 soma += consulta[indicador];
               }
@@ -50,7 +50,7 @@ class GraficoQualidadeVida extends Component {
                 fill: false,
                 backgroundColor: 'rgba(45, 69, 97, 0.8)',
                 borderColor: 'rgba(45, 69, 97, 0.8)',
-                tension: 0.1,
+                tension: 0.2,
                 
               },
             ],
@@ -59,7 +59,7 @@ class GraficoQualidadeVida extends Component {
         return (
 
             <>
-                <Line data={data}/>
+                <Line data={data} width={500}/>
             </>)
 
     }
