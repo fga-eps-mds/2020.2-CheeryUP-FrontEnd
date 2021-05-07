@@ -1,7 +1,7 @@
 import { Pie } from 'react-chartjs-2';
 import api from '../../services/api'
 import { Component } from 'react'
-
+import "../../style/pages/Graficos/Graficos.css"
 class GraficoAvaliaçãoMediaIndicadores extends Component {
     // Recupera dados da API
     state = {
@@ -9,20 +9,99 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/1');
+        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/6');
         this.setState({ consulta: response.data });
     }
 
-    mostraAvaliações(avaliacoes = [], nomeAvaliacao=""){
-        if (avaliacoes.length==0) {
+    mostraAvaliações(avaliacoes = [], nomeAvaliacao = "") {
+        if (avaliacoes.length == 0) {
             return <>
-            <h2>{nomeAvaliacao}</h2>
-            <p>Nenhum indicador neste estado</p>
+                <div>
+                    <h2>{nomeAvaliacao}</h2>
+                    <p>Nenhum indicador neste estado</p>
+                </div>
             </>
         }
         return <>
-        <h2>{nomeAvaliacao}</h2> <ul>{ avaliacoes.map(avaliacao => <li>{ avaliacao }</li>) }</ul>
+            <div>
+                <h2>{nomeAvaliacao}</h2> <ul>{avaliacoes.map(avaliacao => <li>{avaliacao}</li>)}</ul>
+            </div>
         </>;
+    }
+
+
+    editaIndicador(texto = "") {
+        switch (texto) {
+
+            case "problemasPessoais":
+                return "Problemas pessoais"
+
+            case "humor":
+                return "Humor"
+
+            case "estabilidadeDeEmoções":
+                return "Estabilidade de Emoções"
+
+            case "interessePelaVida":
+                return "Interesse pela vida"
+
+            case "capacidadeDeSituaçõesDificeis":
+                return "Capacidade de situações difíceis"
+
+            case "convivioFamiliar":
+                return "Convivio familiar"
+
+            case "energiaSono":
+                return "Energia e sono"
+
+            case "convivioAmigos":
+                return "Convívio entre amigos"
+
+            case "conhecimentoDoenca":
+                return "Conheciemnto da doençã"
+
+            case "criseEspaçoInterior":
+
+            case "exposiçãoRisco":
+                return "Exposição de risco"
+
+            case "qualidadeSono":
+                return "Qualidade do sono"
+
+            case "tentativaSuicidio":
+                return "Tentativa de suicidio"
+
+            case "qualidadeEscuta":
+                return "Qualidade da escuta"
+
+            case "maturidadeEmocional":
+
+
+            case "qualidadeNutritiva":
+                return "Qualidade Nutritiva"
+
+
+            case "autoMedicacao":
+                return "Automedicação"
+
+
+            case "intoleranciaFrustração":
+                return "Intolerância a frustração"
+
+            default:
+                return ""
+                
+        }
+
+
+
+
+
+
+
+
+
+
     }
 
     render() {
@@ -35,23 +114,23 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
 
         for (var indicador in consulta) {
-            if (indicador != 'id' && indicador != 'data') {
+            if (indicador != 'id' && indicador != 'data' && indicador != 'produtividade') {
                 if (consulta[indicador] == 1) {
                     avaliacao[0]++;
-                    avaliacaoBoa.push(indicador)
+                    avaliacaoBoa.push(this.editaIndicador(indicador))
                 }
                 else if (consulta[indicador] == -1) {
                     avaliacao[1]++;
-                    avaliacaoRuim.push(indicador)
+                    avaliacaoRuim.push(this.editaIndicador(indicador))
                 }
-                else {
+                if (consulta[indicador] == 0) {
                     avaliacao[2]++;
-                    avaliacaoRegular.push(indicador)
+                    avaliacaoRegular.push(this.editaIndicador(indicador))
                 }
             }
         };
-        console.log("Avaliações regular: ", avaliacaoRegular);
 
+        console.log(avaliacaoRegular.length);
         // Implementação Grafica
         const data = {
             labels: ['Bom', 'Ruim', 'Regular'],
@@ -75,18 +154,19 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
                 },
             ],
         };
-
         return (
             <>
                 <div>
                     <Pie data={data}
                         width={500}
                         height={500}
-                        options={{ maintainAspectRatio: false , }} />
+                        options={{ maintainAspectRatio: false, }} />
                 </div>
-                {this.mostraAvaliações(avaliacaoBoa, "Avaliações Boas")}
-                {this.mostraAvaliações(avaliacaoRuim, "Avaliações Ruins")}
-                {this.mostraAvaliações(avaliacaoRegular, "Avaliações Regulares")}
+                <div class="avaliacoes">
+                    {this.mostraAvaliações(avaliacaoBoa, "Avaliações Boas")}
+                    {this.mostraAvaliações(avaliacaoRuim, "Avaliações Ruins")}
+                    {this.mostraAvaliações(avaliacaoRegular, "Avaliações Regulares")}
+                </div>
 
             </>)
 

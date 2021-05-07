@@ -114,7 +114,7 @@ class GraficoRegiao extends Component {
                 case "RF":
                     legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
                     break;
-                case "RF2":
+                case "RFII":
                     legenda[legenda.indexOf(regiao)] = "Riacho Fundo II"
                     break;
                 case "SI":
@@ -123,7 +123,7 @@ class GraficoRegiao extends Component {
                 case "SO":
                     legenda[legenda.indexOf(regiao)] = "Sobradinho"
                     break;
-                case "SO2":
+                case "SOII":
                     legenda[legenda.indexOf(regiao)] = "Sobradinho II"
                     break;
                 case "SN":

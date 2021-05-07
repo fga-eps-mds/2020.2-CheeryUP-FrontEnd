@@ -35,24 +35,18 @@ class GraficoProdutividade extends Component {
         var datasFormatadas = []
         var {consultas} = this.state
         var produtividade = [0,0,0]
-        var dataConsultasProdutivas = [];
-        var dataConsultasImprodutivas = [];
-        var dataConsultasEstaveis = [];
+      
 
         consultas.forEach(element => {
             datasFormatadas.push(element.data)
             if(element.produtividade == 1){
                 produtividade[0]++ 
-                dataConsultasProdutivas.push(this.formataData(element.data))
             }
              if (element.produtividade == 0){
                 produtividade[2]++
-                dataConsultasEstaveis.push(this.formataData(element.data))
              }
             if (element.produtividade == -1){ 
                 produtividade[1]++
-                dataConsultasImprodutivas.push(this.formataData(element.data))
-
             }
         });
         
@@ -88,9 +82,7 @@ class GraficoProdutividade extends Component {
                         height={500}
                         options={{ maintainAspectRatio: false  }}/>
                         </div>
-                        {this.mostraAvaliações(dataConsultasProdutivas, "Datas de consultas Produtivas")}
-                        {this.mostraAvaliações(dataConsultasImprodutivas, "Datas de Consultas improdutivas")}
-                        {this.mostraAvaliações(dataConsultasEstaveis, "Datas de Produtividade estavel")}
+                       
             </>)
 
     }

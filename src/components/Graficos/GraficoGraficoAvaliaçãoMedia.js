@@ -1,7 +1,7 @@
 import { Pie } from 'react-chartjs-2';
 import api from '../../services/api'
 import { Component } from 'react'
-
+import "../../style/pages/Graficos/Graficos.css"
 class GraficoAvaliaçãoMediaIndicadores extends Component {
     // Recupera dados da API
     state = {
@@ -13,15 +13,19 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         this.setState({ consultas: response.data });
     }
 
-    mostraAvaliações(avaliacoes = [], nomeAvaliacao=""){
-        if (avaliacoes.length==0) {
+    mostraAvaliações(avaliacoes = [], nomeAvaliacao = "") {
+        if (avaliacoes.length == 0) {
             return <>
-            <h2>{nomeAvaliacao}</h2>
-            <p>Nenhum indicador neste estado</p>
+                <div>
+                    <h2>{nomeAvaliacao}</h2>
+                    <p>Nenhum indicador neste estado</p>
+                </div>
             </>
         }
         return <>
-        <h2>{nomeAvaliacao}</h2> <ul>{ avaliacoes.map(avaliacao => <li>{ avaliacao }</li>) }</ul>
+            <div>
+                <h2>{nomeAvaliacao}</h2> <ul>{avaliacoes.map(avaliacao => <li>{avaliacao}</li>)}</ul>
+            </div>
         </>;
     }
     
@@ -102,9 +106,11 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
                         height={500}
                         options={{ maintainAspectRatio: false  }}/>
                         </div>
-                        {this.mostraAvaliações(avaliacaoBoa, "Avaliações Boas")}
-                        {this.mostraAvaliações(avaliacaoRuim, "Avaliações Ruins")}
-                        {this.mostraAvaliações(avaliacaoRegular, "Avaliações Regulares")}
+                <div class="avaliacoes">
+                    {this.mostraAvaliações(avaliacaoBoa, "Avaliações Boas")}
+                    {this.mostraAvaliações(avaliacaoRuim, "Avaliações Ruins")}
+                    {this.mostraAvaliações(avaliacaoRegular, "Avaliações Regulares")}
+                </div>
                         
             </>)
 

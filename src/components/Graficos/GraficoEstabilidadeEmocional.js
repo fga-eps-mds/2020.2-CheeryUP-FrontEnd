@@ -26,7 +26,7 @@ class GraficoEstabilidadeEmocional extends Component {
     consultas.forEach(consulta => {
       datasFormatadas.push(this.formataData(consulta["data"]));
       for (var indicador in consulta) {
-        if (indicador != 'id' && indicador != 'data') {
+        if (indicador != 'id' && indicador != 'data' && indicador != 'produtividade') {
           if (indicador == "convivioFamiliar" || indicador == "capacidadeDeSituaçõesDificeis" || indicador == "convivioAmigos")
             soma += consulta[indicador] * 3;
         }
