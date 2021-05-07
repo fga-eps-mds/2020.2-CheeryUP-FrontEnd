@@ -12,19 +12,21 @@ class GraficoEvolucaoPaciente extends Component {
         const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
         this.setState({ consultas: response.data });
     }
-
+    formataData(age) {
+      var [year, month, date] = age.split("-");
+      return date + '/' + month + '/' + year;
+    }
     render() {
+        var datasFormatadas = []
 
         var {consultas} = this.state
         var mediaConsulta = [];
-        mediaConsulta[0] = 0;
+
         var soma = 0;
-        var qualidadeDeVida = [];
-       consultas.forEach(consulta => {
-         
+        consultas.forEach(consulta => {
+        datasFormatadas.push(this.formataData(consulta["data"]))
         for (var indicador in consulta){    
             if (indicador != 'id' && indicador != 'data'){ 
-              console.log(indicador);
               if (indicador == "humor" || indicador == "estabilidadeDeEmoções")
                 soma += consulta[indicador]*3
               else{
@@ -34,17 +36,14 @@ class GraficoEvolucaoPaciente extends Component {
           }
           mediaConsulta.push(soma);
        });
-        
-       var legenda = [];
+       var legenda = []
+      
        var i = 0;
-       mediaConsulta.forEach(valor => {
-         if (i==0)
-         legenda.push(" ")
-         else 
-          legenda.push(i+"º consulta")
-         i++;
-         
-       });
+       mediaConsulta.map(element => {
+            legenda.push(datasFormatadas[i])
+          i++
+       })
+      
         const data = {
             labels: legenda,
             datasets: [
@@ -73,7 +72,7 @@ class GraficoEvolucaoPaciente extends Component {
                               display: false,
                             },
                             x: {
-                              display: false,
+                              display: true,
                              
                             }
                           }

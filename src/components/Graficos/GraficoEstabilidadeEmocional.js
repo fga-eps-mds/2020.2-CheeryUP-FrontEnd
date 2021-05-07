@@ -4,81 +4,83 @@ import { Component } from 'react'
 
 class GraficoEstabilidadeEmocional extends Component {
 
-    state = {
-        consultas: [],
-    }
+  state = {
+    consultas: [],
+  }
 
-    async componentDidMount() {
-        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
-        this.setState({ consultas: response.data });
-    }
+  async componentDidMount() {
+    const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/');
+    this.setState({ consultas: response.data });
+  }
+
+  formataData(age) {
+    var [year, month, date] = age.split("-");
+    return date + '/' + month + '/' + year;
+  }
+  render() {
+    var datasFormatadas = []
+    var { consultas } = this.state
+    var mediaConsulta = [];
+    var soma = 0;
+    var qualidadeDeVida = [];
+    consultas.forEach(consulta => {
+      datasFormatadas.push(this.formataData(consulta["data"]));
+      for (var indicador in consulta) {
+        if (indicador != 'id' && indicador != 'data') {
+          if (indicador == "convivioFamiliar" || indicador == "capacidadeDeSituaçõesDificeis" || indicador == "convivioAmigos")
+            soma += consulta[indicador] * 3;
+        }
+      }
+      mediaConsulta.push(soma);
+    });
 
 
-    render() {
-         
-        var {consultas} = this.state
-        var mediaConsulta = [];
-        mediaConsulta[0] = 0;
-        var soma = 0;
-        var qualidadeDeVida = [];
-       consultas.forEach(consulta => {
-        for (var indicador in consulta){    
-          if (indicador != 'id' && indicador != 'data'){ 
-              if (indicador == "convivioFamiliar" || indicador == "capacidadeDeSituaçõesDificeis" || indicador == "convivioAmigos")
-                soma += consulta[indicador]*3;
+    var legenda = []
+    var i = 0;
+    mediaConsulta.map(element => {
+         legenda.push(datasFormatadas[i])
+       i++
+    })
+
+    const data = {
+      labels: legenda,
+      datasets: [
+        {
+          label: 'Estabilidade emocional',
+          data: mediaConsulta,
+          fill: false,
+          backgroundColor: 'rgba(45, 69, 97, 0.8)',
+          borderColor: 'rgba(45, 69, 97, 0.8)',
+          tension: 0.2,
+
+        },
+      ],
+    };
+
+    return (
+
+      <>
+        <div>
+          <Line data={data}
+            width={500}
+            height={500}
+            options={{
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  display: false,
+                },
+                x: {
+                  display: true,
+
+                }
               }
-          }
-          mediaConsulta.push(soma);
-       });
-        
-       var legenda = [];
-       var i = 0;
-       mediaConsulta.forEach(valor => {
-         if (i==0)
-         legenda.push(" ")
-         else 
-          legenda.push(i+"º consulta")
-         i++;
-         
-       });
-        const data = {
-            labels: legenda,
-            datasets: [
-              {
-                label:'Estabilidade emocional',
-                data: mediaConsulta,
-                fill: false,
-                backgroundColor: 'rgba(45, 69, 97, 0.8)',
-                borderColor: 'rgba(45, 69, 97, 0.8)',
-                tension: 0.2,
-                
-              },
-            ],
-          };
 
-        return (
+            }} />
+        </div>
+      </>)
 
-            <>
-              <div>
-                <Line data={data}
-                        width={500}
-                        height={500}
-                        options={{ maintainAspectRatio: false , 
-                          scales: {
-                            y: {
-                              display: false,
-                            },
-                            x: {
-                              display: false,
-                             
-                            }
-                          }
-                        
-                  }}/>
-                        </div>
-            </>)
-
-    }
+  }
 
 
 }

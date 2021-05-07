@@ -13,6 +13,17 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         this.setState({ consulta: response.data });
     }
 
+    mostraAvaliações(avaliacoes = [], nomeAvaliacao=""){
+        if (avaliacoes.length==0) {
+            return <>
+            <h2>{nomeAvaliacao}</h2>
+            <p>Nenhum indicador neste estado</p>
+            </>
+        }
+        return <>
+        <h2>{nomeAvaliacao}</h2> <ul>{ avaliacoes.map(avaliacao => <li>{ avaliacao }</li>) }</ul>
+        </>;
+    }
 
     render() {
         // Calcula Media de cada indicador
@@ -73,6 +84,9 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
                         height={500}
                         options={{ maintainAspectRatio: false , }} />
                 </div>
+                {this.mostraAvaliações(avaliacaoBoa, "Avaliações Boas")}
+                {this.mostraAvaliações(avaliacaoRuim, "Avaliações Ruins")}
+                {this.mostraAvaliações(avaliacaoRegular, "Avaliações Regulares")}
 
             </>)
 
