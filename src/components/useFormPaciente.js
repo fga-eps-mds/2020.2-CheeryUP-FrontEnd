@@ -11,7 +11,7 @@ export default function useFormPaciente() {
     regiao: "PW",
     descricao: "",
     situacao: "M",
-    genero: "M",
+    genero: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);

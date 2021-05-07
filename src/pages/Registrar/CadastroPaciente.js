@@ -39,14 +39,14 @@ import "../../style/pages/Cadastro/CadastroPaciente.css";
 
 // Opções de Região
 const opcoesRegiao = [
-  { key: 1, text: "Águas Claras", value: 1 },
+  { key: 1, text: "Águas Claras", value: 'AC' },
   { key: 2, text: "Taguatinga", value: 2 },
   { key: 3, text: "Vicente Pires", value: 3 },
   { key: 4, text: "Asa Sul", value: 4 },
   { key: 5, text: "Asa Norte", value: 5 },
   { key: 6, text: "Arniqueiras", value: 6 },
   { key: 7, text: "Riacho Fundo", value: 7 },
-  { key: 8, text: "Park Way", value: 8 },
+  { key: 8, text: "Park Way", value: 'PW' },
   { key: 9, text: "Guará", value: 9 },
 ];
 
@@ -57,28 +57,30 @@ class Genero extends Component {
 
   render() {
     const { value } = this.state;
+    
     return (
       <Form.Group inline>
         <label>Gênero</label>
         <Form.Radio
           label="Masculino"
-          value="masc"
-          checked={value === "masc"}
+          value="M"
+          checked={value === "M"}
           onChange={this.handleChange}
         />
         <Form.Radio
           label="Feminino"
-          value="fem"
-          checked={value === "fem"}
+          value="F"
+          checked={value === "F"}
           onChange={this.handleChange}
         />
         <Form.Radio
           label="Indefinido"
-          value="ind"
-          checked={value === "ind"}
+          value="I"
+          checked={value === "I"}
           onChange={this.handleChange}
         />
       </Form.Group>
+
     );
   }
 }
@@ -89,7 +91,6 @@ const CadastroPac = ({ SubmitFormPac }) => {
     SubmitFormPac
     /* validatePac */
   );
-
 
   return (
     <Fragment>
@@ -133,7 +134,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     name="nCPF"
                   />
                   <Form.Select
-                    fluids
+                    fluid
                     label="Região"
                     options={opcoesRegiao}
                     placeholder="Região do Paciente"
