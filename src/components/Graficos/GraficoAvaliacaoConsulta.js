@@ -9,7 +9,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/6');
+        const response = await api.get('api/psicologos/davi/pacientes/07483676167/consultas/1/');
         this.setState({ consulta: response.data });
     }
 
@@ -115,6 +115,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
         for (var indicador in consulta) {
             if (indicador != 'id' && indicador != 'data' && indicador != 'produtividade') {
+                console.log(indicador);
                 if (consulta[indicador] == 1) {
                     avaliacao[0]++;
                     avaliacaoBoa.push(this.editaIndicador(indicador))
@@ -130,7 +131,6 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
             }
         };
 
-        console.log(avaliacaoRegular.length);
         // Implementação Grafica
         const data = {
             labels: ['Bom', 'Ruim', 'Regular'],
