@@ -13,6 +13,80 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         this.setState({ consultas: response.data });
     }
 
+    editaIndicador(texto = "") {
+        switch (texto) {
+
+            case "problemasPessoais":
+                return "Problemas pessoais"
+
+            case "humor":
+                return "Humor"
+
+            case "estabilidadeDeEmoções":
+                return "Estabilidade de Emoções"
+
+            case "interessePelaVida":
+                return "Interesse pela vida"
+
+            case "capacidadeDeSituaçõesDificeis":
+                return "Capacidade de situações difíceis"
+
+            case "convivioFamiliar":
+                return "Convivio familiar"
+
+            case "energiaSono":
+                return "Energia e sono"
+
+            case "convivioAmigos":
+                return "Convívio entre amigos"
+
+            case "conhecimentoDoenca":
+                return "Conheciemnto da doençã"
+
+            case "criseEspaçoInterior":
+
+            case "exposiçãoRisco":
+                return "Exposição de risco"
+
+            case "qualidadeSono":
+                return "Qualidade do sono"
+
+            case "tentativaSuicidio":
+                return "Tentativa de suicidio"
+
+            case "qualidadeEscuta":
+                return "Qualidade da escuta"
+
+            case "maturidadeEmocional":
+
+
+            case "qualidadeNutritiva":
+                return "Qualidade Nutritiva"
+
+
+            case "autoMedicacao":
+                return "Automedicação"
+
+
+            case "intoleranciaFrustração":
+                return "Intolerância a frustração"
+
+            default:
+                return ""
+                
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+
     mostraAvaliações(avaliacoes = [], nomeAvaliacao = "") {
         if (avaliacoes.length == 0) {
             return <>
@@ -60,15 +134,15 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         posicaoIndicador = 0;
         media.forEach(mediaIndicador => {
             if (mediaIndicador > 1){
-                avaliacaoBoa.push(nomeIndicador[posicaoIndicador])
+                avaliacaoBoa.push(this.editaIndicador(nomeIndicador[posicaoIndicador]))
                 avaliacao[0] ++;
             }
             else if (mediaIndicador < -1){
-                avaliacaoRuim.push(nomeIndicador[posicaoIndicador])
+                avaliacaoBoa.push(this.editaIndicador(nomeIndicador[posicaoIndicador]))
                 avaliacao[1]++;
             }
             else {
-                avaliacaoRegular.push(nomeIndicador[posicaoIndicador])
+                avaliacaoBoa.push(this.editaIndicador(nomeIndicador[posicaoIndicador]))
                 avaliacao[2]++;
             }
             posicaoIndicador++;
