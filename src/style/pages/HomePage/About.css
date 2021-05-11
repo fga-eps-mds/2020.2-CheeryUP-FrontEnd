@@ -9,19 +9,32 @@
 
 .upper-content{
     background-color: #2D4561;
-    padding: 1rem 0 3rem 0;
+    padding: 2rem 0 4rem 5rem;
     margin-bottom: 4rem;
+    display: flex;
+}
+.upper-content a {
+    font-size: 16px;
+    position: absolute;
+    left: 90%;
+    color: white;
+    font-weight: 600;
 }
 
+.upper-content a:hover {
+    color: white;
+    text-decoration: underline;
+
+}
 .who-we-are-title{
-    font-size: 32px;
+    font-size: 40px;
     font-weight:lighter;
 }
 
 .who-we-are-content{
-    margin: auto;
+  
     width: 65vw;
-    font-size: 16px;
+    font-size: 14px;
     color: #f1f1f1;
 }
 
@@ -30,14 +43,15 @@
 }
 
 .devel-group{
-    margin: auto;
-    width: 75vw;
+    margin: 0 0 0 0;
+    width: 100%;
     text-align: center;
 }
 
 .devel-group h2, .developer-img-content{
-    color: #444444;
+    color: #272727;
     font-family: "Montserrat", sans-serif;
+    font-size:225% ;
 }
 
 .developer-img:hover img{
