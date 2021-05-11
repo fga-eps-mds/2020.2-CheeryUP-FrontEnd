@@ -20,11 +20,6 @@ export const MenuItems = [
     cName: "nav-links",
     ID: "some-id",
   },
-  {
-    title: "Cadastre",
-    url: "/SignUP",
-    cName: "nav-links",
-  },
 ];
 
 // Fiz esse export para aparecer apenas "Home" na Navbar.
