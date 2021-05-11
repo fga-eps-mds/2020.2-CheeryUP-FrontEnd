@@ -8,6 +8,7 @@ class RegistroConsulta extends Component{
     constructor(props){
         super(props);
         this.state={
+            produtividade:'0',
             problemasPessoais: '0',
             humor: '0', 
             estabilidadeDeEmocoes: '0',
@@ -33,33 +34,38 @@ class RegistroConsulta extends Component{
     handleSubmit = async (e) => {
         e.preventDefault();
         const dataPac = new FormData();
+        var data = new Date();
+        const dataConsulta = data.getFullYear() + '-' + data.getMonth + '-' + data.getDate()
+        dataPac.append("data", this.dataConsulta);
+        /* pegar o id do paciente */
+        dataPac.append("produtividade", this.produtividade);
         dataPac.append("problemasPessoais", this.problemasPessoais);
-        dataPac.append("humor", this.problemasPessoais);
-        dataPac.append("estabilidadeDeEmocoes", this.estabilidadeDeEmocoes);
-        dataPac.append("interessePelaVida", this.problemasPessoais);
-        dataPac.append("capacidadeDeSituacoesDificeis", this.problemasPessoais);
-        dataPac.append("convivioFamiliar", this.problemasPessoais);
-        dataPac.append("energiaSono", this.problemasPessoais);
-        dataPac.append("convivioAmigos", this.problemasPessoais);
-        dataPac.append("conhecimentoDoenca", this.problemasPessoais);
-        dataPac.append("criseEspacoInterior", this.problemasPessoais);
-        dataPac.append("exposicaoRisco", this.problemasPessoais);
-        dataPac.append("qualidadeSono", this.problemasPessoais);
-        dataPac.append("tentativaSuicidio", this.problemasPessoais);
-        dataPac.append("qualidadeEscuta", this.problemasPessoais);
-        dataPac.append("maturidadeEmocional", this.problemasPessoais);
-        dataPac.append("qualidadeNutritiva", this.problemasPessoais);
-        dataPac.append("autoMedicacao", this.problemasPessoais);
-        dataPac.append("intoleranciaFrustracao", this.problemasPessoais);
+        dataPac.append("humor", this.humor);
+        dataPac.append("estabilidadeDeEmoções", this.estabilidadeDeEmocoes);
+        dataPac.append("interessePelaVida", this.interessePelaVida);
+        dataPac.append("capacidadeDeSituaçõesDificeis", this.capacidadeDeSituacoesDificeis);
+        dataPac.append("convivioFamiliar", this.convivioFamiliar);
+        dataPac.append("energiaSono", this.energiaSono);
+        dataPac.append("convivioAmigos", this.convivioAmigos);
+        dataPac.append("conhecimentoDoenca", this.conhecimentoDoenca);
+        dataPac.append("criseEspaçoInterior", this.criseEspacoInterior);
+        dataPac.append("exposiçãoRisco", this.exposicaoRisco);
+        dataPac.append("qualidadeSono", this.qualidadeSono);
+        dataPac.append("tentativaSuicidio", this.tentativaSuicidio);
+        dataPac.append("qualidadeEscuta", this.qualidadeEscuta);
+        dataPac.append("maturidadeEmocional", this.maturidadeEmocional);
+        dataPac.append("qualidadeNutritiva", this.qualidadeNutritiva);
+        dataPac.append("autoMedicacao", this.autoMedicacao);
+        dataPac.append("intoleranciaFrustração", this.intoleranciaFrustracao);
 
 
-        /**await axiosInstance
+        await axiosInstance
           .get("api/psicologos/junin/pacientes/", dataPac)
           .then((data) => {
             alert("Cadastro efetuado passado!");
             console.log(dataPac);
           })
-          .catch((err) => alert("Cadastro de Paciente inválido!")); */
+          .catch((err) => alert("Cadastro de Paciente inválido!"));
       };
 
     
