@@ -10,15 +10,15 @@ export default function useFormDelPaciente(callback, validatePac) {
   
     const dispatchPac = useDispatch();
     const changePac = useCallback((pac) => dispatchPac(setPac(pac)), [dispatchPac]);
-    useEffect(() => {
+    // useEffect(() => {
 
-        axiosInstance
-        .get(`api/psicologos/${psic.user.username}/pacientes/${pac.nCPF}/`)
-        .then((data) => {
-        console.log(data)
-        changePac(data.data);
-        });
-    }, []);
+    //    axiosInstance
+    //     .get(`api/psicologos/${psic.user.username}/pacientes/${pac.nCPF}/`)
+    //     .then((data) => {
+    //     console.log(data)
+    //     changePac(data.data);
+    //     });
+    // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
