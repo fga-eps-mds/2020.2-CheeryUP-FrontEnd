@@ -81,7 +81,32 @@ class RegistroConsulta extends Component{
                     <Form.Field>
                         <input type="date" />
                     </Form.Field>
-
+        {/*problemasPessoais*/}
+                    <Form.Field>
+                        <label>produtividade: <b>{this.state.produtividade}</b></label>
+                        <Radio
+                            label='Houve melhora'
+                            name='produtividade'
+                            value='1'
+                            checked={this.state.produtividade === '1'}
+                            onChange={e => this.setState({ produtividade: '1'})}
+                        />
+                        <Radio
+                            label='Não houve mudanças'
+                            name='produtividade'
+                            value='0'
+                            checked={this.state.produtividade === '0'}
+                            onChange={e => this.setState({ produtividade: '0'})}
+                        />
+                        <Radio
+                            label='Situação piorou'
+                            name='produtividade'
+                            value='-1'
+                            checked={this.state.produtividade === '-1'}
+                            onChange={e => this.setState({ produtividade: '-1'})}
+                        />
+                    </Form.Field>
+         
          {/*problemasPessoais*/}
                     <Form.Field>
                         <label>Problemas pessoais: <b>{this.state.problemasPessoais}</b></label>
