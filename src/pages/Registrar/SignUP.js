@@ -62,7 +62,7 @@ const SignUP = ({ SubmitForm }) => {
             <Card
               className="form-card"
               style={{ border: "none", boxShadow: "none" }}
-            >
+              >
               <Card.Content className="form-title">
                 <Card.Header> Cadastrar </Card.Header>
               </Card.Content>

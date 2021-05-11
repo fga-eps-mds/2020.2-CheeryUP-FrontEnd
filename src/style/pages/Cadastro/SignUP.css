@@ -51,6 +51,7 @@
 .form-content-input {
   display: flex;
   flex-direction: column;
+  position: absolute;
 }
 
 .form-title {
@@ -61,6 +62,7 @@
 
 .form-card {
   width: 300px !important;
+  
 }
 
 .top-signup {
@@ -73,10 +75,12 @@
   justify-content: space-between;
 }
 
+
   .top-signup-logo {
     position: relative;
     align-items: center;
-    left: 2vw;
+    left: 3vw;
+    top: 2vh;
     width: 40px;
     height: 56px;
   }
