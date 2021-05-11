@@ -2,21 +2,16 @@
   display: flex;
   height: 100vh;
   width: 100vh;
+  justify-content:space-between ;
 }
 
 .form-signup-container {
-  position:relative;
-  display: inline-block;
-  height: 100vh;
-  width: 50vw;
-  background: #ffffff
+  
+  background: #ffffff;
 } 
 /*imagem lateral*/
-.side-image img{
-  position: relative;
-  height: 100vh;
-  width: 50vw;
- 
+.side-image {
+ height: 100%;
 }
 /* propriedades do formulario*/
 .ui.input > input {

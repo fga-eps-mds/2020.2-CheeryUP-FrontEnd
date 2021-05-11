@@ -6,7 +6,7 @@ import NavbarAlt from '../../components/Navbar/NavbarAlt';
 function AboutPage() {
   return(
     <div className='AboutPage'>
-      <NavbarAlt />
+      <Navbar />
       <About />
     </div>
   ) 

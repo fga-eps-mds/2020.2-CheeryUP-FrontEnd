@@ -18,13 +18,11 @@ function Body() {
             </div>
             <div className='body-botao'>
                 <ButtonCad>
-                    Faça seu Cadastro
+                    Faça seu cadastro
                 </ButtonCad>
             </div>
             <div className='rodape'>
-                <div className='imagem-rodape'>
-                    <img src="/imagens/github.png" alt="Imagem Logo" width='50' height='50'/>
-                </div>
+               
             </div>
             
         </div>
