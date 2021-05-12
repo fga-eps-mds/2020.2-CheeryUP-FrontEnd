@@ -52,7 +52,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20vh;
+  padding-top: 14vh;
+  
 }
 
 .form-content-input {
@@ -88,8 +89,8 @@
     align-items: center;
     left: 3vw;
     top: 2vh;
-    width: 40px;
-    height: 56px;
+    width: 2.5vw;
+    height: 7vh;
   }
 
   .top-signup-navbar-option{
