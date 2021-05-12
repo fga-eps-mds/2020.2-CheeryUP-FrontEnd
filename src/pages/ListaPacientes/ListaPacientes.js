@@ -12,7 +12,7 @@ import Pacientes from "./Pacientes";
 const ListaPacientes = ({ SubmitForm }) => {
   const { psic, pac } = useSelector((state) => state);
   const history = useHistory();
-  const { handleChange, values, handleSubmit } = useFormDelPaciente(SubmitForm);
+  const { handleSubmit } = useFormDelPaciente(SubmitForm);
   const dispatch = useDispatch();
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
@@ -25,6 +25,15 @@ const ListaPacientes = ({ SubmitForm }) => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  function handleAge (age) {
+    var [year, month, date] = age.split("-");
+    var birthday = new Date(year, month, date);
+    var ageDifference = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifference);
+    
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
   
   return (
     <Fragment>

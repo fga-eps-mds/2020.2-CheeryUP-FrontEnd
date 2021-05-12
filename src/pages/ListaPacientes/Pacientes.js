@@ -1,8 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../store/Pacientes/actions.js'
-import axiosInstance from "../../services/apiToken";
-import { useSelector } from "react-redux";
+import DeletarPaciente from './DeletarPac'
+import axiosInstance from '../../services/apiToken'
+import { useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPsic } from '../../store/Psicologo/actions';
+import useFormDelPaciente from '../../components/useFormDelPaciente.js'
 
 function handleAge (age) {
     var [year, month, date] = age.split("-");
@@ -13,14 +17,33 @@ function handleAge (age) {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
+// function UserPsic() {
+//     const {psic} = useSelector( (state) =>state)
+//     const dispatch = useDispatch();
+//     const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
+//     useEffect(() => {
+//       axiosInstance.get(`api/psicologos/${psic.user.username}/`).then((response) => {
+//         console.log(response)
+//         changePsic(response.data);
+//       });
+//     }, []);
+
+//     var username = psic.user.username
+
+//     return {username}
+// }
+
 class Pacientes extends React.Component {
+    
     state = { iniciouDel : false }
 
     deletarPaciente = () => {
         const { iniciouDel } = this.state;
         if( !iniciouDel ) return this.setState({ iniciouDel : true });
-        this.props.removerPaciente(this.props.paciente.cpf)
-        
+        //const { userPsic } = useFormDelPaciente()
+        //console.log(userPsic)
+        DeletarPaciente( this.props.paciente.cpf)
+        //console.log(this.props.paciente.cpf)
         
     }
 
@@ -38,7 +61,7 @@ class Pacientes extends React.Component {
                     <button 
                         type="button" 
                         className="delete-button" 
-                        onClick={this.mostrarCpf}
+                        onClick={this.deletarPaciente}
                         style={{cursor: "pointer"}}
                     >
                         { iniciouDel ? "Deletar Paciente?" : "X" }
