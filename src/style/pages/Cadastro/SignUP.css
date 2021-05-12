@@ -9,9 +9,16 @@
 
 .form-signup-container {
   background: #ffffff;
+  height: 20vh;
 } 
+
+.ui.card{
+    
+}
+
 /*imagem lateral*/
 .side-image {
+  position: fixed;
   height: 100vh;
   margin-left: 6vw;
 }
