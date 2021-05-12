@@ -142,8 +142,8 @@ const SignUP = ({ SubmitForm }) => {
           </div>
         </div>
 
-        <div className="side-image">
-          <img src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro" />
+        <div>
+          <img  className="side-image" src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro" />
         </div>
       </div>
     </Fragment>
