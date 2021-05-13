@@ -7,10 +7,6 @@ const PerfilPsicologo = () => {
         <div className = "perfil-psicologo-container">
             <NavbarPerfil/>
 
-            <div className="dados-psicologo">
-                Nome do Psicólogo<br/>
-                Número do CRP
-            </div>
             <div className = "all">
                 <div className = "left">
                     <div className = "data">

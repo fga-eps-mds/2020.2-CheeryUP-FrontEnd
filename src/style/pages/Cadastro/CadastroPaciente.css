@@ -5,16 +5,6 @@
 }
 
 /*Dados do psicologo na Navbar*/
-.dados-psicologo{
-    width: 15%;
-    background-color: whitesmoke;
-    margin-left: auto;
-    height: 12vh;
-    padding: 3vh;
-    top: 0%;
-    left: 85%;
-    position: absolute;
-}
 
 .titulo-form{
     width: 100%;

@@ -16,12 +16,6 @@ class AttDadosPsico extends Component {
             <Fragment className="container-attPsico">
                 <NavbarPsic />
 
-                <div className="dados-psicologo-attPsico">
-                    Nome do Psicólogo <br/>
-                    Número do CRP
-                </div>
-
-
                 <div className="form-attPsico">
                     <div className="titulo-form-attPsico">
                         <h1 className="titulo-attPsico">Atualizar dados pessoais </h1>
