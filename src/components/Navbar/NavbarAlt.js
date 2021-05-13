@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { MenuItemsPsic } from "./MenuItems";
-import "../../style/pages/HomePage/NavbarPsicologo.css";
-import axiosInstance from "../../services/api";
+import { MenuItemsAlt } from "./MenuItems";
+import "../../style/pages/HomePage/NavbarAlt.css";
+import {Link} from 'react-router-dom'
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
@@ -9,37 +9,25 @@ import axiosInstance from "../../services/api";
 */
 
 export const NavbarAlt = () => {
-  useEffect(() => {
-    axiosInstance.get("/api/psicologos/").then((response) => {
-      console.log(response);
-    });
-  }, []);
 
   return (
-    <nav className="NavbarItemsPsic">
-      <div className="logo-cheeryUpPsic">
-        <img src="/imagens/logoNavbarAlt.png" alt="Logo" />
-      </div>
-
-      <ul className="nav-menu">
-        {MenuItemsPsic.map((item, index) => {
-          return (
-            <li key={index}>
-              <a className={item.cName} href={item.url}>
-                {item.title}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-
-      {
-        <div className="dados-psicologo">
-          Nome do Psicólogo
-          <br />
-          Número do CRP
+    <nav className="NavbarItemsAlt">
+        <div className='logo-cheeryUpAlt'>
+                <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
         </div>
-      }
+
+        <ul className='nav-menuAlt'>
+            {MenuItemsAlt.map((item, index) => {
+                return (
+                    <li key={index}>
+                        <Link className={item.cName} to={item.url}>
+                        {item.title}
+                        </Link>
+                    </li>
+                )
+            })}
+        </ul>
+
     </nav>
   );
 };

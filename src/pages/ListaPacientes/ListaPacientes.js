@@ -42,7 +42,7 @@ const ListaPacientes = ({ SubmitForm }) => {
 
         <main className="main-content">
           <div className="upper-main-content">
-            <h2 class="page-name">Lista Pacientes</h2>
+            <h2 className="page-name">Lista Pacientes</h2>
             <Link to="/CadastrarPaciente">
               {" "}
               <button
@@ -60,7 +60,7 @@ const ListaPacientes = ({ SubmitForm }) => {
               <img src="img/lupa.png" className="btn-pesquisa" />
             </form>
           </div>
-          <table className="table-content" cellspacing="10">
+          <table className="table-content" cellSpacing="10">
             <thead>
               {/** constante, logo não mudará. É o header da table */}
               <tr className="table-header-columns">

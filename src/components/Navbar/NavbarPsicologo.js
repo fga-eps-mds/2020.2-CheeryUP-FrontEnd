@@ -25,7 +25,7 @@ export const NavbarPsic = () => {
     },[psic])
     
     return (
-        <nav className="NavbarItemsPsicologo">
+    <nav className="NavbarItemsPsicologo">
         <div className='logo-cheeryUpPsicologo'>
                 <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
         </div>

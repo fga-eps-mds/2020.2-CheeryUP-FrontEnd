@@ -25,18 +25,14 @@ export default function DeletarPaciente(cpf) {
     
     
 
-    const { oi } = ""
-
     axiosInstance
     .delete(`api/psicologos/leozin/pacientes/${cpf}/`)
     .then((data) => {
         alert("Paciente deletado com sucesso!");
-        //console.log(cpf);
-        //console.log(user);
         console.log("oi")
     })
     .catch((err) => alert("Impossível realizar essa operação!"));
   
-    return {oi}
+    return {}
     
 }

@@ -1,42 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat", sans-serif;
-}
-
-
-.logo{
-    align-items: center;
-    width: 40px;
-    height: 56px;
-    justify-content: left;
-    margin: 4vw;
-}
-
-.navbar {
+.NavbarItemsAlt {
     background-color: #2D4561;
-    height: 70px;
+    height: 12vh;
     display: flex;
     position: relative;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: 1.2rem;
 }
 
-.nav-items{
-    display: flex;
+.nav-menuAlt {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    position: absolute;
+    right: 0;
+    grid-gap: 10px;
     list-style: none;
+    text-align: right;
+    width: 70vw;
+    justify-content: right;
     margin-right: 2rem;
 }
 
-.nav-items li a{
-    font-size: 1.4rem;
-}
-
 .nav-linksAlt {
-    color: rgb(233, 233, 233);
+    color: white;
     text-decoration: none;
     padding: 0.5rem 3rem;
     border-radius: 10px;
@@ -44,8 +32,15 @@
 }
 
 .nav-linksAlt:hover {
-    background-color: #faf4f3;
+    background-color: #375374;
     border-radius: 10px;
-    color: black;
     transition: all 0.2s ease-out;
+}
+
+.logo-cheeryUpAlt img{
+    width: 45px;
+    height: 6vh;
+    position: absolute;
+    left: 2%;
+    top: 23%;
 }
