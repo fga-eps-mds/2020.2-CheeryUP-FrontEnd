@@ -5,37 +5,39 @@ import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import useFormPaciente from "../../components/useFormPaciente";
 import "../../style/pages/Cadastro/CadastroPaciente.css";
 
-/* function validatePac(values) {
+ function validatePac(values) {
   let errors = {};
   if (!values.nome.trim()) {
-    errors.nome = "É necessário preencher seu nome";
+    errors.nome = "Preencha o nome";
   }
   // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
   //   errors.name = 'Enter a valid name';
   // }
 
   if (!values.nascimento) {
-    errors.nascimento = "É necessário preencher seu e-mail";
+    errors.nascimento = "Preencha o nascimento";
   }
 
   if (!values.regiao) {
-    errors.regiao = "É necessário preencher nºcrp";
+    errors.regiao = "Preencha a região";
   }
   if (!values.nCPF) {
-    errors.nCPF = "É necessário preencher uma senha";
-  } else if (values.senha.length < 11) {
-    errors.nCPF = "A senha deve conter mais de 6 caracteres";
+    errors.nCPF = "Preencha o nºCPF";
+  } else if (values.nCPF.length < 11) {
+    errors.nCPF = "O CPF deve conter 11 caracteres";
   }
 
   if (!values.genero) {
-    errors.genero = "É necessário confirmar sua senha";
+    errors.genero = "Preencha o gênero";
+  } else if(values.genero !== 'M' && values.genero !== 'F' && values.genero !== 'I'){
+    errors.genero = "Gênero inválido. Digite M, F ou I."
   }
 
   if (!values.descricao) {
-    errors.descricao = "É necessário confirmar sua senha";
+    errors.descricao = "Forneça uma descrição";
   }
   return errors;
-} */
+} 
 
 // Opções de Região
 const opcoesRegiao = [
@@ -56,6 +58,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
     SubmitFormPac
     /* validatePac */
   );
+  const [regiaostate, setregiaostate] = useState("");
 
   return (
     <Fragment>
@@ -74,15 +77,18 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     onChange={handleChange}
                     value={values.nome}
                     fluid
+                    required
                     name="nome"
                     label="Nome"
                     placeholder="Nome do Paciente"
                   />
+                  {errors.nome && <p class="alert-message">{errors.nome}</p>}
                 </Form.Group>
               </div>
               <div className="segunda-linha">
                 <Form.Group widths="equal">
                   <Form.Input
+                    required
                     fluid
                     label="Data de Nascimento"
                     placeholder="YYYY-MM-DD"
@@ -90,7 +96,9 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     value={values.nascimento}
                     name="nascimento"
                   />
+                  {errors.nascimento && <p class="alert-message">{errors.nascimento}</p>}
                   <Form.Input
+                    required
                     fluid
                     label="CPF"
                     placeholder="CPF do Paciente"
@@ -98,6 +106,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     value={values.nCPF}
                     name="nCPF"
                   />
+                  {errors.nCPF && <p class="alert-message">{errors.nCPF}</p>}
                   <Form.Select
                     fluid
                     label="Região"
@@ -145,15 +154,17 @@ const CadastroPac = ({ SubmitFormPac }) => {
               </div>
               <div className="quarta-linha">
                 <Form.TextArea
+                  required
                   label="Descrição"
                   placeholder="Informações adicionais do paciente..."
                   onChange={handleChange}
                   value={values.descricao}
                   name="descricao"
                 />
+                {errors.descricao && <p class="alert-message">{errors.descricao}</p>}
               </div>
               <div className="quinta-linha">
-                <Button onClick={handleSubmit} type="submit">
+                <Button type="submit" onClick={handleSubmit}>
                   Cadastrar
                 </Button>
               </div>

@@ -17,7 +17,6 @@ const ListaPacientes = ({ SubmitForm }) => {
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
   useEffect(() => {
-    
     axiosInstance
       .get(`api/psicologos/${psic.user.username}/pacientes/`)
       .then((data) => {
@@ -26,19 +25,19 @@ const ListaPacientes = ({ SubmitForm }) => {
       .catch((err) => console.log(err));
   }, []);
 
-  function handleAge (age) {
+  function handleAge(age) {
     var [year, month, date] = age.split("-");
     var birthday = new Date(year, month, date);
     var ageDifference = Date.now() - birthday.getTime();
     var ageDate = new Date(ageDifference);
-    
+
     return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
-  
+  }
+
   return (
     <Fragment>
       <div className="body-content">
-          <NavbarPsicPerfil />
+        <NavbarPsicPerfil />
 
         <main className="main-content">
           <div className="upper-main-content">
@@ -49,7 +48,9 @@ const ListaPacientes = ({ SubmitForm }) => {
                 type="submit"
                 // onClick={handleSubmit}
                 className="default-button-cadastro"
-              >Cadastrar Paciente</button>
+              >
+                Cadastrar Paciente
+              </button>
             </Link>
             <form className="pesquisa">
               <input
@@ -74,11 +75,9 @@ const ListaPacientes = ({ SubmitForm }) => {
             </thead>
             <tbody>
               {/* tbody é onde sera inserido os individous */}
-              {
-                pac.map((paciente, index) => (
-                  <Pacientes paciente={paciente} key={index}></Pacientes>
-                ))
-              }
+              {pac.map((paciente, index) => (
+                <Pacientes paciente={paciente} key={index}></Pacientes>
+              ))}
             </tbody>
           </table>
         </main>
