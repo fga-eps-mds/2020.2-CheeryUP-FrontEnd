@@ -57,16 +57,16 @@ class RegistroConsulta extends Component{
         dataPac.append("qualidadeNutritiva", this.qualidadeNutritiva);
         dataPac.append("autoMedicacao", this.autoMedicacao);
         dataPac.append("intoleranciaFrustração", this.intoleranciaFrustracao);
-
+        
 
         await axiosInstance
-          .get("api/psicologos/junin/pacientes/", dataPac)
-          .then((data) => {
+          .post("api/psicologos/junin/pacientes/11111111111/consultas/", dataPac)
+          .then((dataPac) => {
             alert("Cadastro efetuado passado!");
             console.log(dataPac);
           })
           .catch((err) => alert("Cadastro de Paciente inválido!"));
-      };
+      }
 
     
     render(){
@@ -77,13 +77,9 @@ class RegistroConsulta extends Component{
                 
                 <Form> 
                     <h2>Registrar consulta</h2>
-
-                    <Form.Field>
-                        <input type="date" />
-                    </Form.Field>
         {/*problemasPessoais*/}
                     <Form.Field>
-                        <label>produtividade: <b>{this.state.produtividade}</b></label>
+                        <label>Produtividade: <b>{this.state.produtividade}</b></label>
                         <Radio
                             label='Houve melhora'
                             name='produtividade'
@@ -92,7 +88,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ produtividade: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='produtividade'
                             value='0'
                             checked={this.state.produtividade === '0'}
@@ -118,7 +114,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ problemasPessoais: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='problemasPessoais'
                             value='0'
                             checked={this.state.problemasPessoais === '0'}
@@ -144,7 +140,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ humor: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='humor'
                             value='0'
                             checked={this.state.humor === '0'}
@@ -170,7 +166,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ estabilidadeDeEmocoes: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='estabilidadeDeEmocoes'
                             value='0'
                             checked={this.state.estabilidadeDeEmocoes === '0'}
@@ -196,7 +192,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ interessePelaVida: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='interessePelaVida'
                             value='0'
                             checked={this.state.interessePelaVida === '0'}
@@ -222,7 +218,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ capacidadeDeSituacoesDificeis: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='capacidadeDeSituacoesDificeis'
                             value='0'
                             checked={this.state.capacidadeDeSituacoesDificeis === '0'}
@@ -248,7 +244,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ convivioFamiliar: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='convivioFamiliar'
                             value='0'
                             checked={this.state.convivioFamiliar === '0'}
@@ -274,7 +270,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ energiaSono: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='energiaSono'
                             value='0'
                             checked={this.state.energiaSono === '0'}
@@ -300,7 +296,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ convivioAmigos: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='convivioAmigos'
                             value='0'
                             checked={this.state.convivioAmigos === '0'}
@@ -326,7 +322,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ conhecimentoDoenca: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='conhecimentoDoenca'
                             value='0'
                             checked={this.state.conhecimentoDoenca === '0'}
@@ -352,7 +348,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ criseEspacoInterior: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='criseEspacoInterior'
                             value='0'
                             checked={this.state.criseEspacoInterior === '0'}
@@ -378,7 +374,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ exposicaoRisco: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='exposicaoRisco'
                             value='0'
                             checked={this.state.exposicaoRisco === '0'}
@@ -404,7 +400,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ qualidadeSono: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='qualidadeSono'
                             value='0'
                             checked={this.state.qualidadeSono === '0'}
@@ -430,7 +426,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ tentativaSuicidio: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='tentativaSuicidio'
                             value='0'
                             checked={this.state.tentativaSuicidio === '0'}
@@ -457,7 +453,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ qualidadeEscuta: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='qualidadeEscuta'
                             value='0'
                             checked={this.state.qualidadeEscuta === '0'}
@@ -483,7 +479,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ maturidadeEmocional: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='maturidadeEmocional'
                             value='0'
                             checked={this.state.maturidadeEmocional === '0'}
@@ -509,7 +505,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ qualidadeNutritiva: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='qualidadeNutritiva'
                             value='0'
                             checked={this.state.qualidadeNutritiva === '0'}
@@ -535,7 +531,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ autoMedicacao: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='autoMedicacao'
                             value='0'
                             checked={this.state.autoMedicacao === '0'}
@@ -561,7 +557,7 @@ class RegistroConsulta extends Component{
                             onChange={e => this.setState({ intoleranciaFrustracao: '1'})}
                         />
                         <Radio
-                            label='Não houve mudanças'
+                            label='Não houve mudança'
                             name='intoleranciaFrustracao'
                             value='0'
                             checked={this.state.intoleranciaFrustracao === '0'}
