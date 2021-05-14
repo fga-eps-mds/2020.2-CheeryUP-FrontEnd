@@ -7,11 +7,12 @@ import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
 import { setPac } from "../../store/Pacientes/actions.js";
 import { Link } from "react-router-dom";
+import Pacientes from "./Pacientes";
 
 const ListaPacientes = ({ SubmitForm }) => {
   const { psic, pac } = useSelector((state) => state);
   const history = useHistory();
-  const { handleChange, values, handleSubmit } = useFormDelPaciente(SubmitForm);
+  const { handleSubmit } = useFormDelPaciente(SubmitForm);
   const dispatch = useDispatch();
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
@@ -32,7 +33,7 @@ const ListaPacientes = ({ SubmitForm }) => {
     var ageDate = new Date(ageDifference);
     
     return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
+}
   
   return (
     <Fragment>
@@ -72,34 +73,11 @@ const ListaPacientes = ({ SubmitForm }) => {
             </thead>
             <tbody>
               {/* tbody é onde sera inserido os individous */}
-              {pac.map((paciente, index) => {
-                return (
-                  <tr>
-                    {/*Individuo 1*/}
-                    <td>
-                      <button type="button" className="delete-button" onClick={handleSubmit}>
-                        X
-                      </button>
-                    </td>
-                    <td className="table-body-option">{index+1}</td>
-                    <td className="table-body-option">{paciente.nome}</td>
-                    <td className="table-body-option">
-                      {handleAge(paciente.data_nascimento)}
-                    </td>
-                    <td className="table-body-option">{paciente.regiao}</td>
-                    <td>
-                      <button type="button" className="default-button">
-                        Informações <img src="img/arrow.png" />
-                      </button>
-                    </td>
-                    <td>
-                      <button type="button" className="default-button">
-                        Registar consulta <img src="img/arrow.png" />
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {
+                pac.map((paciente, index) => (
+                  <Pacientes paciente={paciente} key={index}></Pacientes>
+                ))
+              }
             </tbody>
           </table>
         </main>

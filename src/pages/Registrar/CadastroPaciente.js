@@ -39,55 +39,20 @@ import "../../style/pages/Cadastro/CadastroPaciente.css";
 
 // Opções de Região
 const opcoesRegiao = [
-  { key: 1, text: "Águas Claras", value: 'AC' },
+  { key: 1, text: "Águas Claras", value: "AC" },
   { key: 2, text: "Taguatinga", value: 2 },
   { key: 3, text: "Vicente Pires", value: 3 },
   { key: 4, text: "Asa Sul", value: 4 },
   { key: 5, text: "Asa Norte", value: 5 },
   { key: 6, text: "Arniqueiras", value: 6 },
   { key: 7, text: "Riacho Fundo", value: 7 },
-  { key: 8, text: "Park Way", value: 'PW' },
+  { key: 8, text: "Park Way", value: "PW" },
   { key: 9, text: "Guará", value: 9 },
 ];
 
-// Função para escolha de gênero do paciente
-class Genero extends Component {
-  state = {};
-  handleChange = (e, { value }) => this.setState({ value });
-
-  render() {
-    const { value } = this.state;
-    
-    return (
-      <Form.Group inline>
-        <label>Gênero</label>
-        <Form.Radio
-          label="Masculino"
-          value="M"
-          checked={value === "M"}
-          onChange={this.handleChange}
-        />
-        <Form.Radio
-          label="Feminino"
-          value="F"
-          checked={value === "F"}
-          onChange={this.handleChange}
-        />
-        <Form.Radio
-          label="Indefinido"
-          value="I"
-          checked={value === "I"}
-          onChange={this.handleChange}
-        />
-      </Form.Group>
-
-    );
-  }
-}
-
 // Formulário de Cadastrod de Paciente
 const CadastroPac = ({ SubmitFormPac }) => {
-  const { handleSubmit, handleChange, values } = useFormPaciente(
+  const { handleSubmit, handleChange, values, handleSelect } = useFormPaciente(
     SubmitFormPac
     /* validatePac */
   );
@@ -96,7 +61,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
     <Fragment>
       <div className="container-cadPac">
         <NavbarPsic />
-        
+
         <div className="form-cadPac">
           <div className="titulo-form">
             <h1 className="titulo">Cadastro de Paciente</h1>
@@ -138,14 +103,45 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     label="Região"
                     options={opcoesRegiao}
                     placeholder="Região do Paciente"
-                    onChange={handleChange}
-                    value={values.regiao}
+                    onChange={(e, { value, name }) =>
+                      handleSelect(e, value, name)
+                    }
                     name="regiao"
+                    value={values.regiao}
                   />
                 </Form.Group>
               </div>
               <div className="terceira-linha">
-                <Genero />
+                <Form.Group inline>
+                  <label>Gênero</label>
+                  <Form.Radio
+                    label="Masculino"
+                    value="M"
+                    checked={values.genero === "M"}
+                    onChange={(e, { value, name }) =>
+                      handleSelect(e, value, name)
+                    }
+                    name="genero"
+                  />
+                  <Form.Radio
+                    label="Feminino"
+                    value="F"
+                    checked={values.genero === "F"}
+                    onChange={(e, { value, name }) =>
+                      handleSelect(e, value, name)
+                    }
+                    name="genero"
+                  />
+                  <Form.Radio
+                    label="Indefinido"
+                    value="I"
+                    checked={values.genero === "I"}
+                    onChange={(e, { value, name }) =>
+                      handleSelect(e, value, name)
+                    }
+                    name="genero"
+                  />
+                </Form.Group>
               </div>
               <div className="quarta-linha">
                 <Form.TextArea
@@ -168,6 +164,5 @@ const CadastroPac = ({ SubmitFormPac }) => {
     </Fragment>
   );
 };
-
 
 export default CadastroPac;
