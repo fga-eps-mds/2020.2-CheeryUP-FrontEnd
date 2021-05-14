@@ -44,7 +44,7 @@ export default function Routes() {
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
         <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
-        <Route path="/RegistroConsulta" component={RegistroConsulta}/>
+        <Route path="/RegistroConsulta/:infopaciente" component={RegistroConsulta}/>
 
         <Route
           Route

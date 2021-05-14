@@ -56,6 +56,7 @@ const ListaPacientes = ({ SubmitForm }) => {
             <form className="pesquisa">
               <input
                 type="search"
+                infopaciente
                 id="texto-pesquisa"
                 placeholder="Buscar por nome"
               />
@@ -84,7 +85,7 @@ const ListaPacientes = ({ SubmitForm }) => {
                         X
                       </button>
                     </td>
-                    <td className="table-body-option">{index+1}</td>
+                    <td className="table-body-option">{index + 1}</td>
                     <td className="table-body-option">{paciente.nome}</td>
                     <td className="table-body-option">
                       {handleAge(paciente.data_nascimento)}
@@ -96,9 +97,11 @@ const ListaPacientes = ({ SubmitForm }) => {
                       </button>
                     </td>
                     <td>
-                      <button type="button" className="default-button">
-                        Registar consulta <img src="img/arrow.png" />
-                      </button>
+                      <Link to={`/RegistroConsulta/${paciente.cpf}`}>
+                        <button type="button" className="default-button">
+                          Registar consulta <img src="img/arrow.png" />
+                        </button>
+                      </Link>
                     </td>
                   </tr>
                 );
