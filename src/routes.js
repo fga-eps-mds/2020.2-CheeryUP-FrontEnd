@@ -13,6 +13,7 @@ import AttDadosPsico from './pages/AtualizaDadosPessoais/AtualizarDadosPessoais'
 import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
+import RegistroConsulta from './pages/Registrar/RegistroConsulta'
 import DashboardEvolucao from './pages/DashboradEvolucao/DashboardEvolucao'
 import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'
 import DashboardEstabilidade from './pages/DashboardEstabilidadeEmocional/DashboardEstabilidade';
@@ -21,7 +22,6 @@ import DashboardAvaliacaoMedia from './pages/DashboardAvaliacaoMedia/DashboardAv
 import DashboardAvaliacaoConsulta from './pages/DashboardAvaliacaoConsulta/DashboardAvaliacaoConsulta'
 import DashboardProdutividade from './pages/DashboardProdutividade/DashboardProdutividade'
  
-
 const PrivateRoute = ({ component: Component, isAuth, ...rest }) => (
   <Route
     {...rest}
@@ -51,6 +51,7 @@ export default function Routes() {
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
         <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
+        <Route path="/RegistroConsulta/:infopaciente" component={RegistroConsulta}/>
         <Route path="/DashboardPacientes" component={DashboardPacientes}/>
         <Route path="/DashboardEvolucao" component={DashboardEvolucao}/>
         <Route path="/DashboardEstabilidade" component={DashboardEstabilidade}/>

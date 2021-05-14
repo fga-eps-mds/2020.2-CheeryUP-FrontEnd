@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #f7f7f7 !important;
+}
+
+.ui.form {
+    font-size: 1.2rem !important;
+    display:grid;
+    justify-content: center;
+    
+}
+
+.ui.form .field{
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.ui.form h2{
+    color: #494949;
+    text-align: center;
+    font-size: 24px;
+}
+    
+.ui button{
+
+    margin-bottom: 2rem !important;
+}
+label{
+    color: #494949 !important;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}

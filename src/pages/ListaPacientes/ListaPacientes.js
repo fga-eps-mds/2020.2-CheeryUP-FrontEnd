@@ -54,6 +54,7 @@ const ListaPacientes = ({ SubmitForm }) => {
             <form className="pesquisa">
               <input
                 type="search"
+                infopaciente
                 id="texto-pesquisa"
                 placeholder="Buscar por nome"
               />
@@ -73,11 +74,38 @@ const ListaPacientes = ({ SubmitForm }) => {
             </thead>
             <tbody>
               {/* tbody é onde sera inserido os individous */}
-              {
-                pac.map((paciente, index) => (
-                  <Pacientes paciente={paciente} key={index}></Pacientes>
-                ))
-              }
+
+              {pac.map((paciente, index) => {
+                return (
+                  <tr>
+                    {/*Individuo 1*/}
+                    <td>
+                      <button type="button" className="delete-button">
+                        X
+                      </button>
+                    </td>
+                    <td className="table-body-option">{index + 1}</td>
+                    <td className="table-body-option">{paciente.nome}</td>
+                    <td className="table-body-option">
+                      {handleAge(paciente.data_nascimento)}
+                    </td>
+                    <td className="table-body-option">{paciente.regiao}</td>
+                    <td>
+                      <button type="button" className="default-button">
+                        Informações <img src="img/arrow.png" />
+                      </button>
+                    </td>
+                    <td>
+                      <Link to={`/RegistroConsulta/${paciente.cpf}`}>
+                        <button type="button" className="default-button">
+                          Registar consulta <img src="img/arrow.png" />
+                        </button>
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
+
             </tbody>
           </table>
         </main>
