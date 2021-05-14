@@ -2,20 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../store/Pacientes/actions.js'
 import DeletarPaciente from './DeletarPac'
+import { Link } from 'react-router-dom'
+import {handleAge} from '../../helper/index'
 import axiosInstance from '../../services/apiToken'
 import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from '../../store/Psicologo/actions';
 import useFormDelPaciente from '../../components/useFormDelPaciente.js'
 
-function handleAge (age) {
-    var [year, month, date] = age.split("-");
-    var birthday = new Date(year, month, date);
-    var ageDifference = Date.now() - birthday.getTime();
-    var ageDate = new Date(ageDifference);
-    
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
+
 
 // function UserPsic() {
 //     const {psic} = useSelector( (state) =>state)
@@ -74,9 +69,9 @@ class Pacientes extends React.Component {
                 </td>
                 <td className="table-body-option">{paciente.regiao}</td>
                 <td>
-                    <button type="button" className="default-button">
-                    Informações <img src="img/arrow.png" />
-                    </button>
+                    <Link to ={`/ListaPacientes/${paciente.cpf}`} className="default-button">
+                            Informações <img src="img/arrow.png" />
+                    </Link>
                 </td>
                 <td>
                     <button type="button" className="default-button">

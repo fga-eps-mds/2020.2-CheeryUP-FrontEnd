@@ -10,10 +10,10 @@ export default function useFormPaciente(callback, validatePac) {
     nome: "",
     nascimento: "",
     nCPF: "",
-    regiao: "",
+    regiao: "PW",
     descricao: "",
     situacao: "M",
-    genero: "",
+    genero: "M",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
