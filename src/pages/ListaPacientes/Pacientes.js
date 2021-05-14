@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removerPaciente } from "../../store/Pacientes/actions";
 import axiosInstance from "../../services/apiToken";
+import { Link } from "react-router-dom";
 
 const Pacientes = ({ paciente }) => {
   const [iniciouDel, setIniciouDel] = useState(false);
@@ -67,9 +68,11 @@ const Pacientes = ({ paciente }) => {
         </button>
       </td>
       <td>
-        <button type="button" className="default-button">
-          Registar consulta <img src="img/arrow.png" />
-        </button>
+        <Link to={`/RegistroConsulta/${paciente.cpf}`}>
+          <button type="button" className="default-button">
+            Registar consulta <img src="img/arrow.png" />
+          </button>
+        </Link>
       </td>
     </tr>
   );
