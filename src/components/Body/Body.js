@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Button } from '../Button/Button';
 import ButtonCad from '../Button/ButtonCadastro';
 import '../../style/pages/HomePage/Body.css';
+import GraficoProdutividade from '../Graficos/GraficoProdutividade';
 
 function Body() {
     return (
@@ -18,12 +19,16 @@ function Body() {
             </div>
             <div className='body-botao'>
                 <ButtonCad>
-                    Faça seu cadastro
+                    Faça seu Cadastro
                 </ButtonCad>
             </div>
-            <div className='rodape'>
-               
+            <div className="como-funciona">
+                <h2>Como Funciona</h2>
+                <p>Ao criar sua conta você terá acesso há diversas ferramentas para cadastrar, deletar e editar consultas e dados de seus pacientes,
+                e também acesso a diversos graficos para um melhor monitoramento.
+                </p>
             </div>
+           
             
         </div>
         
