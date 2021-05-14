@@ -1,2 +1,2 @@
-export  const SET_PAC = "setPac",
-        REMOVE_PAC = "REMOVE_PAC";
+export const SET_PAC = "setPac";
+export const REMOVE_PAC = "REMOVE_PAC";
