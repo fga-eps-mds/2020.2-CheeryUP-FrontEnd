@@ -10,7 +10,7 @@ export default function useFormPaciente(callback, validatePac) {
     nome: "",
     nascimento: "",
     nCPF: "",
-    regiao: "PW",
+    regiao: "",
     descricao: "",
     situacao: "M",
     genero: "",
