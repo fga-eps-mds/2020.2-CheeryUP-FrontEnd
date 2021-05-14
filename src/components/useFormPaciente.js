@@ -8,15 +8,16 @@ export default function useFormPaciente() {
     nome: "",
     nascimento: "",
     nCPF: "",
-    regiao: "PW",
+    regiao: "",
     descricao: "",
     situacao: "M",
-    genero: "M",
+    genero: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPac = new FormData();
   const { psic } = useSelector((state) => state);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -25,9 +26,15 @@ export default function useFormPaciente() {
     });
   };
 
+  const handleSelect = (e, value, name) => {
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("pica");
     /*    setIsSubmitting(false);
     /* setErrors(validatePac(values)); */
     /*  setIsSubmitting(true); */
@@ -52,5 +59,5 @@ export default function useFormPaciente() {
 
   // Ainda falta completar toda essa parte aqui ksksksks
 
-  return { handleSubmit, handleChange, values };
+  return { handleSubmit, handleChange, values, handleSelect };
 }

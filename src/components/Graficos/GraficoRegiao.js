@@ -1,4 +1,4 @@
-import { Bar } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import api from '../../services/api'
 import { Component } from 'react'
 
@@ -9,7 +9,7 @@ class GraficoRegiao extends Component {
     }
 
     async componentDidMount() {
-        const response = await api.get('api/psicologos/11111111111/pacientes');
+        const response = await api.get('api/psicologos/davi/pacientes/');
         this.setState({ pessoas: response.data });
     }
 
@@ -114,7 +114,7 @@ class GraficoRegiao extends Component {
                 case "RF":
                     legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
                     break;
-                case "RF2":
+                case "RFII":
                     legenda[legenda.indexOf(regiao)] = "Riacho Fundo II"
                     break;
                 case "SI":
@@ -123,7 +123,7 @@ class GraficoRegiao extends Component {
                 case "SO":
                     legenda[legenda.indexOf(regiao)] = "Sobradinho"
                     break;
-                case "SO2":
+                case "SOII":
                     legenda[legenda.indexOf(regiao)] = "Sobradinho II"
                     break;
                 case "SN":
@@ -165,16 +165,18 @@ class GraficoRegiao extends Component {
                         
                     ],
 
-                    borderWidth: 1,
-                    borderRadius: 30,
+                    
                 },
             ],
         };
         return (
             <>
-                <Bar
-                 data={data}
-                  />
+               <div>
+                <Pie data={data}
+                        width={500}
+                        height={500}
+                        options={{ maintainAspectRatio: false  }}/>
+                        </div>
             </>)
 
     }

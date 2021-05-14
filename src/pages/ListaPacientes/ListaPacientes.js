@@ -1,17 +1,18 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
-import useFormPaciente from "../../components/useFormPaciente";
+import useFormDelPaciente from "../../components/useFormDelPaciente";
 import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicPerfil";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
-import { setPac } from "../../store/Pacientes/actions";
+import { setPac } from "../../store/Pacientes/actions.js";
 import { Link } from "react-router-dom";
+import Pacientes from "./Pacientes";
 
 const ListaPacientes = ({ SubmitForm }) => {
   const { psic, pac } = useSelector((state) => state);
   const history = useHistory();
-  const { handleChange, values, handleSubmit } = useFormPaciente(SubmitForm);
+  const { handleSubmit } = useFormDelPaciente(SubmitForm);
   const dispatch = useDispatch();
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
@@ -32,26 +33,23 @@ const ListaPacientes = ({ SubmitForm }) => {
     var ageDate = new Date(ageDifference);
     
     return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
+}
   
   return (
     <Fragment>
       <div className="body-content">
-        <header className="top-content">
           <NavbarPsicPerfil />
-        </header>
 
         <main className="main-content">
           <div className="upper-main-content">
             <h2 class="page-name">Lista Pacientes</h2>
             <Link to="/CadastrarPaciente">
               {" "}
-              Cadastrar Paciente
               <button
                 type="submit"
-                onClick={handleSubmit}
-                className="default-button"
-              ></button>
+                // onClick={handleSubmit}
+                className="default-button-cadastro"
+              >Cadastrar Paciente</button>
             </Link>
             <form className="pesquisa">
               <input
@@ -76,6 +74,7 @@ const ListaPacientes = ({ SubmitForm }) => {
             </thead>
             <tbody>
               {/* tbody é onde sera inserido os individous */}
+
               {pac.map((paciente, index) => {
                 return (
                   <tr>
@@ -106,6 +105,7 @@ const ListaPacientes = ({ SubmitForm }) => {
                   </tr>
                 );
               })}
+
             </tbody>
           </table>
         </main>

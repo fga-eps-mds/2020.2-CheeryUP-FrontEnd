@@ -24,7 +24,7 @@ body{
 /********************************************************************************/
 
 /* header */
-.top-content{
+/* .top-content{
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -33,8 +33,8 @@ body{
     background-color: #2D4561;
     width: 100vw;
     height: 70px;
-    text-align: center;
-}
+    text-align: center; }*/
+
 /* retira os . iniciais em listas não ordenadas */
 ul{
     list-style: none;
@@ -112,6 +112,7 @@ button{
     padding: 2px 5px 2px 5px;
     color: #f1f1f1;
 }
+
 .default-button{
     background-color: #2D4561;
     padding: 0.35rem 0.5rem 0.35rem 0.5rem;
@@ -119,6 +120,13 @@ button{
     font-size: 16px;
 }
 
+.default-button-cadastro{
+    width: 100%;
+    height: 5vh;
+    background-color: #2D4561;
+    border-radius: 5px;
+    font-size: 100%;
+}
 
 .delete-button{
     background-color: #F9423A;

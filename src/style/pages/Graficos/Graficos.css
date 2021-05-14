@@ -1,0 +1,8 @@
+.avaliacoes {
+    display: flex;
+    justify-content: center;
+}
+
+.avaliacoes div {
+    padding: 5% 4%;
+}

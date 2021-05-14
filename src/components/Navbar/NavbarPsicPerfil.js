@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from "react";
-import "../../style/pages/HomePage/NavbarPsicologo.css";
+import "../../style/pages/HomePage/NavbarPsicPerfil.css";
 import axiosInstance from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from "../../store/Psicologo/actions";
@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom'
     Essa Navbar seria usada nas páginas após o Login.
 */
 
-export const NavbarPsic = () => {
+export const NavbarPsicPerfil = () => {
   const {psic} = useSelector( (state) =>state)
   const dispatch = useDispatch();
   const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
@@ -26,12 +26,12 @@ export const NavbarPsic = () => {
   },[psic])
   
   return (
-    <nav className="NavbarItemsPsico">
+    <nav className="NavbarItemsPsic">
       <div className="logo-cheeryUpPsic">
         <img src="/imagens/logoNavbarAlt.png" alt="Logo" />
       </div>
 
-      <ul className="nav-menu">
+      <ul className="nav-menuPsic">
         {MenuItemsPsicPerfil.map((item, index) => {
           return (
             <li key={index}>
@@ -54,4 +54,4 @@ export const NavbarPsic = () => {
   );
 };
 
-export default NavbarPsic;
+export default NavbarPsicPerfil;
