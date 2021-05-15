@@ -75,7 +75,7 @@ const ListaPacientes = ({ SubmitForm }) => {
               {/* tbody é onde sera inserido os individous */}
               {
                 pac.map((paciente, index) => (
-                  <Pacientes paciente={paciente} key={index}></Pacientes>
+                  <Pacientes paciente={paciente} key={paciente.cpf}></Pacientes>
                 ))
               }
             </tbody>

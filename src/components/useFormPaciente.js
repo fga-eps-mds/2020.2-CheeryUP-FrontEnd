@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import "../pages/Registrar/CadastroPaciente";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-export default function useFormPaciente() {
+export default function useFormPaciente(callback, validatePac) {
+  const history = useHistory()
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
@@ -35,9 +37,10 @@ export default function useFormPaciente() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    /*    setIsSubmitting(false);
-    /* setErrors(validatePac(values)); */
-    /*  setIsSubmitting(true); */
+
+    setIsSubmitting(false);
+    setErrors(validatePac(values)); 
+    setIsSubmitting(true); 
 
     console.log(values);
     dataPac.append("nome", values.nome);
@@ -53,11 +56,12 @@ export default function useFormPaciente() {
       .then((data) => {
         alert("Cadastro efetuado passado!");
         console.log(psic);
+        history.push('/ListaPacientes')
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
   };
 
   // Ainda falta completar toda essa parte aqui ksksksks
 
-  return { handleSubmit, handleChange, values, handleSelect };
+  return { handleSubmit, handleChange, values, handleSelect, errors };
 }
