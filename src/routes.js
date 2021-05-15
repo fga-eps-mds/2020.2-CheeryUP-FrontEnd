@@ -61,7 +61,7 @@ export default function Routes() {
         <Route path="/DashboardAvaliacaoMedia" component={DashboardAvaliacaoMedia}/>
         <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
         <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
-        <Route path="/InformacoesPaciente" component={InformacoesPaciente}/>
+        <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
         <Route
           path= '/ListaPacientes/:infopaciente'
           //isAuth={auth}

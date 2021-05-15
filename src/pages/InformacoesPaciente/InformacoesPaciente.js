@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment } from "react";
 import "../../style/pages/InfoPaciente/InfoPaciente.css";
-import { handleGenero, handleAge, handleRegiao } from "../../helper/index";
+//import { handleGenero, handleAge, handleRegiao } from "../../helper/index";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
@@ -13,7 +13,9 @@ const InfoPac = () => {
 
   useEffect(() => {
     axiosInstance
-      .get(`api/psicologos/${psic.user.username}/pacientes/${infopaciente}/`)
+      .get(
+        `api/psicologos/${psic.user.username}/pacientes/${infopaciente}/`
+      )
       .then((value) => {
         setPaciente(value.data);
       })
@@ -36,10 +38,10 @@ const InfoPac = () => {
         <div className="dados-pac">
           <h4>Dados do Paciente</h4> <br />
           Nome: {paciente.nome} <br />
-          Idade: {handleAge(paciente.data_nascimento)} <br />
+          Idade: {paciente.data_nascimento} <br />
           CPF: {paciente.cpf} <br />
-          Gênero: {handleGenero(paciente.genero)} <br />
-          Região: {handleRegiao(paciente.regiao)}
+          Gênero: {paciente.genero} <br />
+          Região: {paciente.regiao}
         </div>
         <div className="descricao">Descrição: {paciente.descricao}</div>
       </div>

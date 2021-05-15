@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
 import useFormDelPaciente from "../../components/useFormDelPaciente";
-import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicPerfil";
+import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicologo";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,7 +52,7 @@ const ListaPacientes = ({ SubmitForm }) => {
                 Cadastrar Paciente
               </button>
             </Link>
-            <form className="pesquisa">
+            <form className="pesquisinfopacientea">
               <input
                 type="search"
                 infopaciente
