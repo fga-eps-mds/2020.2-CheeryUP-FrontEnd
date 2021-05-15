@@ -4,7 +4,7 @@ import { removerPaciente } from "../../store/Pacientes/actions";
 import axiosInstance from "../../services/apiToken";
 import { Link } from "react-router-dom";
 
-const Pacientes = ({ paciente }) => {
+const Pacientes = ({ paciente, index}) => {
   const [iniciouDel, setIniciouDel] = useState(false);
   const { psic, pac, auth } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const Pacientes = ({ paciente }) => {
           </button>
         )}
       </td>
-      <td className="table-body-option">{paciente.index}</td>
+      <td className="table-body-option">{index +1}</td>
       <td className="table-body-option">{paciente.nome}</td>
       <td className="table-body-opthandleAgeion">
         {handleAge(paciente.data_nascimento)}
