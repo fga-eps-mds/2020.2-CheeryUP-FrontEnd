@@ -19,7 +19,7 @@ class Navbar extends Component {
         return(
             <nav className="NavbarItems">
                 <div className='logo-cheeryUp'>
-                    <img src = '/imagens/logoNavbar.png' alt='Logo'/>
+                    <img src = '/imagens/cereja.png' alt='Logo'/>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {

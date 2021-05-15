@@ -62,7 +62,7 @@ const SignUP = ({ SubmitForm }) => {
             <Card
               className="form-card"
               style={{ border: "none", boxShadow: "none" }}
-            >
+              >
               <Card.Content className="form-title">
                 <Card.Header> Cadastrar </Card.Header>
               </Card.Content>
@@ -142,8 +142,8 @@ const SignUP = ({ SubmitForm }) => {
           </div>
         </div>
 
-        <div className="side-image">
-          <img src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro" />
+        <div>
+          <img  className="side-image" src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro" />
         </div>
       </div>
     </Fragment>

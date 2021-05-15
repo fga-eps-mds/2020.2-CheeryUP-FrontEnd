@@ -1,6 +1,6 @@
 .NavbarItems {
     background-color: white;
-    height: 12vh;
+    height: 9vh;
     display: flex;
     position: relative;
     justify-content: center;
@@ -24,15 +24,14 @@
 .nav-links {
     color: rgb(10, 10, 10);
     text-decoration: none;
-    padding: 0.5rem 3rem;
+    padding: 0rem 3rem;
     border-radius: 10px;
-    font-size: 105%;
+    font-size: 95%;
 }
 
 .nav-links:hover {
-    background-color: #EE512F;
     border-radius: 10px;
-    color: white;
+    color: #ee3c2f;
     transition: all 0.2s ease-out;
 }
 
@@ -125,10 +124,10 @@
 
 .logo-cheeryUp img{
     width: 10vw;
-    height: 6vh;
+    height: 6.5vh;
     position: absolute;
-    left: 2%;
-    top: 23%;
+    left: 7%;
+    top: 15%;
 }
 
 /*

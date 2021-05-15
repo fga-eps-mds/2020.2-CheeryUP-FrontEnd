@@ -2,21 +2,25 @@
   display: flex;
   height: 100vh;
   width: 100vh;
+  
 }
 
+
+
 .form-signup-container {
-  position:relative;
-  display: inline-block;
-  height: 100vh;
-  width: 50vw;
-  background: #ffffff
+  background: #ffffff;
+  height: 20vh;
 } 
+
+.ui.card{
+    
+}
+
 /*imagem lateral*/
-.side-image img{
-  position: relative;
+.side-image {
+  position: fixed;
   height: 100vh;
-  width: 50vw;
- 
+  margin-left: 6vw;
 }
 /* propriedades do formulario*/
 .ui.input > input {
@@ -48,12 +52,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20vh;
+  padding-top: 14vh;
+  
 }
 
 .form-content-input {
   display: flex;
   flex-direction: column;
+  position: absolute;
 }
 
 .form-title {
@@ -64,6 +70,7 @@
 
 .form-card {
   width: 300px !important;
+  
 }
 
 .top-signup {
@@ -76,12 +83,14 @@
   justify-content: space-between;
 }
 
+
   .top-signup-logo {
     position: relative;
     align-items: center;
-    left: 2vw;
-    width: 40px;
-    height: 56px;
+    left: 3vw;
+    top: 2vh;
+    width: 2.5vw;
+    height: 7vh;
   }
 
   .top-signup-navbar-option{
@@ -89,7 +98,7 @@
     font-weight: bold;
     padding: 2rem;
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 16px;
     display: table;
     color: #494949;
   }
