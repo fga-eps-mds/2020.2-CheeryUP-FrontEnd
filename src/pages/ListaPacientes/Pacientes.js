@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 const Pacientes = ({ paciente }) => {
   const [iniciouDel, setIniciouDel] = useState(false);
-  const { psic, pac, auth} = useSelector((state) => state);
+  const { psic, pac, auth } = useSelector((state) => state);
   const dispatch = useDispatch();
   const removerPac = useCallback(
     (cpf) => dispatch(removerPaciente(cpf)),
     [dispatch]
   );
-  
+
   const deletarPaciente = () => {
     axiosInstance
       .delete(`api/psicologos/${psic.user.username}/pacientes/${paciente.cpf}/`)
@@ -56,16 +56,18 @@ const Pacientes = ({ paciente }) => {
           </button>
         )}
       </td>
-      <td className="table-body-option">1</td>
+      <td className="table-body-option">{paciente.index}</td>
       <td className="table-body-option">{paciente.nome}</td>
       <td className="table-body-opthandleAgeion">
         {handleAge(paciente.data_nascimento)}
       </td>
       <td className="table-body-option">{paciente.regiao}</td>
       <td>
-        <button type="button" className="default-button">
-          Informações <img src="img/arrow.png" />
-        </button>
+        <Link to={`/InformacoesPaciente/${paciente.cpf}`}>
+          <button type="button" className="default-button">
+            Informações <img src="img/arrow.png" />
+          </button>
+        </Link>
       </td>
       <td>
         <Link to={`/RegistroConsulta/${paciente.cpf}`}>

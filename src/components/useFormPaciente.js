@@ -19,7 +19,7 @@ export default function useFormPaciente(callback, validatePac) {
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPac = new FormData();
   const { psic } = useSelector((state) => state);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -37,7 +37,6 @@ export default function useFormPaciente(callback, validatePac) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsSubmitting(false);
     setErrors(validatePac(values)); 
     setIsSubmitting(true); 
@@ -56,7 +55,8 @@ export default function useFormPaciente(callback, validatePac) {
       .then((data) => {
         alert("Cadastro efetuado passado!");
         console.log(psic);
-        history.push('/ListaPacientes')
+        history.push("/ListaPacientes");
+
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
   };

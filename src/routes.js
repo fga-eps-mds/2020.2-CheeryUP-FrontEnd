@@ -22,6 +22,8 @@ import DashboardAvaliacaoMedia from './pages/DashboardAvaliacaoMedia/DashboardAv
 import DashboardAvaliacaoConsulta from './pages/DashboardAvaliacaoConsulta/DashboardAvaliacaoConsulta'
 import DashboardProdutividade from './pages/DashboardProdutividade/DashboardProdutividade'
  
+import InfoPac from "./pages/InfoPaciente/InfoPaciente";
+
 const PrivateRoute = ({ component: Component, isAuth, ...rest }) => (
   <Route
     {...rest}
@@ -59,7 +61,12 @@ export default function Routes() {
         <Route path="/DashboardAvaliacaoMedia" component={DashboardAvaliacaoMedia}/>
         <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
         <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
-        <Route path="/InformacoesPaciente" component={InformacoesPaciente}/>
+        <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
+        <Route
+          path= '/ListaPacientes/:infopaciente'
+          //isAuth={auth}
+          component = {InfoPac}
+        />
         <Route
           Route
           path="/CadastrarPaciente"

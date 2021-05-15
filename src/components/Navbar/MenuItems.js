@@ -47,7 +47,7 @@ export const MenuItemsPsic = [
   },
   {
     title: "Perfil",
-    url: "#",
+    url: "/PerfilPsicologo",
     cName: "nav-linksPsic",
   },
 ];
@@ -65,7 +65,7 @@ export const MenuItemsPsicPerfil = [
   },
   {
     title: "Sair",
-    url: "#",
+    url: "/",
     cName: "nav-linksPsicPerfil",
   },
 ];

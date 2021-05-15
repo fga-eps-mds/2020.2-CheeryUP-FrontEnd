@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
 import useFormDelPaciente from "../../components/useFormDelPaciente";
-import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicPerfil";
+import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicologo";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,6 @@ const ListaPacientes = ({ SubmitForm }) => {
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
   useEffect(() => {
-    
     axiosInstance
       .get(`api/psicologos/${psic.user.username}/pacientes/`)
       .then((data) => {
@@ -26,19 +25,19 @@ const ListaPacientes = ({ SubmitForm }) => {
       .catch((err) => console.log(err));
   }, []);
 
-  function handleAge (age) {
+  function handleAge(age) {
     var [year, month, date] = age.split("-");
     var birthday = new Date(year, month, date);
     var ageDifference = Date.now() - birthday.getTime();
     var ageDate = new Date(ageDifference);
-    
+
     return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
-  
+  }
+
   return (
     <Fragment>
       <div className="body-content">
-          <NavbarPsicPerfil />
+        <NavbarPsicPerfil />
 
         <main className="main-content">
           <div className="upper-main-content">
@@ -50,7 +49,7 @@ const ListaPacientes = ({ SubmitForm }) => {
                 className="default-button"
               > Cadastrar Paciente</button>
             </Link>
-            <form className="pesquisa">
+            <form className="pesquisinfopacientea">
               <input
                 type="search"
                 infopaciente
@@ -73,11 +72,10 @@ const ListaPacientes = ({ SubmitForm }) => {
             </thead>
             <tbody>
               {/* tbody é onde sera inserido os individous */}
-              {
-                pac.map((paciente, index) => (
-                  <Pacientes paciente={paciente} key={paciente.cpf}></Pacientes>
-                ))
-              }
+              {pac.map((paciente, index) => (
+                <Pacientes paciente={paciente} key={index}></Pacientes>
+              ))}
+
             </tbody>
           </table>
         </main>

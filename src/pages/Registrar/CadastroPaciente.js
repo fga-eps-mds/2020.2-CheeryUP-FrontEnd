@@ -5,6 +5,7 @@ import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import useFormPaciente from "../../components/useFormPaciente";
 import "../../style/pages/Cadastro/CadastroPaciente.css";
 
+
 function validatePac(values) {
   let errors = {};
   if (!values.nome.trim()) {
@@ -77,12 +78,12 @@ const opcoesRegiao = [
   { key: 36, text: "Entre Outros", value: 'EO' },
 ];
 
-// Formulário de Cadastrod de Paciente
 const CadastroPac = ({ SubmitFormPac }) => {
   const { handleSubmit, handleChange, values, handleSelect, errors } = useFormPaciente(
     SubmitFormPac,
     validatePac 
   );
+  const [regiaostate, setregiaostate] = useState("");
 
   return (
     <Fragment>
@@ -102,6 +103,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     onChange={handleChange}
                     value={values.nome}
                     fluid
+                    required
                     name="nome"
                     label="Nome"
                     placeholder="Nome do Paciente"
@@ -112,6 +114,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
               <div className="segunda-linha">
                 <Form.Group widths="equal">
                   <Form.Input
+                    required
                     fluid
                     required
                     label="Data de Nascimento"
@@ -122,6 +125,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
                   />
                   {errors.nascimento && <p class="alert-message">{errors.nascimento}</p>}
                   <Form.Input
+                    required
                     fluid
                     required
                     label="CPF"
@@ -168,9 +172,9 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     name="genero"
                   />
                   <Form.Radio
-                    label="Indefinido"
-                    value="I"
-                    checked={values.genero === "I"}
+                    label="Outro"
+                    value="O"
+                    checked={values.genero === "O"}
                     onChange={(e, { value, name }) =>
                       handleSelect(e, value, name)
                     }
@@ -191,7 +195,7 @@ const CadastroPac = ({ SubmitFormPac }) => {
                 {errors.descricao && <p class="alert-message">{errors.descricao}</p>}
               </div>
               <div className="quinta-linha">
-                <Button onClick={handleSubmit} type="submit">
+                <Button type="submit" onClick={handleSubmit}>
                   Cadastrar
                 </Button>
               </div>
