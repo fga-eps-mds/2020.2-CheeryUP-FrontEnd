@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
-import "../../style/pages/Lista/ListaPacientes.css";
+import "../../style/pages/Lista/Lista.css";
 import useFormDelPaciente from "../../components/useFormDelPaciente";
 import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicologo";
 import { useHistory } from "react-router-dom";
