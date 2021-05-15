@@ -58,7 +58,7 @@ const Pacientes = ({ paciente }) => {
       </td>
       <td className="table-body-option">{paciente.index}</td>
       <td className="table-body-option">{paciente.nome}</td>
-      <td className="table-body-opthandleAgeion">
+      <td className="table-body-option">
         {handleAge(paciente.data_nascimento)}
       </td>
       <td className="table-body-option">{paciente.regiao}</td>

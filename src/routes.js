@@ -21,6 +21,7 @@ import DashboardQualidadeVida from './pages/DashboardQualidadeVida/DashboardQual
 import DashboardAvaliacaoMedia from './pages/DashboardAvaliacaoMedia/DashboardAvaliaçãoMedia'
 import DashboardAvaliacaoConsulta from './pages/DashboardAvaliacaoConsulta/DashboardAvaliacaoConsulta'
 import DashboardProdutividade from './pages/DashboardProdutividade/DashboardProdutividade'
+import ListaConsultas from './pages/ListaConsultas/ListaConsultas';
  
 import InfoPac from "./pages/InfoPaciente/InfoPaciente";
 
@@ -62,6 +63,7 @@ export default function Routes() {
         <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
         <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
         <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
+        <Route path="/ListaConsultas" component={ListaConsultas}/> 
         <Route
           path= '/ListaPacientes/:infopaciente'
           //isAuth={auth}
