@@ -23,7 +23,7 @@
 
 .form-cadPac{
     width: 50vw;
-    height: 68vh;
+    height: 72vh;
     position: absolute;
     top: 25%;
     left: 25%;
@@ -47,7 +47,7 @@
     position: relative;
 }
 
-.alert-paciente-msg {
+.alert-message {
     font-size: 0.9rem;
     margin-top: 0.1rem;
     color: #f0300efa;

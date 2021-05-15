@@ -41,8 +41,8 @@ import "../../style/pages/Cadastro/CadastroPaciente.css";
 
 // Opções de Região
 const opcoesRegiao = [
-  { key: 1, text: "Águas Claras", value: "AC" },
-  { key: 2, text: "Taguatinga", value: 2 },
+  { key: 1, text: "Águas Claras", value: 'AC' },
+  { key: 2, text: "Taguatinga", value: 'TG' },
   { key: 3, text: "Vicente Pires", value: 3 },
   { key: 4, text: "Asa Sul", value: 4 },
   { key: 5, text: "Asa Norte", value: 5 },
@@ -52,11 +52,26 @@ const opcoesRegiao = [
   { key: 9, text: "Guará", value: 9 },
 ];
 
+// const updateCategory = async (e, value) => {
+//   this.loadingStatus = true;
+//   try {
+//       runInAction('updating category', () => {
+//           if (value != undefined) {
+//               this.regiao = value;
+//           }
+//           console.log(value);
+//       })
+//   } catch (error) {
+//       console.log(error)
+//       this.loadingStatus = false;
+//   }
+// }
+
 // Formulário de Cadastrod de Paciente
-const CadastroPac = ({ SubmitFormPac }) => {
-  const { handleSubmit, handleChange, values, handleSelect } = useFormPaciente(
-    SubmitFormPac
-    /* validatePac */
+const CadastroPac = ({ SubmitForm }) => {
+  const { handleChange, values, handleSubmit, errors, handleSelect } = useFormPaciente(
+    SubmitForm,
+    validatePac 
   );
   const [regiaostate, setregiaostate] = useState("");
 
@@ -142,9 +157,9 @@ const CadastroPac = ({ SubmitFormPac }) => {
                     name="genero"
                   />
                   <Form.Radio
-                    label="Indefinido"
-                    value="I"
-                    checked={values.genero === "I"}
+                    label="Outro"
+                    value="O"
+                    checked={values.genero === "O"}
                     onChange={(e, { value, name }) =>
                       handleSelect(e, value, name)
                     }

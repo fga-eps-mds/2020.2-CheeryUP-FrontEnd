@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
 import useFormDelPaciente from "../../components/useFormDelPaciente";
-import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
+import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicPerfil";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,12 +43,12 @@ const ListaPacientes = ({ SubmitForm }) => {
           <div className="upper-main-content">
             <h2 class="page-name">Lista Pacientes</h2>
             <Link to="/CadastrarPaciente">
-              {" "}
               <button
                 type="submit"
-                // onClick={handleSubmit}
-                className="default-button-cadastro"
+                onClick={handleSubmit}
+                className="default-button"
               >
+                {" "}
                 Cadastrar Paciente
               </button>
             </Link>
