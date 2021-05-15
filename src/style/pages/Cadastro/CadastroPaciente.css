@@ -23,7 +23,7 @@
 
 .form-cadPac{
     width: 50vw;
-    height: 72vh;
+    height: 76vh;
     position: absolute;
     top: 25%;
     left: 25%;
@@ -55,7 +55,7 @@
 
 @media screen and (max-width: 960px) {
     .form-cadPac{
-        background-color: white;
+        background-color: whitesmoke;
     }
 
     .titulo-form{

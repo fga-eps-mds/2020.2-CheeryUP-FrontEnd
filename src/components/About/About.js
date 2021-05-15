@@ -4,7 +4,9 @@ import '../../style/pages/HomePage/About.css';
 function About(){
     return(
         <div className='about-content'>
-                <div className="upper-content">
+            
+            <div className="upper-content">
+                    <a href="/">Voltar</a>
                     <section className="who-we-are-content">
                         <h2 className="who-we-are-title">Quem somos?</h2>
                         <p>Cheery Up é um projeto que dá atenção à saúde psicológica da sociedade, 

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 export default function useFormPaciente(callback, validatePac) {
-  const history = useHistory();
+  const history = useHistory()
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
@@ -37,10 +37,9 @@ export default function useFormPaciente(callback, validatePac) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsSubmitting(false);
-    setErrors(validatePac(values));
-    setIsSubmitting(true);
+    setErrors(validatePac(values)); 
+    setIsSubmitting(true); 
 
     console.log(values);
     dataPac.append("nome", values.nome);
@@ -57,6 +56,7 @@ export default function useFormPaciente(callback, validatePac) {
         alert("Cadastro efetuado passado!");
         console.log(psic);
         history.push("/ListaPacientes");
+
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
   };

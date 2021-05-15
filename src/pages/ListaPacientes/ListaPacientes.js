@@ -42,15 +42,12 @@ const ListaPacientes = ({ SubmitForm }) => {
         <main className="main-content">
           <div className="upper-main-content">
             <h2 class="page-name">Lista Pacientes</h2>
-            <Link to="/CadastrarPaciente">
+            <Link to="/CadastrarPaciente">  
               <button
                 type="submit"
                 onClick={handleSubmit}
                 className="default-button"
-              >
-                {" "}
-                Cadastrar Paciente
-              </button>
+              > Cadastrar Paciente</button>
             </Link>
             <form className="pesquisinfopacientea">
               <input
@@ -78,6 +75,7 @@ const ListaPacientes = ({ SubmitForm }) => {
               {pac.map((paciente, index) => (
                 <Pacientes paciente={paciente} key={index}></Pacientes>
               ))}
+
             </tbody>
           </table>
         </main>

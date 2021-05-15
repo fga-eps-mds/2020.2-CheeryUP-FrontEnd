@@ -11,7 +11,13 @@
     width: 50vw;
     background: #ffffff
   }
-
+  .links {
+    font-size: 90%;
+    color: #f0300efa;
+  }
+  .links:hover {
+    color: #f0300efa;
+  }
   .side-image-login img{
     position: relative;
     height: 100vh;
@@ -72,7 +78,8 @@
   .top-login-logo {
     position: relative;
     align-items: center;
-    left: 2vw;
+    left: 2.5vw;
+    top: 1vw;
     width: 40px;
     height: 56px;
   }
@@ -96,6 +103,11 @@
     font-size: 0.9rem;
     margin-top: 0.1rem;
     color: #f0300efa;
+  }
+
+  .form-input-help {
+    font-size: 95%;
+    margin-left: 5%;
   }
 
   @media screen and (max-width: 960px) {
