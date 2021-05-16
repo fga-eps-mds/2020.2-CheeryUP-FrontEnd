@@ -56,7 +56,7 @@ const Pacientes = ({ paciente, index}) => {
           </button>
         )}
       </td>
-      <td className="table-body-option">{index +1}</td>
+      <td className="table-body-option">{index + 1}</td>
       <td className="table-body-option">{paciente.nome}</td>
       <td className="table-body-opthandleAgeion">
         {handleAge(paciente.data_nascimento)}
@@ -73,6 +73,13 @@ const Pacientes = ({ paciente, index}) => {
         <Link to={`/RegistroConsulta/${paciente.cpf}`}>
           <button type="button" className="default-button">
             Registar consulta <img src="img/arrow.png" />
+          </button>
+        </Link>
+      </td>
+      <td>
+        <Link to={`/AtualizarPaciente/${paciente.cpf}`}>
+          <button type="button" className="default-button">
+            Atualizar Paciente <img src="img/arrow.png" />
           </button>
         </Link>
       </td>

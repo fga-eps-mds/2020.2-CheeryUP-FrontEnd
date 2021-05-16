@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
+import { Button } from "../../components/Button/Button";
+import { Link } from 'react-router-dom'
 
 const InfoPac = () => {
   const { infopaciente } = useParams();
@@ -42,7 +44,9 @@ const InfoPac = () => {
           CPF: {paciente.cpf} <br />
           Gênero: {paciente.genero} <br />
           Região: {paciente.regiao}
+          <br />
         </div>
+
         <div className="descricao">Descrição: {paciente.descricao}</div>
       </div>
 
