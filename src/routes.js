@@ -73,10 +73,9 @@ export default function Routes() {
           isAuth={auth}
           component={CadastroPac}
         />
-        <PrivateRoute
+        <Route
           Route
-          path="/AtualizarPaciente"
-          isAuth={auth}
+          path="/AtualizarPaciente/:infopaciente"
           component={AttDadosPac}
         />
         <PrivateRoute
