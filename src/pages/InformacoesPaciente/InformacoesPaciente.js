@@ -71,7 +71,7 @@ const InfoPac = () => {
             </div>
             <div className="wrap-graficos">
               <div className="graficos-pizzas">
-                <GraficoProdutividade
+                <GraficoProdutividade 
                   paciente={paciente}
                   usernamepsic={psic.user.username}
                 />
