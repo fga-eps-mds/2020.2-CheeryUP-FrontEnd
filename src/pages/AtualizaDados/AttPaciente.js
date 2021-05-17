@@ -80,7 +80,7 @@ const opcoesRegiao = [
 //const history = useHistory();
 
 const AttDadosPac = ({SubmitAttForm}) => {
-    const { handleSubmit, handleChange, values, handleSelect} = useFormAttPaciente(
+    const { handleSubmit, handleChange, values, handleSelect,errors} = useFormAttPaciente(
       SubmitAttForm,
       validatePac
       );

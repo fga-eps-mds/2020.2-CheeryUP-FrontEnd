@@ -37,7 +37,7 @@ function validate(values) {
   }
 
 const AttDadosPsico = ({SubmitAttForm}) => {
-    const { handleSubmit, handleChange, values, handleSelect} = useFormAttContaPsic(
+    const { handleSubmit, handleChange, values, handleSelect,errors} = useFormAttContaPsic(
         SubmitAttForm,
         validate
         );
