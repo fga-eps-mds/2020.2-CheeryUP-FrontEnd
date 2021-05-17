@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../pages/Registrar/CadastroPaciente";
+import "../pages/Registrar/SignUP";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
