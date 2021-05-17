@@ -72,7 +72,7 @@ class GraficoEvolucaoPaciente extends Component {
       <>
         <div>
           <Line
-            data={data}x
+            data={data}
             options={{
               maintainAspectRatio: false,
               scales: {

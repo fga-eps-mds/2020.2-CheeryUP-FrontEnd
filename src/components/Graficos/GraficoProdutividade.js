@@ -93,7 +93,9 @@ class GraficoProdutividade extends Component {
         <div>
           <Doughnut
             data={data}
-            options={{ maintainAspectRatio: false }}
+            width={370}
+            height={500}
+            options={{ maintainAspectRatio: false  }}
           />
         </div>
       </>

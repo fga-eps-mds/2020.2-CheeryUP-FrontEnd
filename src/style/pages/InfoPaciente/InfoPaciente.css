@@ -15,7 +15,7 @@
   height: 25vh;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1vh;
+  padding-bottom: 1.5vh;
   border-radius: 2vh 0vh 0vh 2vh;
 }
 
@@ -47,7 +47,8 @@
 }
 
 .graficos-metricas {
-  margin-top: 90px;
+  text-align: center;
+  margin-top: 100px;
 }
 
 .wrap-graficos {
@@ -56,8 +57,9 @@
 }
 
 .grafico-rosca {
-  max-height: 100vw;
+  width: 500px;
 }
+
 
 @media screen and (max-width: 960px) {
   .container-graficos {

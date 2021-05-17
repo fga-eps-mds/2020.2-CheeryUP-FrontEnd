@@ -9,7 +9,7 @@ import GraficoQualidadeVida from "../../components/Graficos/GraficoQualidadeVida
 import GraficoAvaliaçãoMediaIndicadores from "../../components/Graficos/GraficoGraficoAvaliaçãoMedia";
 import GraficoEvolucaoPaciente from "../../components/Graficos/GraficoEvolucaoPaciente";
 import GraficoEstabilidadeEmocional from "../../components/Graficos/GraficoEstabilidadeEmocional";
-import GraficoProdutividade from "../../components/Graficos/GraficoHomePage";
+import GraficoProdutividade from "../../components/Graficos/GraficoProdutividade";
 
 const InfoPac = () => {
   const { infopaciente } = useParams();
@@ -35,7 +35,7 @@ const InfoPac = () => {
 
       <div className="info-paciente">
         <div className="dados-pac">
-          <h4>Dados do Paciente</h4> <br />
+          <h4>Dados do Paciente</h4> 
           Nome: {paciente.nome} <br />
           Idade: {paciente.data_nascimento} <br />
           CPF: {paciente.cpf} <br />
@@ -79,6 +79,7 @@ const InfoPac = () => {
             </div>
           </div>
           <div className="graficos-metricas">
+            <h2>Avaliação Média</h2>
             <GraficoAvaliaçãoMediaIndicadores
               paciente={paciente}
               usernamepsic={psic.user.username}

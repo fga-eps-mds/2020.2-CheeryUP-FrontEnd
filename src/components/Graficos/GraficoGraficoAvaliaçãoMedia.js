@@ -126,10 +126,10 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         avaliacaoBoa.push(this.editaIndicador(nomeIndicador[posicaoIndicador]));
         avaliacao[0]++;
       } else if (mediaIndicador < -1) {
-        avaliacaoBoa.push(this.editaIndicador(nomeIndicador[posicaoIndicador]));
+        avaliacaoRuim.push(this.editaIndicador(nomeIndicador[posicaoIndicador]));
         avaliacao[1]++;
       } else {
-        avaliacaoBoa.push(this.editaIndicador(nomeIndicador[posicaoIndicador]));
+        avaliacaoRegular.push(this.editaIndicador(nomeIndicador[posicaoIndicador]));
         avaliacao[2]++;
       }
       posicaoIndicador++;
@@ -162,8 +162,8 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         <div>
           <Pie
             data={data}
-            width={500}
-            height={500}
+            width={400}
+            height={450}
             options={{ maintainAspectRatio: false }}
           />
         </div>
