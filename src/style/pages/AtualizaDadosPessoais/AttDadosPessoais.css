@@ -33,7 +33,7 @@
 
 .form-attPsico{
     width: 45vw;
-    height: 75vh;
+    height: 97vh;
     position: absolute;
     top: 25%;
     left: 26%;
@@ -56,13 +56,13 @@
     height: 45vh;
     left: 40%;
     right: 40%; 
-    top: 100%;
+    top: 170%;
     position: absolute;
 }
 
 .form-input-attPsico{
     
-    top: 125%;
+    top: 145%;
     left: 75%;
     right: 5%; 
     position: absolute;
@@ -70,15 +70,8 @@
 
 .default-buttonAtt{
     background-color: #2D4561;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    padding: 0.5rem 5rem 0.5rem 5rem;
     border-radius: 5px;
     font-size: 14px;
 }
 
-.default-buttonAlt{
-    background-color: #cac6c6;
-    color: black;
-    padding: 0.59rem 1rem 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 14px;
-}

@@ -49,45 +49,68 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
         <Form>
           <div className="form-items-attPsico">
             <div className="primeira-linha-attPsico">
-              <Form.Group widths="equal">
-                <Form.Input
-                  placeholder="Digite seu e-mail"
-                  label="Email"
-                  required
-                  fluid
-                  onChange={handleChange}
-                  name="email"
-                  value={values.email}
-                />
-              </Form.Group>
+              <Form.Input
+                placeholder="Digite um username"
+                label="Username"
+                required
+                fluid
+                onChange={handleChange}
+                name="username"
+                value={values.username}
+              />
+              <Form.Input
+                placeholder="Digite seu nome completo"
+                label="Nome"
+                required
+                fluid
+                onChange={handleChange}
+                name="nome"
+                value={values.nome}
+              />
             </div>
             <div className="segunda-linha-attPsico">
-              <Form.Group widths="equal">
-                <Form.Input
-                  required
-                  onChange={handleChange}
-                  value={values.email}
-                  fluid
-                  required
-                  name="email"
-                  label="Email"
-                  placeholder="Seu e-mail"
-                />
-              </Form.Group>
+              <Form.Input
+                required
+                onChange={handleChange}
+                value={values.email}
+                fluid
+                required
+                name="email"
+                label="Email"
+                placeholder="Digite seu e-mail"
+              />
             </div>
             <div className="terceira-linha-attPsico">
-              <Form.Group widths="equal">
-                <Form.Input
-                  required
-                  fluid
-                  required
-                  label="Número do CRP"
-                  placeholder="Seu CRP"
-                  onChange={handleChange}
-                  value={values.nCRP}
-                  name="nCRP"
-                />
-              </Form.Group>
+              <Form.Input
+                required
+                fluid
+                required
+                label="Número do CRP"
+                placeholder="Seu CRP"
+                onChange={handleChange}
+                value={values.nCRP}
+                name="nCRP"
+              />
+              <Form.Input
+                placeholder="Digite sua senha"
+                label="Senha"
+                type="password"
+                required
+                fluid
+                onChange={handleChange}
+                name="senha"
+                value={values.senha}
+              />
+              <Form.Input
+                placeholder="Confirme sua senha"
+                label="Confirmar senha"
+                type="password"
+                required
+                fluid
+                onChange={handleChange}
+                name="senha2"
+                value={values.senha2}
+              />
             </div>
             <div className="quinta-linha-attPsico">
               <Button onClick={handleSubmit}> Atualizar </Button>
@@ -95,9 +118,9 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
           </div>
           <span className="form-input-attPsico">
             <a href="/AtualizarSenha">
-              <button type="button" className="default-buttonAlt">
+              {/* <button type="button" className="default-buttonAlt">
                 Alterar Senha{" "}
-              </button>
+              </button> */}
             </a>
           </span>
         </Form>
