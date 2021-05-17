@@ -7,14 +7,11 @@ import { useParams } from "react-router-dom";
 export default function useFormPaciente() {
   const [values, setValues] = useState({
     nome: "",
-    nascimento: "",
-    nCPF: "",
-    regiao: "",
-    descricao: "",
-    situacao: "M",
-    genero: "",
+    email: "",
+    nCRP: "",
+    avaliacao: "",
   });
-  const { infopaciente } = useParams();
+  const { infopsic } = useParams();
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPac = new FormData();
@@ -43,16 +40,13 @@ export default function useFormPaciente() {
 
     console.log(values);
     dataPac.append("nome", values.nome);
-    dataPac.append("data_nascimento", values.nascimento);
-    dataPac.append("regiao", values.regiao);
-    dataPac.append("situacao", values.situacao);
-    dataPac.append("descricao", values.descricao);
-    dataPac.append("cpf", values.nCPF);
-    dataPac.append("genero", values.genero);
+    dataPac.append("e-mail", values.email);
+    dataPac.append("crp", values.nCRP);
+    dataPac.append("avaliacao", values.avaliacao);
 
     await axiosInstance
       .put(
-        `api/psicologos/${psic.user.username}/pacientes/${infopaciente}/`,
+        `api/psicologos/${psic.user.username}/${infopsic}/`,
         dataPac
       )
       .then((data) => {
