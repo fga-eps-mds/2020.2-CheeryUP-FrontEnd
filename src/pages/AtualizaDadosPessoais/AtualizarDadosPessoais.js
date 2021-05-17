@@ -53,7 +53,7 @@ const AttDadosPsico = ({SubmitAttForm}) => {
                         <div className="form-items-attPsico">
                             <div className="primeira-linha-attPsico">
                                 <Form.Group widths='equal'>
-                                    <Form.Input 
+                                    {/* <Form.Input 
                                     required
                                     onChange={handleChange}
                                     value={values.nome}
@@ -63,7 +63,7 @@ const AttDadosPsico = ({SubmitAttForm}) => {
                                     label="Nome"
                                     placeholder="Seu nome"
                                     />
-                                    {errors.nome && <p class="p-message">{errors.nome}</p>}
+                                    {errors.nome && <p class="p-message">{errors.nome}</p>} */}
                                 </Form.Group>
                             </div>
                             <div className="segunda-linha-attPsico">

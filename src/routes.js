@@ -21,6 +21,8 @@ import DashboardQualidadeVida from './pages/DashboardQualidadeVida/DashboardQual
 import DashboardAvaliacaoMedia from './pages/DashboardAvaliacaoMedia/DashboardAvaliaçãoMedia'
 import DashboardAvaliacaoConsulta from './pages/DashboardAvaliacaoConsulta/DashboardAvaliacaoConsulta'
 import DashboardProdutividade from './pages/DashboardProdutividade/DashboardProdutividade'
+import AtualizarDadosPessoais from './pages/AtualizaDadosPessoais/AtualizarDadosPessoais'
+
  
 import InfoPac from "./pages/InfoPaciente/InfoPaciente";
 
@@ -60,6 +62,7 @@ export default function Routes() {
         <Route path="/DashboardQualidadeVida"  component={DashboardQualidadeVida}/>
         <Route path="/DashboardAvaliacaoMedia" component={DashboardAvaliacaoMedia}/>
         <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
+        <Route path="/AtualizarDadosPessoais" component={AtualizarDadosPessoais}/>
         <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
         <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
         <Route

@@ -7,14 +7,17 @@ import { useParams } from "react-router-dom";
 export default function useFormAttContaPsic() {
   const [values, setValues] = useState({
     nome: "",
+    username: "",
     email: "",
     nCRP: "",
+    genero: "",
+    password: "",
     avaliacao: "",
   });
   const { infopsic } = useParams();
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
-  const dataPac = new FormData();
+  const dataPsic = new FormData();
   const { psic } = useSelector((state) => state);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,15 +42,18 @@ export default function useFormAttContaPsic() {
     setIsSubmitting(true);
 
     console.log(values);
-    dataPac.append("nome", values.nome);
-    dataPac.append("e-mail", values.email);
-    dataPac.append("crp", values.nCRP);
-    dataPac.append("avaliacao", values.avaliacao);
+      dataPsic.append("user.username", values.username);
+      dataPsic.append("user.password", values.senha);
+      dataPsic.append("user.email", values.email);
+      dataPsic.append("nCRP", values.nCRP);
+      dataPsic.append("bio", values.bio);
+      dataPsic.append("genero", values.genero);
+      dataPsic.append("name", values.nome);
 
     await axiosInstance
       .put(
-        `api/psicologos/${psic.user.username}/${infopsic}/`,
-        dataPac
+        `api/psicologos/${psic.user.username}/`,
+        dataPsic
       )
       .then((data) => {
         alert("Dados atualizados com sucesso !");
