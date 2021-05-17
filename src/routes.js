@@ -9,7 +9,6 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ListaPacientes from './pages/ListaPacientes/ListaPacientes';
 import CadastroPac from './pages/Registrar/CadastroPaciente';
 import AttDadosPac from './pages/AtualizaDados/AttPaciente';
-import AttDadosPsico from './pages/AtualizaDadosPessoais/AtualizarDadosPessoais';
 import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
@@ -62,6 +61,7 @@ export default function Routes() {
         <Route path="/DashboardQualidadeVida"  component={DashboardQualidadeVida}/>
         <Route path="/DashboardAvaliacaoMedia" component={DashboardAvaliacaoMedia}/>
         <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
+        <Route path="/AtualizarPaciente" component={AttDadosPac}/>
         <Route path="/AtualizarDadosPessoais" component={AtualizarDadosPessoais}/>
         <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
         <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
