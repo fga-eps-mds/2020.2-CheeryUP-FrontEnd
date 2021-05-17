@@ -14,7 +14,6 @@ export default function useFormAttContaPsic() {
     password: "",
     avaliacao: "",
   });
-  const { infopsic } = useParams();
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPsic = new FormData();
