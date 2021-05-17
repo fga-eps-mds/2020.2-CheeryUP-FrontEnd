@@ -5,8 +5,42 @@ import '../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css';
 import useFormAttContaPsic from '../../components/useFormAttContaPsic'
 import { Redirect } from 'react-router';
 
+function validate(values) {
+    let errors = {};
+    if (!values.nome.trim()) {
+      errors.nome = "É necessário preencher seu nome";
+    }
+    // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
+    //   errors.name = 'Enter a valid name';
+    // }
+  
+    if (!values.email) {
+      errors.email = "É necessário preencher seu e-mail";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = "E-mail inválido. Preencha com algum e-mail válido";
+    }
+    if (!values.nCRP) {
+      errors.nCRP = "É necessário preencher nºcrp";
+    }
+    //if (!values.senha) {
+      //errors.senha = "É necessário preencher uma senha";
+    //} else if (values.senha.length < 6) {
+      //errors.senha = "A senha deve conter mais de 6 caracteres";
+    //}
+  
+    //if (!values.senha2) {
+      //errors.senha2 = "É necessário confirmar sua senha";
+    //} else if (values.senha2 !== values.senha) {
+      //errors.senha2 = "As senhas digitadas não conferem";
+    //}
+    return errors;
+  }
+
 const AttDadosPsico = ({SubmitAttForm}) => {
-    const { handleSubmit, handleChange, values, handleSelect} = useFormAttContaPsic(SubmitAttForm);
+    const { handleSubmit, handleChange, values, handleSelect} = useFormAttContaPsic(
+        SubmitAttForm,
+        validate
+        );
         return (
             <Fragment className="container-attPsico">
                 <NavbarPsic />
@@ -29,6 +63,7 @@ const AttDadosPsico = ({SubmitAttForm}) => {
                                     label="Nome"
                                     placeholder="Seu nome"
                                     />
+                                    {errors.nome && <p class="p-message">{errors.nome}</p>}
                                 </Form.Group>
                             </div>
                             <div className="segunda-linha-attPsico">
@@ -40,9 +75,10 @@ const AttDadosPsico = ({SubmitAttForm}) => {
                                     fluid
                                     required
                                     name="email"
-                                    label="E-mail"
+                                    label="Email"
                                     placeholder="Seu e-mail"
                                     />
+                                    {errors.email && <p class="p-message">{errors.email}</p>}
                                 </Form.Group>
                             </div>
                             <div className="terceira-linha-attPsico">
@@ -51,12 +87,13 @@ const AttDadosPsico = ({SubmitAttForm}) => {
                                     required
                                     fluid
                                     required
-                                    label="CRP"
+                                    label="Número do CRP"
                                     placeholder="Seu CRP"
                                     onChange={handleChange}
                                     value={values.nCRP}
                                     name="nCRP"
                                     />
+                                    {errors.nCRP && <p class="p-message">{errors.nCRP}</p>}
                                 </Form.Group>
                             </div>
                             <div className="quarta-linha-attPsico">

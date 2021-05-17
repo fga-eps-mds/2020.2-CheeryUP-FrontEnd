@@ -6,6 +6,38 @@ import useFormAttPaciente from '../../components/useFormAttPaciente'
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 
+function validatePac(values) {
+  let errors = {};
+  if (!values.nome.trim()) {
+    errors.nome = "Forneça o nome";
+  }
+  // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
+  //   errors.name = 'Enter a valid name';
+  // }
+
+  if (!values.nascimento) {
+    errors.nascimento = "Forneça o nascimento";
+  }
+
+  if (!values.regiao) {
+    errors.regiao = "Forneça a região";
+  }
+  if (!values.nCPF) {
+    errors.nCPF = "Forneça o nºCPF";
+  } else if (values.nCPF.length !== 11) {
+    errors.nCPF = "O CPF deve conter 11 caracteres";
+  }
+
+  if (!values.genero) {
+    errors.genero = "Forneça o gênero";
+  }
+
+  if (!values.descricao) {
+    errors.descricao = "Forneça uma descrição";
+  }
+  return errors;
+}
+
 const opcoesRegiao = [
   { key: 1, text: "Águas Claras", value: "AC" },
   { key: 2, text: "Asa Sul", value: "AS" },
@@ -48,7 +80,10 @@ const opcoesRegiao = [
 //const history = useHistory();
 
 const AttDadosPac = ({SubmitAttForm}) => {
-    const { handleSubmit, handleChange, values, handleSelect} = useFormAttPaciente(SubmitAttForm);
+    const { handleSubmit, handleChange, values, handleSelect} = useFormAttPaciente(
+      SubmitAttForm,
+      validatePac
+      );
 
         return (
           <Fragment className="container-attPac">
@@ -72,6 +107,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         label="Nome"
                         placeholder="Nome do Paciente"
                       />
+                      {errors.nome && <p class="alert-message">{errors.nome}</p>}
                     </Form.Group>
                   </div>
                   <div className="segunda-linha-att">
@@ -86,6 +122,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         value={values.nascimento}
                         name="nascimento"
                       />
+                      {errors.nascimento && <p class="alert-message">{errors.nascimento}</p>}
                       <Form.Input
                         required
                         fluid
@@ -96,6 +133,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         value={values.nCPF}
                         name="nCPF"
                       />
+                      {errors.nCPF && <p class="alert-message">{errors.nCPF}</p>}
                       <Form.Select
                         fluid
                         required
@@ -108,6 +146,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         name="regiao"
                         value={values.regiao}
                       />
+                      {errors.regiao && <p class="alert-message">{errors.regiao}</p>}
                     </Form.Group>
                   </div>
                   <div className="terceira-linha-att">
@@ -141,6 +180,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         name="genero"
                       />
                     </Form.Group>
+                    {errors.genero && <p class="alert-message">{errors.genero}</p>}
                   </div>
                   <div className="quarta-linha-att">
                     <Form.TextArea
@@ -151,6 +191,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                       value={values.descricao}
                       name="descricao"
                     />
+                    {errors.descricao && <p class="alert-message">{errors.descricao}</p>}
                   </div>
                   <div className="quinta-linha-att">
                   
