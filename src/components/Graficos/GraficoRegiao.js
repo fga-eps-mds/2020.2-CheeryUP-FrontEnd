@@ -1,18 +1,21 @@
 import { Pie } from 'react-chartjs-2';
-import api from '../../services/api'
+import axiosInstance from '../../services/apiToken'
 import { Component } from 'react'
-
+import { connect } from 'react-redux'
 
 class GraficoRegiao extends Component {
-    state = {
-        pessoas: [],
+    constructor(props) { 
+        super(props)
+        this.state = {
+            pessoas: [],
+        }
     }
-
+   
     async componentDidMount() {
-        const response = await api.get('api/psicologos/davi/pacientes/');
+        const response = await axiosInstance.get(`api/psicologos/${this.props.psic.user.username}/pacientes/`);
         this.setState({ pessoas: response.data });
     }
-
+    
     render() {
         const { pessoas } = this.state;
         var regioes = pessoas.map(pessoa => pessoa.regiao);
@@ -162,7 +165,6 @@ class GraficoRegiao extends Component {
                         'rgba(183, 49, 43, 0.7)', // vermelho escuro
                         'rgba(108, 194, 74, 0.7)', // verde escuro
                         
-                        
                     ],
 
                     
@@ -178,12 +180,11 @@ class GraficoRegiao extends Component {
                         options={{ maintainAspectRatio: false  }}/>
                         </div>
             </>)
-
     }
-
-
 }
 
+function getState ( state ) {
+    return { psic:state.psic}
+}
 
-
-export default GraficoRegiao;
+export default connect(getState)(GraficoRegiao);

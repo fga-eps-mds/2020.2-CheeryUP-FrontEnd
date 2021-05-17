@@ -5,8 +5,11 @@ import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
-import { Button } from "../../components/Button/Button";
-import { Link } from 'react-router-dom'
+import GraficoQualidadeVida from "../../components/Graficos/GraficoQualidadeVida";
+import GraficoAvaliaçãoMediaIndicadores from "../../components/Graficos/GraficoGraficoAvaliaçãoMedia";
+import GraficoEvolucaoPaciente from "../../components/Graficos/GraficoEvolucaoPaciente";
+import GraficoEstabilidadeEmocional from "../../components/Graficos/GraficoEstabilidadeEmocional";
+import GraficoProdutividade from "../../components/Graficos/GraficoHomePage";
 
 const InfoPac = () => {
   const { infopaciente } = useParams();
@@ -23,14 +26,8 @@ const InfoPac = () => {
       })
       .catch((err) => console.log("Impossível realizar essa operação!"));
 
-    console.log(infopaciente);
   }, [infopaciente]);
 
-  useEffect(() => {
-    console.log(paciente);
-  }, [paciente]);
-
-  const genero = "";
 
   return (
     <Fragment>
@@ -49,8 +46,46 @@ const InfoPac = () => {
 
         <div className="descricao">Descrição: {paciente.descricao}</div>
       </div>
-
-      <div className="graficos"></div>
+      {Object.keys(paciente).length !== 0 ? (
+        <Fragment>
+          <div className= "container-graficos">
+            <div className="wrap-graficos">
+              <div className="graficos">
+                <GraficoQualidadeVida
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+              <div className="graficos">
+                <GraficoEvolucaoPaciente
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+              <div className="graficos">
+                <GraficoEstabilidadeEmocional
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+            </div>
+            <div className="wrap-graficos">
+              <div className="graficos-pizzas">
+                <GraficoProdutividade
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="graficos-metricas">
+            <GraficoAvaliaçãoMediaIndicadores
+              paciente={paciente}
+              usernamepsic={psic.user.username}
+            />
+          </div>
+        </Fragment>
+      ) : null}
     </Fragment>
   );
 };
