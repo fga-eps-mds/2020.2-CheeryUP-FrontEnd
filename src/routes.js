@@ -71,7 +71,7 @@ export default function Routes() {
           isAuth={auth}
           component={AttDadosPac}
         />
-        <PrivateRoute
+        <Route
           Route
           path="/PerfilPsicologo"
           isAuth={auth}
