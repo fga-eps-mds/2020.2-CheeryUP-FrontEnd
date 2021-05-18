@@ -38,7 +38,12 @@ class GraficoProdutividade extends Component {
                 <Doughnut data={data}
                         width={400}
                         height={500}
-                        options={{ maintainAspectRatio: false  }}/>
+                        options={{ maintainAspectRatio: false ,
+                            animation: {
+                                  duration: 2000,
+                                  easing: 'easeOutQuint',
+                                  delay: 1000,  
+                              }, }}/>
                         </div>
                        
             </>)

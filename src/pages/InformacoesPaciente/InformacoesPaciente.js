@@ -1,12 +1,14 @@
 import React, { useEffect, useState, Fragment } from "react";
 import "../../style/pages/InfoPaciente/InfoPaciente.css";
-//import { handleGenero, handleAge, handleRegiao } from "../../helper/index";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
-import { Button } from "../../components/Button/Button";
-import { Link } from 'react-router-dom'
+import GraficoQualidadeVida from "../../components/Graficos/GraficoQualidadeVida";
+import GraficoAvaliaçãoMediaIndicadores from "../../components/Graficos/GraficoGraficoAvaliaçãoMedia";
+import GraficoEvolucaoPaciente from "../../components/Graficos/GraficoEvolucaoPaciente";
+import GraficoEstabilidadeEmocional from "../../components/Graficos/GraficoEstabilidadeEmocional";
+import GraficoProdutividade from "../../components/Graficos/GraficoProdutividade";
 
 const InfoPac = () => {
   const { infopaciente } = useParams();
@@ -23,14 +25,7 @@ const InfoPac = () => {
       })
       .catch((err) => console.log("Impossível realizar essa operação!"));
 
-    console.log(infopaciente);
   }, [infopaciente]);
-
-  useEffect(() => {
-    console.log(paciente);
-  }, [paciente]);
-
-  const genero = "";
 
   return (
     <Fragment>
@@ -38,9 +33,9 @@ const InfoPac = () => {
 
       <div className="info-paciente">
         <div className="dados-pac">
-          <h4>Dados do Paciente</h4> <br />
+          <h4>Dados do Paciente</h4>
           Nome: {paciente.nome} <br />
-          Idade: {paciente.data_nascimento} <br />
+          Nascimento: {paciente.data_nascimento} <br />
           CPF: {paciente.cpf} <br />
           Gênero: {paciente.genero} <br />
           Região: {paciente.regiao}
@@ -49,8 +44,47 @@ const InfoPac = () => {
 
         <div className="descricao">Descrição: {paciente.descricao}</div>
       </div>
-
-      <div className="graficos"></div>
+      {Object.keys(paciente).length !== 0 ? (
+        <Fragment>
+          <div className="container-graficos">
+            <div className="wrap-graficos">
+              <div className="graficos">
+                <GraficoQualidadeVida
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+              <div className="graficos">
+                <GraficoEvolucaoPaciente
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+              <div className="graficos">
+                <GraficoEstabilidadeEmocional
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+            </div>
+            <div className="wrap-graficos">
+              <div className="graficos-pizzas">
+                <GraficoProdutividade
+                  paciente={paciente}
+                  usernamepsic={psic.user.username}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="graficos-metricas">
+            <h2>Avaliação Média</h2>
+            <GraficoAvaliaçãoMediaIndicadores
+              paciente={paciente}
+              usernamepsic={psic.user.username}
+            />
+          </div>
+        </Fragment>
+      ) : null}
     </Fragment>
   );
 };

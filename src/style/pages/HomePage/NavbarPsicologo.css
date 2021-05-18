@@ -44,10 +44,10 @@
 
 .logo-cheeryUpPsicologo img{
     width: 3vw;
-    height: 6vh;
+    height: 4vw;
     position: absolute;
     left: 2%;
-    top: 23%;
+    top: 13%;
 }
 
 @media screen and (max-width: 960px) {

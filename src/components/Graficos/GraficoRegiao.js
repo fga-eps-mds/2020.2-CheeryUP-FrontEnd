@@ -1,18 +1,21 @@
 import { Pie } from 'react-chartjs-2';
-import api from '../../services/api'
+import axiosInstance from '../../services/apiToken'
 import { Component } from 'react'
-
+import { connect } from 'react-redux'
 
 class GraficoRegiao extends Component {
-    state = {
-        pessoas: [],
+    constructor(props) { 
+        super(props)
+        this.state = {
+            pessoas: [],
+        }
     }
-
+   
     async componentDidMount() {
-        const response = await api.get('api/psicologos/davi/pacientes/');
+        const response = await axiosInstance.get(`api/psicologos/${this.props.psic.user.username}/pacientes/`);
         this.setState({ pessoas: response.data });
     }
-
+    
     render() {
         const { pessoas } = this.state;
         var regioes = pessoas.map(pessoa => pessoa.regiao);
@@ -162,8 +165,16 @@ class GraficoRegiao extends Component {
                         'rgba(183, 49, 43, 0.7)', // vermelho escuro
                         'rgba(108, 194, 74, 0.7)', // verde escuro
                         
-                        
                     ],
+                    borderColor: [
+                        'rgba(103, 160, 224, 0.8)', // azul claro
+                        'rgba(249, 66, 58, 0.8)',//vermelho clar
+                        'rgba(159, 219, 127, 0.8)', // verde claro
+
+                        'rgba(45, 69, 97, 0.8)', // a escuro
+                        'rgba(183, 49, 43, 0.8)', // vermelho escuro
+                        'rgba(108, 194, 74, 0.8)', // verde escuro
+                      ],
 
                     
                 },
@@ -175,15 +186,20 @@ class GraficoRegiao extends Component {
                 <Pie data={data}
                         width={500}
                         height={500}
-                        options={{ maintainAspectRatio: false  }}/>
+                        options={{ maintainAspectRatio: false,
+                            animation: {
+                                duration: 2500,
+                                easing: 'easeOutQuint',
+                                delay: 500,  
+                            } }}
+                        />
                         </div>
             </>)
-
     }
-
-
 }
 
+function getState ( state ) {
+    return { psic:state.psic}
+}
 
-
-export default GraficoRegiao;
+export default connect(getState)(GraficoRegiao);

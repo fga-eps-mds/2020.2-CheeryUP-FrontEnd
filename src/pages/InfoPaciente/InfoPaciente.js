@@ -4,7 +4,7 @@ import { handleGenero, handleAge, handleRegiao } from '../../helper/index'
 import { useParams } from 'react-router-dom'
 import axiosInstance from '../../services/apiToken'
 import { useSelector } from "react-redux";
-import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
+import NavbarPsicPerfil from '../../components/Navbar/NavbarPsicPerfil'
 
 const InfoPac = () => {
     const { infopaciente } = useParams()
@@ -30,7 +30,7 @@ const InfoPac = () => {
     
     return(
         <Fragment>
-            <NavbarPsic />
+            <NavbarPsicPerfil />
 
             <div className='info-paciente'>
                 <div className='dados-pac'>

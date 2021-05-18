@@ -4,9 +4,11 @@ import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import "../../style/pages/Cadastro/RegistroConsulta.css";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+
 
 const RegistroConsulta = ({ paciente }) => {
+  const history = useHistory();
   const { infopaciente } = useParams();
   const { psic } = useSelector((state) => state);
   const [produtividade, setprodutividade] = useState("0");
@@ -71,6 +73,8 @@ const RegistroConsulta = ({ paciente }) => {
         console.log(dataPac);
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
+      
+    history.push('/ListaPacientes')
   };
 
   return (
@@ -611,7 +615,6 @@ const RegistroConsulta = ({ paciente }) => {
             onChange={(e) => setintoleranciaFrustracao("-1")}
           />
         </Form.Field>
-
         <Form.Button onClick={handleSubmit} type="submit">
           Registrar
         </Form.Button>
