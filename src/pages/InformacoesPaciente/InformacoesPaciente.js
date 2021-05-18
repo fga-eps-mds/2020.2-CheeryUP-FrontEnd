@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment } from "react";
 import "../../style/pages/InfoPaciente/InfoPaciente.css";
-//import { handleGenero, handleAge, handleRegiao } from "../../helper/index";
+import { handleAge } from "../../helper/index";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
@@ -35,9 +35,9 @@ const InfoPac = () => {
 
       <div className="info-paciente">
         <div className="dados-pac">
-          <h4>Dados do Paciente</h4> 
+          <h4>Dados do Paciente</h4>
           Nome: {paciente.nome} <br />
-          Idade: {paciente.data_nascimento} <br />
+          Idade: {handleAge(paciente.data_nascimento)} <br />
           CPF: {paciente.cpf} <br />
           Gênero: {paciente.genero} <br />
           Região: {paciente.regiao}
@@ -48,7 +48,7 @@ const InfoPac = () => {
       </div>
       {Object.keys(paciente).length !== 0 ? (
         <Fragment>
-          <div className= "container-graficos">
+          <div className="container-graficos">
             <div className="wrap-graficos">
               <div className="graficos">
                 <GraficoQualidadeVida
@@ -71,7 +71,7 @@ const InfoPac = () => {
             </div>
             <div className="wrap-graficos">
               <div className="graficos-pizzas">
-                <GraficoProdutividade 
+                <GraficoProdutividade
                   paciente={paciente}
                   usernamepsic={psic.user.username}
                 />
