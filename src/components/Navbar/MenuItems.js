@@ -60,7 +60,7 @@ export const MenuItemsPsicPerfil = [
   },
   {
     title: "Dashboards Gerais",
-    url: "#",
+    url: "/DashboardGerais",
     cName: "nav-linksPsicPerfil",
   },
   {
