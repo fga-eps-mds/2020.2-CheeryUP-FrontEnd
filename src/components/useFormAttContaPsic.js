@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import "../pages/Registrar/SignUP";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 export default function useFormAttContaPsic() {
+  const history = useHistory();
   const { psic } = useSelector((state) => state);
   const [values, setValues] = useState({
     nome: "",
@@ -13,7 +14,7 @@ export default function useFormAttContaPsic() {
     nCRP: "",
     genero: "",
     password: "",
-    avaliacao: "",
+    bio: "Algo",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
@@ -41,13 +42,14 @@ export default function useFormAttContaPsic() {
     setIsSubmitting(true);
 
     console.log(values);
-      dataPsic.append("user.username", values.username);
+      //dataPsic.append("user.username", values.username);
       dataPsic.append("user.password", values.senha);
       dataPsic.append("user.email", values.email);
       dataPsic.append("nCRP", values.nCRP);
       dataPsic.append("bio", values.bio);
       dataPsic.append("genero", values.genero);
       dataPsic.append("name", values.nome);
+      dataPsic.append("bio", values.bio);
 
     await axiosInstance
       .patch(
@@ -57,6 +59,7 @@ export default function useFormAttContaPsic() {
       .then((data) => {
         alert("Dados atualizados com sucesso !");
         console.log(psic);
+        history.push('/ListaPacientes')
       })
       .catch((err) => alert("Dados inválidos!"));
   };

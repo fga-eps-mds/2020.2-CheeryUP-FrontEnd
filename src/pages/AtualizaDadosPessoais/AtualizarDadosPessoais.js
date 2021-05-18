@@ -21,7 +21,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
         <Form>
           <div className="form-items-attPsico">
             <div className="primeira-linha-attPsico">
-               <Form.Input
+{/*                <Form.Input
                 placeholder= {psic.user.username}
                 label="Username"
                 required
@@ -29,7 +29,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 onChange={handleChange}
                 name="username"
                 value={values.username}
-              /> 
+              />  */}
               <Form.Input
                 placeholder= {psic.name}
                 label="Nome"
