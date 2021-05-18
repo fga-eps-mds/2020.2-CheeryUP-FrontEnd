@@ -17,6 +17,7 @@
 /*imagem lateral*/
 .side-image {
   position: fixed;
+  width: 50vw;
   height: 100vh;
 }
 /* propriedades do formulario*/

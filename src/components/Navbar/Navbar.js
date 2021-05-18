@@ -44,7 +44,7 @@ export const Navbar = () => {
       ) : (
         <nav className="NavbarItems">
           <div className="logo-cheeryUp">
-            <img src="/imagens/logoNavbar.png" alt="Logo" />
+            <img src="/imagens/cereja.png" alt="Logo" />
           </div>
           <ul className={"nav-menu"}>
             {MenuItems.map((item, index) => {
