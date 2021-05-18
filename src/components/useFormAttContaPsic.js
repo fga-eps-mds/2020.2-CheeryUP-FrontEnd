@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 export default function useFormAttContaPsic() {
+  const { psic } = useSelector((state) => state);
   const [values, setValues] = useState({
     nome: "",
     username: "",
@@ -17,7 +18,6 @@ export default function useFormAttContaPsic() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPsic = new FormData();
-  const { psic } = useSelector((state) => state);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -50,7 +50,7 @@ export default function useFormAttContaPsic() {
       dataPsic.append("name", values.nome);
 
     await axiosInstance
-      .put(
+      .patch(
         `api/psicologos/${psic.user.username}/`,
         dataPsic
       )

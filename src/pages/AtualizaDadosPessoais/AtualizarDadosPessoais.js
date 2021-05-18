@@ -1,41 +1,13 @@
-import React, { Component, Fragment } from "react";
-import { Button, Card, Form, Dropdown } from "semantic-ui-react";
+import React, { Fragment } from "react";
+import { Button, Form } from "semantic-ui-react";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import "../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css";
 import useFormAttContaPsic from "../../components/useFormAttContaPsic";
-import { Redirect } from "react-router";
+import { useSelector } from "react-redux";
 
-function validate(values) {
-  let errors = {};
-  if (!values.nome.trim()) {
-    errors.nome = "É necessário preencher seu nome";
-  } else if (!/^[A-Za-z]+/.test(values.name.trim())) {
-    errors.name = "Enter a valid name";
-  }
-
-  if (!values.email) {
-    errors.email = "É necessário preencher seu e-mail";
-  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-    errors.email = "E-mail inválido. Preencha com algum e-mail válido";
-  }
-  if (!values.nCRP) {
-    errors.nCRP = "É necessário preencher nºcrp";
-  }
-  //if (!values.senha) {
-  //errors.senha = "É necessário preencher uma senha";
-  //} else if (values.senha.length < 6) {
-  //errors.senha = "A senha deve conter mais de 6 caracteres";
-  //}
-
-  //if (!values.senha2) {
-  //errors.senha2 = "É necessário confirmar sua senha";
-  //} else if (values.senha2 !== values.senha) {
-  //errors.senha2 = "As senhas digitadas não conferem";
-  //}
-  return errors;
-}
 
 const AttDadosPsico = ({ SubmitAttForm }) => {
+  const { psic } = useSelector((state) => state);
   const { handleSubmit, handleChange, values } =
     useFormAttContaPsic( SubmitAttForm );
   return (
@@ -49,17 +21,17 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
         <Form>
           <div className="form-items-attPsico">
             <div className="primeira-linha-attPsico">
-              <Form.Input
-                placeholder="Digite um username"
+               <Form.Input
+                placeholder= {psic.user.username}
                 label="Username"
                 required
                 fluid
                 onChange={handleChange}
                 name="username"
                 value={values.username}
-              />
+              /> 
               <Form.Input
-                placeholder="Digite seu nome completo"
+                placeholder= {psic.name}
                 label="Nome"
                 required
                 fluid
@@ -77,7 +49,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 required
                 name="email"
                 label="Email"
-                placeholder="Digite seu e-mail"
+                placeholder= {psic.user.email}
               />
             </div>
             <div className="terceira-linha-attPsico">
@@ -86,13 +58,13 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 fluid
                 required
                 label="Número do CRP"
-                placeholder="Seu CRP"
+                placeholder= {psic.nCRP}
                 onChange={handleChange}
                 value={values.nCRP}
                 name="nCRP"
               />
               <Form.Input
-                placeholder="Digite sua senha"
+                placeholder="Escolha sua nova senha "
                 label="Senha"
                 type="password"
                 required
@@ -102,7 +74,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 value={values.senha}
               />
               <Form.Input
-                placeholder="Confirme sua senha"
+                placeholder="Confirme sua nova senha"
                 label="Confirmar senha"
                 type="password"
                 required
