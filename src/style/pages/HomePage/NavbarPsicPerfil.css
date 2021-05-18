@@ -21,7 +21,7 @@
 
 .nav-menuPsic {
     display: grid; 
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     position: absolute;
     width: 70vw; 
     justify-content: right;

@@ -13,7 +13,7 @@
 }
 .perfil-psicologo-container .all .left .data{
     width: 300px;
-    height: 300px;
+    height: 350px;
     border-radius: 15px;
     padding: 30px;
     font-size: 18px;
@@ -26,6 +26,10 @@
     height: 30px;
     width: 130px;
     color: #2d4561;
+}
+.perfil-psicologo-container .all .left .data button:last-of-type {
+    color: #f30808;
+    margin-top: 15px;
 }
 .perfil-psicologo-container .all .right{
     width: 50vw;

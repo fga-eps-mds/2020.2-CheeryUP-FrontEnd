@@ -66,7 +66,7 @@ export default function Routes() {
           path="/AtualizarPaciente/:infopaciente"
           component={AttDadosPac}
         />
-        <PrivateRoute
+        <Route
           Route
           path="/PerfilPsicologo"
           isAuth={auth}
