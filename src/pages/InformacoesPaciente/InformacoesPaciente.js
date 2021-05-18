@@ -1,6 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
 import "../../style/pages/InfoPaciente/InfoPaciente.css";
-import { handleAge } from "../../helper/index";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
@@ -28,7 +27,6 @@ const InfoPac = () => {
 
   }, [infopaciente]);
 
-
   return (
     <Fragment>
       <NavbarPsic />
@@ -37,7 +35,7 @@ const InfoPac = () => {
         <div className="dados-pac">
           <h4>Dados do Paciente</h4>
           Nome: {paciente.nome} <br />
-          Idade: {handleAge(paciente.data_nascimento)} <br />
+          Nascimento: {paciente.data_nascimento} <br />
           CPF: {paciente.cpf} <br />
           Gênero: {paciente.genero} <br />
           Região: {paciente.regiao}

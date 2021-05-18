@@ -29,7 +29,7 @@ const PerfilPsicologo = () => {
                 <Link to="/ListaPacientes">
                   <button>Lista de Pacientes</button>
                 </Link>
-                <Link to="#">
+                <Link to="/DashboardGerais">
                   <button>Dashboards Gerais</button>
                 </Link>
               </div>
