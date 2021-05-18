@@ -20,6 +20,7 @@ export const MenuItems = [
     cName: "nav-links",
     ID: "some-id",
   },
+  
 ];
 
 // Fiz esse export para aparecer apenas "Home" na Navbar.
@@ -41,12 +42,12 @@ export const MenuItemsPsic = [
   },
   {
     title: "Dashboards Gerais",
-    url: "#",
+    url: "/DashboardGerais",
     cName: "nav-linksPsic",
   },
   {
     title: "Perfil",
-    url: "#",
+    url: "/PerfilPsicologo",
     cName: "nav-linksPsic",
   },
 ];
@@ -54,12 +55,12 @@ export const MenuItemsPsic = [
 export const MenuItemsPsicPerfil = [
   {
     title: "Lista de Pacientes",
-    url: "#",
+    url: "/ListaPacientes",
     cName: "nav-linksPsicPerfil",
   },
   {
     title: "Dashboards Gerais",
-    url: "#",
+    url: "/DashboardGerais",
     cName: "nav-linksPsicPerfil",
   },
   {

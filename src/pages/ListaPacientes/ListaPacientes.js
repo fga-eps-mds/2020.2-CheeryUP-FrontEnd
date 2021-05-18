@@ -1,22 +1,22 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
 import useFormDelPaciente from "../../components/useFormDelPaciente";
-import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicPerfil";
+import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicologo";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
 import { setPac } from "../../store/Pacientes/actions.js";
 import { Link } from "react-router-dom";
+import Pacientes from "./Pacientes";
 
 const ListaPacientes = ({ SubmitForm }) => {
   const { psic, pac } = useSelector((state) => state);
   const history = useHistory();
-  const { handleChange, values, handleSubmit } = useFormDelPaciente(SubmitForm);
+  const { handleSubmit } = useFormDelPaciente(SubmitForm);
   const dispatch = useDispatch();
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
   useEffect(() => {
-    
     axiosInstance
       .get(`api/psicologos/${psic.user.username}/pacientes/`)
       .then((data) => {
@@ -25,34 +25,34 @@ const ListaPacientes = ({ SubmitForm }) => {
       .catch((err) => console.log(err));
   }, []);
 
-  function handleAge (age) {
+  function handleAge(age) {
     var [year, month, date] = age.split("-");
     var birthday = new Date(year, month, date);
     var ageDifference = Date.now() - birthday.getTime();
     var ageDate = new Date(ageDifference);
-    
+
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
-  
+
   return (
     <Fragment>
       <div className="body-content">
-          <NavbarPsicPerfil />
+        <NavbarPsicPerfil />
 
         <main className="main-content">
           <div className="upper-main-content">
             <h2 class="page-name">Lista Pacientes</h2>
-            <Link to="/CadastrarPaciente">
-              {" "}
+            <Link to="/CadastrarPaciente">  
               <button
                 type="submit"
-                // onClick={handleSubmit}
-                className="default-button-cadastro"
-              >Cadastrar Paciente</button>
+                onClick={handleSubmit}
+                className="default-button"
+              > Cadastrar Paciente</button>
             </Link>
-            <form className="pesquisa">
+            <form className="pesquisinfopacientea">
               <input
                 type="search"
+                infopaciente
                 id="texto-pesquisa"
                 placeholder="Buscar por nome"
               />
@@ -73,32 +73,8 @@ const ListaPacientes = ({ SubmitForm }) => {
             <tbody>
               {/* tbody é onde sera inserido os individous */}
               {pac.map((paciente, index) => {
-                return (
-                  <tr>
-                    {/*Individuo 1*/}
-                    <td>
-                      <button type="button" className="delete-button" onClick={handleSubmit}>
-                        X
-                      </button>
-                    </td>
-                    <td className="table-body-option">{index+1}</td>
-                    <td className="table-body-option">{paciente.nome}</td>
-                    <td className="table-body-option">
-                      {handleAge(paciente.data_nascimento)}
-                    </td>
-                    <td className="table-body-option">{paciente.regiao}</td>
-                    <td>
-                      <button type="button" className="default-button">
-                        Informações <img src="img/arrow.png" />
-                      </button>
-                    </td>
-                    <td>
-                      <button type="button" className="default-button">
-                        Registar consulta <img src="img/arrow.png" />
-                      </button>
-                    </td>
-                  </tr>
-                );
+                console.log(index);
+                return <Pacientes paciente={paciente} key={index} index = {index}/>;
               })}
             </tbody>
           </table>

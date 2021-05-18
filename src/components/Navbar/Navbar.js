@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { MenuItems} from "./MenuItems"
-import { Button } from "../Button/Button"
 import '../../style/pages/HomePage/Navbar.css'
 
 //import { useState } from 'react'
@@ -19,7 +18,7 @@ class Navbar extends Component {
         return(
             <nav className="NavbarItems">
                 <div className='logo-cheeryUp'>
-                    <img src = '/imagens/logoNavbar.png' alt='Logo'/>
+                    <img src = '/imagens/cereja.png' alt='Logo'/>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {

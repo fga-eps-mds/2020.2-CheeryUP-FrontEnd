@@ -33,7 +33,7 @@ export const NavbarPsicPerfil = () => {
 
       <ul className="nav-menuPsic">
         {MenuItemsPsicPerfil.map((item, index) => {
-          return (
+          return (  
             <li key={index}>
               <Link className={item.cName} to={item.url}>
                 {item.title}

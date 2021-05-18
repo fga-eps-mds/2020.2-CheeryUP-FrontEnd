@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import "../pages/Registrar/CadastroPaciente";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function useFormPaciente(callback, validatePac) {
-  const history = useHistory()
+export default function useFormPaciente() {
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
@@ -15,11 +14,11 @@ export default function useFormPaciente(callback, validatePac) {
     situacao: "M",
     genero: "",
   });
+  const { infopaciente } = useParams();
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPac = new FormData();
   const { psic } = useSelector((state) => state);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -36,10 +35,11 @@ export default function useFormPaciente(callback, validatePac) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(false);
-    setErrors(validatePac(values)); 
-    setIsSubmitting(true); 
+    //e.preventDefault();
+    console.log("pica");
+    /*    setIsSubmitting(false);
+    /* setErrors(validatePac(values)); */
+    setIsSubmitting(true);
 
     console.log(values);
     dataPac.append("nome", values.nome);
@@ -51,17 +51,18 @@ export default function useFormPaciente(callback, validatePac) {
     dataPac.append("genero", values.genero);
 
     await axiosInstance
-      .post(`api/psicologos/${psic.user.username}/pacientes/`, dataPac)
+      .put(
+        `api/psicologos/${psic.user.username}/pacientes/${infopaciente}/`,
+        dataPac
+      )
       .then((data) => {
-        alert("Cadastro efetuado passado!");
+        alert("Dados atualizados com sucesso !");
         console.log(psic);
-        history.push("/ListaPacientes");
-
       })
-      .catch((err) => alert("Cadastro de Paciente inválido!"));
+      .catch((err) => alert("Dados invalidos!"));
   };
 
   // Ainda falta completar toda essa parte aqui ksksksks
 
-  return { handleSubmit, handleChange, values, handleSelect, errors };
+  return { handleSubmit, handleChange, values, handleSelect };
 }

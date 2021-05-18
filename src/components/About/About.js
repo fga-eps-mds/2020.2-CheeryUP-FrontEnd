@@ -1,11 +1,12 @@
 import React from 'react';
 import '../../style/pages/HomePage/About.css';
-import NavbarAlt from '../Navbar/NavbarAlt'
 
 function About(){
     return(
         <div className='about-content'>
-                <div className="upper-content">
+            
+            <div className="upper-content">
+                    <a href="/">Voltar</a>
                     <section className="who-we-are-content">
                         <h2 className="who-we-are-title">Quem somos?</h2>
                         <p>Cheery Up é um projeto que dá atenção à saúde psicológica da sociedade, 
@@ -31,7 +32,7 @@ function About(){
                     
                     <div className="img-group">
                         <figure className="developer-img">
-                            <a href="https://github.com/Abraao1231" target="_blank">
+                            <a href="https://github.com/Abraao1231" target="_blank" rel='noreferrer'>
                                 <img src="imagens/integrantes/abraao-pic.jpg" alt="Foto Abrãao"/>
                             </a>
                             <div className="middle">
@@ -40,7 +41,7 @@ function About(){
                         </figure>
 
                         <figure className="developer-img">
-                            <a href="https://github.com/antoniotoineto" target="_blank">
+                            <a href="https://github.com/antoniotoineto" target="_blank" rel='noreferrer'>
                                 <img className="img-developer image" src="imagens/integrantes/antonio-pic.jpg" alt="Foto Antônio"/>
                             </a>
                             <div className="middle">
@@ -49,7 +50,7 @@ function About(){
                         </figure>
 
                         <figure className="developer-img">
-                            <a href="https://github.com/art1505" target="_blank">
+                            <a href="https://github.com/art1505" target="_blank" rel='noreferrer'>
                                 <img src="imagens/integrantes/arthur-pic.jpg" alt="Foto Arthur"/>
                             </a>
                             <div className="middle">
@@ -58,7 +59,7 @@ function About(){
                         </figure>
 
                         <figure className="developer-img">
-                            <a href="https://github.com/DaviMatheus" target="_blank">
+                            <a href="https://github.com/DaviMatheus" target="_blank" rel='noreferrer'>
                                 <img src="imagens/integrantes/davi-pic.jpg" alt="Foto Davi"/>
                             </a>
                             <div className="middle">
@@ -67,7 +68,7 @@ function About(){
                         </figure>
 
                         <figure className="developer-img">
-                            <a href="https://github.com/mibasFerraz" target="_blank">
+                            <a href="https://github.com/mibasFerraz" target="_blank" rel='noreferrer'>
                                 <img src="imagens/integrantes/lucas-pic.jpg" alt="Foto Lucas"/>
                             </a>
                             <div className="middle">
@@ -75,7 +76,7 @@ function About(){
                             </div>
                         </figure>
                         <figure className="developer-img">
-                            <a href="https://github.com/fernandes-natanael" target="_blank">
+                            <a href="https://github.com/fernandes-natanael" target="_blank" rel='noreferrer'>
                                 <img src="imagens/integrantes/natanael-pic.jpg" alt="Foto Natanael"/>
                             </a>
                             <div className="middle">
@@ -85,7 +86,7 @@ function About(){
             
 
                         <figure className="developer-img">
-                            <a href="https://github.com/NilvanPeres" target="_blank">
+                            <a href="https://github.com/NilvanPeres" target="_blank" rel='noreferrer'>
                                 <img src="imagens/integrantes/nilvan-pic.jpg" alt="Foto Nilvan"/>
                             </a>
                             <div className="middle">
