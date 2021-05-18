@@ -42,7 +42,7 @@ export const MenuItemsPsic = [
   },
   {
     title: "Dashboards Gerais",
-    url: "#",
+    url: "/DashboardGerais",
     cName: "nav-linksPsic",
   },
   {

@@ -14,7 +14,7 @@ import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import RegistroConsulta from './pages/Registrar/RegistroConsulta'
 import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'
-
+import DashboardsGerais from './pages/DashboardsGerais/DashboardGerais'
  
 import InfoPac from "./pages/InfoPaciente/InfoPaciente";
 
@@ -54,6 +54,7 @@ export default function Routes() {
           //isAuth={auth}
           component = {InfoPac}
         />
+        <Route path="/DashboardGerais" component={DashboardsGerais}/>
         <Route
           Route
           path="/CadastrarPaciente"

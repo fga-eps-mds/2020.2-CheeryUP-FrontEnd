@@ -83,6 +83,15 @@ class GraficoEvolucaoPaciente extends Component {
                   display: true,
                 },
               },
+              animation: {
+                tension: {
+                  duration: 1000,
+                  easing: 'linear',
+                  from: 0.9,
+                  to: 0,
+                  loop: true
+                }
+              },
             }}
           />
         </div>
