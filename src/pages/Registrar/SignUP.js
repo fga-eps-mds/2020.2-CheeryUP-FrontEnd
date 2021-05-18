@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import "../../style/pages/Cadastro/SignUP.css";
 import useForm from "../../components/useForm";
 import { Card, Form, Button } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
 function validate(values) {
   let errors = {};
@@ -35,6 +36,7 @@ function validate(values) {
 }
 
 const SignUP = ({ SubmitForm }) => {
+  const { mobile } = useSelector((state) => state);
   const { handleChange, values, handleSubmit, errors } = useForm(
     SubmitForm,
     validate
@@ -43,8 +45,8 @@ const SignUP = ({ SubmitForm }) => {
   return (
     <Fragment>
       <div className="container">
-        <div className="form-signup-container">
-          <div className="top-signup">
+        <div className={ mobile ? "form-signup-container-mobile" : "form-signup-container" }>
+          <div className={ mobile ? "top-signup-mobile" : "top-signup" }>
             <a href="/">
               <img
                 className="top-signup-logo"
@@ -58,7 +60,7 @@ const SignUP = ({ SubmitForm }) => {
             </a>
           </div>
 
-          <div className="form-signup-wrap">
+          <div className={ mobile ? "form-signup-wrap-mobile" : "form-signup-wrap" } >
             <Card
               className="form-card"
               style={{ border: "none", boxShadow: "none" }}
@@ -142,9 +144,11 @@ const SignUP = ({ SubmitForm }) => {
           </div>
         </div>
 
-        <div>
-          <img  className="side-image" src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro" />
-        </div>
+        { !mobile && (
+          <div>
+            <img  className="side-image" src="img/wallpaper_cadastro.png" alt="Wallpaper cadastro" />
+          </div>
+        )}
       </div>
     </Fragment>
   );

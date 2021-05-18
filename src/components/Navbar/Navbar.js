@@ -1,40 +1,67 @@
-import React, { Component } from 'react'
-import { MenuItems} from "./MenuItems"
-import '../../style/pages/HomePage/Navbar.css'
-
+import React, { useState, useEffect } from "react";
+import { MenuItems } from "./MenuItems";
+import "../../style/pages/HomePage/Navbar.css";
+import { useSelector } from "react-redux";
+import { Icon } from "semantic-ui-react";
+import { Drawer } from "@material-ui/core";
+import { Link } from "react-router-dom";
 //import { useState } from 'react'
-//import { Link } from 'react-router-dom'
 
+export const Navbar = () => {
+  const { mobile } = useSelector((state) => state);
+  const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    console.log(mobile)
+  }, [mobile]);
 
-class Navbar extends Component {
-    state = { clicked: false }
+  return (
+    <div>
+      {mobile ? (
+        <div>
+          <nav className="NavbarItemsMobile">
+            <Icon name="bars" onClick={() => setVisible(!visible)} />
+          </nav>
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
-    }
+          <Drawer
+            anchor="left"
+            open={visible}
+            onClose={() => {
+              setVisible(false);
+            }}
+          >
+            <div className="ContainerSideBar">
+              {MenuItems.map((item, index) => {
+                return (
+                  <Link className="ContentSideBar" key={index} to={item.url}>
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </div>
+          </Drawer>
+        </div>
+      ) : (
+        <nav className="NavbarItems">
+          <div className="logo-cheeryUp">
+            <img src="/imagens/logoNavbar.png" alt="Logo" />
+          </div>
+          <ul className={"nav-menu"}>
+            {MenuItems.map((item, index) => {
+              return (
+                <li key={index}>
+                  <a className={item.cName} href={item.url}>
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
+    </div>
+  );
+};
 
-    render() {
-        return(
-            <nav className="NavbarItems">
-                <div className='logo-cheeryUp'>
-                    <img src = '/imagens/cereja.png' alt='Logo'/>
-                </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a className={item.cName} href={item.url}>
-                                {item.title}
-                                </a>
-                            </li>
-                        )
-                    })}
-                </ul>
-                
-            </nav>
-        )
-    }
-}
+export default Navbar;
 
-export default Navbar

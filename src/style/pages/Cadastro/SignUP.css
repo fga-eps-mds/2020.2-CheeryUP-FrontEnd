@@ -5,11 +5,9 @@
   
 }
 
-
-
 .form-signup-container {
   background: #ffffff;
-  height: 20vh;
+  height: 100vh;
 } 
 
 .ui.card{
@@ -20,7 +18,6 @@
 .side-image {
   position: fixed;
   height: 100vh;
-  margin-left: 6vw;
 }
 /* propriedades do formulario*/
 .ui.input > input {
@@ -52,8 +49,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 14vh;
-  
+  height: 90%;
+  margin-top: 50px;
 }
 
 .form-content-input {
@@ -76,32 +73,34 @@
 .top-signup {
   position: absolute;
   width: 50vw;
-  height: 70px;
+  height: 50px;
   background-color:#ffffff;
   display: flex;
   text-decoration: none;
   justify-content: space-between;
 }
 
+.top-signup a  {
+  display: flex;
+  align-items: center;
+}
 
-  .top-signup-logo {
-    position: relative;
-    align-items: center;
-    left: 3vw;
-    top: 2vh;
-    width: 2.5vw;
-    height: 7vh;
-  }
+.top-signup-logo {
+  position: relative;
+  align-items: center;
+  margin-left: 3vw;
+  height: 40px;
+}
 
-  .top-signup-navbar-option{
-    text-align: center;
-    font-weight: bold;
-    padding: 2rem;
-    width: 100%;
-    font-size: 16px;
-    display: table;
-    color: #494949;
-  }
+.top-signup-navbar-option{
+  text-align: center;
+  font-weight: bold;
+  margin-right: 3vw;
+  width: 100%;
+  font-size: 16px;
+  display: table;
+  color: #494949;
+}
 
   .top-signup-navbar-option:hover{
     transition: all 0.4s ease-out;
@@ -172,7 +171,7 @@
     color :red;
   }
 
-  @media screen and (max-width: 960px) {
+  /* @media screen and (max-width: 960px) {
     .form-signup-wrap{
       position: relative;
       left: 50%;
@@ -180,4 +179,41 @@
     .side-image{
       display: none;
     }
-  }
+  } */
+
+
+
+
+  
+/* MOBILE */
+
+.form-signup-container-mobile {
+  background: #ffffff;
+  height: 100%;
+}
+
+.top-signup-mobile {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color:#ffffff;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.top-signup-mobile a  {
+  display: flex;
+  align-items: center;
+}
+
+
+.form-signup-wrap-mobile {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  margin-top: 50px;
+}

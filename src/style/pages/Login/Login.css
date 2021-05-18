@@ -57,7 +57,7 @@
   }
 
   .form-content-input-login {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
   }
 
@@ -110,7 +110,7 @@
     margin-left: 5%;
   }
 
-  @media screen and (max-width: 960px) {
+  /* @media screen and (max-width: 960px) {
     .form-signup-wrap{
       position: relative;
       left: 50%;
@@ -118,5 +118,36 @@
     .side-image{
       display: none;
     }
-  }
+  } */
 
+
+
+
+  /* MOBILE */
+
+.container-login-mobile {
+  
+}
+
+.form-login-container-mobile {
+  position:relative;
+  height: 100vh;
+  background: #ffffff
+}
+
+.top-login-mobile {
+  position: absolute;
+  width: 100%;
+  background-color:#ffffff;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.form-login-wrap-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
