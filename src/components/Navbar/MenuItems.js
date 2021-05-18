@@ -63,8 +63,13 @@ export const MenuItemsPsicPerfil = [
     cName: "nav-linksPsicPerfil",
   },
   {
+    title: "Perfil",
+    url: "/PerfilPsicologo",
+    cName: "nav-linksPsicPerfil",
+  },
+  {
     title: "Sair",
-    url: "#",
+    url: "/",
     cName: "nav-linksPsicPerfil",
   },
 ];
