@@ -4,7 +4,7 @@ import axiosInstance from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from "../../store/Psicologo/actions";
 import { MenuItems, MenuItemsPsicPerfil } from "./MenuItems";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
@@ -12,19 +12,30 @@ import {Link} from 'react-router-dom'
 */
 
 export const NavbarPsicPerfil = () => {
-  const {psic} = useSelector( (state) =>state)
+  function handleClick(title) {
+    if (title === "Sair") {
+      localStorage.removeItem("psic");
+      localStorage.removeItem("auth");
+      localStorage.removeItem("pac");
+      console.log("pica");
+    }
+  }
+
+  const { psic } = useSelector((state) => state);
   const dispatch = useDispatch();
   const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
   useEffect(() => {
-    axiosInstance.get(`api/psicologos/${psic.user.username}/`).then((response) => {
-      console.log(response)
-      changePsic(response.data);
-    });
+    axiosInstance
+      .get(`api/psicologos/${psic.user.username}/`)
+      .then((response) => {
+        console.log(response);
+        changePsic(response.data);
+      });
   }, []);
-  useEffect( () => {
-      console.log(psic)
-  },[psic])
-  
+  useEffect(() => {
+    console.log(psic);
+  }, [psic]);
+
   return (
     <nav className="NavbarItemsPsic">
       <div className="logo-cheeryUpPsic">
@@ -33,9 +44,13 @@ export const NavbarPsicPerfil = () => {
 
       <ul className="nav-menuPsic">
         {MenuItemsPsicPerfil.map((item, index) => {
-          return (
+          return (  
             <li key={index}>
-              <Link className={item.cName} to={item.url}>
+              <Link
+                className={item.cName}
+                to={item.url}
+                onClick={() => handleClick(item.title)}
+              >
                 {item.title}
               </Link>
             </li>
@@ -45,7 +60,7 @@ export const NavbarPsicPerfil = () => {
 
       {
         <div className="dados-psicologo">
-          {psic.user.username}
+          {psic.name}
           <br />
           {psic.nCRP}
         </div>

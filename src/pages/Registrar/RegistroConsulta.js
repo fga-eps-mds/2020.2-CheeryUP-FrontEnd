@@ -4,9 +4,11 @@ import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import "../../style/pages/Cadastro/RegistroConsulta.css";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+
 
 const RegistroConsulta = ({ paciente }) => {
+  const history = useHistory();
   const { infopaciente } = useParams();
   const { psic } = useSelector((state) => state);
   const [produtividade, setprodutividade] = useState("0");
@@ -71,6 +73,8 @@ const RegistroConsulta = ({ paciente }) => {
         console.log(dataPac);
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
+      
+    history.push('/ListaPacientes')
   };
 
   return (
@@ -79,10 +83,10 @@ const RegistroConsulta = ({ paciente }) => {
 
       <Form>
         <h2>Registrar consulta</h2>
-        {/*problemasPessoais*/}
+        {/*produtividade*/}
         <Form.Field>
           <label>
-            Produtividade: <b>{produtividade}</b>
+            Produtividade:
           </label>
           <Radio
             label="Houve melhora"
@@ -110,7 +114,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*problemasPessoais*/}
         <Form.Field>
           <label>
-            Problemas pessoais: <b>{problemasPessoais}</b>
+            Problemas pessoais:
           </label>
           <Radio
             label="Houve melhora"
@@ -138,7 +142,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*humor*/}
         <Form.Field>
           <label>
-            Humor: <b>{humor}</b>
+            Humor:
           </label>
           <Radio
             label="Houve melhora"
@@ -166,7 +170,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*estabilidadeDeEmocoes*/}
         <Form.Field>
           <label>
-            Estabilidade de emoções: <b>{estabilidadeDeEmocoes}</b>
+            Estabilidade de emoções:
           </label>
           <Radio
             label="Houve melhora"
@@ -194,7 +198,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*interessePelaVida*/}
         <Form.Field>
           <label>
-            Interesse pela vida: <b>{interessePelaVida}</b>
+            Interesse pela vida:
           </label>
           <Radio
             label="Houve melhora"
@@ -222,8 +226,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*capacidadeDeSituacoesDificeis*/}
         <Form.Field>
           <label>
-            Capacidade de situações dificeis:{" "}
-            <b>{capacidadeDeSituacoesDificeis}</b>
+            Capacidade de situações dificeis:
           </label>
           <Radio
             label="Houve melhora"
@@ -251,7 +254,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*convivioFamiliar*/}
         <Form.Field>
           <label>
-            Convivio familiar: <b>{convivioFamiliar}</b>
+            Convivio familiar:
           </label>
           <Radio
             label="Houve melhora"
@@ -279,7 +282,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*energiaSono*/}
         <Form.Field>
           <label>
-            Energia sono: <b>{energiaSono}</b>
+            Energia sono:
           </label>
           <Radio
             label="Houve melhora"
@@ -307,7 +310,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*convivioAmigos*/}
         <Form.Field>
           <label>
-            Convivio amigos: <b>{convivioAmigos}</b>
+            Convivio amigos:
           </label>
           <Radio
             label="Houve melhora"
@@ -335,7 +338,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*conhecimentoDoenca*/}
         <Form.Field>
           <label>
-            Conhecimento doenca: <b>{conhecimentoDoenca}</b>
+            Conhecimento doenca: 
           </label>
           <Radio
             label="Houve melhora"
@@ -363,7 +366,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*criseEspacoInterior*/}
         <Form.Field>
           <label>
-            Crise espaço interior: <b>{criseEspacoInterior}</b>
+            Crise espaço interior: 
           </label>
           <Radio
             label="Houve melhora"
@@ -391,7 +394,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*exposiçãoRisco*/}
         <Form.Field>
           <label>
-            Exposição risco: <b>{exposicaoRisco}</b>
+            Exposição risco:
           </label>
           <Radio
             label="Houve melhora"
@@ -419,7 +422,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*qualidadeSono*/}
         <Form.Field>
           <label>
-            Qualidade sono: <b>{qualidadeSono}</b>
+            Qualidade sono:
           </label>
           <Radio
             label="Houve melhora"
@@ -447,7 +450,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*tentativaSuicidio*/}
         <Form.Field>
           <label>
-            Tentativa suicidio: <b>{tentativaSuicidio}</b>
+            Tentativa suicidio:
           </label>
           <Radio
             label="Houve melhora"
@@ -475,7 +478,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*qualidadeEscuta*/}
         <Form.Field>
           <label>
-            Qualidade escuta: <b>{qualidadeEscuta}</b>
+            Qualidade escuta: 
           </label>
           <Radio
             label="Houve melhora"
@@ -503,7 +506,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*maturidadeEmocional*/}
         <Form.Field>
           <label>
-            Maturidade emocional: <b>{maturidadeEmocional}</b>
+            Maturidade emocional: 
           </label>
           <Radio
             label="Houve melhora"
@@ -531,7 +534,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*qualidadeNutritiva*/}
         <Form.Field>
           <label>
-            Qualidade nutritiva: <b>{qualidadeNutritiva}</b>
+            Qualidade nutritiva: 
           </label>
           <Radio
             label="Houve melhora"
@@ -559,7 +562,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*autoMedicacao*/}
         <Form.Field>
           <label>
-            Auto medicação: <b>{autoMedicacao}</b>
+            Auto medicação: 
           </label>
           <Radio
             label="Houve melhora"
@@ -587,7 +590,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*intoleranciaFrustracao*/}
         <Form.Field>
           <label>
-            Intolerancia a frustração: <b>{intoleranciaFrustracao}</b>
+            Intolerancia a frustração:
           </label>
           <Radio
             label="Houve melhora"
@@ -611,7 +614,6 @@ const RegistroConsulta = ({ paciente }) => {
             onChange={(e) => setintoleranciaFrustracao("-1")}
           />
         </Form.Field>
-
         <Form.Button onClick={handleSubmit} type="submit">
           Registrar
         </Form.Button>

@@ -4,18 +4,18 @@ import useFormSignIn from '../../components/useFormSignIn';
 import { Card, Form, Button} from 'semantic-ui-react'
 import { useSelector } from "react-redux";
 
-function validate(values){
-    let errors = {};
-    if (!values.username.trim()) {
-        errors.username = 'É necessário preencher seu nome';
-    }
-    if (!values.senha) {
-        errors.senha = 'É necessário preencher uma senha';
-    } else if (values.senha.length < 6) {
-        errors.senha = 'A senha deve conter mais de 6 caracteres';
-    }
-    return errors;
-};
+function validate(values) {
+  let errors = {};
+  if (!values.username.trim()) {
+    errors.username = "É necessário preencher seu nome";
+  }
+  if (!values.senha) {
+    errors.senha = "É necessário preencher uma senha";
+  } else if (values.senha.length < 6) {
+    errors.senha = "A senha deve conter mais de 6 caracteres";
+  }
+  return errors;
+}
 
     
 const Login = ({ SubmitForm }) => {

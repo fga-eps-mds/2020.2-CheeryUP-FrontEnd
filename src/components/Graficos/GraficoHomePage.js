@@ -41,6 +41,7 @@ class GraficoProdutividade extends Component {
                     options={{ maintainAspectRatio: false  }}
                 />
                 </div>
+
                        
             </>)
 

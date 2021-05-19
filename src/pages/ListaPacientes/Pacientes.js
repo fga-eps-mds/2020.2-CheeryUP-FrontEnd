@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removerPaciente } from "../../store/Pacientes/actions";
 import axiosInstance from "../../services/apiToken";
@@ -58,7 +58,7 @@ const Pacientes = ({ paciente, index}) => {
       </td>
       <td className="table-body-option">{index + 1}</td>
       <td className="table-body-option">{paciente.nome}</td>
-      <td className="table-body-opthandleAgeion">
+      <td className="table-body-option">
         {handleAge(paciente.data_nascimento)}
       </td>
       <td className="table-body-option">{paciente.regiao}</td>
@@ -76,6 +76,13 @@ const Pacientes = ({ paciente, index}) => {
           </button>
         </Link>
       </td>
+        <td>
+          <Link to={`/ListaConsultas/${paciente.cpf}`}>
+            <button type="button" className="default-button">
+              Lista Consultas <img src="img/arrow.png" />
+            </button>
+          </Link>
+        </td>
       <td>
         <Link to={`/AtualizarPaciente/${paciente.cpf}`}>
           <button type="button" className="default-button">

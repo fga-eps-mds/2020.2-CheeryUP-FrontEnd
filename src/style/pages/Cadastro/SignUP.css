@@ -10,10 +10,6 @@
   height: 100vh;
 } 
 
-.ui.card{
-    
-}
-
 /*imagem lateral*/
 .side-image {
   position: fixed;
@@ -161,7 +157,6 @@
     right: 0;
     bottom: 0;
     display: flex;  
- 
   }
   
   .form-input-login a {
