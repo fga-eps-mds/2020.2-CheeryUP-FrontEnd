@@ -1,69 +1,71 @@
-import React, { Fragment, useEffect, useCallback} from "react";
+
+
+import React, { Fragment, useEffect, useCallback, useState } from "react";
 import "../../style/pages/Lista/Lista.css";
+import useFormDelPaciente from "../../components/useFormDelPaciente";
 import NavbarPsicologo from "../../components/Navbar/NavbarPsicologo";
+import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
-import { setCons } from "../../store/Consulta/actions";
-import { Link, useParams } from "react-router-dom";
-import Consultas from "./Consulta";
+import { setPac } from "../../store/Pacientes/actions.js";
+import { Link } from "react-router-dom";
 //import Pacientes from "./Pacientes";
 
 const ListaConsultas = ({ SubmitForm }) => {
-  const { psic, cons } = useSelector((state) => state);
+  /*
+  const { psic, pac } = useSelector((state) => state);
+  const history = useHistory();
+  const { handleSubmit } = useFormDelPaciente(SubmitForm);
   const dispatch = useDispatch();
-  const changeCons = useCallback((cons) => dispatch(setCons(cons)), [dispatch]);
-  const { infopaciente } = useParams();
-  
- 
+  const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
+
   useEffect(() => {
     axiosInstance
-      .get(
-        `api/psicologos/${psic.user.username}/pacientes/${infopaciente}/consultas`
-      )
+      .get(`api/psicologos/${psic.user.username}/pacientes/`)
       .then((data) => {
-        changeCons(data.data);
+        changePac(data.data);
       })
       .catch((err) => console.log(err));
   }, []);
-
-  function mostrarPopup(id){
-    console.log(id);
-  }
+*/
 
   return (
     <Fragment>
-      <div className="body-content">
-        <NavbarPsicologo />
+        <div className="body-content">
+            <NavbarPsicologo/>
 
-        <main className="main-content">
-          <div className="upper-main-content">
-            <h2 className="page-name">Lista Consultas</h2>
-            <Link to="/CadastrarPaciente">
-              <button
-                type="submit"
-                onClick="" /*{handleSubmit}*/
-                className="default-button"
-              >
-                {" "}
-                Registrar consulta
-              </button>
-            </Link>
-          </div>
-          <table className="table-content" cellSpacing="10">
-            <thead>
-              <tr className="table-header-columns">
-                <th className="table-header-option">Data registrada</th>
-              </tr>
-            </thead>
+            <main className="main-content">
+                <div className="upper-main-content">
+                    <h2 class="page-name">Lista Consultas</h2>
+                    <Link to="/CadastrarPaciente">  
+                    <button
+                        type="submit"
+                        onClick=""/*{handleSubmit}*/
+                        className="default-button"
+                    > Registrar consulta</button>
+                    </Link>
+                </div>
+                <table className="table-content" cellspacing="10">
+                        <thead>
+                        {/** constante, logo não mudará. É o header da table */}
+                        <tr className="table-header-columns">
+                            <th className="table-header-option">Data registrada</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>                            
+                            <td>20-02-2021</td>
+                            
+                        {/* tbody é onde sera inserido os individous */}
+                        {/*
+                        {pac.map((paciente, index) => (
+                            <Pacientes paciente={paciente} key={index}></Pacientes>
+                        ))} */}
 
-            {cons.map((consulta, index) => (
-              <Consultas consulta={consulta} key={index}/>
-            ))}
-          </table>
-        </main>
-      </div>
-
-
+                        </tbody>
+                </table>
+            </main>
+        </div>
     </Fragment>
   );
 };
