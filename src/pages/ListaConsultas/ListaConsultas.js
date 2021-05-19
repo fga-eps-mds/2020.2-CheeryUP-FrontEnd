@@ -1,22 +1,20 @@
-import React, { Fragment, useEffect, useCallback, useState } from "react";
+import React, { Fragment, useEffect, useCallback} from "react";
 import "../../style/pages/Lista/Lista.css";
-import useFormDelPaciente from "../../components/useFormDelPaciente";
 import NavbarPsicologo from "../../components/Navbar/NavbarPsicologo";
-import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
 import { setCons } from "../../store/Consulta/actions";
 import { Link, useParams } from "react-router-dom";
 import Consultas from "./Consulta";
-import { Icon } from 'semantic-ui-react'
 //import Pacientes from "./Pacientes";
 
 const ListaConsultas = ({ SubmitForm }) => {
-  const { psic, pac, cons } = useSelector((state) => state);
+  const { psic, cons } = useSelector((state) => state);
   const dispatch = useDispatch();
   const changeCons = useCallback((cons) => dispatch(setCons(cons)), [dispatch]);
   const { infopaciente } = useParams();
-
+  
+ 
   useEffect(() => {
     axiosInstance
       .get(
@@ -28,6 +26,10 @@ const ListaConsultas = ({ SubmitForm }) => {
       .catch((err) => console.log(err));
   }, []);
 
+  function mostrarPopup(id){
+    console.log(id);
+  }
+
   return (
     <Fragment>
       <div className="body-content">
@@ -35,7 +37,7 @@ const ListaConsultas = ({ SubmitForm }) => {
 
         <main className="main-content">
           <div className="upper-main-content">
-            <h2 class="page-name">Lista Consultas</h2>
+            <h2 className="page-name">Lista Consultas</h2>
             <Link to="/CadastrarPaciente">
               <button
                 type="submit"
@@ -47,7 +49,7 @@ const ListaConsultas = ({ SubmitForm }) => {
               </button>
             </Link>
           </div>
-          <table className="table-content" cellspacing="10">
+          <table className="table-content" cellSpacing="10">
             <thead>
               <tr className="table-header-columns">
                 <th className="table-header-option">Data registrada</th>
@@ -55,23 +57,8 @@ const ListaConsultas = ({ SubmitForm }) => {
             </thead>
 
             {cons.map((consulta, index) => (
-              <tr>
-                <td className="table-body-option">{consulta.data}</td>
-                <td>
-                  <Link to={`/RegistroConsulta/`}>
-                    <button type="button" className="default-button" >
-                      Dados da consulta 
-                      <Icon name="arrow right" color="white" />
-                    </button>
-                  </Link>
-                </td>
-              </tr>
+              <Consultas consulta={consulta} key={index}/>
             ))}
-
-            {/*             <tbody>
-              <td>20-02-2021</td>
-
-            </tbody> */}
           </table>
         </main>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removerPaciente } from "../../store/Pacientes/actions";
 import axiosInstance from "../../services/apiToken";
