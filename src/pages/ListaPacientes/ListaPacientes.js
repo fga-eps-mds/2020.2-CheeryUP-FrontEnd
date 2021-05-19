@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useCallback, useState } from "react";
-import "../../style/pages/ListaPacientes/ListaPacientes.css";
+import "../../style/pages/Lista/Lista.css";
 import useFormDelPaciente from "../../components/useFormDelPaciente";
 import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicologo";
 import { useHistory } from "react-router-dom";
@@ -17,12 +17,20 @@ const ListaPacientes = ({ SubmitForm }) => {
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
   useEffect(() => {
-    axiosInstance
-      .get(`api/psicologos/${psic.user.username}/pacientes/`)
-      .then((data) => {
-        changePac(data.data);
-      })
-      .catch((err) => console.log(err));
+    console.log(psic.user.username);
+    var storage = localStorage.getItem("pac");
+    if (storage) {
+      changePac(JSON.parse(storage));
+    }
+    else {
+      axiosInstance
+        .get(`api/psicologos/${psic.user.username}/pacientes/`)
+        .then((data) => {
+          changePac(data.data);
+          localStorage.setItem("pac", JSON.stringify(data.data));
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   function handleAge(age) {
@@ -42,12 +50,15 @@ const ListaPacientes = ({ SubmitForm }) => {
         <main className="main-content">
           <div className="upper-main-content">
             <h2 class="page-name">Lista Pacientes</h2>
-            <Link to="/CadastrarPaciente">  
+            <Link to="/CadastrarPaciente">
               <button
                 type="submit"
                 onClick={handleSubmit}
                 className="default-button"
-              > Cadastrar Paciente</button>
+              >
+                {" "}
+                Cadastrar Paciente
+              </button>
             </Link>
             <form className="pesquisinfopacientea">
               <input
@@ -72,10 +83,10 @@ const ListaPacientes = ({ SubmitForm }) => {
             </thead>
             <tbody>
               {/* tbody é onde sera inserido os individous */}
-              {pac.map((paciente, index) => {
-                console.log(index);
-                return <Pacientes paciente={paciente} key={index} index = {index}/>;
-              })}
+              {pac.map((paciente, index) => (
+                <Pacientes paciente={paciente} key={index}></Pacientes>
+              ))}
+
             </tbody>
           </table>
         </main>
