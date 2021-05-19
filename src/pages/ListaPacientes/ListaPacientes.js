@@ -86,6 +86,7 @@ const ListaPacientes = ({ SubmitForm }) => {
               {pac.map((paciente, index) => (
                 <Pacientes paciente={paciente} key={index}></Pacientes>
               ))}
+
             </tbody>
           </table>
         </main>

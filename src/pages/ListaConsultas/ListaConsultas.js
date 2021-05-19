@@ -62,6 +62,8 @@ const ListaConsultas = ({ SubmitForm }) => {
           </table>
         </main>
       </div>
+
+
     </Fragment>
   );
 };

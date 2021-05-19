@@ -9,21 +9,13 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ListaPacientes from './pages/ListaPacientes/ListaPacientes';
 import CadastroPac from './pages/Registrar/CadastroPaciente';
 import AttDadosPac from './pages/AtualizaDados/AttPaciente';
-import AttDadosPsico from './pages/AtualizaDadosPessoais/AtualizarDadosPessoais';
 import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
-import DashboardPacientes from './pages/DashboardPacientes/DashboardPacientes'
 import RegistroConsulta from './pages/Registrar/RegistroConsulta'
-import DashboardEvolucao from './pages/DashboradEvolucao/DashboardEvolucao'
 import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'
-import DashboardEstabilidade from './pages/DashboardEstabilidadeEmocional/DashboardEstabilidade';
-import DashboardQualidadeVida from './pages/DashboardQualidadeVida/DashboardQualidadeVida'
-import DashboardAvaliacaoMedia from './pages/DashboardAvaliacaoMedia/DashboardAvaliaçãoMedia'
-import DashboardAvaliacaoConsulta from './pages/DashboardAvaliacaoConsulta/DashboardAvaliacaoConsulta'
-import DashboardProdutividade from './pages/DashboardProdutividade/DashboardProdutividade'
 import ListaConsultas from './pages/ListaConsultas/ListaConsultas';
- 
-import InfoPac from "./pages/InfoPaciente/InfoPaciente";
+import DashboardsGerais from './pages/DashboardsGerais/DashboardGerais'
+import AttDadosPsico from "./pages/AtualizaDadosPessoais/AtualizarDadosPessoais";
 
 const PrivateRoute = ({ component: Component, isAuth, ...rest }) => (
   <Route
@@ -54,59 +46,25 @@ export default function Routes() {
         <Route path="/SignUP" component={SignUP} />
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
-        <Route
-          path="/ListaPacientes"
-          component={ListaPacientes}
-        />
-        <Route
-          path="/RegistroConsulta/:infopaciente"
-          component={RegistroConsulta}
-        />
-        <Route path="/DashboardPacientes" component={DashboardPacientes} />
-        <Route path="/DashboardEvolucao" component={DashboardEvolucao} />
-        <Route
-          path="/DashboardEstabilidade"
-          component={DashboardEstabilidade}
-        />
-        <Route
-          path="/DashboardQualidadeVida"
-          component={DashboardQualidadeVida}
-        />
-        <Route
-          path="/DashboardAvaliacaoMedia"
-          component={DashboardAvaliacaoMedia}
-        />
-        <Route
-          path="/DashboardAvaliacaoConsulta"
-          component={DashboardAvaliacaoConsulta}
-        />
-        <Route
-          path="/DashboardProdutividade"
-          component={DashboardProdutividade}
-        />
-        <Route
-          path="/InformacoesPaciente/:infopaciente"
-          component={InformacoesPaciente}
         />
         <Route
           path="/ListaConsultas/:infopaciente"
           component={ListaConsultas}
         />
-        <Route
-          path="/ListaPacientes/:infopaciente"
-          //isAuth={auth}
-          component={InfoPac}
-        />
+        <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
+        <Route path="/RegistroConsulta/:infopaciente" component={RegistroConsulta}/>
+        <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
+        <Route path="/DashboardGerais" component={DashboardsGerais}/>
         <Route
           Route
           path="/CadastrarPaciente"
           isAuth={auth}
           component={CadastroPac}
         />
-        <PrivateRoute
+        <Route path="/AtualizarDadosPessoais" component={AttDadosPsico}/>
+        <Route
           Route
-          path="/AtualizarPaciente"
-          isAuth={auth}
+          path="/AtualizarPaciente/:infopaciente"
           component={AttDadosPac}
         />
         <Route
@@ -114,12 +72,7 @@ export default function Routes() {
           path="/PerfilPsicologo"
           component={PerfilPsicologo}
         />
-        <PrivateRoute
-          Route
-          path="/DashboardPacientes"
-          isAuth={auth}
-          component={DashboardPacientes}
-        />
+       
         <PrivateRoute
           Route
           path="/RecuperarSenha"

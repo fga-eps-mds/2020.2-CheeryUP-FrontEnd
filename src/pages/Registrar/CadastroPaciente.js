@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { useState } from "react";
+import {opcoesRegiao} from '../../helper/index'
 import { Button, Form } from "semantic-ui-react";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import useFormPaciente from "../../components/useFormPaciente";
@@ -38,57 +38,16 @@ function validatePac(values) {
   return errors;
 } 
 
-// Opções de Região
-const opcoesRegiao = [
-  { key: 1, text: "Águas Claras", value: 'AC' },
-  { key: 2, text: "Asa Sul", value: 'AS' },
-  { key: 3, text: "Asa Norte", value: 'AN' },
-  { key: 4, text: "Arniqueiras", value: 'AR' },
-  { key: 5, text: "Brazlândia", value: 'BZ' },
-  { key: 6, text: "Candangolândia", value: 'CA' },
-  { key: 7, text: "Ceilândia", value: 'CI' },
-  { key: 8, text: "Cruzeiro", value: 'CZ' },
-  { key: 9, text: "Fercal", value: 'FE' },
-  { key: 10, text: "Gama", value: 'GA' },
-  { key: 11, text: "Guará", value: 'GR' },
-  { key: 12, text: "Itapoã", value: 'IT' },
-  { key: 13, text: "Jardim Botânico", value: 'JB' },
-  { key: 14, text: "Lago Sul", value: 'LS' },
-  { key: 15, text: "Lago Norte", value: 'LN' },
-  { key: 16, text: "Núcleo Bandeirante", value: 'NB' },
-  { key: 17, text: "Park Way", value: 'PW' },
-  { key: 18, text: "Paranoá", value: 'PA' },
-  { key: 19, text: "Planaltina", value: 'PL' },
-  { key: 20, text: "Plano Piloto", value: 'PP' },
-  { key: 21, text: "Recanto das Emas", value: 'RE' },
-  { key: 22, text: "Riacho Fundo", value: 'RF' },
-  { key: 23, text: "Riacho Fundo 2", value: 'RFII' },
-  { key: 24, text: "Samambaia", value: 'SA' },
-  { key: 25, text: "Santa Maria", value: 'SM' },
-  { key: 26, text: "São Sebastião", value: 'SB' },
-  { key: 27, text: "SCIA", value: 'SCIA' },
-  { key: 28, text: "SIA", value: 'SI' },
-  { key: 29, text: "Sobradinho", value: 'SO' },
-  { key: 30, text: "Sobradinho 2", value: 'SOII' },
-  { key: 31, text: "Sol Nascente", value: 'SN' },
-  { key: 32, text: "Sudoeste", value: 'SD' },
-  { key: 33, text: "Taguatinga", value: 'TA' },
-  { key: 34, text: "Varjão", value: 'VA' },
-  { key: 35, text: "Vicente Pires", value: 'VP' },
-  { key: 36, text: "Entre Outros", value: 'EO' },
-];
-
 const CadastroPac = ({ SubmitFormPac }) => {
   const { handleSubmit, handleChange, values, handleSelect, errors } = useFormPaciente(
     SubmitFormPac,
     validatePac 
   );
-  const [regiaostate, setregiaostate] = useState("");
 
   return (
     <Fragment>
+      <NavbarPsic />
       <div className="container-cadPac">
-        <NavbarPsic />
 
         <div className="form-cadPac">
           <div className="titulo-form">
@@ -173,8 +132,8 @@ const CadastroPac = ({ SubmitFormPac }) => {
                   />
                   <Form.Radio
                     label="Outro"
-                    value="O"
-                    checked={values.genero === "O"}
+                    value="P"
+                    checked={values.genero === "P"}
                     onChange={(e, { value, name }) =>
                       handleSelect(e, value, name)
                     }
