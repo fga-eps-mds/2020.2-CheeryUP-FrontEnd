@@ -14,8 +14,6 @@ import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import RegistroConsulta from './pages/Registrar/RegistroConsulta'
 import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'
 import DashboardsGerais from './pages/DashboardsGerais/DashboardGerais'
- 
-import InfoPac from "./pages/InfoPaciente/InfoPaciente";
 import AttDadosPsico from "./pages/AtualizaDadosPessoais/AtualizarDadosPessoais";
 
 const PrivateRoute = ({ component: Component, isAuth, ...rest }) => (
@@ -49,11 +47,6 @@ export default function Routes() {
         <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
         <Route path="/RegistroConsulta/:infopaciente" component={RegistroConsulta}/>
         <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
-        <Route
-          path= '/ListaPacientes/:infopaciente'
-          //isAuth={auth}
-          component = {InfoPac}
-        />
         <Route path="/DashboardGerais" component={DashboardsGerais}/>
         <Route
           Route

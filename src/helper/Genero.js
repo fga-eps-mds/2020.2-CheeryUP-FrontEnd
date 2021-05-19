@@ -6,7 +6,7 @@ export function handleGenero(sigla) {
         case 'F':
             return 'Feminino'
 
-        case 'I':
+        case 'P':
             return 'Outro'
     }
     

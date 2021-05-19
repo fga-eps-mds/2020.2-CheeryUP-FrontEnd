@@ -3,6 +3,7 @@ import "../../style/pages/InfoPaciente/InfoPaciente.css";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useSelector } from "react-redux";
+import { handleGenero, handleRegiao } from "../../helper/index"
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import GraficoQualidadeVida from "../../components/Graficos/GraficoQualidadeVida";
 import GraficoAvaliaçãoMediaIndicadores from "../../components/Graficos/GraficoGraficoAvaliaçãoMedia";
@@ -37,8 +38,8 @@ const InfoPac = () => {
           Nome: {paciente.nome} <br />
           Nascimento: {paciente.data_nascimento} <br />
           CPF: {paciente.cpf} <br />
-          Gênero: {paciente.genero} <br />
-          Região: {paciente.regiao}
+          Gênero: {handleGenero(paciente.genero)} <br />
+          Região: {handleRegiao(paciente.regiao)}
           <br />
         </div>
 
