@@ -83,12 +83,11 @@ const CadastroPac = ({ SubmitFormPac }) => {
     SubmitFormPac,
     validatePac 
   );
-  const [regiaostate, setregiaostate] = useState("");
 
   return (
     <Fragment>
+      <NavbarPsic />
       <div className="container-cadPac">
-        <NavbarPsic />
 
         <div className="form-cadPac">
           <div className="titulo-form">
@@ -173,8 +172,8 @@ const CadastroPac = ({ SubmitFormPac }) => {
                   />
                   <Form.Radio
                     label="Outro"
-                    value="O"
-                    checked={values.genero === "O"}
+                    value="P"
+                    checked={values.genero === "P"}
                     onChange={(e, { value, name }) =>
                       handleSelect(e, value, name)
                     }

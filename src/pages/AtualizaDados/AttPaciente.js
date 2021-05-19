@@ -3,8 +3,6 @@ import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
 import '../../style/pages/AtualizaDados/AttPaciente.css';
 import useFormAttPaciente from '../../components/useFormAttPaciente'
-import { Link } from 'react-router-dom'
-import { useHistory } from "react-router-dom";
 
 function validatePac(values) {
   let errors = {};
@@ -102,7 +100,7 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         required
                         name="nome"
                         label="Nome"
-                        placeholder="Nome do Paciente"
+                        placeholder="Nome do paciente"
                       />
                     </Form.Group>
                   </div>
@@ -165,8 +163,8 @@ const AttDadosPac = ({SubmitAttForm}) => {
                       />
                       <Form.Radio
                         label="Outro"
-                        value="O"
-                        checked={values.genero === "O"}
+                        value="P"
+                        checked={values.genero === "P"}
                         onChange={(e, { value, name }) =>
                           handleSelect(e, value, name)
                         }
