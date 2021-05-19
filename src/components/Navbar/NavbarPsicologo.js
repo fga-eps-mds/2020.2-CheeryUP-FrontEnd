@@ -43,7 +43,7 @@ export const NavbarPsic = () => {
       </ul>
 
       <div className="dados-psicologo">
-        {psic.user.username} <br />
+        {psic.name} <br />
         {psic.nCRP}
       </div>
     </nav>
