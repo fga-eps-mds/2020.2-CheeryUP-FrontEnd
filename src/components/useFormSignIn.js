@@ -32,22 +32,22 @@ export default function useFormSignIn(callback, validate) {
 
     setErrors(validate(values));
     changeAuth(true);
-    localStorage.setItem("auth", true);
     setIsSubmitting(true);
-
   };
 
   useEffect(async () => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       data.append("username", values.username);
       data.append("password", values.senha);
+      console.log(FormData);
 
       await axiosInstance
         .post("login/api/login/", data)
         .then((res) => {
-          localStorage.setItem("refresh_token", res.data.refresh);
           localStorage.setItem("access_token", res.data.access);
+          localStorage.setItem("refresh_token", res.data.refresh);
           changePsic( { user: {username: res.data.user}})
+          console.log(res.data.access);
           history.push("/ListaPacientes");
         })
         .catch((err) => alert("Login Inválido"));

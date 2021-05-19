@@ -83,10 +83,10 @@ const RegistroConsulta = ({ paciente }) => {
 
       <Form>
         <h2>Registrar consulta</h2>
-        {/*produtividade*/}
+        {/*problemasPessoais*/}
         <Form.Field>
           <label>
-            Produtividade:
+            Produtividade: <b>{produtividade}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -114,7 +114,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*problemasPessoais*/}
         <Form.Field>
           <label>
-            Problemas pessoais:
+            Problemas pessoais: <b>{problemasPessoais}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -142,7 +142,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*humor*/}
         <Form.Field>
           <label>
-            Humor:
+            Humor: <b>{humor}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -170,7 +170,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*estabilidadeDeEmocoes*/}
         <Form.Field>
           <label>
-            Estabilidade de emoções:
+            Estabilidade de emoções: <b>{estabilidadeDeEmocoes}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -198,7 +198,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*interessePelaVida*/}
         <Form.Field>
           <label>
-            Interesse pela vida:
+            Interesse pela vida: <b>{interessePelaVida}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -226,7 +226,8 @@ const RegistroConsulta = ({ paciente }) => {
         {/*capacidadeDeSituacoesDificeis*/}
         <Form.Field>
           <label>
-            Capacidade de situações dificeis:
+            Capacidade de situações dificeis:{" "}
+            <b>{capacidadeDeSituacoesDificeis}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -254,7 +255,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*convivioFamiliar*/}
         <Form.Field>
           <label>
-            Convivio familiar:
+            Convivio familiar: <b>{convivioFamiliar}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -282,7 +283,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*energiaSono*/}
         <Form.Field>
           <label>
-            Energia sono:
+            Energia sono: <b>{energiaSono}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -310,7 +311,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*convivioAmigos*/}
         <Form.Field>
           <label>
-            Convivio amigos:
+            Convivio amigos: <b>{convivioAmigos}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -338,7 +339,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*conhecimentoDoenca*/}
         <Form.Field>
           <label>
-            Conhecimento doenca: 
+            Conhecimento doenca: <b>{conhecimentoDoenca}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -366,7 +367,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*criseEspacoInterior*/}
         <Form.Field>
           <label>
-            Crise espaço interior: 
+            Crise espaço interior: <b>{criseEspacoInterior}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -394,7 +395,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*exposiçãoRisco*/}
         <Form.Field>
           <label>
-            Exposição risco:
+            Exposição risco: <b>{exposicaoRisco}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -422,7 +423,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*qualidadeSono*/}
         <Form.Field>
           <label>
-            Qualidade sono:
+            Qualidade sono: <b>{qualidadeSono}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -450,7 +451,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*tentativaSuicidio*/}
         <Form.Field>
           <label>
-            Tentativa suicidio:
+            Tentativa suicidio: <b>{tentativaSuicidio}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -478,7 +479,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*qualidadeEscuta*/}
         <Form.Field>
           <label>
-            Qualidade escuta: 
+            Qualidade escuta: <b>{qualidadeEscuta}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -506,7 +507,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*maturidadeEmocional*/}
         <Form.Field>
           <label>
-            Maturidade emocional: 
+            Maturidade emocional: <b>{maturidadeEmocional}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -534,7 +535,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*qualidadeNutritiva*/}
         <Form.Field>
           <label>
-            Qualidade nutritiva: 
+            Qualidade nutritiva: <b>{qualidadeNutritiva}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -562,7 +563,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*autoMedicacao*/}
         <Form.Field>
           <label>
-            Auto medicação: 
+            Auto medicação: <b>{autoMedicacao}</b>
           </label>
           <Radio
             label="Houve melhora"
@@ -590,7 +591,7 @@ const RegistroConsulta = ({ paciente }) => {
         {/*intoleranciaFrustracao*/}
         <Form.Field>
           <label>
-            Intolerancia a frustração:
+            Intolerancia a frustração: <b>{intoleranciaFrustracao}</b>
           </label>
           <Radio
             label="Houve melhora"
