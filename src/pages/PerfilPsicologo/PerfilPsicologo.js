@@ -29,7 +29,6 @@ const PerfilPsicologo = () => {
               <p>
                 <strong>Seus Dados</strong>
               </p>
-
               <p> Nome: {psic.name}</p>
               <p>Email: {psic.user.email}</p>
               <p>CRP: {psic.nCRP}</p>

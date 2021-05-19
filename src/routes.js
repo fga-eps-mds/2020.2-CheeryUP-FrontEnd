@@ -13,7 +13,6 @@ import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import RegistroConsulta from './pages/Registrar/RegistroConsulta'
 import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'
-import ListaConsultas from './pages/ListaConsultas/ListaConsultas';
 import DashboardsGerais from './pages/DashboardsGerais/DashboardGerais'
 import AttDadosPsico from "./pages/AtualizaDadosPessoais/AtualizarDadosPessoais";
 
@@ -38,7 +37,6 @@ export default function Routes() {
   useEffect(() => {
     console.log(auth);
   }, [auth]);
-  
   return (
     <BrowserRouter>
       <Switch>
@@ -46,11 +44,6 @@ export default function Routes() {
         <Route path="/SignUP" component={SignUP} />
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
-        />
-        <Route
-          path="/ListaConsultas/:infopaciente"
-          component={ListaConsultas}
-        />
         <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
         <Route path="/RegistroConsulta/:infopaciente" component={RegistroConsulta}/>
         <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
@@ -70,6 +63,7 @@ export default function Routes() {
         <Route
           Route
           path="/PerfilPsicologo"
+          isAuth={auth}
           component={PerfilPsicologo}
         />
        
