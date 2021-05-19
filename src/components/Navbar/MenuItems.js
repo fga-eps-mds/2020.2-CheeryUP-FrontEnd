@@ -42,7 +42,7 @@ export const MenuItemsPsic = [
   },
   {
     title: "Dashboards Gerais",
-    url: "#",
+    url: "/DashboardGerais",
     cName: "nav-linksPsic",
   },
   {
@@ -55,12 +55,17 @@ export const MenuItemsPsic = [
 export const MenuItemsPsicPerfil = [
   {
     title: "Lista de Pacientes",
-    url: "#",
+    url: "/ListaPacientes",
     cName: "nav-linksPsicPerfil",
   },
   {
     title: "Dashboards Gerais",
-    url: "#",
+    url: "/DashboardGerais",
+    cName: "nav-linksPsicPerfil",
+  },
+  {
+    title: "Perfil",
+    url: "/PerfilPsicologo",
     cName: "nav-linksPsicPerfil",
   },
   {

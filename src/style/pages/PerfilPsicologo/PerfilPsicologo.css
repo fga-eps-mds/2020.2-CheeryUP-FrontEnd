@@ -28,6 +28,10 @@
     color: #2d4561;
     font-size: 15px;
 }
+.perfil-psicologo-container .all .left .data button:last-of-type {
+    color: #f30808;
+    margin-top: 15px;
+}
 .perfil-psicologo-container .all .right{
     width: 50vw;
     height: 60vh;
