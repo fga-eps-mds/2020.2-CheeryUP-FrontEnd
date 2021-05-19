@@ -9,7 +9,7 @@
     width: 15%;
     background-color: whitesmoke;
     margin-left: auto;
-    height: 12vh;
+    height: 10vh;
     padding: 3vh;
     top: 0%;
     left: 85%;
@@ -17,7 +17,7 @@
 
 .titulo-form-attPsico{
     width: 300px;
-    padding-bottom: 8vh;
+    padding-bottom: 6vh;
     padding-left: 1vw;
     padding-top: 1vw;
 }
@@ -31,10 +31,10 @@
 
 .form-attPsico{
     width: 45vw;
-    height: 97vh;
+    height: 80vh;
     position: absolute;
-    top: 25%;
-    left: 26%;
+    top: 20%;
+    left: 23%;
     background-color: #f7f7f7;
     border-radius: 0px;
     border-color: rgb(139, 138, 138);
@@ -44,17 +44,23 @@
 
 .form-items-attPsico{
     display: block;
-    width: 45vw;
+    width: 60vw;
     height: 45vh;
     padding: 2vh 2vh ;
 }
-
+.primeira-linha-attPsico{
+    width: 40vw;
+    height: 90vh;
+    left: 5%;
+    top: -5%;
+    position: absolute;
+}
 .quinta-linha-attPsico{
     width: 45vw;
     height: 45vh;
     left: 40%;
     right: 40%; 
-    top: 170%;
+    top: 130%;
     position: absolute;
 }
 

@@ -21,7 +21,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
         <Form>
           <div className="form-items-attPsico">
             <div className="primeira-linha-attPsico">
-{/*                <Form.Input
+             {/*<Form.Input
                 placeholder= {psic.user.username}
                 label="Username"
                 required
@@ -39,8 +39,6 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 name="nome"
                 value={values.nome}
               />
-            </div>
-            <div className="segunda-linha-attPsico">
               <Form.Input
                 required
                 onChange={handleChange}
@@ -51,8 +49,6 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 label="Email"
                 placeholder= {psic.user.email}
               />
-            </div>
-            <div className="terceira-linha-attPsico">
               <Form.Input
                 required
                 fluid
@@ -64,7 +60,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 name="nCRP"
               />
               <Form.Input
-                placeholder="Escolha sua nova senha "
+                
                 label="Senha"
                 type="password"
                 required
@@ -74,7 +70,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                 value={values.senha}
               />
               <Form.Input
-                placeholder="Confirme sua nova senha"
+                
                 label="Confirmar senha"
                 type="password"
                 required
