@@ -16,6 +16,7 @@ import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente
 import DashboardsGerais from './pages/DashboardsGerais/DashboardGerais'
  
 import InfoPac from "./pages/InfoPaciente/InfoPaciente";
+import AttDadosPsico from "./pages/AtualizaDadosPessoais/AtualizarDadosPessoais";
 
 const PrivateRoute = ({ component: Component, isAuth, ...rest }) => (
   <Route
@@ -60,6 +61,7 @@ export default function Routes() {
           isAuth={auth}
           component={CadastroPac}
         />
+        <Route path="/AtualizarDadosPessoais" component={AttDadosPsico}/>
         <Route
           Route
           path="/AtualizarPaciente/:infopaciente"

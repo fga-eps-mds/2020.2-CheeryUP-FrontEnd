@@ -17,13 +17,12 @@
     'Helvetica Neue', sans-serif;
     font-size: 150%;
     margin: auto;
-    width: 18vw;
+    width: 250px;
     height: 5vh;
 }
 
 .form-attPsico{
-    width: 28vw;
-    height: 67.2vh;
+    display: flex;
     border-radius: 0.5vw;
     background-color: #e2e2e2; 
 }
@@ -36,14 +35,26 @@
     width: 24vw;
 }
 .quinta-linha-attPsico{
-    width: 8vw;
-    margin-left: auto;
+    width: 100%;
+    margin: auto;
 }
 
-.default-buttonAtt{
+.quinta-linha-attPsico button{
+    border-radius: 15px;
     background-color: #2D4561;
     padding: 0.5rem 5rem 0.5rem 5rem;
-    border-radius: 5px;
     font-size: 14px;
+    width: 100%;
 }
+
+@media screen and (max-width: 960px) {
+    .form-attPsico{
+        background-color: whitesmoke; 
+    }
+
+    .titulo{
+        margin-left: auto;
+    }
+}
+
 

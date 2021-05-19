@@ -32,7 +32,7 @@ const PerfilPsicologo = () => {
               <p> Nome: {psic.name}</p>
               <p>Email: {psic.user.email}</p>
               <p>CRP: {psic.nCRP}</p>
-              <button>Alterar Dados</button>
+              <Link to='/AtualizarDadosPessoais'><button>Alterar Dados</button></Link>
               <button type="submit" onClick={handleSubmit} >Excluir Conta</button>
             </div>
           </div>

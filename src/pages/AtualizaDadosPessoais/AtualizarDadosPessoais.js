@@ -74,7 +74,7 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                   />
                 </div>
                 <div className="quinta-linha-attPsico">
-                  <Button onClick={handleSubmit}> Atualizar </Button>
+                  <button onClick={handleSubmit}> Atualizar </button>
                 </div> 
               </div>
             </Form>
