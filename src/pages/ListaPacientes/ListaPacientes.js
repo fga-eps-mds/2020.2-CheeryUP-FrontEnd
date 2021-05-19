@@ -18,19 +18,15 @@ const ListaPacientes = ({ SubmitForm }) => {
 
   useEffect(() => {
     console.log(psic.user.username);
-    var storage = localStorage.getItem("pac");
-    if (storage) {
-      changePac(JSON.parse(storage));
-    }
-    else {
+
       axiosInstance
         .get(`api/psicologos/${psic.user.username}/pacientes/`)
         .then((data) => {
           changePac(data.data);
-          localStorage.setItem("pac", JSON.stringify(data.data));
+          /* localStorage.setItem("pac", JSON.stringify(data.data)); */
         })
         .catch((err) => console.log(err));
-    }
+    
   }, []);
 
   function handleAge(age) {
