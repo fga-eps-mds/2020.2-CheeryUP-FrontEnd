@@ -32,16 +32,7 @@ const ListaPacientes = ({ SubmitForm }) => {
         .catch((err) => console.log(err));
     }
   }, []);
-
-  function handleAge(age) {
-    var [year, month, date] = age.split("-");
-    var birthday = new Date(year, month, date);
-    var ageDifference = Date.now() - birthday.getTime();
-    var ageDate = new Date(ageDifference);
-
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
-
+  
   return (
     <Fragment>
       <div className="body-content">
@@ -82,11 +73,10 @@ const ListaPacientes = ({ SubmitForm }) => {
               </tr>
             </thead>
             <tbody>
-              {/* tbody é onde sera inserido os individous */}
-              {pac.map((paciente, index) => (
-                <Pacientes paciente={paciente} key={index}></Pacientes>
-              ))}
-
+            {pac.map((paciente, index) => {
+                console.log(index);
+                return <Pacientes paciente={paciente} key={index} index = {index}/>;
+              })}
             </tbody>
           </table>
         </main>
