@@ -46,6 +46,7 @@ export default function Routes() {
   useEffect(() => {
     console.log(auth);
   }, [auth]);
+  
   return (
     <BrowserRouter>
       <Switch>
@@ -53,21 +54,48 @@ export default function Routes() {
         <Route path="/SignUP" component={SignUP} />
         <Route path="/AboutPage" component={AboutPage} />
         <Route path="/Login" component={Login} />
-        <Route path="/ListaPacientes" isAuth={auth} component={ListaPacientes} />
-        <Route path="/RegistroConsulta/:infopaciente" component={RegistroConsulta}/>
-        <Route path="/DashboardPacientes" component={DashboardPacientes}/>
-        <Route path="/DashboardEvolucao" component={DashboardEvolucao}/>
-        <Route path="/DashboardEstabilidade" component={DashboardEstabilidade}/>
-        <Route path="/DashboardQualidadeVida"  component={DashboardQualidadeVida}/>
-        <Route path="/DashboardAvaliacaoMedia" component={DashboardAvaliacaoMedia}/>
-        <Route path="/DashboardAvaliacaoConsulta" component={DashboardAvaliacaoConsulta}/>
-        <Route path="/DashboardProdutividade" component={DashboardProdutividade}/>
-        <Route path="/InformacoesPaciente/:infopaciente" component={InformacoesPaciente}/>
-        <Route path="/ListaConsultas" component={ListaConsultas}/> 
         <Route
-          path= '/ListaPacientes/:infopaciente'
+          path="/ListaPacientes"
+          component={ListaPacientes}
+        />
+        <Route
+          path="/RegistroConsulta/:infopaciente"
+          component={RegistroConsulta}
+        />
+        <Route path="/DashboardPacientes" component={DashboardPacientes} />
+        <Route path="/DashboardEvolucao" component={DashboardEvolucao} />
+        <Route
+          path="/DashboardEstabilidade"
+          component={DashboardEstabilidade}
+        />
+        <Route
+          path="/DashboardQualidadeVida"
+          component={DashboardQualidadeVida}
+        />
+        <Route
+          path="/DashboardAvaliacaoMedia"
+          component={DashboardAvaliacaoMedia}
+        />
+        <Route
+          path="/DashboardAvaliacaoConsulta"
+          component={DashboardAvaliacaoConsulta}
+        />
+        <Route
+          path="/DashboardProdutividade"
+          component={DashboardProdutividade}
+        />
+        <Route
+          path="/InformacoesPaciente/:infopaciente"
+          component={InformacoesPaciente}
+        />
+        <Route
+          path="/ListaConsultas/:infopaciente"
+          component={ListaConsultas}
+        />
+        <Route
+          path="/ListaPacientes/:infopaciente"
           //isAuth={auth}
-          component = {InfoPac}
+          component={InfoPac}
         />
         <Route
           Route
@@ -81,10 +109,9 @@ export default function Routes() {
           isAuth={auth}
           component={AttDadosPac}
         />
-        <PrivateRoute
+        <Route
           Route
           path="/PerfilPsicologo"
-          isAuth={auth}
           component={PerfilPsicologo}
         />
         <PrivateRoute

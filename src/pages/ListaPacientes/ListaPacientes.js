@@ -17,12 +17,20 @@ const ListaPacientes = ({ SubmitForm }) => {
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
   useEffect(() => {
-    axiosInstance
-      .get(`api/psicologos/${psic.user.username}/pacientes/`)
-      .then((data) => {
-        changePac(data.data);
-      })
-      .catch((err) => console.log(err));
+    console.log(psic.user.username);
+    var storage = localStorage.getItem("pac");
+    if (storage) {
+      changePac(JSON.parse(storage));
+    }
+    else {
+      axiosInstance
+        .get(`api/psicologos/${psic.user.username}/pacientes/`)
+        .then((data) => {
+          changePac(data.data);
+          localStorage.setItem("pac", JSON.stringify(data.data));
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   function handleAge(age) {
@@ -42,12 +50,15 @@ const ListaPacientes = ({ SubmitForm }) => {
         <main className="main-content">
           <div className="upper-main-content">
             <h2 class="page-name">Lista Pacientes</h2>
-            <Link to="/CadastrarPaciente">  
+            <Link to="/CadastrarPaciente">
               <button
                 type="submit"
                 onClick={handleSubmit}
                 className="default-button"
-              > Cadastrar Paciente</button>
+              >
+                {" "}
+                Cadastrar Paciente
+              </button>
             </Link>
             <form className="pesquisinfopacientea">
               <input
@@ -75,7 +86,6 @@ const ListaPacientes = ({ SubmitForm }) => {
               {pac.map((paciente, index) => (
                 <Pacientes paciente={paciente} key={index}></Pacientes>
               ))}
-
             </tbody>
           </table>
         </main>
