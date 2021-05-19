@@ -4,7 +4,7 @@ import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-export default function useFormPaciente() {
+export default function useFormPaciente(callback, validatePac) {
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
@@ -36,9 +36,8 @@ export default function useFormPaciente() {
 
   const handleSubmit = async (e) => {
     //e.preventDefault();
-    console.log("pica");
-    /*    setIsSubmitting(false);
-    /* setErrors(validatePac(values)); */
+    setIsSubmitting(false);
+    setErrors(validatePac(values));
     setIsSubmitting(true);
 
     console.log(values);
@@ -59,10 +58,10 @@ export default function useFormPaciente() {
         alert("Dados atualizados com sucesso !");
         console.log(psic);
       })
-      .catch((err) => alert("Dados invalidos!"));
+      .catch((err) => alert("Dados inválidos!"));
   };
 
   // Ainda falta completar toda essa parte aqui ksksksks
 
-  return { handleSubmit, handleChange, values, handleSelect };
+  return { handleSubmit, handleChange, values, handleSelect, errors };
 }
