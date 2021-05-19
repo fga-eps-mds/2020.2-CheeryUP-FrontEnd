@@ -76,6 +76,13 @@ const Pacientes = ({ paciente }) => {
           </button>
         </Link>
       </td>
+        <td>
+          <Link to={`/ListaConsultas/${paciente.cpf}`}>
+            <button type="button" className="default-button">
+              Lista Consultas <img src="img/arrow.png" />
+            </button>
+          </Link>
+        </td>
     </tr>
   );
 };

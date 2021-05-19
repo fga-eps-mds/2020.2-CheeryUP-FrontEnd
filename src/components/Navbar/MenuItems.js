@@ -55,7 +55,7 @@ export const MenuItemsPsic = [
 export const MenuItemsPsicPerfil = [
   {
     title: "Lista de Pacientes",
-    url: "#",
+    url: "/ListaPacientes",
     cName: "nav-linksPsicPerfil",
   },
   {
