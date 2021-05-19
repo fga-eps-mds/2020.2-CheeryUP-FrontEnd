@@ -15,7 +15,7 @@ function App() {
     dispatch,
   ]);
 
-  useEffect(() => {
+   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 960) {
         changeMobile(true);
@@ -26,7 +26,7 @@ function App() {
     handleResize();
 
     window.addEventListener("resize", handleResize);
-  });
+  }); 
   
    useEffect(() => {
     var storagePsic = localStorage.getItem("psic");
@@ -46,6 +46,6 @@ function App() {
   return (
       <Routes />
   );
-
+}
 
 export default App;

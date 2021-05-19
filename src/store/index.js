@@ -10,6 +10,6 @@ export const rootReducer = combineReducers ({
     auth:authReducer,
     psic:psicologoReducer,
     pac: pacReducer,
-    mobile: mobileReducer
+    mobile: mobileReducer,
     cons: consReducer
 })
