@@ -49,11 +49,21 @@
 > [Video](https://www.youtube.com/watch?v=-i132rXQbEE)
 <br>
 
+## Release 1
+ >[Slides](https://docs.google.com/presentation/d/1elaS3Q-Id5pkRb8AqTLDucXgC8hOcXoflT59Aqu-xfI/edit#slide=id.gca54601322_0_0)
+
+> [Video](https://www.youtube.com/watch?v=-i132rXQbEE)
+<br>
+
 ## Release 2
  >[Slides](https://www.canva.com/design/DAEe4sMKB-g/3b3rJbIIAFG-_QeSFW_4Dg/view?utm_content=DAEe4sMKB-g&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
-> [Video](https://www.youtube.com/watch?v=sbuFW0D_nLc)
+> [Video](https://www.youtube.com/watch?v=pSQB8eEPJGM)
 <br>
+
+>[React Psicologa](https://www.youtube.com/watch?v=XCNxhW2fn4k)
+
+>[Experiencias com o Cliente](https://drive.google.com/drive/u/0/folders/195V0138bHyXzHfL6_1UvNU5966Rn3QXk)
 
 ## Tecnologias
 <a href="https://habrastorage.org/webt/zt/rm/bk/ztrmbknpfaz9ybmoy3j12x5tlcw.gif"><img src="https://habrastorage.org/webt/zt/rm/bk/ztrmbknpfaz9ybmoy3j12x5tlcw.gif" width=15% height=20%></a>
