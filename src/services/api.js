@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-  baseURL: "https://cheeryup-api.herokuapp.com/",
+  baseURL: "http://0.0.0.0:https://cheeryup-api.herokuapp.com/",
 
 });
 

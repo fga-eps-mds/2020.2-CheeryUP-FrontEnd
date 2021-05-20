@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = "http://0.0.0.0:8000/"
+const baseURL = "https://cheeryup-api.herokuapp.com/"
 
 
 const axiosInstance = axios.create({
