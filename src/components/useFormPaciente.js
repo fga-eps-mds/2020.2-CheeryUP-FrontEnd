@@ -1,68 +1,65 @@
-import { useState, useEffect } from 'react'
-import '../pages/Registrar/CadastroPaciente'
+import { useState } from "react";
+import "../pages/Registrar/CadastroPaciente";
+import axiosInstance from "../services/apiToken";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-import api from '../services/api';
+export default function useFormPaciente(callback, validatePac) {
+  const history = useHistory()
+  const [values, setValues] = useState({
+    nome: "",
+    nascimento: "",
+    nCPF: "",
+    regiao: "",
+    descricao: "",
+    situacao: "M",
+    genero: "M",
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(null);
+  const dataPac = new FormData();
+  const { psic } = useSelector((state) => state);
 
-export default function useFormPaciente(callback, validate) {
-    const [values, setValues] = useState({
-        nome: '',
-        nascimento: '',
-        nCPF: '',
-        regiao: '',
-        genero: '',
-        descricao: '',
-        situacao: 'Controlada'
-        // genero: "M"
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
     });
-    const [errors, setErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const data = new FormData();
+  };
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setValues({
-            ...values,
-            [name]: value
-        });
-    };
+  const handleSelect = (e, value, name) => {
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
 
-    const handleSubmit = e => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(false);
+    setErrors(validatePac(values)); 
+    setIsSubmitting(true); 
 
-        setErrors(validate(values));
+    dataPac.append("nome", values.nome);
+    dataPac.append("data_nascimento", values.nascimento);
+    dataPac.append("regiao", values.regiao);
+    dataPac.append("situacao", values.situacao);
+    dataPac.append("descricao", values.descricao);
+    dataPac.append("cpf", values.nCPF);
+    dataPac.append("genero", values.genero);
 
-        setIsSubmitting(true);
-    };
+    await axiosInstance
+      .post(`api/psicologos/${psic.user.username}/pacientes/`, dataPac)
+      .then((data) => {
+        alert("Cadastro efetuado passado!");
+        history.push("/ListaPacientes");
 
-    // Ainda falta completar toda essa parte aqui ksksksks
+      })
+      .catch((err) => alert("Cadastro de Paciente inválido!"));
+  };
 
-    // useEffect(
-    //     async () => {
-    //         if (Object.keys(errors).length === 0 && isSubmitting) {
-    //             console.log(values);
-                
-                
-    //             data.append('user.username', values.nome)
-    //             data.append('user.password', values.senha)
-    //             data.append('user.email', values.email)
-    //             data.append('nCRP', values.nCRP)
-    //             data.append('bio', values.bio)
-    //             data.append('genero', values.genero)
+  // Ainda falta completar toda essa parte aqui ksksksks
 
-    
-    //             await api.post('api/psicologos/', data)
-    //                 .then(() => {
-    //                     alert("Cadastro efetuado passado!");  
-    //                 })
-    //                 .catch((err) => alert("Cadastro Inválido"))
-    
-    //         }
-   
-    //     },
-    //     [errors]
-    // );
-
-
-    return { handleChange, values, handleSubmit, errors };
-};
+  return { handleSubmit, handleChange, values, handleSelect, errors };
+}

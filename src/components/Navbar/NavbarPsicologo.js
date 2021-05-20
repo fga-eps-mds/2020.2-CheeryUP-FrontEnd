@@ -1,47 +1,51 @@
-import React, { Component } from 'react'
-import { MenuItemsPsic } from "./MenuItems"
-import { Button } from "../Button/Button"
-import '../../style/pages/HomePage/NavbarPsicologo.css'
-
+import React, { useEffect, useCallback } from "react";
+import "../../style/pages/HomePage/NavbarPsicologo.css";
+import axiosInstance from "../../services/api";
+import { useDispatch, useSelector } from "react-redux";
+import { setPsic } from "../../store/Psicologo/actions";
+import { MenuItemsPsic } from "./MenuItems";
+import {Link} from 'react-router-dom'
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
     Essa Navbar seria usada nas páginas após o Login.
 */
 
-class NavbarPsic extends Component {
-    state = { clicked: false }
+export const NavbarPsic = () => {
+    const {psic} = useSelector( (state) =>state)
+    const dispatch = useDispatch();
+    const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
+    useEffect(() => {
+      axiosInstance.get(`api/psicologos/${psic.user.username}/`).then((response) => {
+        changePsic(response.data);
+      });
+    },[]);
+    
+    
+    return (
+    <nav className="NavbarItemsPsicologo">
+        <div className='logo-cheeryUpPsicologo'>
+                <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
+        </div>
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
-    }
+        <ul className='nav-menuPsicologo'>
+            {MenuItemsPsic.map((item, index) => {
+                return (
+                    <li key={index}>
+                        <Link className={item.cName} to={item.url}>
+                        {item.title}
+                        </Link>
+                    </li>
+                )
+            })}
+        </ul>
 
-    render() {
-        return(
-            <nav className="NavbarItemsPsicologo">
-                <div className='logo-cheeryUpPsicologo'>
-                        <img src = '/imagens/logoNavbarAlt.png' alt='Logo'/>
-                </div>
+        <div className="dados-psicologo">
+            {psic.name} <br/>
+            {psic.nCRP}
+        </div> 
 
-                <ul className={this.state.clicked ? 'nav-menu activePsicologo' : 'nav-menuPsicologo'}>
-                    {MenuItemsPsic.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a className={item.cName} href={item.url}>
-                                {item.title}
-                                </a>
-                            </li>
-                        )
-                    })}
-                </ul>
-
-                {/* <div className="dados-psicologo">
-                    Nome do Psicólogo<br/>
-                    Número do CRP
-                </div> */}
-
-            </nav>
-        )
-    }
-}
-
-export default NavbarPsic
+    </nav>
+    );
+  };
+  
+  export default NavbarPsic;

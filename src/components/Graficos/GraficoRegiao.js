@@ -1,22 +1,24 @@
-import { Bar } from 'react-chartjs-2';
-import api from '../../services/api'
+import { Pie } from 'react-chartjs-2';
+import axiosInstance from '../../services/apiToken'
 import { Component } from 'react'
-
+import { connect } from 'react-redux'
 
 class GraficoRegiao extends Component {
-    state = {
-        pessoas: [],
+    constructor(props) { 
+        super(props)
+        this.state = {
+            pessoas: [],
+        }
     }
-
+   
     async componentDidMount() {
-        const response = await api.get('api/psicologos/11111111111/pacientes');
+        const response = await axiosInstance.get(`api/psicologos/${this.props.psic.user.username}/pacientes/`);
         this.setState({ pessoas: response.data });
     }
-
+    
     render() {
         const { pessoas } = this.state;
         var regioes = pessoas.map(pessoa => pessoa.regiao);
-        console.log("regioes Totais:", regioes);
 
         var legenda = [];
         var qtdRegioes = [];
@@ -96,9 +98,6 @@ class GraficoRegiao extends Component {
                 case "RE":
                     legenda[legenda.indexOf(regiao)] = "Recanto das Emas"
                     break;
-                case "RF":
-                    legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
-                    break;
                 case "SA":
                     legenda[legenda.indexOf(regiao)] = "Samambaia"
                     break;
@@ -114,7 +113,7 @@ class GraficoRegiao extends Component {
                 case "RF":
                     legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
                     break;
-                case "RF2":
+                case "RFII":
                     legenda[legenda.indexOf(regiao)] = "Riacho Fundo II"
                     break;
                 case "SI":
@@ -123,7 +122,7 @@ class GraficoRegiao extends Component {
                 case "SO":
                     legenda[legenda.indexOf(regiao)] = "Sobradinho"
                     break;
-                case "SO2":
+                case "SOII":
                     legenda[legenda.indexOf(regiao)] = "Sobradinho II"
                     break;
                 case "SN":
@@ -140,12 +139,15 @@ class GraficoRegiao extends Component {
                     break;
                 case "VP":
                     legenda[legenda.indexOf(regiao)] = "Vicente Pires"
+                    break;
                 case "EO":
                     legenda[legenda.indexOf(regiao)] = "Entre outros"
+                    break;
+                default: 
+
             }
         })
 
-        console.log(legenda);
 
         const data = {
             labels: legenda,
@@ -162,26 +164,41 @@ class GraficoRegiao extends Component {
                         'rgba(183, 49, 43, 0.7)', // vermelho escuro
                         'rgba(108, 194, 74, 0.7)', // verde escuro
                         
-                        
                     ],
+                    borderColor: [
+                        'rgba(103, 160, 224, 0.8)', // azul claro
+                        'rgba(249, 66, 58, 0.8)',//vermelho clar
+                        'rgba(159, 219, 127, 0.8)', // verde claro
 
-                    borderWidth: 1,
-                    borderRadius: 30,
+                        'rgba(45, 69, 97, 0.8)', // a escuro
+                        'rgba(183, 49, 43, 0.8)', // vermelho escuro
+                        'rgba(108, 194, 74, 0.8)', // verde escuro
+                      ],
+
+                    
                 },
             ],
         };
         return (
             <>
-                <Bar
-                 data={data}
-                  />
+               <div>
+                <Pie data={data}
+                        width={500}
+                        height={500}
+                        options={{ maintainAspectRatio: false,
+                            animation: {
+                                duration: 2500,
+                                easing: 'easeOutQuint',
+                                delay: 500,  
+                            } }}
+                        />
+                        </div>
             </>)
-
     }
-
-
 }
 
+function getState ( state ) {
+    return { psic:state.psic}
+}
 
-
-export default GraficoRegiao;
+export default connect(getState)(GraficoRegiao);

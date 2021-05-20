@@ -1,95 +1,164 @@
-import React, { Component, Fragment } from 'react'
-import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
-import NavbarPsic from '../../components/Navbar/NavbarPsic';
+import React, { Fragment } from 'react'
+import {opcoesRegiao} from '../../helper/index'
+import { Button, Form } from 'semantic-ui-react'
+import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
 import '../../style/pages/AtualizaDados/AttPaciente.css';
+import useFormAttPaciente from '../../components/useFormAttPaciente'
 
-const opcoesRegiao = [
-    { key: 1, text: 'Águas Claras', value: 1 },
-    { key: 2, text: 'Taguatinga', value: 2 },
-    { key: 3, text: 'Vicente Pires', value: 3 },
-    { key: 4, text: 'Asa Sul', value: 4 },
-    { key: 5, text: 'Asa Norte', value: 5 },
-    { key: 6, text: 'Arniqueiras', value: 6 },
-    { key: 7, text: 'Riacho Fundo', value: 7 },
-    { key: 8, text: 'Park Way', value: 8 },
-    { key: 9, text: 'Guará', value: 9 },
-  ]
+function validatePac(values) {
+  let errors = {};
+  if (!values.nome.trim()) {
+    errors.nome = "Forneça o nome";
+  }
 
-class AttDadosPac extends Component {
-    state = {}
+  if (!values.nascimento) {
+    errors.nascimento = "Forneça o nascimento";
+  }
 
-    handleChange = (e, { value }) => this.setState({ value })
+  if (!values.regiao) {
+    errors.regiao = "Forneça a região";
+  }
+  if (!values.nCPF) {
+    errors.nCPF = "Forneça o nºCPF";
+  } else if (values.nCPF.length !== 11) {
+    errors.nCPF = "O CPF deve conter 11 caracteres";
+  }
 
-    render() {
-        const { value } = this.state
+  if (!values.genero) {
+    errors.genero = "Forneça o gênero";
+  }
+
+  if (!values.descricao) {
+    errors.descricao = "Forneça uma descrição";
+  }
+  return errors;
+}
+
+//const history = useHistory();
+
+const AttDadosPac = ({SubmitAttForm}) => {
+    const { handleSubmit, handleChange, values, handleSelect, errors} = useFormAttPaciente(
+      SubmitAttForm, 
+      validatePac
+      );
+
         return (
-            <Fragment className="container-attPac">
-                <NavbarPsic />
+          <Fragment className="container-attPac">
+            <NavbarPsic />
 
-                <div className="dados-psicologo-attPac">
-                    Nome do Psicólogo <br/>
-                    Número do CRP
+            <div className="form-attPac">
+              <div className="titulo-form-attPac">
+                <h1 className="titulo-att">Atualizar dados - Paciente</h1>
+              </div>
+              <Form>
+                <div className="form-items-attPac">
+                  <div className="primeira-linha-att">
+                    <Form.Group widths="equal">
+                      <Form.Input
+                        required
+                        onChange={handleChange}
+                        value={values.nome}
+                        fluid
+                        name="nome"
+                        label="Nome"
+                        placeholder="Nome do paciente"
+                      />
+                      {errors.nome && <p class="alert-message">{errors.nome}</p>}
+                    </Form.Group>
+                  </div>
+                  <div className="segunda-linha-att">
+                    <Form.Group widths="equal">
+                    <Form.Input>
+                      <div className="nascimento">
+                      <label>Data de nascimento<strong>*</strong></label>
+                      <input 
+                        required
+                        type="date"
+                        onChange={handleChange}
+                        value={values.nascimento}
+                        name="nascimento"
+                      />
+                      </div>
+                      
+                    </Form.Input>
+                      <Form.Input
+                        required
+                        fluid
+                        label="CPF"
+                        placeholder="CPF do Paciente"
+                        onChange={handleChange}
+                        value={values.nCPF}
+                        name="nCPF"
+                      />
+                      {errors.nCPF && <p class="alert-message">{errors.nCPF}</p>}
+                      <Form.Select
+                        fluid
+                        required
+                        label="Região"
+                        options={opcoesRegiao}
+                        placeholder="Região do Paciente"
+                        onChange={(e, { value, name }) =>
+                          handleSelect(e, value, name)
+                        }
+                        name="regiao"
+                        value={values.regiao}
+                      />
+                      {errors.regiao && <p class="alert-message">{errors.regiao}</p>}
+                    </Form.Group>
+                  </div>
+                  <div className="terceira-linha-att">
+                    <Form.Group inline>
+                      <label>Gênero</label>
+                      <Form.Radio
+                        label="Masculino"
+                        value="M"
+                        checked={values.genero === "M"}
+                        onChange={(e, { value, name }) =>
+                          handleSelect(e, value, name)
+                        }
+                        name="genero"
+                      />
+                      <Form.Radio
+                        label="Feminino"
+                        value="F"
+                        checked={values.genero === "F"}
+                        onChange={(e, { value, name }) =>
+                          handleSelect(e, value, name)
+                        }
+                        name="genero"
+                      />
+                      <Form.Radio
+                        label="Outro"
+                        value="P"
+                        checked={values.genero === "P"}
+                        onChange={(e, { value, name }) =>
+                          handleSelect(e, value, name)
+                        }
+                        name="genero"
+                      />
+                    </Form.Group>
+                  </div>
+                  <div className="quarta-linha-att">
+                    <Form.TextArea
+                      required
+                      label="Descrição"
+                      placeholder="Informações adicionais do paciente..."
+                      onChange={handleChange}
+                      value={values.descricao}
+                      name="descricao"
+                    />
+                    {errors.descricao && <p class="alert-message">{errors.descricao}</p>}
+                  </div>
+                  <div className="quinta-linha-att">
+                  
+                      <Button onClick={handleSubmit}> Atualizar </Button>
+                    
+                  </div>
                 </div>
-
-
-                <div className="form-attPac">
-                    <div className="titulo-form-attPac">
-                        <h1 className="titulo-att">Atualizar dados - Paciente</h1>
-                    </div>
-                    <Form>
-                        <div className="form-items-attPac">
-                            <div className="primeira-linha-att">
-                                <Form.Group widths='equal'>
-                                    <Form.Input fluid label="Nome" placeholder="Paciente x" />
-                                </Form.Group>
-                            </div>
-                            <div className="segunda-linha-att">
-                                <Form.Group widths='equal'>
-                                    <Form.Input fluid label='Data de Nascimento' placeholder='11/11/2001' />
-                                    <Form.Input fluid label='CPF' placeholder='12345678910' />
-                                    <Form.Select
-                                        fluids
-                                        label='Região'
-                                        options={opcoesRegiao}
-                                        placeholder='Local X'
-                                    />
-                                </Form.Group>
-                            </div>
-                            <div className="terceira-linha-att">
-                                <Form.Group inline>
-                                <label>Gênero</label>
-                                <Form.Radio
-                                    label='Masculino'
-                                    value='masc'
-                                    checked={value === 'masc'}
-                                    onChange={this.handleChange}
-                                />
-                                <Form.Radio
-                                    label='Feminino'
-                                    value='fem'
-                                    checked={value === 'fem'}
-                                    onChange={this.handleChange}
-                                />
-                                <Form.Radio
-                                    label='Indefinido'
-                                    value='ind'
-                                    checked={value === 'ind'}
-                                    onChange={this.handleChange}
-                                />
-                                </Form.Group>
-                            </div>
-                            <div className="quarta-linha-att">
-                                <Form.TextArea label='Descrição' placeholder='Paciente apresenta um quadro de...' />
-                            </div>
-                            <div className="quinta-linha-att">
-                                <Form.Button>Atualizar</Form.Button>
-                            </div>
-                        </div>
-                    </Form>
-                </div>
-            </Fragment>
-        )
-    }
+              </Form>
+            </div>
+          </Fragment>
+        );
 }
 
 export default AttDadosPac;

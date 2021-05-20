@@ -1,86 +1,88 @@
-import React, { Component, Fragment } from 'react'
-import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
-import NavbarPsic from '../../components/Navbar/NavbarPsic';
-import '../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css';
-import { Redirect } from 'react-router';
+import React, { Fragment } from "react";
+import { Form } from "semantic-ui-react";
+import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
+import "../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css";
+import useFormAttContaPsic from "../../components/useFormAttContaPsic";
+import { useSelector } from "react-redux";
 
 
-class AttDadosPsico extends Component {
-    state = {}
+const AttDadosPsico = ({ SubmitAttForm }) => {
+  const { psic } = useSelector((state) => state);
+  const { handleSubmit, handleChange, values } =
+  useFormAttContaPsic( SubmitAttForm );
+  
+  return (
+    <Fragment>
+      <NavbarPsic />
+      <div className="container-attPsico">
 
-    handleChange = (e, { value }) => this.setState({ value })
+        <div className='container-titulo-form'>
+          <div className='titulo'>Atualizar dados pessoais</div>
 
-    render() {
-        const { value } = this.state
-        return (
-            <Fragment className="container-attPsico">
-                <NavbarPsic />
-
-                <div className="dados-psicologo-attPsico">
-                    Nome do Psicólogo <br/>
-                    Número do CRP
+          <div className="form-attPsico">
+            <Form>
+              <div className="form-items-attPsico">
+                <div className="primeira-linha-attPsico">
+                  <Form.Input
+                    placeholder= {psic.name}
+                    label="Nome"
+                    required
+                    fluid
+                    onChange={handleChange}
+                    name="nome"
+                    value={values.nome}
+                  />
+                  <Form.Input
+                    required
+                    onChange={handleChange}
+                    value={values.email}
+                    fluid
+                    name="email"
+                    label="Email"
+                    placeholder= {psic.user.email}
+                  />
+                  <Form.Input
+                    required
+                    fluid
+                    label="Número do CRP"
+                    placeholder= {psic.nCRP}
+                    onChange={handleChange}
+                    value={values.nCRP}
+                    name="nCRP"
+                  />
+                  <Form.Input
+                    
+                    label="Senha"
+                    type="password"
+                    required
+                    fluid
+                    onChange={handleChange}
+                    name="senha"
+                    value={values.senha}
+                  />
+                  <Form.Input
+                    
+                    label="Confirmar senha"
+                    type="password"
+                    required
+                    fluid
+                    onChange={handleChange}
+                    name="senha2"
+                    value={values.senha2}
+                  />
                 </div>
-
-
-                <div className="form-attPsico">
-                    <div className="titulo-form-attPsico">
-                        <h1 className="titulo-attPsico">Atualizar dados pessoais </h1>
-                    </div>
-                    <Form>
-                        <div className="form-items-attPsico">
-                            <div className="primeira-linha-attPsico">
-                                <Form.Group widths='equal'>
-                                    <Form.Input fluid label="Nome" placeholder="Nome" />
-                                </Form.Group>
-                            </div>
-                            <div className="segunda-linha-attPsico">
-                                <Form.Group widths='equal'>
-                                    <Form.Input fluid label='E-mail' placeholder='E-mail' />
-                                </Form.Group>
-                            </div>
-                            <div className="terceira-linha-attPsico">
-                                <Form.Group widths='equal'>
-                                    <Form.Input fluid label='CRP' placeholder='CRP' />
-                                </Form.Group>
-                            </div>
-                            <div className="quarta-linha-attPsico">
-                                <Form.Group inline>
-                                <label> Avaliação da plataforma: </label>
-                                <Form.Radio
-                                    label='Satisfeito'
-                                    value='good'
-                                    checked={value === 'good'}
-                                    onChange={this.handleChange}
-                                />
-                                <Form.Radio
-                                    label='Insatisfeito'
-                                    value='bad'
-                                    checked={value === 'bad'}
-                                    onChange={this.handleChange}
-                                />
-
-
-                                </Form.Group>
-                            </div>
-
-                            <div className="quinta-linha-attPsico">
-                                <a href="/">
-                                <button type="button" className="default-buttonAtt" >Atualizar </button> 
-                                </a>
-                            </div>
-                        </div>
-                        <span className="form-input-attPsico">
-                                <a href="/AtualizarSenha">
-                                <button type="button" className="default-buttonAlt" >Alterar Senha </button> 
-                                </a>
-                        </span>
-
-                    </Form>
+                <div className="quinta-linha-attPsico">
+                  <button onClick={handleSubmit}> Atualizar </button>
+                </div> 
+              </div>
+            </Form>
+          </div>
+        </div>
         
-                </div>
-            </Fragment>
-        )
-    }
-}
+      </div>
+    </Fragment>
+  );
+};
 
 export default AttDadosPsico;
+

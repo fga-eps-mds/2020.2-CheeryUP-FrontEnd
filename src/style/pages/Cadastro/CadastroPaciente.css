@@ -5,23 +5,14 @@
 }
 
 /*Dados do psicologo na Navbar*/
-.dados-psicologo{
-    width: 15%;
-    background-color: whitesmoke;
-    margin-left: auto;
-    height: 12vh;
-    padding: 3vh;
-    top: 0%;
-    left: 85%;
-    position: absolute;
-}
 
 .titulo-form{
-    width: 100%;
+    width: 25vw;
     height: 4vh;
     padding-bottom: 8vh;
     padding-left: 1vw;
     padding-top: 1vw;
+    margin: auto;
 }
 
 .titulo{
@@ -33,33 +24,51 @@
 
 .form-cadPac{
     width: 50vw;
-    height: 68vh;
-    position: absolute;
-    top: 25%;
+    /* height: auto;  */
+    position: absolute; 
+    top: 20%;
     left: 25%;
     background-color: #e2e2e2;
     border-radius: 0.5vw;
-    /*  Não sei como bota borda nessa budega
-    border-color: rgb(56, 56, 56);
-    border-width: 10px; */
 }
 
 .form-items{
     display: block;
     width: 45vw;
-    height: 45vh;
+    /* height: 45vh; */
     margin: auto;
 }
 
 .quinta-linha{
-    left: 82%;
-    top: 8%;
+    margin-left: auto;
+    width: 8vw;
+    height: 7vh;
     position: relative;
 }
 
+.nascimento input{
+    margin: auto !important;
+    
+}
+
+.nascimento label{
+    font-weight: 700;
+}
+
+.nascimento strong {
+    color: #f0300efa;
+}
+
+
+.alert-message {
+    font-size: 0.9rem;
+    margin-top: 0.1rem;
+    color: #f0300efa;
+  }
+
 @media screen and (max-width: 960px) {
     .form-cadPac{
-        background-color: white;
+        background-color: whitesmoke;
     }
 
     .titulo-form{
@@ -67,6 +76,6 @@
     }
 
     .quinta-linha{
-        left: 65%;
+        margin-left: auto;
     }
 }

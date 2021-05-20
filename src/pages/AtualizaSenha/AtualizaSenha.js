@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
-import NavbarPsic from '../../components/Navbar/NavbarPsic';
+import { Form } from 'semantic-ui-react'
+import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
 import '../../style/pages/AtualizaSenha/AtualizarSenha.css';
 
 
@@ -10,17 +10,10 @@ class AttSenha extends Component {
     handleChange = (e, { value }) => this.setState({ value })
 
     render() {
-        const { value } = this.state
         return (
             <Fragment className="container-attSenha">
                 <NavbarPsic />
-
-                <div className="dados-psicologo-attSenha">
-                    Nome do Psicólogo <br/>
-                    Número do CRP
-                </div>
-
-
+                
                 <div className="form-attSenha">
                     <div className="titulo-form-attSenha">
                         <h1 className="titulo-attSenha">Alterar Senha</h1>

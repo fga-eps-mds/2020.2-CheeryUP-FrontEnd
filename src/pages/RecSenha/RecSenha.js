@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react'
-import useState from 'react'
 import '../../style/pages/RecSenha/RecSenha.css';
 import useForm from '../../components/useForm';
-import { Card, Form, Button,Header } from 'semantic-ui-react'
+import { Card, Form, Button } from 'semantic-ui-react'
 
 
 const RecSenha = ({ SubmitForm }) => 
@@ -13,11 +12,11 @@ const RecSenha = ({ SubmitForm }) =>
             <div className="container-Rec">
                 <div className= "form-RecPassword-container">
                     <div className="top-RecPassword">
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                             <img className="top-RecPassword-logo" src="img/logo_word.png" alt="logo CheeryUp" />
                         </a>
 
-                        <a href="http://localhost:3000/"> 
+                        <a href="/"> 
                             <label className="top-RecPassword-navbar-option">Início</label>
                         </a>
                     </div>

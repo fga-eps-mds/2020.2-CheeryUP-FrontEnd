@@ -2,21 +2,19 @@
   display: flex;
   height: 100vh;
   width: 100vh;
+  
 }
 
 .form-signup-container {
-  position:relative;
-  display: inline-block;
+  background: #ffffff;
   height: 100vh;
-  width: 50vw;
-  background: #ffffff
 } 
+
 /*imagem lateral*/
-.side-image img{
-  position: relative;
-  height: 100vh;
+.side-image {
+  position: fixed;
   width: 50vw;
- 
+  height: 100vh;
 }
 /* propriedades do formulario*/
 .ui.input > input {
@@ -48,12 +46,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20vh;
+  height: 90%;
+  margin-top: 50px;
 }
 
 .form-content-input {
   display: flex;
   flex-direction: column;
+  position: absolute;
 }
 
 .form-title {
@@ -64,35 +64,40 @@
 
 .form-card {
   width: 300px !important;
+  
 }
 
 .top-signup {
   position: absolute;
   width: 50vw;
-  height: 70px;
+  height: 50px;
   background-color:#ffffff;
   display: flex;
   text-decoration: none;
   justify-content: space-between;
 }
 
-  .top-signup-logo {
-    position: relative;
-    align-items: center;
-    left: 2vw;
-    width: 40px;
-    height: 56px;
-  }
+.top-signup a  {
+  display: flex;
+  align-items: center;
+}
 
-  .top-signup-navbar-option{
-    text-align: center;
-    font-weight: bold;
-    padding: 2rem;
-    width: 100%;
-    font-size: 1.4rem;
-    display: table;
-    color: #494949;
-  }
+.top-signup-logo {
+  position: relative;
+  align-items: center;
+  margin-left: 3vw;
+  height: 40px;
+}
+
+.top-signup-navbar-option{
+  text-align: center;
+  font-weight: bold;
+  margin-right: 3vw;
+  width: 100%;
+  font-size: 16px;
+  display: table;
+  color: #494949;
+}
 
   .top-signup-navbar-option:hover{
     transition: all 0.4s ease-out;
@@ -152,7 +157,6 @@
     right: 0;
     bottom: 0;
     display: flex;  
- 
   }
   
   .form-input-login a {
@@ -163,7 +167,7 @@
     color :red;
   }
 
-  @media screen and (max-width: 960px) {
+  /* @media screen and (max-width: 960px) {
     .form-signup-wrap{
       position: relative;
       left: 50%;
@@ -171,4 +175,41 @@
     .side-image{
       display: none;
     }
-  }
+  } */
+
+
+
+
+  
+/* MOBILE */
+
+.form-signup-container-mobile {
+  background: #ffffff;
+  height: 100%;
+}
+
+.top-signup-mobile {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color:#ffffff;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.top-signup-mobile a  {
+  display: flex;
+  align-items: center;
+}
+
+
+.form-signup-wrap-mobile {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  margin-top: 50px;
+}
