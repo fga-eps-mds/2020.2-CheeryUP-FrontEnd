@@ -22,7 +22,7 @@ class GraficoProdutividade extends Component {
   }
 
   mostraAvaliações(avaliacoes = [], nomeAvaliacao = "") {
-    if (avaliacoes.length == 0) {
+    if (avaliacoes.length === 0) {
       return (
         <>
           <h2>{nomeAvaliacao}</h2>
@@ -50,13 +50,13 @@ class GraficoProdutividade extends Component {
 
     consultas.forEach((element) => {
       datasFormatadas.push(element.data);
-      if (element.produtividade == 1) {
+      if (element.produtividade === 1) {
         produtividade[0]++;
       }
-      if (element.produtividade == 0) {
+      if (element.produtividade === 0) {
         produtividade[2]++;
       }
-      if (element.produtividade == -1) {
+      if (element.produtividade === -1) {
         produtividade[1]++;
       }
     });

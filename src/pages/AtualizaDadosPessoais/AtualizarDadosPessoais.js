@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import "../../style/pages/AtualizaDadosPessoais/AttDadosPessoais.css";
 import useFormAttContaPsic from "../../components/useFormAttContaPsic";
@@ -37,7 +37,6 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                     onChange={handleChange}
                     value={values.email}
                     fluid
-                    required
                     name="email"
                     label="Email"
                     placeholder= {psic.user.email}
@@ -45,7 +44,6 @@ const AttDadosPsico = ({ SubmitAttForm }) => {
                   <Form.Input
                     required
                     fluid
-                    required
                     label="Número do CRP"
                     placeholder= {psic.nCRP}
                     onChange={handleChange}

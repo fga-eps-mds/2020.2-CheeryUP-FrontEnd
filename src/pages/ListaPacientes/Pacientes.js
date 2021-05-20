@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removerPaciente } from "../../store/Pacientes/actions";
 import axiosInstance from "../../services/apiToken";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Pacientes = ({ paciente, index}) => {
   const [iniciouDel, setIniciouDel] = useState(false);
-  const { psic, pac, auth } = useSelector((state) => state);
+  const { psic } = useSelector((state) => state);
   const dispatch = useDispatch();
   const removerPac = useCallback(
     (cpf) => dispatch(removerPaciente(cpf)),
@@ -65,21 +65,21 @@ const Pacientes = ({ paciente, index}) => {
       <td>
         <Link to={`/InformacoesPaciente/${paciente.cpf}`}>
           <button type="button" className="default-button">
-            Informações <img src="img/arrow.png" />
+            Informações <img src="img/arrow.png" alt='seta'/>
           </button>
         </Link>
       </td>
       <td>
         <Link to={`/RegistroConsulta/${paciente.cpf}`}>
           <button type="button" className="default-button">
-            Registar consulta <img src="img/arrow.png" />
+            Registar consulta <img src="img/arrow.png" alt='seta'/>
           </button>
         </Link>
       </td>
       <td>
         <Link to={`/AtualizarPaciente/${paciente.cpf}`}>
           <button type="button" className="default-button">
-            Atualizar Paciente <img src="img/arrow.png" />
+            Atualizar Paciente <img src="img/arrow.png" alt='seta'/>
           </button>
         </Link>
       </td>

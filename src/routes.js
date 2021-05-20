@@ -9,7 +9,6 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ListaPacientes from './pages/ListaPacientes/ListaPacientes';
 import CadastroPac from './pages/Registrar/CadastroPaciente';
 import AttDadosPac from './pages/AtualizaDados/AttPaciente';
-import AttSenha from './pages/AtualizaSenha/AtualizaSenha';
 import PerfilPsicologo from './pages/PerfilPsicologo/PerfilPsicologo';
 import RegistroConsulta from './pages/Registrar/RegistroConsulta'
 import InformacoesPaciente from './pages/InformacoesPaciente/InformacoesPaciente'

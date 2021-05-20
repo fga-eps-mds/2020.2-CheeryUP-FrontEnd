@@ -35,14 +35,14 @@ class GraficoQualidadeVida extends Component {
       datasFormatadas.push(this.formataData(consulta["data"]));
       for (var indicador in consulta) {
         if (
-          indicador != "id" &&
-          indicador != "data" &&
-          indicador != "produtividade"
+          indicador !== "id" &&
+          indicador !== "data" &&
+          indicador !== "produtividade"
         ) {
           if (
-            indicador == "interessePelaVida" ||
-            indicador == "exposiçãoRisco" ||
-            indicador == "qualidadeNutritiva"
+            indicador === "interessePelaVida" ||
+            indicador === "exposiçãoRisco" ||
+            indicador === "qualidadeNutritiva"
           )
             soma += consulta[indicador];
         }

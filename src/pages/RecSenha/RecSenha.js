@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react'
-import useState from 'react'
 import '../../style/pages/RecSenha/RecSenha.css';
 import useForm from '../../components/useForm';
-import { Card, Form, Button,Header } from 'semantic-ui-react'
+import { Card, Form, Button } from 'semantic-ui-react'
 
 
 const RecSenha = ({ SubmitForm }) => 

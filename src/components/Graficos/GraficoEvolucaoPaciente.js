@@ -33,11 +33,11 @@ class GraficoEvolucaoPaciente extends Component {
       datasFormatadas.push(this.formataData(consulta["data"]));
       for (var indicador in consulta) {
         if (
-          indicador != "id" &&
-          indicador != "data" &&
-          indicador != "produtividade"
+          indicador !== "id" &&
+          indicador !== "data" &&
+          indicador !== "produtividade"
         ) {
-          if (indicador == "humor" || indicador == "estabilidadeDeEmoções")
+          if (indicador === "humor" || indicador === "estabilidadeDeEmoções")
             soma += consulta[indicador] * 3;
           else {
             soma += consulta[indicador];

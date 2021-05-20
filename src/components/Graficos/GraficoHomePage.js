@@ -1,5 +1,4 @@
 import { Doughnut } from 'react-chartjs-2';
-import api from '../../services/api'
 import { Component } from 'react'
 
 class GraficoProdutividade extends Component {

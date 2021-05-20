@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import {opcoesRegiao} from '../../helper/index'
-import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
 import '../../style/pages/AtualizaDados/AttPaciente.css';
 import useFormAttPaciente from '../../components/useFormAttPaciente'
@@ -10,9 +10,6 @@ function validatePac(values) {
   if (!values.nome.trim()) {
     errors.nome = "Forneça o nome";
   }
-  // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
-  //   errors.name = 'Enter a valid name';
-  // }
 
   if (!values.nascimento) {
     errors.nascimento = "Forneça o nascimento";
@@ -62,7 +59,6 @@ const AttDadosPac = ({SubmitAttForm}) => {
                         onChange={handleChange}
                         value={values.nome}
                         fluid
-                        required
                         name="nome"
                         label="Nome"
                         placeholder="Nome do paciente"
@@ -75,7 +71,6 @@ const AttDadosPac = ({SubmitAttForm}) => {
                       <Form.Input
                         required
                         fluid
-                        required
                         label="Data de Nascimento"
                         placeholder="YYYY-MM-DD"
                         onChange={handleChange}
@@ -86,7 +81,6 @@ const AttDadosPac = ({SubmitAttForm}) => {
                       <Form.Input
                         required
                         fluid
-                        required
                         label="CPF"
                         placeholder="CPF do Paciente"
                         onChange={handleChange}

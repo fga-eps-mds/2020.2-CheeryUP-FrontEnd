@@ -3,7 +3,7 @@ import "../../style/pages/HomePage/NavbarPsicPerfil.css";
 import axiosInstance from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPsic } from "../../store/Psicologo/actions";
-import { MenuItems, MenuItemsPsicPerfil } from "./MenuItems";
+import { MenuItemsPsicPerfil } from "./MenuItems";
 import {Link} from 'react-router-dom'
 
 /*
@@ -20,7 +20,7 @@ export const NavbarPsicPerfil = () => {
       console.log(response)
       changePsic(response.data);
     });
-  }, []);
+  });
   useEffect( () => {
       console.log(psic)
   },[psic])

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../pages/Registrar/CadastroPaciente";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
