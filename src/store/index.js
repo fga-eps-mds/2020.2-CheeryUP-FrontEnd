@@ -12,4 +12,5 @@ export const rootReducer = combineReducers ({
     pac: pacReducer,
     mobile: mobileReducer,
     cons: consReducer
+
 })

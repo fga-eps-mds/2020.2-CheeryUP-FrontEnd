@@ -1,6 +1,9 @@
+
 import React, { useState, Fragment } from 'react';
 import ButtonCad from '../Button/ButtonCadastro';
 import '../../style/pages/HomePage/Body.css';
+import '../../style/pages/HomePage/Body.css';
+import {Fragment} from 'react'
 import Grafico from '../Graficos/GraficoHomePage'
 import { useSelector } from "react-redux";
 
@@ -54,6 +57,7 @@ function Body() {
                     <div className={ mobile ? "github-mobile" : "github"}>
                         <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP"> <img src="/imagens/github_logo.png" /></a>
                         { !mobile && <h2>Github</h2>}
+
 
                     </div>
 

@@ -26,19 +26,18 @@ class GraficoEstabilidadeEmocional extends Component {
     var { consultas } = this.state;
     var mediaConsulta = [];
     var soma = 0;
-    var qualidadeDeVida = [];
     consultas.forEach((consulta) => {
       datasFormatadas.push(this.formataData(consulta["data"]));
       for (var indicador in consulta) {
         if (
-          indicador != "id" &&
-          indicador != "data" &&
-          indicador != "produtividade"
+          indicador !== "id" &&
+          indicador !== "data" &&
+          indicador !== "produtividade"
         ) {
           if (
-            indicador == "convivioFamiliar" ||
-            indicador == "capacidadeDeSituaçõesDificeis" ||
-            indicador == "convivioAmigos"
+            indicador === "convivioFamiliar" ||
+            indicador === "capacidadeDeSituaçõesDificeis" ||
+            indicador === "convivioAmigos"
           )
             soma += consulta[indicador] * 3;
         }

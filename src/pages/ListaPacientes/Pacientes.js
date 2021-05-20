@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Pacientes = ({ paciente, index}) => {
   const [iniciouDel, setIniciouDel] = useState(false);
-  const { psic, pac, auth } = useSelector((state) => state);
+  const { psic } = useSelector((state) => state);
   const dispatch = useDispatch();
   const removerPac = useCallback(
     (cpf) => dispatch(removerPaciente(cpf)),
@@ -58,35 +58,28 @@ const Pacientes = ({ paciente, index}) => {
       </td>
       <td className="table-body-option">{index + 1}</td>
       <td className="table-body-option">{paciente.nome}</td>
-      <td className="table-body-option">
+      <td className="table-body-opthandleAgeion">
         {handleAge(paciente.data_nascimento)}
       </td>
       <td className="table-body-option">{paciente.regiao}</td>
       <td>
         <Link to={`/InformacoesPaciente/${paciente.cpf}`}>
           <button type="button" className="default-button">
-            Informações <img src="img/arrow.png" />
+            Informações <img src="img/arrow.png" alt='seta'/>
           </button>
         </Link>
       </td>
       <td>
         <Link to={`/RegistroConsulta/${paciente.cpf}`}>
           <button type="button" className="default-button">
-            Registar consulta <img src="img/arrow.png" />
+            Registar consulta <img src="img/arrow.png" alt='seta'/>
           </button>
         </Link>
       </td>
-        <td>
-          <Link to={`/ListaConsultas/${paciente.cpf}`}>
-            <button type="button" className="default-button">
-              Lista Consultas <img src="img/arrow.png" />
-            </button>
-          </Link>
-        </td>
       <td>
         <Link to={`/AtualizarPaciente/${paciente.cpf}`}>
           <button type="button" className="default-button">
-            Atualizar Paciente <img src="img/arrow.png" />
+            Atualizar Paciente <img src="img/arrow.png" alt='seta'/>
           </button>
         </Link>
       </td>

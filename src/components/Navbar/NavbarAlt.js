@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MenuItemsAlt } from "./MenuItems";
 import "../../style/pages/HomePage/NavbarAlt.css";
 import {Link} from 'react-router-dom'

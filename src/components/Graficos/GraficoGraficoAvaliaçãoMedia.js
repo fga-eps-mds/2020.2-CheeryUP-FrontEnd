@@ -53,6 +53,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
         return "Qualidade da escuta";
 
       case "maturidadeEmocional":
+        return "Maturidade Emocional";
 
       case "qualidadeNutritiva":
         return "Qualidade Nutritiva";
@@ -69,7 +70,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
   }
 
   mostraAvaliações(avaliacoes = [], nomeAvaliacao = "") {
-    if (avaliacoes.length == 0) {
+    if (avaliacoes.length === 0) {
       return (
         <>
           <div>
@@ -108,11 +109,11 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
       for (var indicador in consulta) {
         if (
-          indicador != "id" &&
-          indicador != "data" &&
-          indicador != "produtividade"
+          indicador !== "id" &&
+          indicador !== "data" &&
+          indicador !== "produtividade"
         ) {
-          if (consultas.indexOf(consulta) == 0) {
+          if (consultas.indexOf(consulta) === 0) {
             nomeIndicador.push(indicador);
             media.push(consulta[indicador]);
           } else media[posicaoIndicador] += consulta[indicador];
