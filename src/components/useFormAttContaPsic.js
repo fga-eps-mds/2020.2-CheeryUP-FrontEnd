@@ -56,7 +56,7 @@ export default function useFormAttContaPsic() {
       .then((data) => {
         alert("Dados atualizados com sucesso !");
         console.log(psic);
-        history.push('/ListaPacientes')
+        history.push('/PerfilPsicologo')
       })
       .catch((err) => alert("Dados inválidos!"));
   };

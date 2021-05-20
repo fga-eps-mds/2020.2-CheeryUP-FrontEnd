@@ -45,7 +45,7 @@ export const NavbarPsicPerfil = () => {
 
       {
         <div className="dados-psicologo">
-          {psic.user.username}
+          {psic.name}
           <br />
           {psic.nCRP}
         </div>

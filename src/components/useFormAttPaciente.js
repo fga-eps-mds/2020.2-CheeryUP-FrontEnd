@@ -3,8 +3,10 @@ import "../pages/Registrar/CadastroPaciente";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function useFormPaciente(callback, validatePac) {
+  const history = useHistory();
   const [values, setValues] = useState({
     nome: "",
     nascimento: "",
@@ -56,7 +58,7 @@ export default function useFormPaciente(callback, validatePac) {
       )
       .then((data) => {
         alert("Dados atualizados com sucesso !");
-        console.log(psic);
+        history.push('/ListaPacientes')
       })
       .catch((err) => alert("Dados inválidos!"));
   };
