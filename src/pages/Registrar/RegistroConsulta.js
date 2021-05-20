@@ -70,7 +70,6 @@ const RegistroConsulta = ({ paciente }) => {
       )
       .then((dataPac) => {
         alert("Cadastro efetuado passado!");
-        console.log(dataPac);
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
       

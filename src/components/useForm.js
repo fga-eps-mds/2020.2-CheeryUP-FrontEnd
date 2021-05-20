@@ -37,7 +37,6 @@ export default function useForm(callback, validate) {
 
   useEffect(async () => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      console.log(values);
 
       data.append("user.username", values.username);
       data.append("user.password", values.senha);

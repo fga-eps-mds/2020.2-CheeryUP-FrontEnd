@@ -28,7 +28,6 @@ class GraficoQualidadeVida extends Component {
     var datasFormatadas = [];
     var date = new Date("2021-05-06");
     var txtBonito = date.toLocaleString();
-    console.log(txtBonito);
 
     var soma = 0;
     consultas.forEach((consulta) => {

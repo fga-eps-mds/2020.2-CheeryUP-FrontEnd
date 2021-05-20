@@ -19,7 +19,6 @@ class GraficoRegiao extends Component {
     render() {
         const { pessoas } = this.state;
         var regioes = pessoas.map(pessoa => pessoa.regiao);
-        console.log("regioes Totais:", regioes);
 
         var legenda = [];
         var qtdRegioes = [];
@@ -149,7 +148,6 @@ class GraficoRegiao extends Component {
             }
         })
 
-        console.log(legenda);
 
         const data = {
             labels: legenda,

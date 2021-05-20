@@ -42,7 +42,6 @@ export default function useFormPaciente(callback, validatePac) {
     setErrors(validatePac(values));
     setIsSubmitting(true);
 
-    console.log(values);
     dataPac.append("nome", values.nome);
     dataPac.append("data_nascimento", values.nascimento);
     dataPac.append("regiao", values.regiao);

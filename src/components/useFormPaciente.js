@@ -41,7 +41,6 @@ export default function useFormPaciente(callback, validatePac) {
     setErrors(validatePac(values)); 
     setIsSubmitting(true); 
 
-    console.log(values);
     dataPac.append("nome", values.nome);
     dataPac.append("data_nascimento", values.nascimento);
     dataPac.append("regiao", values.regiao);
@@ -54,7 +53,6 @@ export default function useFormPaciente(callback, validatePac) {
       .post(`api/psicologos/${psic.user.username}/pacientes/`, dataPac)
       .then((data) => {
         alert("Cadastro efetuado passado!");
-        console.log(psic);
         history.push("/ListaPacientes");
 
       })

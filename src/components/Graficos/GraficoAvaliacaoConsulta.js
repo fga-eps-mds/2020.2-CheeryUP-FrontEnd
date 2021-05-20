@@ -115,7 +115,6 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
         for (var indicador in consulta) {
             if (indicador !== 'id' && indicador !== 'data' && indicador !== 'produtividade') {
-                console.log(indicador);
                 if (consulta[indicador] === 1) {
                     avaliacao[0]++;
                     avaliacaoBoa.push(this.editaIndicador(indicador))

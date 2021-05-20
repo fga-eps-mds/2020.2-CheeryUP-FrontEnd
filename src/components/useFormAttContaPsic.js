@@ -36,10 +36,7 @@ export default function useFormAttContaPsic() {
 
   const handleSubmit = async (e) => {
     //e.preventDefault();
-    console.log("pica");
     setIsSubmitting(true);
-
-    console.log(values);
       dataPsic.append("user.password", values.senha);
       dataPsic.append("user.email", values.email);
       dataPsic.append("nCRP", values.nCRP);
@@ -55,7 +52,6 @@ export default function useFormAttContaPsic() {
       )
       .then((data) => {
         alert("Dados atualizados com sucesso !");
-        console.log(psic);
         history.push('/PerfilPsicologo')
       })
       .catch((err) => alert("Dados inválidos!"));

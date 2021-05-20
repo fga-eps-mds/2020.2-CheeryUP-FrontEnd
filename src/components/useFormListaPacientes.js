@@ -26,11 +26,9 @@ export default function useFormPaciente(callback, validatePac) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("pica");
     /*    setIsSubmitting(false);
     /* setErrors(validatePac(values)); */
     /*  setIsSubmitting(true); */
-    console.log(values);
     dataPac.append("nome", values.nome);
     dataPac.append("data_nascimento", values.nascimento);
     dataPac.append("regiao", values.regiao);
@@ -43,7 +41,6 @@ export default function useFormPaciente(callback, validatePac) {
       .get("api/psicologos/junin/pacientes/", dataPac)
       .then((data) => {
         alert("Cadastro efetuado passado!");
-        console.log(dataPac);
       })
       .catch((err) => alert("Cadastro de Paciente inválido!"));
   };

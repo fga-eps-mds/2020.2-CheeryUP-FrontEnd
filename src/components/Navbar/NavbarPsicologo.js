@@ -16,13 +16,10 @@ export const NavbarPsic = () => {
     const changePsic = useCallback((psic) => dispatch(setPsic(psic)), [dispatch]);
     useEffect(() => {
       axiosInstance.get(`api/psicologos/${psic.user.username}/`).then((response) => {
-        console.log(response)
         changePsic(response.data);
       });
     },[]);
-    useEffect( () => {
-        console.log(psic)
-    },[psic])
+    
     
     return (
     <nav className="NavbarItemsPsicologo">
