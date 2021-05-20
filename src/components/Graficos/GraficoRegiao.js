@@ -99,9 +99,6 @@ class GraficoRegiao extends Component {
                 case "RE":
                     legenda[legenda.indexOf(regiao)] = "Recanto das Emas"
                     break;
-                case "RF":
-                    legenda[legenda.indexOf(regiao)] = "Riacho Fundo"
-                    break;
                 case "SA":
                     legenda[legenda.indexOf(regiao)] = "Samambaia"
                     break;
@@ -143,8 +140,12 @@ class GraficoRegiao extends Component {
                     break;
                 case "VP":
                     legenda[legenda.indexOf(regiao)] = "Vicente Pires"
+                    break;
                 case "EO":
                     legenda[legenda.indexOf(regiao)] = "Entre outros"
+                    break;
+                default: 
+
             }
         })
 

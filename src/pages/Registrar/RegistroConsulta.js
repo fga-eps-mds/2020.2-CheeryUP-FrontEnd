@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Radio, Form } from "semantic-ui-react";
 import NavbarPsic from "../../components/Navbar/NavbarPsicologo";
 import "../../style/pages/Cadastro/RegistroConsulta.css";

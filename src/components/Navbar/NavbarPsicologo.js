@@ -19,7 +19,7 @@ export const NavbarPsic = () => {
         console.log(response)
         changePsic(response.data);
       });
-    }, []);
+    },[]);
     useEffect( () => {
         console.log(psic)
     },[psic])

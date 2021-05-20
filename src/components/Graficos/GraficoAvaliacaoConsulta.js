@@ -14,7 +14,7 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
     }
 
     mostraAvaliações(avaliacoes = [], nomeAvaliacao = "") {
-        if (avaliacoes.length == 0) {
+        if (avaliacoes.length === 0) {
             return <>
                 <div>
                     <h2>{nomeAvaliacao}</h2>
@@ -114,17 +114,17 @@ class GraficoAvaliaçãoMediaIndicadores extends Component {
 
 
         for (var indicador in consulta) {
-            if (indicador != 'id' && indicador != 'data' && indicador != 'produtividade') {
+            if (indicador !== 'id' && indicador !== 'data' && indicador !== 'produtividade') {
                 console.log(indicador);
-                if (consulta[indicador] == 1) {
+                if (consulta[indicador] === 1) {
                     avaliacao[0]++;
                     avaliacaoBoa.push(this.editaIndicador(indicador))
                 }
-                else if (consulta[indicador] == -1) {
+                else if (consulta[indicador] === -1) {
                     avaliacao[1]++;
                     avaliacaoRuim.push(this.editaIndicador(indicador))
                 }
-                if (consulta[indicador] == 0) {
+                if (consulta[indicador] === 0) {
                     avaliacao[2]++;
                     avaliacaoRegular.push(this.editaIndicador(indicador))
                 }

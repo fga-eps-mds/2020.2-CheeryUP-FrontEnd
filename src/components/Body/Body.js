@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Button } from '../Button/Button';
+import React from 'react';
 import ButtonCad from '../Button/ButtonCadastro';
 import '../../style/pages/HomePage/Body.css';
-import {Component, Fragment} from 'react'
+import {Fragment} from 'react'
 import Grafico from '../Graficos/GraficoHomePage'
 function Body() {
     return (
@@ -39,12 +38,12 @@ function Body() {
                 <p className="mensagem-titulo">Caso haja qualquer duvida,problema ou queira colaborar com o projeto <br/>basta nos procurar através das plataformas.</p>
                 <div className="imagens">
                     <div className="telegram">
-                        <a href="https://t.me/juninhigh"> <img src="/imagens/telegram_logo.png" /></a>
+                        <a href="https://t.me/juninhigh"> <img src="/imagens/telegram_logo.png" alt='imagem'/></a>
                         <h2>Telegram</h2>
 
                     </div>
                     <div className="github">
-                        <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP"> <img src="/imagens/github_logo.png" /></a>
+                        <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP"> <img src="/imagens/github_logo.png" alt='imagem'/></a>
                         <h2>Guthub</h2>
 
                     </div>

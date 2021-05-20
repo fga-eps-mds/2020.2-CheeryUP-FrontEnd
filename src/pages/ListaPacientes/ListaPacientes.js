@@ -1,8 +1,6 @@
-import React, { Fragment, useEffect, useCallback, useState } from "react";
+import React, { Fragment, useEffect, useCallback } from "react";
 import "../../style/pages/ListaPacientes/ListaPacientes.css";
-import useFormDelPaciente from "../../components/useFormDelPaciente";
 import NavbarPsicPerfil from "../../components/Navbar/NavbarPsicologo";
-import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/apiToken";
 import { useDispatch, useSelector } from "react-redux";
 import { setPac } from "../../store/Pacientes/actions.js";
@@ -11,8 +9,7 @@ import Pacientes from "./Pacientes";
 
 const ListaPacientes = ({ SubmitForm }) => {
   const { psic, pac } = useSelector((state) => state);
-  const history = useHistory();
-  const { handleSubmit } = useFormDelPaciente(SubmitForm);
+  //const { handleSubmit } = useFormDelPaciente(SubmitForm);
   const dispatch = useDispatch();
   const changePac = useCallback((pac) => dispatch(setPac(pac)), [dispatch]);
 
@@ -25,15 +22,6 @@ const ListaPacientes = ({ SubmitForm }) => {
       .catch((err) => console.log(err));
   }, []);
 
-  function handleAge(age) {
-    var [year, month, date] = age.split("-");
-    var birthday = new Date(year, month, date);
-    var ageDifference = Date.now() - birthday.getTime();
-    var ageDate = new Date(ageDifference);
-
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
-
   return (
     <Fragment>
       <div className="body-content">
@@ -45,7 +33,6 @@ const ListaPacientes = ({ SubmitForm }) => {
             <Link to="/CadastrarPaciente">  
               <button
                 type="submit"
-                onClick={handleSubmit}
                 className="default-button"
               > Cadastrar Paciente</button>
             </Link>
@@ -56,7 +43,7 @@ const ListaPacientes = ({ SubmitForm }) => {
                 id="texto-pesquisa"
                 placeholder="Buscar por nome"
               />
-              <img src="img/lupa.png" className="btn-pesquisa" />
+              <img src="img/lupa.png" className="btn-pesquisa" alt='imagem'/>
             </form>
           </div>
           <table className="table-content" cellspacing="10">
@@ -74,7 +61,7 @@ const ListaPacientes = ({ SubmitForm }) => {
               {/* tbody é onde sera inserido os individous */}
               {pac.map((paciente, index) => {
                 console.log(index);
-                return <Pacientes paciente={paciente} key={index} index = {index}/>;
+                return <Pacientes paciente={paciente} key={paciente.cpf} index = {index}/>;
               })}
             </tbody>
           </table>

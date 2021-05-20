@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Button, Card, Form, Dropdown } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 import NavbarPsic from '../../components/Navbar/NavbarPsicologo';
 import '../../style/pages/AtualizaSenha/AtualizarSenha.css';
 
@@ -10,7 +10,6 @@ class AttSenha extends Component {
     handleChange = (e, { value }) => this.setState({ value })
 
     render() {
-        const { value } = this.state
         return (
             <Fragment className="container-attSenha">
                 <NavbarPsic />

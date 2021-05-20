@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../pages/Registrar/SignUP";
 import axiosInstance from "../services/apiToken";
 import { useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function useFormAttContaPsic() {
   const history = useHistory();
@@ -16,7 +16,7 @@ export default function useFormAttContaPsic() {
     password: "",
     bio: "Algo",
   });
-  const [errors, setErrors] = useState({});
+  
   const [isSubmitting, setIsSubmitting] = useState(null);
   const dataPsic = new FormData();
   const handleChange = (e) => {
@@ -37,12 +37,9 @@ export default function useFormAttContaPsic() {
   const handleSubmit = async (e) => {
     //e.preventDefault();
     console.log("pica");
-    /*    setIsSubmitting(false);
-    /* setErrors(validatePac(values)); */
     setIsSubmitting(true);
 
     console.log(values);
-      //dataPsic.append("user.username", values.username);
       dataPsic.append("user.password", values.senha);
       dataPsic.append("user.email", values.email);
       dataPsic.append("nCRP", values.nCRP);
@@ -64,7 +61,6 @@ export default function useFormAttContaPsic() {
       .catch((err) => alert("Dados inválidos!"));
   };
 
-  // Ainda falta completar toda essa parte aqui ksksksks
 
   return { handleSubmit, handleChange, values, handleSelect };
 }

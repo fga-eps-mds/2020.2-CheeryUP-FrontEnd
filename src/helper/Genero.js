@@ -8,6 +8,9 @@ export function handleGenero(sigla) {
 
         case 'P':
             return 'Outro'
+        
+        default:
+            return 'Indefina'
     }
     
 }
