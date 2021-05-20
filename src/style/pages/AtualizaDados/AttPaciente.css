@@ -16,6 +16,20 @@
     position: absolute;
 }
 
+.nascimento input{
+    margin: auto !important;
+    
+}
+
+.nascimento label{
+    font-weight: 700;
+}
+
+.nascimento strong {
+    color: #f0300efa;
+}
+
+
 .titulo-form-attPac{
     width: 25vw;
     height: 4vh;

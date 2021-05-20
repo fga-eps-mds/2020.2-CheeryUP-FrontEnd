@@ -13,7 +13,7 @@ export default function useFormPaciente(callback, validatePac) {
     regiao: "",
     descricao: "",
     situacao: "M",
-    genero: "",
+    genero: "M",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(null);

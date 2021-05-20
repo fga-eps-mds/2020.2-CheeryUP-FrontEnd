@@ -68,16 +68,19 @@ const AttDadosPac = ({SubmitAttForm}) => {
                   </div>
                   <div className="segunda-linha-att">
                     <Form.Group widths="equal">
-                      <Form.Input
+                    <Form.Input>
+                      <div className="nascimento">
+                      <label>Data de nascimento<strong>*</strong></label>
+                      <input 
                         required
-                        fluid
-                        label="Data de Nascimento"
-                        placeholder="YYYY-MM-DD"
+                        type="date"
                         onChange={handleChange}
                         value={values.nascimento}
                         name="nascimento"
                       />
-                      {errors.nascimento && <p class="alert-message">{errors.nascimento}</p>}
+                      </div>
+                      
+                    </Form.Input>
                       <Form.Input
                         required
                         fluid

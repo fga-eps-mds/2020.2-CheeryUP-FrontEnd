@@ -14,7 +14,7 @@ export default function useFormPaciente(callback, validatePac) {
     regiao: "",
     descricao: "",
     situacao: "M",
-    genero: "",
+    genero: "M",
   });
   const { infopaciente } = useParams();
   const [errors, setErrors] = useState({});

@@ -68,16 +68,20 @@ const CadastroPac = ({ SubmitFormPac }) => {
               </div>
               <div className="segunda-linha">
                 <Form.Group widths="equal">
-                  <Form.Input
-                    required
-                    fluid
-                    label="Data de Nascimento"
-                    placeholder="YYYY-MM-DD"
-                    onChange={handleChange}
-                    value={values.nascimento}
-                    name="nascimento"
-                  />
-                  {errors.nascimento && <p class="alert-message">{errors.nascimento}</p>}
+                  
+                  <Form.Input>
+                    <div className="nascimento">
+                    <label>Data de nascimento<strong>*</strong></label>
+                    <input 
+                      required
+                      type="date"
+                      onChange={handleChange}
+                      value={values.nascimento}
+                      name="nascimento"
+                    />
+                    </div>
+                    
+                  </Form.Input>
                   <Form.Input
                     required
                     fluid

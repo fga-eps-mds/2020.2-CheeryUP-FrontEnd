@@ -46,6 +46,20 @@
     position: relative;
 }
 
+.nascimento input{
+    margin: auto !important;
+    
+}
+
+.nascimento label{
+    font-weight: 700;
+}
+
+.nascimento strong {
+    color: #f0300efa;
+}
+
+
 .alert-message {
     font-size: 0.9rem;
     margin-top: 0.1rem;
