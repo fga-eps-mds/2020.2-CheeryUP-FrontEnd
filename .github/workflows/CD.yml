@@ -16,3 +16,4 @@ jobs:
           heroku_app_name: "cheeryup-frontend" #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_API_EMAIL}}
           branch: "development"
+

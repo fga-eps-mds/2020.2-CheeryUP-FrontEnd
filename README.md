@@ -1,4 +1,37 @@
-<p align="center"><a href="image" target="_blank"><img width="600"src="./public/logoReadme.png"></a></p>   
+<p align="center"><a href="image" target="_blank"><img width="600"src="./public/logoReadme.png"></a></p>  
+
+<p align="center">
+ 
+  <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP-FrontEnd/pulls?q=is%3Apr+is%3Aclosed">
+        	 <img alt="GitHub closed pull requests " src="https://img.shields.io/github/issues-pr-closed-raw/fga-eps-mds/2020.2-CheeryUP-FrontEnd?color=2D4561&style=flat-square">
+  </a>
+ 
+ <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP/issues?q=is%3Aissue+is%3Aclosed">
+        	 <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed-raw/fga-eps-mds/2020.2-CheeryUP?color=%23F44545&logo=GitHub&style=flat-square">
+		</a>
+
+  
+  <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP-FrontEnd/graphs/commit-activity">
+        	 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/fga-eps-mds/2020.2-CheeryUP-FrontEnd?color=576473&style=flat-square">
+		</a>
+  
+  <a href="https://github.com/fga-eps-mds/2020.2-CheeryUP-FrontEnd/blob/main/LICENSE">
+		<img alt="GitHub" src="https://img.shields.io/github/license/fga-eps-mds/2020.2-CheeryUP-FrontEnd?color=F9423A&style=flat-square">
+	</a>
+
+  
+</p>
+
+
+</p>
+<p align="center">
+ <a href="https://isitmaintained.com/project/fga-eps-mds/2020.2-CheeryUP">
+        	 <img alt=" Github Issue Resolution " src="http://isitmaintained.com/badge/resolution/fga-eps-mds/2020.2-CheeryUP.svg">
+		</a>
+ <a href="https://isitmaintained.com/project/fga-eps-mds/2020.2-CheeryUP">
+        	 <img alt="Github Open Issues " src="http://isitmaintained.com/badge/open/fga-eps-mds/2020.2-CheeryUP.svg">
+</p>
+
 
 ## ℹ️ Sobre o projeto
 <p align="justify"> O CheeryUP é um sistema direcionado para psicólogos que foi arquitetado por Carla Silva Rocha Aguiar, com a ideia de disponibilizar uma plataforma online para prontuário de atendimento de pacientes que estão em fase de recuperação da COVID-19.</p>
@@ -88,7 +121,7 @@ Após a instalação conferir se o mesmo encontra em sua máquina.
         <!-- Antônio   -->
         <td align="center"><a href="https://github.com/antoniotoineto"><img style="border-radius: 5%;" src="https://i.ibb.co/wCJ6tks/antonio.jpg" width="100px;" alt=""/><br /><sub><b>Antônio Neto</b><br><b>Front-End</b></sub></a><br /></td>
         <!-- Arthur   -->
-        <td align="center"><a href="https://github.com/art1505"><img style="border-radius: 5%;" src="https://i.ibb.co/xKbQ89h/arthur.jpg" width="100px;" alt=""/><br /><sub><b>Arthur Thalles</b><br><b>Front-End</b></sub></a><br /></td>
+        <td align="center"><a href="https://github.com/art1505"><img style="border-radius: 5%;" src="https://i.ibb.co/xKbQ89h/arthur.jpg" width="100px;" alt=""/><br /><sub><b>Arthur Talles</b><br><b>Front-End</b></sub></a><br /></td>
         <!-- Davi   -->
         <td align="center"><a href="https://github.com/DaviMatheus"><img style="border-radius: 5%;" src="https://i.ibb.co/4PbbmJs/davi.jpg" width="100px;" alt=""/><br /><sub><b>Davi Matheus</b><br><b>Product Owner</b><br><b>Back-End</b></sub></a><br /></td>
         <!-- Lucas   -->
