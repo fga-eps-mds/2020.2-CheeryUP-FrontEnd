@@ -3,6 +3,7 @@ import { MenuItemsAlt } from "./MenuItems";
 import "../../style/pages/HomePage/NavbarAlt.css";
 import {Link} from 'react-router-dom'
 
+
 /*
     Fiz esse novo arquivo no intuito de termos uma Navbar do Psicólogo.
     Essa Navbar seria usada nas páginas após o Login.
@@ -33,3 +34,5 @@ export const NavbarAlt = () => {
 };
 
 export default NavbarAlt;
+
+

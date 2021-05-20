@@ -2,6 +2,8 @@ import React, {Fragment} from 'react'
 import '../../style/pages/Login/Login.css';
 import useFormSignIn from '../../components/useFormSignIn';
 import { Card, Form, Button} from 'semantic-ui-react'
+import { useSelector } from "react-redux";
+
 
 function validate(values){
     let errors = {};
@@ -16,14 +18,19 @@ function validate(values){
     return errors;
 };
 
+    
 const Login = ({ SubmitForm }) => {
+
+    const { mobile } = useSelector((state) => state);
+
     const { handleChange, values, handleSubmit, errors } = useFormSignIn(SubmitForm, validate);
 
     return (
             <Fragment>
-                <div className="container-login"> 
-                        <div className="form-login-container">
-                            <div className="top-login">
+                <div className={ mobile ? "container-login-mobile" : "container-login" }> 
+                        <div className={ mobile ? "form-login-container-mobile" : "form-login-container" } >
+                            <div className={ mobile ? "top-login-mobile" : "top-login"}>
+
                                 <a href="/"> 
                                     <img className="top-login-logo" src="img/logo_word.png" alt="logo CheeryUp" />
                                 </a>
@@ -32,7 +39,8 @@ const Login = ({ SubmitForm }) => {
                                 </a>
                             </div>
 
-                        <div className="form-login-wrap">
+                        <div className={ mobile ? "form-login-wrap-mobile" : "form-login-wrap" }>
+
                             <Card className = "form-card-login" style={{ border: "none", boxShadow: "none" }}>
 
                                 <Card.Content className = "form-title-login" style={{ border: "none", boxShadow: "none" }}>
@@ -40,10 +48,12 @@ const Login = ({ SubmitForm }) => {
                                 </Card.Content>
                                 
                                 <Card.Content> 
-                                    <Form className ="form-content-input-login">
+
+                                    <Form className="form-content-input-login">
                                         <Form.Input placeholder="Username" label="Username" required fluid onChange={handleChange} name='username' value={values.username}/>
                                             {errors.nome && <p class="p-message">{errors.username}</p>}
                                         <Form.Input placeholder="Senha" label="Senha" required fluid onChange={handleChange} type="password" name='senha' value={values.senha}/>
+    
                                             {errors.senha && <p class="p-message">{errors.senha}</p>}
                                             <p><a className="links" href="/RecuperarSenha">Esqueceu sua senha?</a></p>
                                         <Button type="submit" onClick={handleSubmit}>Login</Button>
@@ -60,14 +70,20 @@ const Login = ({ SubmitForm }) => {
                         </div>
 
                     </div>
-                
-                    <div className="side-image-login">
-                        <img src="img/wallpaper_login.png" alt="Wallpaper login"/>
-                    </div> 
+               
+                    {!mobile && (
+                        <div className="side-image-login">
+                            <img src="img/wallpaper_login.png" alt="Wallpaper login"/>
+                        </div> 
+                    )}
+
                 
                 </div>
             </Fragment>
         
             )
 }
+
 export default Login;
+
+

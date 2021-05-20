@@ -34,16 +34,13 @@ class GraficoProdutividade extends Component {
         return (
             <>
                 <div>
-                <Doughnut data={data}
-                        width={400}
-                        height={500}
-                        options={{ maintainAspectRatio: false ,
-                            animation: {
-                                  duration: 2000,
-                                  easing: 'easeOutQuint',
-                                  delay: 1000,  
-                              }, }}/>
-                        </div>
+                <Doughnut 
+                    data={data}
+                    height={400}
+                    options={{ maintainAspectRatio: false  }}
+                />
+                </div>
+
                        
             </>)
 
